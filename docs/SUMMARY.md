@@ -1,10 +1,10 @@
 # Summary
 
-- [Introduction]()
+- Introduction
   - [Engineering](engineering.md)
   - [Software](software.md)
   - [The modern synthesis](the-modern-synthesis.md)
-- [Design process]()
+- Design process
   - [History](history.md)
   - [Ideation](ideation.md)
   - [Analysis](analysis.md)

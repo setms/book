@@ -5,9 +5,11 @@ level: error
 scope: heading
 match: $sentence
 exceptions:
-  - Adevinta Databox
+  - Agile
   - API
   - APIs
+  - AST
+  - ASTs
   - Azure
   - Checkstyle
   - CID
@@ -20,40 +22,26 @@ exceptions:
   - DDRs
   - Emmet
   - GDPR
-  - GDPR Middleware
   - Git
   - GitHub
   - GPG
   - Gradle
   - gRPC
   - I
-  - IntelliJ
-  - Interconnect
   - Java
   - Jenkins
   - Jira
-  - Knocker
   - Kubernetes
   - Linux
   - macOS
-  - Marketplace
-  - Middleware
   - MongoDB
   - MySQL
   - OpenStack
   - PGP
-  - Privacy Broker
+  - PR
+  - PRs
   - Pub/Sub
   - REPL
-  - SAR
-  - SARs
-  - Secret Manager
   - Slack
-  - Studio
-  - Terraform
-  - Terragrunt
-  - TypeScript
   - URLs
-  - Visual
-  - VS
   - Windows

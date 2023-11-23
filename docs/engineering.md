@@ -4,7 +4,7 @@
 
 ## Applied science
 
-... Shaw's model
+Shaw's model
 
 ## Design process
 
