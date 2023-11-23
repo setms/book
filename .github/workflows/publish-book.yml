@@ -57,7 +57,7 @@ jobs:
       - vale
       - megalinter
     container:
-      thefarwind/mdbook mdbook
+      thefarwind/mdbook
     steps:
       - uses: actions/checkout@v3
       - name: Setup Pages
