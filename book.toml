@@ -1,6 +1,7 @@
 [book]
-authors = ["Ray Sinnema"]
+authors = ["Rémon Sinnema"]
 language = "en"
 multilingual = false
 src = "src"
 title = "Software Engineering: The Modern Synthesis"
+description = "Bringing science to software development to create a real engineering discipline."
