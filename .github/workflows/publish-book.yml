@@ -27,14 +27,14 @@ concurrency:
 
 jobs:
   vale:
-    runs-on: org/gdpr-middleware
+    runs-on: ubuntu-latest
     container:
       image: dockerhub.es.ecg.tools/jdkato/vale:v2.10.2
     steps:
       - uses: actions/checkout@v3
       - run: vale docs
   megalinter:
-    runs-on: org/gdpr-middleware
+    runs-on: ubuntu-latest
     container:
       image: dockerhub.es.ecg.tools/oxsecurity/megalinter-documentation:v6
     steps:
