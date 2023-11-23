@@ -1,0 +1,6 @@
+[book]
+authors = ["Ray Sinnema"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Software Engineering: The Modern Synthesis"
