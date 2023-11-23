@@ -29,14 +29,14 @@ jobs:
   vale:
     runs-on: ubuntu-latest
     container:
-      image: dockerhub.es.ecg.tools/jdkato/vale:v2.10.2
+      image: jdkato/vale:v2.10.2
     steps:
       - uses: actions/checkout@v3
       - run: vale docs
   megalinter:
     runs-on: ubuntu-latest
     container:
-      image: dockerhub.es.ecg.tools/oxsecurity/megalinter-documentation:v6
+      image: oxsecurity/megalinter-documentation:v6
     steps:
       - uses: actions/checkout@v3
         with:
