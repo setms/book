@@ -14,6 +14,7 @@
 - [Testing](testing.md)
 - [Construction](construction.md)
 - [Design](design.md)
+- [Operations](operations.md)
 
 # Scaling up
 

@@ -12,4 +12,6 @@ Find input and output languages of Mealy machines.
 
 ## Fitness functions
 
+## Trade-offs
+
 ## Examples

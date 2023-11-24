@@ -1,6 +1,6 @@
 # Management
 
-## Standardized work
+## Scientific management
 
-## Continuous improvement
+## Toyota production system
 

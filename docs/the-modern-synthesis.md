@@ -2,10 +2,4 @@
 
 ## Evolution
 
-## Management
-
-### Scientific management
-
-### Toyota production system
-
 ## Example system
