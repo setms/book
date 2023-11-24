@@ -20,7 +20,7 @@ We had fixed scope and deadlines, resulting in poor quality and lots of bug fixi
 
 In my third job I read @@beck2000 and started to see a way out of the misery.
 I introduced eXtreme Programming into the organization and achieved some initial successes.
-At the first sight of trouble, the CEO forbid us to do any more pair programming.
+At the first bump in the road, however, the CEO forbid us to do any more pair programming.
 
 And so it continued with every job I had after that.
 I've never had the feeling that we as an industry have figured out how to do software development _well_.
