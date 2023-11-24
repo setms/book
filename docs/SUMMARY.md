@@ -1,9 +1,12 @@
 # Summary
 
+[Preface](preface.md)
+
 # Introduction
 
 - [Engineering](engineering.md)
 - [Software](software.md)
+- [Software engineering](software-engineering.md)
 - [The modern synthesis](the-modern-synthesis.md)
 
 # Design process

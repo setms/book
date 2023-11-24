@@ -5,3 +5,6 @@ multilingual = false
 src = "docs"
 title = "Software Engineering: The Modern Synthesis"
 description = "Bringing science to software development to create a real engineering discipline."
+
+[preprocessor.bib]
+bibliography = "references.bib"
