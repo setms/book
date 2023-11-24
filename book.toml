@@ -6,5 +6,16 @@ src = "docs"
 title = "Software Engineering: The Modern Synthesis"
 description = "Bringing science to software development to create a real engineering discipline."
 
+[preprocessor.admonish]
+command = "mdbook-admonish"
+assets_version = "3.0.1" # do not edit: managed by `mdbook-admonish install`
+
 [preprocessor.bib]
 bibliography = "references.bib"
+render-bib = "cited"
+
+[output]
+
+[output.html]
+additional-css = ["./mdbook-admonish.css"]
+curly-quotes = true

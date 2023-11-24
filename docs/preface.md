@@ -1,7 +1,6 @@
 # Preface
 
 <!-- vale Google.FirstPerson = NO -->
-<!-- vale Google.We = NO -->
 
 In 1989, I went to college to study business informatics.
 One of the classes I took was  _Software Engineering_.
@@ -18,7 +17,7 @@ My second job was working for a product company, where I didn't interact directl
 That didn't solve my problems.
 We had fixed scope and deadlines, resulting in poor quality and lots of bug fixing.
 
-In my third job I read @@beck2000 and started to see a way out of the misery.
+In my third job I read @@Beck2000 and started to see a way out of the misery.
 I introduced eXtreme Programming into the organization and achieved some initial successes.
 At the first bump in the road, however, the CEO forbid us to do any more pair programming.
 
@@ -31,5 +30,4 @@ This book is my attempt to survey the field and see how far away that ideal is.
 Ray Sinnema<br>
 November 2023
 
-<!-- vale Google.We = YES -->
 <!-- vale Google.FirstPerson = YES -->
