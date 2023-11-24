@@ -36,7 +36,7 @@ jobs:
   megalinter:
     runs-on: ubuntu-latest
     container:
-      image: oxsecurity/megalinter-documentation:v6
+      image: oxsecurity/megalinter-documentation
     steps:
       - uses: actions/checkout@v3
         with:
