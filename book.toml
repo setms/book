@@ -14,6 +14,9 @@ assets_version = "3.0.1" # do not edit: managed by `mdbook-admonish install`
 bibliography = "references.bib"
 render-bib = "cited"
 
+[preprocessor.katex]
+after = ["links"]
+
 [output]
 
 [output.html]

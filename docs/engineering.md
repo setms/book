@@ -39,6 +39,9 @@ These activities form a loop:
 
 Scientific knowledge grows over time.
 Little discoveries here and there build on each other to reach truly impressive gains in understanding.
+Most of this progress is gradual.
+Every once in a while, however, a breakthrough leads to rapid progress.
+Some of these breakthroughs are the result of a different way of looking at things @@Kuhn1970.
 
 Application of the scientific method leads to scientific theories that engineering then applies to solve practical
 problems.
