@@ -67,14 +67,14 @@ For instance, the Unified Modeling Language (UML) has a `StateMachines` package 
 or operation using a state machine @@UML.
 
 The most common representations of FSMs are state transition tables and state diagrams.
-A **state transition table** is a matrix where the rows are inputs, the columns are states, and the cells indicate
+A **state transition table** is a matrix where the rows are inputs, the columns are states, and the cells contain
 the new state and output.
 A downside of state transition tables is that many cells may be empty.
 In that case, a state diagram may be a better representation.
 
-A **state diagram** or state transition diagram is directed graph where the nodes correspond to the states Q,
-and the edges to transitions defined by $ \delta $.
-The edges are labeled with the input defined by $ \Sigma $ and optionally with the output defined by $ \lambda $:
+A **state diagram** is a directed graph where the nodes correspond to the states Q and the edges to transitions
+defined by $ \delta $.
+The edge labels are inputs from $ \Sigma $ and optionally may contain the output defined by $ \lambda $:
 
 ![Sample state diagram](https://i.stack.imgur.com/E8i9t.png)
 
@@ -84,5 +84,5 @@ For now, we just want to define a model of a software application based on Mealy
 
 ![Model of application based on Mealy machine](app-model-mealy.png)
 
-This is a very basic model and admittedly not very useful yet.
-We'll revise this model later.
+This basic model is admittedly not super useful yet.
+We'll revise it later.
