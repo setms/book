@@ -17,7 +17,7 @@ Let's look at those in a bit more detail.
 ## Applied science
 
 ```admonish tldr title="Definition"
-**Science** is a system of knowledge covering general truths or the operation of general laws especially as
+**Science** is a system of knowledge covering general truths or the operation of general laws, especially as
 obtained and tested through the scientific method.
 
 --- @@MerriamWebsterScience
@@ -31,8 +31,8 @@ formulation and testing of hypotheses.
 --- @@MerriamWebsterScientificMethod
 ```
 
-The _scientific method_ involves making observations, formulating hypotheses based on those observations,
-running experiments to falsify the hypotheses, and generalizing hypotheses into a theory.
+The scientific method involves making observations, formulating hypotheses based on those observations,
+running experiments to falsify the hypotheses, and generalizing hypotheses into a cohesive theory.
 These activities form a loop:
 
 ![The scientific method](https://s3-us-west-2.amazonaws.com/courses-images-archive-read-only/wp-content/uploads/sites/902/2015/02/23224503/CNX_Psych_02_01_Method.jpg)
@@ -52,7 +52,7 @@ Engineering follows a well-defined process to solving problems:
 ![Engineering design process](https://1.bp.blogspot.com/-kX4k9R-xwe4/WOUZJHg2SFI/AAAAAAAAA1M/74nGctp1OtQb79drZTlEsOCmd4ZXISQsQCEw/s1600/engineering-design-process.jpg)
 
 Note that this process shares similarities with the scientific method.
-The major difference is that engineering is about _making_ something.
+The major difference is that engineering is about _making_ something whereas science is about _knowing_ something.
 
 
 ## Evolution of an engineering discipline

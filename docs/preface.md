@@ -14,8 +14,8 @@ Budget and schedule overruns of 200% were common.
 
 In my youthful ignorance, I blamed fickle customers.
 My second job was working for a product company, where I didn't interact directly with customers anymore.
-That didn't solve my problems.
-We had fixed scope and deadlines, resulting in poor quality and lots of bug fixing.
+That didn't solve my problems, though.
+We had fixed scope and deadlines, resulting in poor quality and lots of time spent fixing bugs.
 
 In my third job I read @@Beck2000 and started to see a way out of the misery.
 I introduced eXtreme Programming into the organization and achieved some initial successes.
