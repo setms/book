@@ -65,9 +65,3 @@ reference list for detailed information.
 IEEE CS stresses that SWEBOK is a _guide_ to the body of knowledge for software engineering.
 The body of knowledge itself consists of the literature that SWEBOK references.
 Appendix C contains a list of 36 books that together cover all the KAs.
-
-
-## Adoption
-
-In theory the body of knowledge referenced by SWEBOK covers all we need to know about how do to software engineering.
-Then how come what we do in practice feels nothing like engineering?

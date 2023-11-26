@@ -7,7 +7,7 @@
 - [Engineering](engineering.md)
 - [Software](software.md)
 - [Software engineering](software-engineering.md)
-- [The modern synthesis](the-modern-synthesis.md)
+- [Problems with software engineering](problem-statement.md)
 
 # Design process
 
