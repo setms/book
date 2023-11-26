@@ -32,8 +32,7 @@ They offer the following tools to improve layer 3:
 
 ## Ignorance
 
-Many software developers are unaware of the SWEBOK.
-<!-- vale Google.FirstPerson = NO -->
+Many software developers are unaware of the SWEBOK.<!-- vale Google.FirstPerson = NO -->
 I myself only found it when doing research for this book, and I'm an avid reader.
 <!-- vale Google.FirstPerson = YES -->
 
@@ -83,4 +82,5 @@ Its output:
 
 Is there a similar ideal for software development?
 And if so, is there an engineering design process that applies science to continuously get closer to that ideal?
+
 The rest of this book is an attempt to find the answers to those questions.
