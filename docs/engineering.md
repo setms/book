@@ -47,6 +47,25 @@ Application of the scientific method leads to scientific theories that engineeri
 problems.
 For instance, electrical engineering applies the theory of electromagnetism @@Jackson1999.
 
+Engineers apply scientific theories by construction models of their designs @@Brockman2009.
+A model is an approximation of a real system that responds in a similar way.
+
+<!-- vale write-good.Passive = NO -->
+Since everything is connected to everything, networks are important models.
+<!-- vale write-good.Passive = YES -->
+A _graph_ is a model of a network, where the _nodes_ are things and the _edges_ are relationships between the things.
+
+A _system_ is part of a network inside a boundary.
+Everything outside the boundary is the _environment_.
+Systems can consist of subsystems, which are also systems.
+Systems are often more than the sum of their parts.
+
+Systems are important for engineering because:
+
+- They're more robust: fewer dependencies means fewer things that can go wrong.
+- They're easier to reason about: instead of having to understand everything inside a subsystem, we can temporarily
+  forget about irrelevant details.
+
 
 ## Design process
 
