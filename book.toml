@@ -17,6 +17,10 @@ render-bib = "cited"
 [preprocessor.katex]
 after = ["links"]
 
+[preprocessor.graphviz]
+command = "mdbook-graphviz"
+output-to-file = false
+
 [output]
 
 [output.html]
