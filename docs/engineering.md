@@ -41,7 +41,7 @@ running experiments to falsify the hypotheses, and generalizing hypotheses into 
 These activities form a loop:
 
 ```dot process
-digraph g1 {
+digraph scientific_method {
   size="6!";
   layout="circo";
   splines="curved";
@@ -74,8 +74,31 @@ A _model_ is an approximation of a real system that responds in a similar way.
 
 Since everything connects to everything, networks are important models.
 A _graph_ is a model of a network, where the _nodes_ are things and the _edges_ are relationships between the things.
+Edges are either directed (with arrows) or undirected.
 
-![A graph](img/graph.png)
+Here's an example of an undirected graph:
+
+```dot process
+digraph nodes_and_edges {
+  layout="neato";
+  node [shape=circle, style=filled, fixedsize=true, width=0.15, height=0.15, fillcolor=lightskyblue2,
+    color=steelblue4, label=""];
+  edge [color=steelblue4, dir=none];
+
+
+  a -> b;
+  b -> c;
+  c -> d;
+  c -> e;
+  c -> f;
+  e -> f;
+  f -> g;
+  b -> h;
+  h -> i;
+  c -> i;
+  i -> j
+}
+```
 
 A _concept map_ is a graph where the nodes represent concepts and the edges their relationships.
 
@@ -140,4 +163,6 @@ Both of these take time to develop, so a new field of engineering necessarily gr
 
 ![Evolution of an engineering discipline](https://www.researchgate.net/profile/Trevor-Bihl/publication/339029049/figure/download/fig2/AS:854876443660288@1580829835253/Shaws-Model-of-the-evolution-of-engineering-disciplines-from-14.png)
 
-Before we judge where software development falls in this model, let's look at software in more detail.
+@@Brockman2009 lists over 15 different engineering disciplines, like aerospace, chemical, civil, electrical, mechanical,
+and nuclear engineering.
+Before we judge whether software engineering deserves to be on that list, let's look at software in more detail.
