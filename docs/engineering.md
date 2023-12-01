@@ -40,7 +40,21 @@ The scientific method involves making observations, formulating hypotheses based
 running experiments to falsify the hypotheses, and generalizing hypotheses into a cohesive theory.
 These activities form a loop:
 
-![The scientific method](https://s3-us-west-2.amazonaws.com/courses-images-archive-read-only/wp-content/uploads/sites/902/2015/02/23224503/CNX_Psych_02_01_Method.jpg)
+```dot process
+digraph g1 {
+  size="6!";
+  layout="circo";
+  splines="curved";
+  node [shape=rect, style="rounded,filled", fixedsize=true, width=1.5, height=0.75, fillcolor=lightskyblue2,
+    color=steelblue4, penwidth=2];
+  edge [fontsize=11, color=steelblue4, penwidth=2];
+
+  Experiment -> Observation [label = "\n\nPerform the\nexperiment"];
+  Observation -> Theory [label = "Modify the\ntheory"];
+  Theory -> Hypothesis [label = "Use the theory\nto form a\nhypothesis"];
+  Hypothesis -> Experiment [label = "Design an\nexperiment to\ntest the hypothesis"];
+}
+```
 
 Scientific knowledge grows over time.
 Little discoveries here and there build on each other to reach truly impressive gains in understanding.
