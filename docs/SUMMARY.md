@@ -11,7 +11,6 @@
 # Design process
 
 - [History](history.md)
-- [Ideation](ideation.md)
 - [Analysis](analysis.md)
 - [Testing](testing.md)
 - [Construction](construction.md)

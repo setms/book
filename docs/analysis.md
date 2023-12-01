@@ -1,5 +1,8 @@
 # Analysis
 
+## Requirements gathering
+
+
 ## Event storming
 
 Find transition function of Mealy machines.
