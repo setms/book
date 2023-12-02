@@ -13,8 +13,8 @@ Before we get into all that, a quick note on the book's title.
 Biology is the scientific study of life.
 While it has a broad scope, there is a unifying theory:
 
-```admonish example "Quote"
-"Nothing in biology makes sense except in the light of evolution"
+```admonish info "Quote"
+Nothing in biology makes sense except in the light of evolution.
 
 --- @@Dobzhansky1973
 ```
@@ -23,9 +23,6 @@ The scientific theory of evolution rests on two pillars:
 
 1. **Natural selection** is the differential survival and reproduction of individuals due to differences in traits @@Darwin1859.
 2. **Heredity of traits** is the passing on of traits from parents to their offspring @@Mendel1866, @@Fisher1930.
-
-These pillars were fist brought together in the seminal book _Evolution: The Modern Synthesis_ @@Huxley1948.
-This book similarly aspires to bring together the pillars of software engineering.
 
 On a high level, evolution works as follows:
 
@@ -47,4 +44,7 @@ digraph evolutoin {
 Note the similarities with both the scientific method and the engineering design process.
 It turns out that nature is performing some form of science.
 
-With this detour out of the way, let's dig into the software engineering process.
+The two pillars of evolution were fist brought together in the seminal book _Evolution: The Modern Synthesis_ @@Huxley1948.
+
+This book similarly aspires to bring together the pillars of software engineering.
+Let's get to it.
