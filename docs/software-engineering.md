@@ -131,9 +131,9 @@ Its _Toyota Production System_ (TPS) is an approach that combines all three tool
 
 Taiichi Ohno, TPS's founder, says TPS is about reducing waste through just-in-time production
 and automation with a human touch @@Ohno1988.
-However, analysis shows that the real power of TPS stems from the fact that they standardize all work,
-while constantly improving those standards @@Spear1999.
-In other words, they use the scientific method.
+However, @@Spear1999 shows that the real power of TPS stems from standardizing all work, while responding to problems
+by improving the standards.
+In other words, Toyota uses the scientific method.
 
 Is it possible to find one way to do software development that's optimal in all situations?
 The answer is probably negative.
