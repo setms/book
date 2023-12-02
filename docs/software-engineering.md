@@ -7,7 +7,7 @@ operation, and maintenance of software; that is, the application of engineering 
 --- @@ISO/IEC_2382:2015
 ```
 
-The term _software engineering_ was first used in the title of a NATO conference in 1968 @@Naur1969 :
+The term software engineering was first used in the title of a NATO conference in 1968 @@Naur1969 :
 <!-- vale Microsoft.Adverbs = NO -->
 <!-- vale write-good.Passive = NO -->
 
@@ -59,7 +59,7 @@ The other KAs deal with related topics.
 
 SWEBOK V4 recognizes 18 KAs, introducing architecture, operations, and security as separate areas.
 
-Each knowledge area breaks down into topics and subtopics, summarizing the key concepts and including a
+Each knowledge area breaks down into topics and subtopics, summarizes the key concepts, and includes a
 reference list for detailed information.
 
 IEEE CS stresses that SWEBOK is a _guide_ to the body of knowledge for software engineering.
@@ -84,12 +84,12 @@ A complex question like that usually has more than one answer.
 Let's look at some possibilities.
 
 
-## Management
+### Management
 
 Organizations achieve immensely different outcomes, even in level playing fields.
-Some organizations outperform their competitors in every important dimension, all at once.
+Some organizations outperform their competitors in every important dimension, _all at once_.
 
-[Kim2023] claim to understand why.
+@@Kim2023 claim to understand why.
 They say all organizations are sociotechnical systems, where different types of work happen in
 different layers:
 
@@ -99,15 +99,16 @@ different layers:
 
 They argue that performance in layer 3 dominates performance as a whole.
 In other words, winning organizations wire their social circuitry better.
+For instance, Agile methods outperform Waterfall @@AgileVsWaterfall2023.
 
-They offer the following tools to improve layer 3:
+@@Kim2023 offer the following tools to improve layer 3:
 
 - **Slowification** to make it easier to solve problems.
 - **Simplification** to make the problems themselves easier to solve.
 - **Amplification** to make it obvious that there are problems that need solving.
 
 
-## Ignorance
+### Ignorance
 
 Many software developers are unaware of the SWEBOK.<!-- vale Google.FirstPerson = NO -->
 I myself only found it when doing research for this book, and I'm an avid reader.
@@ -122,7 +123,7 @@ This may be due to a lack of discipline, or it may result from poor management.
 It's also possible that they're confused by too many options.
 
 
-## Too many options
+### Too many options
 
 The SWEBOK references more than one approach for most knowledge areas.
 Contrast this with Toyota.
@@ -141,7 +142,7 @@ These approaches were the result of the divisions encountering different problem
 and solving them according to their unique situation.
 
 And yet, there is an underlying way of working in those divisions.
-Companies following TPS have a common sense of what the ideal production system would be.
+Companies following TPS have a common sense of what the _ideal_ production system would be.
 Its output:
 <!-- vale write-good.Passive = NO -->
 <!-- vale write-good.Weasel = NO -->

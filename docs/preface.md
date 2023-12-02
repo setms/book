@@ -2,7 +2,7 @@
 
 <!-- vale Google.FirstPerson = NO -->
 
-In 1989, I went to college to study business informatics.
+In 1989, I went to college to study business informatics, or applied computer science.
 One of the classes I took was  _Software Engineering_.
 It taught us the process of how to develop software.
 
