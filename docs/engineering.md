@@ -149,6 +149,7 @@ The design process to solve an engineering problem consists of the following ste
 2. **Explore**.
   Does the problem make sense? What are the assumptions? Possible approaches? Can we re-use (partial) existing solutions?
 3. **Plan**.
+
 4. **Implement**.
 5. **Check**.
 6. **Generalize**.

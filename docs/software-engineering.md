@@ -72,8 +72,9 @@ Appendix C contains a list of 36 books that together cover all the KAs.
 The SWEBOK uses the word engineering a lot, but is what it describes actually engineering?
 The year after SWEBOK V3 came out, Mary Shaw argued that what we're doing in software development isn't engineering
 @@Shaw2015.
+Alan Kay recently agreed @@Kay2021.
 
-Some random data points support that assessment:
+Some random data points further support this assessment:
 
 - The Standish Group publishes a recurring CHAOS Report.
   The 2020 version states that 19% of IT projects are utter failures, and 50% fail in at least one way @@Standish2020.
@@ -161,6 +162,4 @@ Its output:
 Is there a similar ideal for software development?
 And if so, is there an engineering design process that applies science to continuously get closer to that ideal?
 
-The rest of this book is an attempt to find the answers to those questions.
-First we'll look into each of the SWEBOK knowledge areas and see how much they conform to the engineering approach.
-Then we'll see if we can build an actual engineering process out of their combination.
+Let's find out.

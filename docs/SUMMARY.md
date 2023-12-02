@@ -7,6 +7,7 @@
 - [Engineering](engineering.md)
 - [Software](software.md)
 - [Software engineering](software-engineering.md)
+- [The modern synthesis](book-organization.md)
 
 # Design process
 
