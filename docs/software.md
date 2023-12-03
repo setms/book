@@ -48,58 +48,10 @@ where:
 The different variations for $ \Sigma $, Q, and $ \delta $ lead to several classes of automata with different
 capabilities.
 
-Since software has to run on computers, which have finite resources, the classes of automata we're interested in
-have finite $ \Sigma $ and Q.
-Also, since we're focused on application software, it makes sense to assume a deterministic $ \delta $.
-This combination is a **Finite State Machine** (FSM) known as a **Mealy machine** @@Mealy1955.
-
-While we take both $ \Sigma $ and Q as finite, that doesn't mean they can't be big.
-All but the most trivial software has many states in Q.
-Likewise, a lot of software accepts a large number of inputs in $ \Sigma $.
-
-Having a formal definition is great for doing science.
-It allows for the development of scientific theories that inform us about the capabilities of Mealy machines.
-For our purposes, however, we're not going to need the formal definition much.
-The transition function $ \delta $ and output function $ \lambda $ are usually too complex to formally define as
-mathematical functions.
-Likewise, the states and inputs are often too large and implicit to enumerate.
-
-We can use these concepts for parts of the software we're developing, however.
-For instance, the Unified Modeling Language (UML) has a `StateMachines` package to specify behavior of a class
-or operation using a state machine @@UML.
-
-The most common representations of FSMs are state transition tables and state diagrams.
-A **state transition table** is a matrix where the rows are inputs, the columns are states, and the cells contain
-the new state and output.
-A downside of state transition tables is that many cells may be empty.
-In that case, a state diagram may be a better representation.
-
-A **state diagram** is a directed graph where the nodes correspond to the states Q and the edges to transitions
-defined by $ \delta $.
-The edge labels are inputs from $ \Sigma $ and optionally may contain the output defined by $ \lambda $.
-
-Here's an example state diagram for a turnstile:
+Here's a concept map of software based on automata theory:
 
 ```dot process
-digraph state_diagram {
-  rankdir=LR;
-  node [shape=circle, style=filled, fixedsize=true, width=0.8, height=0.8, fillcolor=lightskyblue2,
-    color=steelblue4, penwidth=2];
-  edge [fontsize=11, color=steelblue4, penwidth=2];
-
-  Locked -> Locked [label="Push"];
-  Locked -> Unlocked [label="Coin"];
-  Unlocked -> Unlocked [label="Coin"];
-  Unlocked -> Locked [label="Push"];
-}
-```
-
-
-We'll come back to Mealy machines in later chapters.
-For now, we just want to define a concept map of software based on Mealy machines:
-
-```dot process
-digraph state_diagram {
+digraph basic_application_concept_map {
   node [shape=rect, style="rounded,filled", fixedsize=true, width=1.5, height=0.75, fillcolor=lightskyblue2,
     color=steelblue4, penwidth=2];
   edge [fontsize=11, color=steelblue4, penwidth=2];
