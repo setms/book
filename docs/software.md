@@ -64,7 +64,6 @@ digraph basic_application_concept_map {
 }
 ```
 
-This basic model is admittedly not super useful yet.
-We'll revise it later.
+This model is admittedly not super useful yet, but it'll serve as the basis for later enhancements.
 
-Now that we understand the basics of both software and engineering, let's put them together.
+Now that we understand the basics of both software and engineering, let's put these two together.

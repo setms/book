@@ -37,18 +37,22 @@ digraph evolutoin {
     color=steelblue4, penwidth=2];
   edge [fontsize=11, color=steelblue4, penwidth=2];
 
-  Offspring -> Population [label = "Survivors and\noffspring form\nthe new population  "];
-  Population -> Survivors [label = "The environment\nselects survivors\nbased on their fitness"];
-  Survivors -> Offspring [label = "Survivors mate\nand produce offspring"];
+  "Parents &\noffspring" -> Survivors [label = "\nLimited resources\nensure only the\nfittest survive"];
+  Survivors -> Population [label = "Survivors form\nthe new population  "];
+  Population -> Offspring [label = "Parents produce\noffspring with\nsmall changes\nin traits"];
+  Offspring -> "Parents &\noffspring" [label = "\nOffspring expand\nthe population"];
 }
 ```
 
-What's this loop doesn't show, is the massive parallel exploration of genetics space that happens.
-Survivors that mate produce offspring that aren't exact copies of their parents.
-Instead, **mutations**, or small alterations in the genetic material, occur spontaneously.
-In species with sexual reproduction, **crossovers** swap part of the genetic material of the parents in the child.
-In this way, nature tries out many different variations and keeps the best, or fittest, of each generation.
-In other words, nature forms and evaluates many hypotheses simultaneously in each generation.
+Note how this process resembles the [scientific method](engineering.md#science):
+
+- The population is nature's current best theory on how to adapt to the environment.
+- Offspring inherit traits from their parents, but with small changes via _mutation_ and, for species with
+  sexual reproduction, _crossover_.
+  In other words, each new generation contains several hypotheses on how to better adapt to the environment.
+- Since resources are usually limited, only the fittest survive.
+  Nature implicitly conducts experiments to falsify its hypotheses.
+- The fittest organisms make up the new population, or current theory of how best to adapt to the environment.
 
 Nature is doing science.
 
