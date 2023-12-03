@@ -133,7 +133,7 @@ A producer produces an artifact in the **engineering environment**, while an ope
 
 Operators have performance goals, or **specifications**.
 Producers have cost goals, or **requirements**.
-An engineers expresses goals quantitatively as constraints or objectives.
+An engineer expresses goals quantitatively as constraints or objectives.
 A **constraint** is a hard limit, for instance water-resistant up to 20m.
 An **objective** is a desire for minimizing or maximizing a value, for example as thin as possible.
 
@@ -151,15 +151,15 @@ The design process to solve an engineering problem consists of the following ste
   Does the problem make sense? What are the assumptions? Possible approaches? Can we re-use (partial) existing solutions?
 3. **Plan**.
   Determine the sequence of steps.
-  Create a tree where the root represents the main goal, intermediate nodes represent subgoals, and leaves the givens
+  Create a tree where the root represents the main goal, intermediate nodes represent subgoals, and leafs the givens
   and assumptions.
 4. **Implement**.
   Solve equations, assemble the structure, write a program, etc.
-  Take small steps and document.
+  Take small steps and document them.
   Expect to iterate between this step and the plan step.
 5. **Check**.
   Do a sanity check.
-  Run through test cases, known solutions to an instance of a general problem.
+  Run through **test cases**, known solutions to an instance of a general problem.
   You may need to iterate again.
 6. **Generalize**.
   Reflect on learnings.
@@ -169,8 +169,7 @@ The design process to solve an engineering problem consists of the following ste
   Prepare to present to both experts and lay people.
 
 While the above list may suggest a linear approach, this is seldom the case.
-At each step, the engineer may learn something that affects a "prior" step.
-It's therefore best to think of this sequence as a circle rather than a straight line.
+At most steps, the engineer may learn something that affects a "prior" step.
 
 
 ## Evolution of an engineering discipline
