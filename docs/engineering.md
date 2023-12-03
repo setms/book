@@ -174,8 +174,8 @@ At most steps, the engineer may learn something that affects a "prior" step.
 
 ## Evolution of an engineering discipline
 
-Engineering applies science and uses a design process.
-Both of these take time to develop, so a new field of engineering necessarily grows from humble beginnings.
+Engineering applies science, which takes time to develop.
+A new field of engineering necessarily grows from humble beginnings.
 @@Shaw1990 provides the following model of such evolution:
 
 ![Evolution of an engineering discipline](https://www.researchgate.net/profile/Trevor-Bihl/publication/339029049/figure/download/fig2/AS:854876443660288@1580829835253/Shaws-Model-of-the-evolution-of-engineering-disciplines-from-14.png)
