@@ -21,8 +21,10 @@ Nothing in biology makes sense except in the light of evolution.
 
 The scientific theory of evolution rests on two pillars:
 
-1. **Natural selection** is the differential survival and reproduction of individuals due to differences in traits @@Darwin1859.
-2. **Heredity of traits** is the passing on of traits from parents to their offspring @@Mendel1866, @@Fisher1930.
+1. **Natural selection** is the differential survival and reproduction of individuals due to differences in traits
+  @@Darwin1859.
+2. **Heredity of traits** is the passing on of traits from parents to their offspring with some changes @@Mendel1866,
+  @@Fisher1930.
 
 On a high level, evolution works as follows:
 
@@ -41,10 +43,17 @@ digraph evolutoin {
 }
 ```
 
-Note the similarities with both the scientific method and the engineering design process.
-It turns out that nature is performing some form of science.
+What's this loop doesn't show, is the massive parallel exploration of genetics space that happens.
+Survivors that mate produce offspring that aren't exact copies of their parents.
+Instead, **mutations**, or small alterations in the genetic material, occur spontaneously.
+In species with sexual reproduction, **crossovers** swap part of the genetic material of the parents in the child.
+In this way, nature tries out many different variations and keeps the best, or fittest, of each generation.
+In other words, nature forms and evaluates many hypotheses simultaneously in each generation.
 
-The two pillars of evolution were fist brought together in the seminal book _Evolution: The Modern Synthesis_ @@Huxley1948.
+Nature is doing science.
 
-This book similarly aspires to bring together the pillars of software engineering.
+The two pillars of evolution were fist brought together in the seminal book _Evolution: The Modern Synthesis_
+@@Huxley1948.
+
+This book similarly aspires to bring together the various pillars of software engineering.
 Let's get to it.
