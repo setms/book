@@ -1,6 +1,4 @@
-# Analysis
-
-## Requirements gathering
+# Requirements
 
 
 ## Event storming
