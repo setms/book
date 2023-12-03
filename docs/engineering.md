@@ -114,11 +114,12 @@ Systems are important for engineering because:
 - They're more robust: fewer dependencies means fewer things that can go wrong.
 - They're easier to reason about: instead of having to understand everything inside a subsystem, we can temporarily
   forget about irrelevant details.
-- Engineers can re-use existing designs when building subsystems.
+- Engineers can re-use existing designs when incorporating subsystems into the systems they're designing.
 
 Many systems are hierarchical in nature.
 A graph of such a system is a **tree**, which is usually drawn upside-down, with the **root** at the top.
 A node directly above another node is a **parent node** and the node below it its **child**.
+A node without children is a **leaf**.
 
 A **parts hierarchy** or **structural hierarchy** is a tree where all relationships are `has-part`.
 A **class hierarchy** or **taxonomy** is a tree where all relationships are `is-a`.
@@ -149,13 +150,25 @@ The design process to solve an engineering problem consists of the following ste
 2. **Explore**.
   Does the problem make sense? What are the assumptions? Possible approaches? Can we re-use (partial) existing solutions?
 3. **Plan**.
-
+  Determine the sequence of steps.
+  Create a tree where the root represents the main goal, intermediate nodes represent subgoals, and leaves the givens
+  and assumptions.
 4. **Implement**.
+  Solve equations, assemble the structure, write a program, etc.
+  Take small steps and document.
+  Expect to iterate between this step and the plan step.
 5. **Check**.
+  Do a sanity check.
+  Run through test cases, known solutions to an instance of a general problem.
+  You may need to iterate again.
 6. **Generalize**.
+  Reflect on learnings.
+  Would this approach also work for other problems?
+  Did you encounter problems to watch out for in future endeavors?
 7. **Present results**.
+  Prepare to present to both experts and lay people.
 
-While the above list suggests a linear approach, this is seldom the case.
+While the above list may suggest a linear approach, this is seldom the case.
 At each step, the engineer may learn something that affects a "prior" step.
 It's therefore best to think of this sequence as a circle rather than a straight line.
 
