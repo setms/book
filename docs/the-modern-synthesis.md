@@ -46,7 +46,7 @@ digraph evolutoin {
 
 Note how this process resembles the [scientific method](engineering.md#science):
 
-- The population is nature's current best theory on how to adapt to the environment.
+- The population is nature's current theory on how to best adapt to their environment.
 - Offspring inherit traits from their parents, but with small changes via _mutation_ and, for species with
   sexual reproduction, _crossover_.
   In other words, each new generation contains several hypotheses on how to better adapt to the environment.
@@ -54,10 +54,10 @@ Note how this process resembles the [scientific method](engineering.md#science):
   Nature implicitly conducts experiments to falsify its hypotheses.
 - The fittest organisms make up the new population, or current theory of how best to adapt to the environment.
 
-Nature is doing science.
+It certainly looks like nature is doing science.
 
 The two pillars of evolution were fist brought together in the seminal book _Evolution: The Modern Synthesis_
 @@Huxley1948.
 
-This book similarly aspires to bring together the various pillars of software engineering.
+The current book similarly aspires to bring together the various pillars of software engineering.
 Let's get to it.

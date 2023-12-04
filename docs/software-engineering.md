@@ -142,7 +142,7 @@ In other words, Toyota uses the scientific method.
 
 Is it possible to find one way to do software development that's optimal in all situations?
 The answer is probably negative.
-@@Spear1999 gives the example of one Toyota plant with two divisions, where each division used a different approach.
+@@Spear1999 describes one Toyota plant with two divisions, where each division used a different approach.
 These approaches were the result of the divisions encountering different problems during their operation
 and solving them according to their unique situation.
 
