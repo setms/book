@@ -7,13 +7,17 @@ operation, and maintenance of software; that is, the application of engineering 
 --- @@ISO/IEC_2382:2015
 ```
 
-The term software engineering was first used in the title of a NATO conference in 1968 @@Naur1969 :
+The term software engineering was first used in the title of a NATO conference in 1968:
 <!-- vale Microsoft.Adverbs = NO -->
 <!-- vale write-good.Passive = NO -->
 
-> The phrase ‘software engineering’ was deliberately chosen as being provocative, in implying the need
-> for software manufacture to be based on the types of theoretical foundations and practical disciplines,
-> that are traditional in the established branches of engineering.
+```admonish info "Quote"
+The phrase ‘software engineering’ was deliberately chosen as being provocative, in implying the need
+for software manufacture to be based on the types of theoretical foundations and practical disciplines,
+that are traditional in the established branches of engineering.
+
+--- @@Naur1969
+```
 
 <!-- vale write-good.Passive = YES -->
 <!-- vale Microsoft.Adverbs = YES -->
@@ -69,7 +73,7 @@ Appendix C contains a list of 36 books that together cover all the KAs.
 
 ## Is this actually engineering?
 
-The SWEBOK uses the word engineering a lot, but is what it describes actually engineering?
+The SWEBOK uses the word "engineering" a lot, but is what it describes actually engineering?
 The year after SWEBOK V3 came out, Mary Shaw argued that what we're doing in software development isn't engineering
 @@Shaw2015.
 Alan Kay recently agreed @@Kay2021.
