@@ -1,18 +1,8 @@
 # Requirements
 
-
-## Event storming
-
-Find transition function of Mealy machines.
-
-## DDD
-
-Find input and output languages of Mealy machines.
-
-## Specification by example
-
-## Fitness functions
-
-## Trade-offs
-
-## Examples
+```admonish info "Ideas"
+- Event storming: Find major parts of transition function of automaton
+- Specification by example: Completely define transition function
+- DDD: Find input and output alphabets of automaton
+- Fitness functions
+```

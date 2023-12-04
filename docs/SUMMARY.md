@@ -9,19 +9,24 @@
 - [Software engineering](software-engineering.md)
 - [The modern synthesis](the-modern-synthesis.md)
 
-# Design process
+# Analysis
 
-- [History](history.md)
-- [Analysis](requirements.md)
-- [Testing](testing.md)
-- [Construction](construction.md)
+- [Requirements](requirements.md)
 - [Design](design.md)
-- [Operations](operations.md)
+- [Construction](construction.md)
+- [Testing](testing.md)
+- [Maintenance](maintenance.md)
+- [Configuration management](configuration-management.md)
+- [Engineering management](engineering-management.md)
+- [Engineering process](engineering-process.md)
+- [Engineering models and methods](engineering-models-methods.md)
+- [Quality](quality.md)
+- [Engineering professional practice](engineering-professional-practice.md)
+- [Engineering economics](engineering-economics.md)
 
-# Scaling up
+# Synthesis
 
-- [Collaboration](collaboration.md)
-- [Management](management.md)
+- [Putting it all together](synthesis.md)
 
 # Conclusion
 
