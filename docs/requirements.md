@@ -16,9 +16,9 @@ They may be a constraint on the development of the system.
   Most systems support multiple user classes, as well as other stakeholders.
 - **Functional requirements** specify the behaviors the system must exhibit under specific conditions.
   They describe what the developers must implement to enable the user requirements.
-- **System requirements** describe the requirements for a system that consists of multiple subsystems.
 - **Non-functional requirements** or **quality attributes** describe the product's characteristics in various
   dimensions that are important to either users or developers and maintainers.
+- **System requirements** describe the requirements for a system that consists of multiple subsystems.
 
 ```dot process
 digraph requirements_engineering {
@@ -79,8 +79,6 @@ To combat this:
 - Build prototypes.
 
 Prevent gold plating by tracing each bit of functionality back to requirements and business objectives.
-
-Customers
 
 
 ## TODO
