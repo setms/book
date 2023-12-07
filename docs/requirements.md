@@ -13,12 +13,24 @@ They may be a constraint on the development of the system.
 - **Business requirements** describe _why_ the organization is developing a system: the benefits they hope to achieve.
 - **User requirements** describe goals or tasks the users must be able to perform with the product to realize the
   business requirements.
-  Most systems support multiple user classes, as well as other stakeholders.
+  Most systems support multiple user classes, as well as other stakeholders, like legal officers and developers.
+  Direct users operate the system, while indirect users receive outputs from the system without touching it.
+  Make sure they stakeholders have a voice.
 - **Functional requirements** specify the behaviors the system must exhibit under specific conditions.
   They describe what the developers must implement to enable the user requirements.
 - **Non-functional requirements** or **quality attributes** describe the product's characteristics in various
-  dimensions that are important to either users or developers and maintainers.
+  dimensions that are important to stakeholders.
 - **System requirements** describe the requirements for a system that consists of multiple subsystems.
+
+```admonish tldr title="Definition"
+A **stakeholder** is a person, group, or organization that is actively involved in a project, is affected by its process
+or outcome, or can influence its process or outcome.
+Stakeholders can be internal or external to the project team and to the developing organization.
+
+--- @@Wiegers2013
+```
+
+The **business analyst** is a role that
 
 ```dot process
 digraph requirements_engineering {
@@ -48,6 +60,8 @@ document analysis, prototyping, etc.
 Elicitation is usually either usage-centric or product-centric.
 The usage-centric approach emphasizes understanding and exploring user goals to derive functionality.
 The product-centric approach focuses on defining features expected to lead to marketplace or business success.
+It's important for non-business people to speak the language of the business.
+Customers sometimes don't articulate point that they believe are common knowledge.
 
 ```admonish tldr title="Definition"
 A **feature** consists of one or more logically related system capabilities that provide value to a user and are
@@ -58,9 +72,12 @@ described by a set of functional requirements.
 
 **Analysis** involves reaching a richer and more precise understanding of each requirement and representing sets of
 requirements in multiple ways.
+An **analysis model** is a diagram that depicts requirements visually, which sometimes makes it easier to find flaws.
 
 **Specification** involves representing and storing the collected requirements knowledge in a persistent and
 well-organized fashion.
+We should record requirements in a shareable form, rather than using an oral tradition.
+They should also be version-controlled.
 
 **Validation** confirms that you have the correct set of requirements information to enable developers to build
 a solution that satisfies the business objectives.
