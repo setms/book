@@ -52,6 +52,13 @@ $ \delta : \mathcal{Q} \times \Sigma \to \mathcal{Q} \times \Gamma $.
 The different variations for $ \Sigma $, $ \mathcal{Q} $, and $ \delta $ lead to several classes of automata with
 different capabilities.
 
+TODO:
+
+- accepting state & languages
+- finite automata & regular expressions - use in protocols with external systems
+- pushdown automata & context-free grammars - use in parse trees
+- more?
+
 Here's a concept map of a software application based on automata theory:
 
 ```dot process
