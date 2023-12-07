@@ -138,7 +138,7 @@ Taiichi Ohno, TPS's founder, says TPS is about reducing waste through just-in-ti
 and automation with a human touch @@Ohno1988.
 However, @@Spear1999 shows that the real power of TPS stems from standardizing all work, while responding to problems
 by improving the standards.
-In other words, Toyota uses the scientific method.
+In other words, Toyota uses the [scientific method](engineering.md#science).
 
 Is it possible to find one way to do software development that's optimal in all situations?
 The answer is probably negative.
@@ -163,7 +163,37 @@ Its output:
 <!-- vale write-good.Weasel = YES -->
 <!-- vale write-good.Passive = YES -->
 
-Is there a similar ideal for software development?
-And if so, is there an engineering design process that applies science to continuously get closer to that ideal?
+Let's look at this from the perspective of the Cynefin framework @@Snowden2007.
 
-Let's find out.
+![Cynefin framework](img/cynefin.png)
+
+Software development isn't in the _Clear_ domain (formerly known as _Simple_ and _Obvious_).
+Therefore, are no best practices that everyone should follow no matter the situation.
+The question is whether software development falls in the _Complicated_ or _Complex_ domains.
+
+In the _Complicated_ domain, experts, like engineers, rule.
+The decision-making approach is to sense (get the facts), analyze, and respond.
+Here we use good, rather than best, practices, and can find multiple ways to success.
+This domain is the realm of the known unknowns, where at least one right answer exists.
+
+In the _Complex_ domain, there is no path to the one right answer.
+Here we're in the realm of the unknown unknowns, where we can understand what happened only in retrospect.
+The best course of action is to probe (try something), sense (see patterns emerge), and respond.
+It must be safe to fail, or else people stop probing.
+
+It's unclear whether software development falls in the _Complicated_ or _Complex_ domains.
+In fact different aspects may be in different domains.
+
+Consider a nuclear engineer designing a nuclear reactor.
+How often do they to have to adapt their design to the discovery of a new radioactive element or isotope?
+Never.
+If that did happen, they would throw away their design and start afresh.
+
+Yet these types of requirement changes are what we see in software development all the time.
+This prompted the Agile movement to adopt a different way of working that embraces change @@AgileManifesto.
+
+We don't yet know whether software development is in the _Complicated_ or _Complex_ domain.
+We do know that it's not in the _Clear_ domain, so there isn't one best way to the right answer.
+There may not even be a right answer that we can see before we start.
+
+Let's look at the SWEBOK knowledge areas through that lens and see what we can learn.
