@@ -166,7 +166,7 @@ Its output:
 Let's look at this from the perspective of the Cynefin framework @@Snowden2002 @@Kurtz2003 @@Snowden2007.
 Here's what its latest version looks like:
 
-![Cynefin framework](img/cynefin.png)
+![Cynefin framework](../img/cynefin.png)
 
 Software development isn't in the _Clear_ domain (formerly known as _Simple_ and _Obvious_).
 Therefore, there are no best practices that everyone should follow no matter the situation.

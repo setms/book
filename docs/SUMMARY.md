@@ -6,11 +6,11 @@
 
 # Part I: Introduction
 
-- [Introduction](introduction.md)
-  - [Engineering](engineering.md)
-  - [Software](software.md)
-  - [Software engineering](software-engineering.md)
-  - [The modern synthesis](the-modern-synthesis.md)
+- [Introduction](introduction/index.md)
+  - [Engineering](introduction/engineering.md)
+  - [Software](introduction/software.md)
+  - [Software engineering](introduction/software-engineering.md)
+  - [The modern synthesis](introduction/the-modern-synthesis.md)
 
 # Part II: Analysis of knowledge areas
 

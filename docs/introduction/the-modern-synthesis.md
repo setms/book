@@ -54,10 +54,8 @@ Note how this process resembles the [scientific method](engineering.md#science):
   Nature implicitly conducts experiments to falsify its hypotheses.
 - The fittest organisms make up the new population, or current theory of how best to adapt to the environment.
 
-It certainly looks like nature is doing science.
-
 The two pillars of evolution were fist brought together in the seminal book _Evolution: The Modern Synthesis_
 @@Huxley1948.
 
 The current book similarly aspires to bring together the various pillars of software engineering.
-Let's get to it.
+Let's get started.
