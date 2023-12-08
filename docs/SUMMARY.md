@@ -1,15 +1,18 @@
 # Summary
 
+<!-- vale Google.Headings = NO -->
+
 [Preface](preface.md)
 
-# Introduction
+# Part I: Introduction
 
-- [Engineering](engineering.md)
-- [Software](software.md)
-- [Software engineering](software-engineering.md)
-- [The modern synthesis](the-modern-synthesis.md)
+- [Introduction](introduction.md)
+  - [Engineering](engineering.md)
+  - [Software](software.md)
+  - [Software engineering](software-engineering.md)
+  - [The modern synthesis](the-modern-synthesis.md)
 
-# Analysis of knowledge areas
+# Part II: Analysis of knowledge areas
 
 - [Requirements](requirements.md)
 - [Design](design.md)
@@ -24,10 +27,12 @@
 - [Engineering professional practice](engineering-professional-practice.md)
 - [Engineering economics](engineering-economics.md)
 
-# Synthesis
+# Part III: Synthesis
 
 - [Putting it all together](synthesis.md)
 
-# Conclusion
+# Part IV: Conclusion
 
 - [Conclusion](conclusion.md)
+
+<!-- vale Google.Headings = YES -->
