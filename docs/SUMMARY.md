@@ -9,7 +9,7 @@
 - [Software engineering](software-engineering.md)
 - [The modern synthesis](the-modern-synthesis.md)
 
-# Analysis
+# Analysis of knowledge areas
 
 - [Requirements](requirements.md)
 - [Design](design.md)
