@@ -163,15 +163,16 @@ Its output:
 <!-- vale write-good.Weasel = YES -->
 <!-- vale write-good.Passive = YES -->
 
-Let's look at this from the perspective of the Cynefin framework @@Snowden2007.
+Let's look at this from the perspective of the Cynefin framework @@Snowden2002 @@Kurtz2003 @@Snowden2007.
+Here's what its latest version looks like:
 
 ![Cynefin framework](img/cynefin.png)
 
 Software development isn't in the _Clear_ domain (formerly known as _Simple_ and _Obvious_).
-Therefore, are no best practices that everyone should follow no matter the situation.
+Therefore, there are no best practices that everyone should follow no matter the situation.
 The question is whether software development falls in the _Complicated_ or _Complex_ domains.
 
-In the _Complicated_ domain, experts, like engineers, rule.
+Experts, such as engineers, rule the _Complicated_ domain.
 The decision-making approach is to sense (get the facts), analyze, and respond.
 Here we use good, rather than best, practices, and can find multiple ways to success.
 This domain is the realm of the known unknowns, where at least one right answer exists.
@@ -181,9 +182,6 @@ Here we're in the realm of the unknown unknowns, where we can understand what ha
 The best course of action is to probe (try something), sense (see patterns emerge), and respond.
 It must be safe to fail, or else people stop probing.
 
-It's unclear whether software development falls in the _Complicated_ or _Complex_ domains.
-In fact different aspects may be in different domains.
-
 Consider a nuclear engineer designing a nuclear reactor.
 How often do they to have to adapt their design to the discovery of a new radioactive element or isotope?
 Never.
@@ -192,8 +190,9 @@ If that did happen, they would throw away their design and start afresh.
 Yet these types of requirement changes are what we see in software development all the time.
 This prompted the Agile movement to adopt a different way of working that embraces change @@AgileManifesto.
 
-We don't yet know whether software development is in the _Complicated_ or _Complex_ domain.
-We do know that it's not in the _Clear_ domain, so there isn't one best way to the right answer.
-There may not even be a right answer that we can see before we start.
+Thi is a sign that at least some parts of software development fall in the _Complex_ domain.
+Signs aren't proof, however.
+In fact, different aspects may be in different domains.
+This matters, because we should approach problems in the two domains differently.
 
 Let's look at the SWEBOK knowledge areas through that lens and see what we can learn.
