@@ -15,7 +15,7 @@
 # Part II: Analysis of knowledge areas
 
 - [Requirements](requirements/index.md)
-  - [Summary](requirements/summary.md)
+  - [Digest](requirements/digest.md)
   - [Analysis](requirements/analysis.md)
 
 - [Design](design.md)

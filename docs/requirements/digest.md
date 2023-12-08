@@ -1,4 +1,4 @@
-# Summary
+# Digest of requirements literature
 
 ```admonish tldr title="Definition"
 **Requirements** are a specification of what should be implemented.
