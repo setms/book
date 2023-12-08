@@ -27,7 +27,14 @@ It has never felt like _engineering_ to me.
 
 This book is my attempt to survey the field and see how far away that ideal is.
 
+The material that follows is in written form, because I firmly believe that writing is thinking.
+It's a book rather than a blog post or series of posts because there is a lot of ground to cover.
+Writing this book is the most ambitious thing I've ever done.
+I may not even finish it, but I'm sure I'll learn a lot on the way.
+And maybe it'll help you too.
+
+
 Ray Sinnema<br>
-November 2023
+November 2023-???
 
 <!-- vale Google.FirstPerson = YES -->
