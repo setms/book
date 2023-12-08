@@ -120,6 +120,7 @@ Many systems are hierarchical in nature.
 A graph of such a system is a **tree**, which is usually drawn upside-down, with the **root** at the top.
 A node directly above another node is a **parent node** and the node below it its **child**.
 A node without children is a **leaf**.
+A node that's neither the root nor a leaf is an **intermediate node**.
 
 A **parts hierarchy** or **structural hierarchy** is a tree where all relationships are `has-part`.
 A **class hierarchy** or **taxonomy** is a tree where all relationships are `is-a`.
@@ -151,7 +152,7 @@ The design process to solve an engineering problem consists of the following ste
   Does the problem make sense? What are the assumptions? Possible approaches? Can we re-use (partial) existing solutions?
 3. **Plan**.
   Determine the sequence of steps.
-  Create a tree where the root represents the main goal, intermediate nodes represent subgoals, and leafs the givens
+  Create a tree where the root represents the main goal, intermediate nodes represent subgoals, and leaves the givens
   and assumptions.
 4. **Implement**.
   Solve equations, assemble the structure, write a program, etc.
