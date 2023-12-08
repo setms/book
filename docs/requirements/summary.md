@@ -1,4 +1,4 @@
-# Requirements
+# Summary
 
 ```admonish tldr title="Definition"
 **Requirements** are a specification of what should be implemented.
@@ -15,7 +15,7 @@ They may be a constraint on the development of the system.
   business requirements.
   Most systems support multiple user classes, as well as other stakeholders, like legal officers and developers.
   Direct users operate the system, while indirect users receive outputs from the system without touching it.
-  Make sure they stakeholders have a voice.
+  Make sure all stakeholders have a voice.
 - **Functional requirements** specify the behaviors the system must exhibit under specific conditions.
   They describe what the developers must implement to enable the user requirements.
 - **Non-functional requirements** or **quality attributes** describe the product's characteristics in various
@@ -30,7 +30,7 @@ Stakeholders can be internal or external to the project team and to the developi
 --- @@Wiegers2013
 ```
 
-The **business analyst** is a role that
+**Requirements engineering** is the discipline that deals with requirements:
 
 ```dot process
 digraph requirements_engineering {
@@ -51,17 +51,23 @@ digraph requirements_engineering {
 }
 ```
 
+Requirements engineering is the realm of the **business analyst**.
+This can be a job title or a role performed by people that also perform other roles.
+The analyst serves as the principal interpreter through which requirements flow between the customer community and
+the software development team @@Wiegers2013.
+
 **Requirements development** aims to collect good enough requirements to allow the team to start design and
 construction at an acceptable level of risk @@Wiegers2013.
 Requirements development is an iterative process.
+
+
+## Elicitation
 
 **Elicitation** consists of activities involved with discovering requirements, such as interviews, workshops,
 document analysis, prototyping, etc.
 Elicitation is usually either usage-centric or product-centric.
 The usage-centric approach emphasizes understanding and exploring user goals to derive functionality.
 The product-centric approach focuses on defining features expected to lead to marketplace or business success.
-It's important for non-business people to speak the language of the business.
-Customers sometimes don't articulate point that they believe are common knowledge.
 
 ```admonish tldr title="Definition"
 A **feature** consists of one or more logically related system capabilities that provide value to a user and are
@@ -70,14 +76,26 @@ described by a set of functional requirements.
 --- @@Wiegers2013
 ```
 
+It's important for non-business people to speak the language of the business.
+Customers sometimes don't articulate points that they believe are common knowledge.
+
+
+## Analysis
+
 **Analysis** involves reaching a richer and more precise understanding of each requirement and representing sets of
 requirements in multiple ways.
 An **analysis model** is a diagram that depicts requirements visually, which sometimes makes it easier to find flaws.
+
+
+## Specification
 
 **Specification** involves representing and storing the collected requirements knowledge in a persistent and
 well-organized fashion.
 We should record requirements in a shareable form, rather than using an oral tradition.
 They should also be version-controlled.
+
+
+## Validation
 
 **Validation** confirms that you have the correct set of requirements information to enable developers to build
 a solution that satisfies the business objectives.
@@ -98,11 +116,6 @@ To combat this:
 Prevent gold plating by tracing each bit of functionality back to requirements and business objectives.
 
 
-## TODO
+## Requirements management
 
-```admonish info "Ideas"
-- Event storming: Find major parts of transition function of automaton
-- Specification by example: Completely define transition function
-- DDD: Find input and output alphabets of automaton
-- Fitness functions
-```
+TODO
