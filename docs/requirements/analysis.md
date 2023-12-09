@@ -9,6 +9,11 @@ One would expect references to the fields of education or knowledge management.
 Instead, the simplistic model is to talk to subject-matter experts (SMEs) and to write down what you hear.
 Of course this results in problems when we attempt to tap into an SME's vast tacit knowledge.
 
+Domain-Driven Design (DDD) is a step in the right direction @@Evans2014.
+It offers the _domain model_ as help in requirements elicitation.
+However, the books that SWEBOK V3 posits as the body of knowledge for requirements don't mention DDD.
+Neither does the V4 draft.
+
 The requirements themselves are much more fluid than in the traditional engineering fields.
 As an example, let's look at scale requirements.
 A civil engineer, for example, designs a bridge for a given load.
@@ -18,7 +23,7 @@ Software systems are routinely expected to scale that much and more.
 And this assumes that the requirements are clear in the first place.
 The Lean Startup movement assumes we can only find out what works by trying it out @@Ries2011.
 This would put requirements development in the _Complex_
-[Cynefin domain](../introduction/software-engineering.md#the-cynefin-framework), rather than the _Complicated_
+[Cynefin domain](../introduction/software-engineering.md#the-cynefin-framework), rather than in the _Complicated_
 realm of engineering.
 
 Another problem is the advice to state requirements in an abstract way, only referencing a user's needs.
