@@ -31,4 +31,4 @@ The point there is keep design out of requirements gathering, and this is sound 
 However, this approach also keeps out the fact that the requirements are for _software_ rather than for manual procedures
 or implementations in some other medium.
 As we saw in the introduction to this book, [software](../introduction/software.md) has a particular shape.
-Shouldn't that affect how we write up requirements?
+Shouldn't that affect how we define requirements?
