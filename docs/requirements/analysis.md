@@ -26,9 +26,11 @@ This would put requirements development in the _Complex_
 [Cynefin domain](../introduction/software-engineering.md#the-cynefin-framework), rather than in the _Complicated_
 realm of engineering.
 
-Another problem is the advice to state requirements in an abstract way, only referencing a user's needs.
+Another potential issue is the advice to state requirements in an abstract way, only referencing a user's needs.
 The point there is keep design out of requirements gathering, and this is sound advice.
 However, this approach also keeps out the fact that the requirements are for _software_ rather than for manual procedures
 or implementations in some other medium.
 As we saw in the introduction to this book, [software](../introduction/software.md) has a particular shape.
 Shouldn't that affect how we define requirements?
+
+We'll revisit some of these issues in the [synthesis](../synthesis.md).
