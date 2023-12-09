@@ -163,6 +163,9 @@ Its output:
 <!-- vale write-good.Weasel = YES -->
 <!-- vale write-good.Passive = YES -->
 
+
+## The Cynefin framework
+
 Let's look at this from the perspective of the Cynefin framework @@Snowden2002 @@Kurtz2003 @@Snowden2007.
 Here's what its latest version looks like:
 

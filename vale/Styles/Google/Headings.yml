@@ -17,6 +17,7 @@ exceptions:
   - CLI
   - Code
   - Cosmos
+  - Cynefin
   - Docker
   - DDR
   - DDRs
