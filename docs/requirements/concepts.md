@@ -24,7 +24,9 @@ digraph requirements_concept_map {
   Operator -> Stakeholder [label="is a"];
   Stakeholder -> Requirement [label="  provides"];
   Requirement -> Illity [label="  supports"];
-  Requirement -> BO [label="  supports"];
-  Illity -> Metric [label="  measured by"];
+  Requirement -> BO [label="supports"];
+  Illity -> Metric [label="measured by    "];
+  Illity -> Standard [label=" defined in  "];
+  Illity -> Law [label="defined in"];
 }
 ```

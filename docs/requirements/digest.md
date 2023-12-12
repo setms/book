@@ -55,6 +55,7 @@ Requirements engineering is the realm of the **business analyst**.
 This can be a job title or a role performed by people that also perform other roles.
 The analyst serves as the principal interpreter through which requirements flow between the customer community and
 the software development team @@Wiegers2013.
+Business analysts have their own body of knowledge @@BABOK2015.
 
 **Requirements development** aims to collect good enough requirements to allow the team to start design and
 construction at an acceptable level of risk @@Wiegers2013.
