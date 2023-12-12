@@ -16,6 +16,7 @@
 
 - [Requirements](requirements/index.md)
   - [Digest](requirements/digest.md)
+  - [Concepts](requirements/concepts.md)
   - [Analysis](requirements/analysis.md)
 
 - [Design](design.md)
