@@ -43,7 +43,7 @@ A **Deterministic Finite Automaton** (DFA) is a tuple $A = \lang Q, \Sigma, \del
 - $Q$ is a finite set of **states** the automaton can be in.
 - $\Sigma$ is a finite set of symbols, called the **input alphabet** of the automaton.
 - $\delta$ is the **transition function** $\delta : Q \times \Sigma \to Q$ mapping states to
-  successor states under input from $\Sigma$.
+  successor states while consuming input.
 - $q_0 \in Q$ is the **start state**.
 - $F \subseteq Q$ is the set of **accepting states**.
 
@@ -75,15 +75,15 @@ digraph transition_diagram {
 Let $w$ be a word made up of symbols $a_i \in \Sigma$ such that $w = a_1a_2...a_n$.
 If there are transitions in $\delta$ such that $q_1 = \delta(q_0, a_1)$, $q_2 = \delta(q_1, a_2)$, etc. and
 $q_n \in F$, then $A$ **accepts** $w$.
-The collection of all words that $A$ accepts is the **language** of $A$, $L(A)$.
+The set of all words that $A$ accepts is the **language** of $A$, $L(A)$.
 <!-- vale Google.Ellipses = YES -->
 
-For instance, the language of the automaton above is the set of strings composed of $0$s and $1$s that contains the
+For instance, the language of the automaton above is the set of strings composed of $0$s and $1$s that contain the
 substring $01$.
 
 Languages accepted by DFAs are **regular languages**.
 Regular languages have many applications in software.
-For instance, they describe keywords and valid identifiers in programming languages and parts of a URL.
+For instance, they describe keywords and valid identifiers in programming languages or the structure of a URL.
 They're also useful in searching documents and describing protocols.
 
 A **Nondeterministic Finite Automaton** (NFA) is like a DFA, except $\delta$ returns a subset of $Q$ rather than
@@ -101,10 +101,139 @@ They use the symbols of $\Sigma$ along with the operators $+$ (union) and $*$ (z
 For instance, the regular expression $(0+1)^*01(0+1)^*$ defines the same language as the PDA above.
 We can convert regular expressions to DFAs and vice versa.
 
+Regular languages are useful but limited, since they have no concept of memory.
+Let's look at more powerful automata that define more useful languages.
+
 
 ### Pushdown automata
 
-TODO
+A **Pushdown Automaton** (PDA) is an $\epsilon$-NFA with a stack on which it can store information.
+A PDA can access information on the stack only in a first-in-first-out way.
+The stack allows the PDA to remember things, which makes it more powerful than a DFA.
+For instance, no DFA can recognize palindromes, but a PDA can.
+
+Formally, a PDA is a tuple $P = \lang Q, \Sigma, \Gamma, \delta, q_0, Z_0, F \rang$.
+We've seen most of these symbols already in the definition of DFAs.
+The new ones are:
+
+- $\Gamma$ is the alphabet of stack symbols, the information that can go on the stack.
+- $Z_0$ is the initial symbol on the stack when the PDA starts.
+
+The transition function is slightly different.
+It takes the current state, an input symbol, and the symbol from the top of the stack as input.
+It outputs pairs consisting of a new state and a string of stack symbols that replace the top of the stack.
+
+- This stack string can be $\epsilon$, the empty string, in which case $\delta$ pops an element off the stack.
+- It can also be the same as the top of the stack, in which case the stack remains the same.
+- Or it can be a different string, even consisting of multiple symbols.
+  In that case, the PDA pops the top symbol off the stack and pushes the output string onto the stack,
+  one symbol at a time.
+
+We can visualize PDAs using transition diagrams, just like DFAs.
+The edges show both the input symbol consumed and the old and new top of the stack.
+For instance, an edge labeled $a, X / \gamma$ between nodes $p$ and $q$ means that $\delta(p,a, X)$ contains the pair
+$(p, \gamma)$.
+Here, $\gamma$ is a string made up of stack symbols $\gamma_i \in \Gamma$.
+
+A PDA can accept a word in two ways:
+
+- By final state, like for finite automatons.
+- By empty stack, which is a new capability compared to finite automatons.
+  In this definition, when the PDA pops the last symbol off its stack, the input it consumed up to then is a word that
+  it accepts.
+
+These two ways of accepting words and thus defining a language turn out to be the same.
+Suppose a PDA $P_1$ accepts by final state the language $L$.
+We can construct a different PDA $P_2$ that accepts by empty stack precisely $L$.
+The converse is also true.
+
+We call the languages accepted by PDAs the **context-free languages**.
+Context-free languages, like regular languages, have important applications in software development.
+Before we dive into those, let's look at an alternative way to specify the context-free languages: context-free grammars.
+
+A **Context-Free Grammar** (CFG), or just grammar, is a tuple $G = \lang V, T, P, S \rang$, where
+
+<!-- vale Google.Ellipses = NO -->
+- $V$ is a set of variables.
+  Each variable represents a language, or set of strings.
+  **Variables** are building block for the bigger language that the grammar defines.
+- $T$ is a set of terminals.
+  A **terminal** is a symbol in the language the grammar defines.
+- $P$ is a set of productions.
+  A **production** is of the form $H \to B$, where $H \in V$ is the **head** and
+  $B = \text{\textbraceleft} b_1b_2...b_n \mid b_i \in V \cup T \text{\textbraceright}$ is the **body**.
+  A body consists of zero or more variables and terminals.
+- $S \in V$ is the start symbol.
+<!-- vale Google.Ellipses = YES -->
+
+For instance, a grammar for the palindromes over $0$ and $1$ is:
+
+$G_p = \lang \text{\textbraceleft}P\text{\textbraceright}, \text{\textbraceleft}0, 1\text{\textbraceright}, A, P \rang$
+
+Where $A$ is the following set of productions:
+
+1. $P \to \epsilon$
+2. $P \to 0$
+3. $P \to 1$
+4. $P \to 0P0$
+5. $P \to 1P1$
+
+We can **derive** a word from a CFG $G$.
+Start with its start symbol, and recursively replace variables using the productions until only terminal symbols remain.
+The set of words we can derive from a grammar $G$ is its language, $L(G)$.
+
+<!-- vale Google.Ellipses = NO -->
+A **parse tree** is a tree representation of a derivation in a CFG $G$.
+The root of this tree is the start symbol $S$ of $G$.
+For every production $H \to b_1b2...b_n$, there is a child $b_i$ under parent $H$ and these children are in order.
+<!-- vale Google.Ellipses = YES -->
+
+Here's an example parse tree for $G_p$ that derives the palindrome $01010$:
+
+```dot process
+graph parse_tree_example {
+  A [label="P"];
+  A -- {B C D}
+  C -- {E F G}
+  C [label="P"];
+  F -- H
+  F [label="P"];
+
+  subgraph {
+    rank=same;
+    bb="0,0,0,0";
+
+    B [label="0"];
+    E [label="1"];
+    H [label="0"];
+    G [label="1"];
+    D [label="0"];
+  }
+}
+```
+
+The leaves from left to right spell the derived word.
+
+Languages we can derive from CFGs are precisely the context-free languages.
+For every CFG $G$ that defines a language $L(G)$, we can construct a PDA $P$ such that $L(G) = L(P)$.
+The converse is also true.
+
+Context-free languages can recognize programming languages.
+A parse tree of a CFG for a programming language describes a single program in that language.
+For instance, here's a fictitional parse tree for the infamous $Hello, world!$ program in C:
+
+```dot process
+graph parse_tree {
+  Program -- Function -- Declaration -- TypeSpecifier -- "int"
+  Function -- CompoundStatement -- Statement -- ExpressionStatement -- CallExpression -- Identifier -- "printf"
+  CallExpression -- StringLiteral
+
+  StringLiteral [label="\"Hello, world!\""]
+}
+```
+
+We now have the vocabulary to describe the structure of program and of programming languages.
+However, PDAs aren't powerful enough to describe the runtime behavior of all but the simplest programs.
 
 
 ### Turing machines
