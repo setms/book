@@ -101,7 +101,8 @@ They use the symbols of $\Sigma$ along with the operators $+$ (union) and $*$ (z
 For instance, the regular expression $(0+1)^*01(0+1)^*$ defines the same language as the PDA above.
 We can convert regular expressions to DFAs and vice versa.
 
-Regular languages are useful but limited, since they have no concept of memory.
+Regular languages can describe parts of programs, but not entire programs.
+The memory of a DFA is too limited.
 Let's look at more powerful automata that define more useful languages.
 
 
@@ -232,8 +233,8 @@ graph parse_tree {
 }
 ```
 
-We now have the vocabulary to describe the structure of program and of programming languages.
-However, PDAs aren't powerful enough to describe the runtime behavior of all but the simplest programs.
+We now have the vocabulary to describe the _structure_ of a program and of programming languages.
+However, PDAs aren't powerful enough to describe the runtime _behavior_ of all but the simplest programs.
 
 
 ### Turing machines
