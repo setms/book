@@ -257,7 +257,6 @@ The new and changed ones are:
   These are analogous to the stack symbols of a PDA.
   Note that $\Sigma \subset \Gamma$.
 - $B$ is the **blank symbol**, where $B \in \Gamma - \Sigma$.
-  It's analogous to $Z_0$ of a PDA.
 - The transition function $\delta$ takes a state $q \in Q$ and tape symbol $X \in \Gamma$ as input.
   It produces a triple $(p, Y, D)$.
   Here $p \in Q$ is the next state.
@@ -270,13 +269,27 @@ Here $X$ is the tape symbol at the head and $Y$ is the replacement tape symbol.
 $D$ is the direction in which to move the head ($L$ or $R$).
 
 The languages TMs accept are the **recursively enumerated** (RE) languages.
-Several variations of TMs exist, such as those with multiple tapes and non-deterministic TMs.
-These have the same power, in the sense that they also accept RE languages.
+Like with the other types of languages, there are alternative notations for expressing RE languages, for instance
+_$\lambda$-calculus_ and _general recursive functions_.
+We won't go into these here.
+
+Several variations of TMs exist, such as those with multiple tapes or with the ability to keep the head in place.
+A non-deterministic variant exists as well.
+All these variations have the same power, in the sense that they all accept the RE languages and nothing more.
 Simpler models exists as well, like a PDA with two stacks, that accept RE languages.
+We call these models **Turing-complete**.
 
 Real computers have the same power as TMs, in the sense that a TM can simulate a computer and vice versa.
 Here we assume a computer has access to an infinite number of disks of external storage to simulate the infinite tape.
-Programming a TM isn't practical for solving real-world problems, but a TM is a useful abstraction to reason about.
+
+The **Church-Turing thesis** states that anything computable is computable by a TM.
+In other words, there can be no more powerful automata than TMs.
+Despite the lack a formal proof, most people accept this thesis as true.
+
+Programming a TM isn't practical for solving real-world problems.
+The linear access model of a TM to its external storage, the tape, means the TM has to travel great distances.
+Real computers can access memory locations directly, which is much more efficient.
+Having said that, a TM is a useful abstraction to reason about computation.
 
 
 ### Model of software
@@ -290,10 +303,11 @@ digraph basic_application_concept_map {
   edge [fontsize=11, color=steelblue4, penwidth=2];
 
   Application -> State [label="has"];
-  Application -> Transition [label="allows"];
+  Application -> Transition [label="  allows"];
   Transition -> State [label="from/to"];
   Transition -> Input [label="accepts"];
   Transition -> Output [label="  produces"];
+  Application -> "External storage" [label="reads from & writes to"];
 }
 ```
 
