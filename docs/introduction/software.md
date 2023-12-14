@@ -235,11 +235,48 @@ graph parse_tree {
 
 We now have the vocabulary to describe the _structure_ of a program and of programming languages.
 However, PDAs aren't powerful enough to describe the runtime _behavior_ of all but the simplest programs.
+Let's next look at automata that can.
 
 
 ### Turing machines
 
-TODO
+<!-- vale proselint.Typography = NO -->
+A **Turing Machine** (TM) is a generalization of a PDA where an infinite tape replaces the stack.
+This **tape** is a linear sequence of **cells**, one of which, the **head**, the TM points to.
+Initially, the input is on the tape, one symbol per cell, and the head points to the first input symbol.
+Left and right of the input, all cells are blank.
+<!-- vale proselint.Typography = YES -->
+
+![Turing machine](../img/turing-machine.png)
+
+Formally, a TM is a tuple $M = \lang Q, \Sigma, \Gamma, \delta, q_0, B, F \rang$.
+We’ve seen most of these symbols already in the definition of previous automata.
+The new and changed ones are:
+
+- $\Gamma$ is a set of **tape symbols**.
+  These are analogous to the stack symbols of a PDA.
+  Note that $\Sigma \subset \Gamma$.
+- $B$ is the **blank symbol**, where $B \in \Gamma - \Sigma$.
+  It's analogous to $Z_0$ of a PDA.
+- The transition function $\delta$ takes a state $q \in Q$ and tape symbol $X \in \Gamma$ as input.
+  It produces a triple $(p, Y, D)$.
+  Here $p \in Q$ is the next state.
+  $Y \in \Gamma$ is the tape symbol written to the head.
+  $D \in \text{\textbraceleft} L, R \text{\textbraceright}$ is the direction in which the head moves: $L$ = left and
+  $R$ = right.
+
+We can visualize TMs using transition diagrams, where edges are of the form $X / Y D$.
+Here $X$ is the tape symbol at the head and $Y$ is the replacement tape symbol.
+$D$ is the direction in which to move the head ($L$ or $R$).
+
+The languages TMs accept are the **recursively enumerated** (RE) languages.
+Several variations of TMs exist, such as those with multiple tapes and non-deterministic TMs.
+These have the same power, in the sense that they also accept RE languages.
+Simpler models exists as well, like a PDA with two stacks, that accept RE languages.
+
+Real computers have the same power as TMs, in the sense that a TM can simulate a computer and vice versa.
+Here we assume a computer has access to an infinite number of disks of external storage to simulate the infinite tape.
+Programming a TM isn't practical for solving real-world problems, but a TM is a useful abstraction to reason about.
 
 
 ### Model of software
