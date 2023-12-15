@@ -113,7 +113,7 @@ For instance, the regular expression $(0+1)^*01(0+1)^*$ defines the same languag
 We can convert regular expressions to DFAs and vice versa.
 
 Regular languages can describe parts of programs, but not entire programs.
-The memory of a DFA is too limited.
+The memory of a DFA is too limited, since it consists of a finite number of states.
 Let's look at more powerful automata that define more useful languages.
 
 
@@ -279,23 +279,23 @@ We can visualize TMs using transition diagrams, where edges are of the form $X /
 Here $X$ is the tape symbol at the head and $Y$ is the replacement tape symbol.
 $D$ is the direction in which to move the head ($L$ or $R$).
 
-The languages TMs accept are the **recursively enumerated** (RE) languages.
-Like with the other types of languages, there are alternative notations for expressing RE languages, for instance
-_$\lambda$-calculus_ and _general recursive functions_.
-We won't go into these here.
-
 Several variations of TMs exist, such as those with multiple tapes or with the ability to keep the head in place.
 A non-deterministic variant exists as well.
-All these variations have the same power, in the sense that they all accept the RE languages and nothing more.
-Simpler models exists as well, like a PDA with two stacks, that accept RE languages.
-We call these models **Turing-complete**.
+All these variations have the same power, in the sense that deterministic one-tape TMs can simulate them.
+Simpler models exists as well, like a PDA with two stacks, that can simulate a TM.
+
+The languages TMs accept are the **recursively enumerated** (RE) languages.
+Like with the other types of languages, there are alternative models for expressing RE languages, for instance
+_$\lambda$-calculus_ and _general recursive functions_.
+We call any model that accepts RE languages **Turing-complete**.
 
 Real computers have the same power as TMs, in the sense that a TM can simulate a computer and vice versa.
-Here we assume a computer has access to an infinite number of disks of external storage to simulate the infinite tape.
+Here we must assume the computer has access to an infinite number of disks of external storage to simulate the
+infinite tape.
 
 The **Church-Turing thesis** states that anything computable is computable by a TM.
 In other words, there can be no more powerful automata than TMs.
-Despite the lack a formal proof, most people accept this thesis as true.
+Despite the lack of a formal proof, most people accept this thesis as true.
 
 Programming a TM isn't practical for solving real-world problems.
 The linear access model of a TM to its external storage, the tape, means the TM has to travel great distances.
@@ -325,7 +325,7 @@ output.
 For instance, a **tokenizer** is a program that breaks a stream of text into individual tokens.
 These tokens may be part of a grammar, in which case we call the tokenizer a **lexer** or **lexical analyzer**.
 The program that analyzes a text against a grammar is a **parser**.
-The parser needs to distinguish between the tokens, so the lexer must output the token it accepted to the parser.
+The lexer must output the token it accepted, so that the parser can use it in its operations.
 
 
 ### Model of software
