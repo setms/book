@@ -317,7 +317,7 @@ output.
 
 For instance, a **tokenizer** is a program that breaks a stream of text into individual tokens.
 These tokens may be part of a grammar, in which case we call the tokenizer a **lexer** or **lexical analyzer**.
-A program that analyzes text against a grammar is a **parser** (which produces parse trees).
+A program that analyzes text against a grammar and produces parse trees is a **parser**.
 The lexer must output the token it accepted, so that the parser can use it in its evaluations.
 
 
