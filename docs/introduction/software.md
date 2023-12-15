@@ -71,6 +71,17 @@ digraph transition_diagram {
 }
 ```
 
+An alternative description of a DFA uses a table format.
+A **transition table** shows inputs as rows, the current states as columns, and next states in the
+intersection of the two.
+For example, the PDA above looks like this:
+
+|       | p | q | r |
+|-------|---|---|---|
+| **0** | q | q | r |
+| **1** | p | r | r |
+
+
 <!-- vale Google.Ellipses = NO -->
 Let $w$ be a word made up of symbols $a_i \in \Sigma$ such that $w = a_1a_2...a_n$.
 If there are transitions in $\delta$ such that $q_1 = \delta(q_0, a_1)$, $q_2 = \delta(q_1, a_2)$, etc. and
