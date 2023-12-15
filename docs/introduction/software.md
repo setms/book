@@ -330,9 +330,9 @@ digraph basic_application_concept_map {
   Application -> State [label="has"];
   Application -> Transition [label="  allows"];
   Transition -> State [label="from/to"];
-  Transition -> Input [label="accepts"];
+  Transition -> Input [label="  accepts"];
   Transition -> Output [label="  produces"];
-  Application -> "External storage" [label="reads from & writes to"];
+  Transition -> "External storage" [label="  reads from & writes to"];
 }
 ```
 
