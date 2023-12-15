@@ -23,6 +23,7 @@ Neither does the V4 draft.
 @@BABOK2015 contains a section on learning (9.1.3), but doesn't give much advice on how to best do that.
 It doesn't mention DDD by name, but does list concept modelling as a technique in section 10.11 and mind mapping
 in 10.29.
+Event the Agile Extension to the BABOK doesn't mention DDD @@AgileBABOK2017.
 
 
 ## Changing requirements
