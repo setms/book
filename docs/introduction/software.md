@@ -292,6 +292,31 @@ Real computers can access memory locations directly, which is much more efficien
 Having said that, a TM is a useful abstraction to reason about computation.
 
 
+### Output
+
+The transition function $\delta$ of an automaton gives the next state and, depending on the automaton,
+writes to external storage (stack or tape).
+We can change $\delta$ to also output something.
+A finite state machine that produces output is a **transducer**.
+An example of a transducer is a Mealy machine @@Mealy1955.
+
+Conceptually, we can think of a transducer as a TM with two tapes: one for input and one for output.
+This implies that the output is a string of tape symbols from $\Gamma$.
+
+Output is often omitted in automata theory, which focuses on solving problems by accepting input.
+For real computer programs, however, output is crucial.
+
+One may, of course, (and some have) argue that the output of a TM is somewhere on its single tape.
+This works for TMs and to some extent for PDAs, but not for DFAs.
+As we've seen, DFAs are useful in many situations in software development and some of those situations require
+output.
+
+For instance, a **tokenizer** is a program that breaks a stream of text into individual tokens.
+These tokens may be part of a grammar, in which case we call the tokenizer a **lexer** or **lexical analyzer**.
+The program that analyzes a text against a grammar is a **parser**.
+The parser needs to distinguish between the tokens, so the lexer must output the token it accepted to the parser.
+
+
 ### Model of software
 
 Here's a concept map of a software application based on automata theory:
