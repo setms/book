@@ -38,7 +38,7 @@ The theory formally defines different types of automata and derives mathematical
 ### Finite automata
 
 The simplest types of automata are finite automata.
-A **Deterministic Finite Automaton** (DFA) is a tuple $A = \lang Q, \Sigma, \delta, q_0, F \rang$, where
+Formally, a **Deterministic Finite Automaton** (DFA) is a tuple $A = \lang Q, \Sigma, \delta, q_0, F \rang$, where
 
 - $Q$ is a finite set of **states** the automaton can be in.
 - $\Sigma$ is a finite set of symbols, called the **input alphabet** of the automaton.
@@ -82,12 +82,10 @@ For example, the PDA above looks like this:
 | **1** | p | r | r |
 
 
-<!-- vale Google.Ellipses = NO -->
-Let $w$ be a word made up of symbols $a_i \in \Sigma$ such that $w = a_1a_2...a_n$.
+Let $w$ be a word made up of symbols $a_i \in \Sigma$ such that $w = a_1a_2\mathellipsisa_n$.
 If there are transitions in $\delta$ such that $q_1 = \delta(q_0, a_1)$, $q_2 = \delta(q_1, a_2)$, etc. and
 $q_n \in F$, then $A$ **accepts** $w$.
 The set of all words that $A$ accepts is the **language** of $A$, $L(A)$.
-<!-- vale Google.Ellipses = YES -->
 
 For instance, the language of the automaton above is the set of strings composed of $0$s and $1$s that contain the
 substring $01$.
@@ -144,8 +142,8 @@ It outputs pairs consisting of a new state and a string of stack symbols that re
 We can visualize PDAs using transition diagrams, just like DFAs.
 The edges show both the input symbol consumed and the old and new top of the stack.
 For instance, an edge labeled $a, X / \gamma$ between nodes $p$ and $q$ means that $\delta(p,a, X)$ contains the pair
-$(p, \gamma)$.
-Here, $\gamma$ is a string made up of stack symbols $\gamma_i \in \Gamma$.
+$(q, \gamma)$.
+Here, $\gamma = \gamma_1\gamma_2\mathellipsis\gamma_n$, where $\gamma_i \in \Gamma$.
 
 A PDA can accept a word in two ways:
 
@@ -165,7 +163,6 @@ Before we dive into those, let's look at an alternative way to specify the conte
 
 A **Context-Free Grammar** (CFG), or just grammar, is a tuple $G = \lang V, T, P, S \rang$, where
 
-<!-- vale Google.Ellipses = NO -->
 - $V$ is a set of variables.
   Each variable represents a language, or set of strings.
   **Variables** are building block for the bigger language that the grammar defines.
@@ -173,10 +170,9 @@ A **Context-Free Grammar** (CFG), or just grammar, is a tuple $G = \lang V, T, P
   A **terminal** is a symbol in the language the grammar defines.
 - $P$ is a set of productions.
   A **production** is of the form $H \to B$, where $H \in V$ is the **head** and
-  $B = \text{\textbraceleft} b_1b_2...b_n \mid b_i \in V \cup T \text{\textbraceright}$ is the **body**.
+  $B = \text{\textbraceleft} b_1b_2\mathellipsisb_n \mid b_i \in V \cup T \text{\textbraceright}$ is the **body**.
   A body consists of zero or more variables and terminals.
 - $S \in V$ is the start symbol.
-<!-- vale Google.Ellipses = YES -->
 
 For instance, a grammar for the palindromes over $0$ and $1$ is:
 
@@ -194,11 +190,9 @@ We can **derive** a word from a CFG $G$.
 Start with its start symbol, and recursively replace variables using the productions until only terminal symbols remain.
 The set of words we can derive from a grammar $G$ is its language, $L(G)$.
 
-<!-- vale Google.Ellipses = NO -->
 A **parse tree** is a tree representation of a derivation in a CFG $G$.
 The root of this tree is the start symbol $S$ of $G$.
-For every production $H \to b_1b2...b_n$, there is a child $b_i$ under parent $H$ and these children are in order.
-<!-- vale Google.Ellipses = YES -->
+For every production $H \to b_1b2\mathellipsisb_n$, there is a child $b_i$ under parent $H$ and these children are in order.
 
 Here's an example parse tree for $G_p$ that derives the palindrome $01010$:
 
@@ -245,7 +239,7 @@ graph parse_tree {
 ```
 
 We now have the vocabulary to describe the _structure_ of a program and of programming languages.
-However, PDAs aren't powerful enough to describe the runtime _behavior_ of all but the simplest programs.
+However, PDAs aren't powerful enough to describe the _runtime behavior_ of all but the simplest programs.
 Let's next look at automata that can.
 
 
@@ -284,14 +278,14 @@ A non-deterministic variant exists as well.
 All these variations have the same power, in the sense that deterministic one-tape TMs can simulate them.
 Simpler models exists as well, like a PDA with two stacks, that can simulate a TM.
 
-The languages TMs accept are the **recursively enumerated** (RE) languages.
+The languages TMs accept are the **Recursively Enumerated** (RE) languages.
 Like with the other types of languages, there are alternative models for expressing RE languages, for instance
 _$\lambda$-calculus_ and _general recursive functions_.
 We call any model that accepts RE languages **Turing-complete**.
 
-Real computers have the same power as TMs, in the sense that a TM can simulate a computer and vice versa.
-Here we must assume the computer has access to an infinite number of disks of external storage to simulate the
-infinite tape.
+Real computers are Turing complete, if we assume the computer has access to an infinite number of disks of external
+storage.
+These disks simulate the TM's infinite tape.
 
 The **Church-Turing thesis** states that anything computable is computable by a TM.
 In other words, there can be no more powerful automata than TMs.
@@ -309,7 +303,6 @@ The transition function $\delta$ of an automaton gives the next state and, depen
 writes to external storage (stack or tape).
 We can change $\delta$ to also output something.
 A finite state machine that produces output is a **transducer**.
-An example of a transducer is a Mealy machine @@Mealy1955.
 
 Conceptually, we can think of a transducer as a TM with two tapes: one for input and one for output.
 This implies that the output is a string of tape symbols from $\Gamma$.
@@ -317,15 +310,15 @@ This implies that the output is a string of tape symbols from $\Gamma$.
 Output is often omitted in automata theory, which focuses on solving problems by accepting input.
 For real computer programs, however, output is crucial.
 
-One may, of course, (and some have) argue that the output of a TM is somewhere on its single tape.
+One may argue that the output of a TM is somewhere on its tape.
 This works for TMs and to some extent for PDAs, but not for DFAs.
 As we've seen, DFAs are useful in many situations in software development and some of those situations require
 output.
 
 For instance, a **tokenizer** is a program that breaks a stream of text into individual tokens.
 These tokens may be part of a grammar, in which case we call the tokenizer a **lexer** or **lexical analyzer**.
-The program that analyzes a text against a grammar is a **parser**.
-The lexer must output the token it accepted, so that the parser can use it in its operations.
+A program that analyzes text against a grammar is a **parser** (which produces parse trees).
+The lexer must output the token it accepted, so that the parser can use it in its evaluations.
 
 
 ### Model of software
