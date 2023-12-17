@@ -28,5 +28,10 @@ digraph requirements_concept_map {
   Illity -> Metric [label="measured by    "];
   Illity -> Standard [label=" defined in  "];
   Illity -> Law [label="defined in"];
+  Law [label="Law or\nregulation"];
+  Requirement -> AC [label=" has"];
+  AC [label="Acceptance\ncriterion"];
+  AC -> AT [label="  captured in"];
+  AT [label="Acceptance\ntest"];
 }
 ```
