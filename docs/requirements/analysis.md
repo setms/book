@@ -5,7 +5,6 @@ However, we feel that some issues remain:
 
 - There isn't always someone who can give us the requirements.
 - Requirements elicitation takes a long time because the development team needs to learn the domain.
-- Requirements in software development change more often than in traditional engineering disciplines.
 - Software has a certain shape that should affect how we express requirements.
 
 Let's explore these issues in more detail.
@@ -24,7 +23,7 @@ realm of engineering.
 
 The Build-Measure-Learn cycle in Lean Startup corresponds to the probe-sense-response approach suited for the
 _Complicated_ domain.
-This process moves the requirements gathering activity from _Complex_ to _Complicated_.
+This process moves the undertaking from _Complex_ to _Complicated_.
 Once the company establishes product/market fit, its requirements process normalizes.
 
 <!-- vale Google.FirstPerson = NO -->
@@ -37,7 +36,10 @@ Remember the quote attributed to Henry Ford:
 "If I had asked people what they wanted, they would have said faster horses."
 <!-- vale Google.FirstPerson = YES -->
 
-We're not going to explore the issue of unknowable requirements any further.
+In this book, we're trying to establish an _engineering_ discipline for software development, so we'll focus on the
+_Complicated_ domain.
+We therefore won't pursue the issue of unknowable requirements any further, trusting that Lean Startup solves that
+problem.
 
 
 ## Learning the domain
@@ -74,42 +76,12 @@ It uses a simple notation that, unlike _Business Process Model and Notation_ @@B
 non-technical people to understand.
 It lets the stakeholders and development team build up a _domain model_ in hours or days rather than weeks or months.
 
-The domain model is a concept from _Domain-Driven Design_ (DDD) @@Evans2014.
+In event storming, the SMEs perform the integration of various perspectives rather than the analyst.
+By giving them a standard notation, non-experts can follow what they're doing and force them to be precise.
+It allows them to ask the hard questions and bring conflicts out for resolution.
+Everybody's learning compresses while the domain model emerges as a natural byproduct.
 
-```admonish info "Quote"
-The interaction between team members changes as all members crunch the model together. The constant
-refinement of the domain model forces the developers to learn the important principles of the business they are
-assisting, rather than to produce functions mechanically. The domain experts often refine their own
-understanding by being forced to distill what they know to essentials, and they come to understand the
-conceptual rigor that software projects require.
-
---- @@Evans2014
-```
-
-The **domain model** is a set of concepts shared by everyone on the project, with terms and relationships
-that reflect domain insight.
-These terms and relationships provide semantics for a language tailored to the domain while being precise enough
-for technical development.
-
-This language is the **ubiquitous language**, because it's used everywhere: requirements, code, tests, etc.
-The basic terms in the ubiquitous language are the **domain objects**: entities and value objects.
-
-An **entity** is anything that has continuity and an identity, like a customer.
-When we need to bill the customer, we care whether we bill Adam Brooks or Charlie Davis.
-
-A **value object** is a concept without an identity, like an email address.
-For value objects, we only care about their attributes.
-Two email addresses with the same local name and internet domain are always the same, while two customers named
-John Smith can be different.
-
-An **aggregate** is a cluster of associated objects that we treat as a unit for data changes.
-For instance, we can save an order including its line items, but we can't save individual line items.
-The **root** of an aggregate is an entity, like order in the example.
-
-A **repository** is where an application stores aggregates and later retrieves them.
-Each aggregate type has its own repository.
-
-Event storming enhances DDD with some extra concepts:
+The event storming notation consists of the following:
 
 - A **domain event** is anything that happens that's of interest to an SME.
 - A **command** triggers an event.
@@ -124,7 +96,9 @@ Workshop participants place the stickies on a wall in timeline order to visualiz
 
 A specific grammar governs event storming concepts @@Brandolini2022, in the sense that certain things
 always come before or after others.
-The usual case is that a user of the system issues a command based on some information:
+It's this grammar that allow non-experts to ask intelligent questions, like what emits this event?
+
+The main part of the grammar is when a user of the system issues a command based on some information:
 
 ```dot process
 digraph event_storming {
@@ -155,7 +129,7 @@ digraph event_storming {
 }
 ```
 
-Some alternatives exist as well.
+Some alternatives flows exist as well.
 An external system rather than a person may issue a command:
 
 ```dot process
@@ -190,33 +164,54 @@ digraph event_storming {
 }
 ```
 
+With the big picture defined, we can flesh out the domain model further.
+The domain model is a concept from _Domain-Driven Design_ (DDD) @@Evans2014.
 
-## Changing requirements
+```admonish info "Quote"
+The interaction between team members changes as all members crunch the model together. The constant
+refinement of the domain model forces the developers to learn the important principles of the business they are
+assisting, rather than to produce functions mechanically. The domain experts often refine their own
+understanding by being forced to distill what they know to essentials, and they come to understand the
+conceptual rigor that software projects require.
 
-Software requirements change more often and change more in magnitude than requirements in traditional engineering
-fields.
-As an example, let's look at scale requirements.
-A civil engineer designs a bridge for a given load.
-If that load turns out to be two orders of magnitude higher, then a new bridge is necessary.
-Software systems are routinely expected to scale that much and more.
+--- @@Evans2014
+```
 
-One reason for the large amount of changes in software is that they're _possible_.
-Software as a medium is a lot more malleable than the materials that make up a bridge.
+The **domain model** is a set of concepts shared by everyone on the project, with terms and relationships
+that reflect domain insight.
+These terms and relationships provide semantics for a language tailored to the domain while being precise enough
+for technical development.
 
-Another reason for frequent changes is stakeholders' difficulty in visualizing how a system is going to work
-until it's in front of them.
-Prototypes and mockups help with that, as @@Wiegers2013 mentions.
-We think that event storming helps as well, especially for the big picture workings of the system.
-And since there is no substitute for users working with a real system, iterative & incremental development is essential.
+This language is the **ubiquitous language**, because it's used everywhere: requirements, code, tests, etc.
+Using the same language prevents many misunderstandings and bugs.
+The basic terms in the ubiquitous language are the **domain objects**: entities and value objects.
 
-Whatever the reason, it's clear there is value in designs that are easy to change to allow for changes in requirements.
-We'll come back to this topic in later chapters.
+An **entity** is anything that has continuity and an identity, like a customer.
+When we need to bill the customer, we care whether we bill Adam Brooks or Charlie Davis.
+
+A **value object** is a concept without an identity, like an email address.
+For value objects, we only care about their attributes.
+Two email addresses with the same local name and internet domain are always the same, while two customers named
+John Smith can be different.
+
+An **aggregate** is a cluster of associated objects that we treat as a unit for data changes.
+For instance, we can save an order including its line items, but we can't save individual line items.
+The **root** of an aggregate is an entity, like order in the example.
+The aggregate may contain other entities, like line items.
+Anything outside the aggregate may only refer to the root entity.
+
+A **repository** is where an application stores aggregates and later retrieves them.
+Each aggregate type has its own repository.
+
+The combination of event storming and DDD allows the development team to learn the domain faster and better than
+traditional techniques.
+The DDD concepts also map to code constructs in a natural way, eliminating translation issues.
 
 
 ## Requirements for software
 
 Another potential issue is the advice to state requirements in an abstract way, only referencing a user's needs.
-The point here is to keep design out of requirements, and this is sound advice.
+The point here is to keep design out of requirements, and that's sound advice.
 
 However, this approach also keeps out the fact that the requirements are for _software_ rather than for manual
 procedures or for some other medium.
