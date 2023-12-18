@@ -217,10 +217,33 @@ However, this approach also keeps out the fact that the requirements are for _so
 procedures or for some other medium.
 Software has a [particular shape](../introduction/software.md) and that should affect how we define requirements.
 
-TODO: Requirement -> Acceptance criteria -> Acceptance tests -> BDD -> transitions
+Requirements should have **acceptance criteria**, predefined conditions that the product must meet to be
+acceptable in the operating environment.
+Without acceptance criteria, there is no way of knowing whether the product meets the requirement.
+
+At least some acceptance criteria take the form of acceptance tests.
+An **acceptance test** verifies whether the system meets a requirement.
+Some acceptance criteria can't have acceptance tests, because they're not about the system itself.
+For instance, stakeholders may insist that the system comes with documentation.
+
+Some acceptance tests run automatically as part of the product's test suite; others are manual tests, like those
+in User Acceptance Testing (UAT).
+
+@@Adzic2009 argues that acceptance tests are best written using examples.
+@@Smart2014 provides a template for doing that using the following form:
+
+```text
+Given <some initial state>
+When <some input arrives>
+Then <expect some new state and/or output>
+```
+
+This approach maps nicely to states and transitions of a Turing Machine or other automaton.
+We therefore argue that at least all automated acceptance tests for functional requirements should take this form.
+For requirements around quality attributes other than functionality, this format may be too restrictive.
 
 
-## A new model for software applications
+## A better model for software applications
 
 DDD and event storming gives us a new vocabulary to talk about what software does.
 We need to reconcile that with our vocabulary of [what software is](../introduction/software.md#model-of-software).
