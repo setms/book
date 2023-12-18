@@ -141,7 +141,7 @@ digraph event_storming {
   ES -> C;
   C [label="Command", fillcolor=deepskyblue];
   C -> rest;
-  rest [shape=plaintext, label="...", style=normal];
+  rest [shape=plaintext, label="...", style=""];
 }
 ```
 
@@ -160,7 +160,7 @@ digraph event_storming {
   E2 -> rest;
   E1 -> rest;
   E -> rest;
-  rest [shape=plaintext, label="...", style=normal];
+  rest [shape=plaintext, label="...", style=""];
 }
 ```
 
@@ -225,25 +225,29 @@ digraph ddd_application_concept_map {
     color=steelblue4, penwidth=2];
   edge [fontsize=11, color=steelblue4, penwidth=2];
 
-  Application -> Aggregate [label="has"];
   Application -> Policy [label="has"];
+  Policy -> Event [label="reacts  \nto\n\n"];
+  Policy -> RM [label="queries       "];
+  RM [label="Read model"];
+  RM-> Repository [label="based on"];
+  Application -> Aggregate [label="has"];
   Aggregate -> Event [label="emits    "];
-  Policy -> Event [label=" reacts\nto"];
   Policy -> Command [label="\n\n issues"];
-  Aggregate -> Command [label="accepts"];
-  Aggregate -> Repository [label="stored\nin"];
-  Aggregate -> RE [label=" defined\nby"];
+  Aggregate -> Command [label="accepts  "];
+  Aggregate -> RE [label="defined\nby"];
   RE[label="Root entity"];
   RE -> Entity [label=" is a"];
-  Entity -> DO [label="is a"];
+  RE -> Repository [label="stored\nin"];
+  Entity -> DO [label="is a   "];
   DO [label="Domain object"];
-  VO -> DO [label="is a"];
+  VO -> DO [label=" is a"];
   VO [label="Value object"];
-  Entity -> VO [label=" refers\nto"];
+  Entity -> VO [label="refers\nto"];
   Entity -> Entity [label="  contains"];
-  Entity -> Aggregate [label=" bound\n inside"];
+  Entity -> Aggregate [label="  bound\n  inside"];
   Command -> DO [label=" contains"];
-  Event -> DO [label="contains"];
+  Event -> DO [label=" contains"];
+
 }
 ```
 
