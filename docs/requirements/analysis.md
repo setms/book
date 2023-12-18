@@ -225,27 +225,25 @@ digraph ddd_application_concept_map {
     color=steelblue4, penwidth=2];
   edge [fontsize=11, color=steelblue4, penwidth=2];
 
-  Application -> Aggregate [label=" has"];
-  Application -> Policy [label=" has"];
-  Aggregate -> Event [label="emits"];
+  Application -> Aggregate [label="has"];
+  Application -> Policy [label="has"];
+  Aggregate -> Event [label="emits    "];
   Policy -> Event [label=" reacts\nto"];
+  Policy -> Command [label="\n\n issues"];
   Aggregate -> Command [label="accepts"];
-  Aggregate -> Repository [label=" stored\nin"];
+  Aggregate -> Repository [label="stored\nin"];
   Aggregate -> RE [label=" defined\nby"];
   RE[label="Root entity"];
   RE -> Entity [label=" is a"];
-  Entity -> DO [label=" is a"];
+  Entity -> DO [label="is a"];
   DO [label="Domain object"];
-  VO -> DO [label=" is a"];
+  VO -> DO [label="is a"];
   VO [label="Value object"];
   Entity -> VO [label=" refers\nto"];
   Entity -> Entity [label="  contains"];
-  Entity -> Aggregate [label="  bound\ninside"];
-  Command -> DO [label="contains"];
+  Entity -> Aggregate [label=" bound\n inside"];
+  Command -> DO [label=" contains"];
   Event -> DO [label="contains"];
-
-  { rank=same; Command; Event; }
-
 }
 ```
 
@@ -284,7 +282,7 @@ This approach maps nicely to states and transitions of a Turing Machine or other
 We therefore argue that at least all automated acceptance tests for functional requirements should take this form.
 For requirements around quality attributes other than functionality, this format may be too restrictive.
 
-If we look at acceptance criteria through the lens of event storming, then we see two specializations of the generic
+If we look at acceptance criteria through the lens of event storming, we see two specializations of the generic
 `Given/When/Then` format.
 
 This first is for aggregates:
