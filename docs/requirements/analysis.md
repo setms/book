@@ -68,9 +68,10 @@ More often, multiple SMEs each have a clear picture of one part of the process a
 This results in conflicting points of view, which need resolution before building software.
 However, the analyst doesn't know enough yet to bring conflicts into the open.
 
-_Event storming_ is a technique that solves these issues @@Brandolini2013.
+_Event storming_ is a technique that solves these issues @@Brandolini2013 @@Webber2017.
 It's a workshop where the key stakeholders work together to build up a consistent picture of the entire process.
-It uses a simple notation that, unlike something like UML, is easy for non-technical people to understand.
+It uses a simple notation that, unlike _Business Process Model and Notation_ @@BPMN2013, is easy for
+non-technical people to understand.
 It lets the stakeholders and development team build up a _domain model_ in hours or days rather than weeks or months.
 
 The domain model is a concept from _Domain-Driven Design_ (DDD) @@Evans2014.
@@ -180,22 +181,14 @@ digraph event_storming {
   ES [label="External\nSystem", fillcolor=lightpink];
   ES -> E;
   E [label="Event", fillcolor=orange];
-  T [label=<&#x1F551;>, fillcolor=lightpink];
-  T -> E;
+  E1 [label=<&#x1F4C5; Calendar event>, fillcolor=orange];
+  E2 [label=<&#x1F551; Timer event>, fillcolor=orange];
+  E2 -> rest;
+  E1 -> rest;
   E -> rest;
   rest [shape=plaintext, label="...", style=normal];
 }
 ```
-
-The books that SWEBOK V3 posits as the body of knowledge for requirements don't mention DDD or event storming.
-Neither does the V4 draft.
-
-They do recommend to maintain a glossary, but that isn't the same as a full-fledged domain model.
-And it certainly isn't a guarantee that the terms in the glossary find their way into the code and other artifacts.
-
-@@BABOK2015 contains a section on learning (9.1.3), but doesn't give much advice on how to best do that.
-It doesn't mention DDD or event storming, although it does list concept modelling as a technique in section 10.11.
-The Agile Extension to the BABOK doesn't mention them either @@AgileBABOK2017.
 
 
 ## Changing requirements
