@@ -52,7 +52,7 @@ The requirements elicitation practices assume an analyst interviews various subj
 and then writes down requirements.
 Different representations of the requirements help SMEs to validate them.
 
-It's the business analyst who integrates the perspectives from various stakeholders.
+In this approach, it's the business analyst who integrates the perspectives from various stakeholders.
 Once a sufficiently clear picture is emerging from those conversations, maybe a workshop brings all the stakeholders
 together to validate there is a shared understanding.
 
@@ -68,7 +68,7 @@ The result is an iterative process that takes a lot of time.
 Worse, it's uncommon for SMEs to be experts in the entire domain.
 More often, multiple SMEs each have a clear picture of one part of the process and nobody of the whole.
 This results in conflicting points of view, which need resolution before building software.
-However, the analyst doesn't know enough yet to bring conflicts into the open.
+However, it takes a while before the analyst knows enough to ask the hard questions and bring conflicts into the open.
 
 _Event storming_ is a technique that solves these issues @@Brandolini2013 @@Webber2017.
 It's a workshop where the key stakeholders work together to build up a consistent picture of the entire process.
@@ -85,7 +85,7 @@ The event storming notation consists of the following:
 
 - A **domain event** is anything that happens that's of interest to an SME.
 - A **command** triggers an event.
-- An **aggregate** accepts commands and accomplishes events.
+- An **aggregate** accepts commands and emits events.
 - A **policy** contains the decision how to react to an event.
 - A **read model** holds the information necessary to make a decision.
 - A **person** is a human being responsible for a given decision.
@@ -194,7 +194,7 @@ For value objects, we only care about their attributes.
 Two email addresses with the same local name and internet domain are always the same, while two customers named
 John Smith can be different.
 
-An **aggregate** is a cluster of associated objects that we treat as a unit for data changes.
+An **aggregate** is a cluster of associated domain objects that we treat as a unit for data changes.
 For instance, we can save an order including its line items, but we can't save individual line items.
 The **root** of an aggregate is an entity, like order in the example.
 The aggregate may contain other entities, like line items.
@@ -207,10 +207,52 @@ The combination of event storming and DDD allows the development team to learn t
 traditional techniques.
 The DDD concepts also map to code constructs in a natural way, eliminating translation issues.
 
+DDD and event storming give us a new vocabulary to talk about what software _does_.
+We need to reconcile that with our vocabulary of what software [is](../introduction/software.md#model-of-software).
+
+In event storming terms, aggregates make up an application's state.
+An application transitions between states when an aggregate accepts a command.
+The output of an application is an emitted event.
+
+Commands and events carry data.
+In DDD terms, that data takes the form of domain objects.
+
+Putting that all together, we get the following model for a software application:
+
+```dot process
+digraph ddd_application_concept_map {
+  node [shape=rect, style="rounded,filled", fixedsize=true, width=1.5, height=0.75, fillcolor=lightskyblue2,
+    color=steelblue4, penwidth=2];
+  edge [fontsize=11, color=steelblue4, penwidth=2];
+
+  Application -> Aggregate [label=" has"];
+  Application -> Policy [label=" has"];
+  Aggregate -> Event [label="emits"];
+  Policy -> Event [label=" reacts\nto"];
+  Aggregate -> Command [label="accepts"];
+  Aggregate -> Repository [label=" stored\nin"];
+  Aggregate -> RE [label=" defined\nby"];
+  RE[label="Root entity"];
+  RE -> Entity [label=" is a"];
+  Entity -> DO [label=" is a"];
+  DO [label="Domain object"];
+  VO -> DO [label=" is a"];
+  VO [label="Value object"];
+  Entity -> VO [label=" refers\nto"];
+  Entity -> Entity [label="  contains"];
+  Entity -> Aggregate [label="  bound\ninside"];
+  Command -> DO [label="contains"];
+  Event -> DO [label="contains"];
+
+  { rank=same; Command; Event; }
+
+}
+```
 
 ## Requirements for software
 
-Another potential issue is the advice to state requirements in an abstract way, only referencing a user's needs.
+Another potential issue with the generally accepted requirements engineering knowledge, is the advice to state
+requirements in relation to a user's needs only.
 The point here is to keep design out of requirements, and that's sound advice.
 
 However, this approach also keeps out the fact that the requirements are for _software_ rather than for manual
@@ -224,7 +266,7 @@ Without acceptance criteria, there is no way of knowing whether the product meet
 At least some acceptance criteria take the form of acceptance tests.
 An **acceptance test** verifies whether the system meets a requirement.
 Some acceptance criteria can't have acceptance tests, because they're not about the system itself.
-For instance, stakeholders may insist that the system comes with documentation.
+For instance, stakeholders may require that the system comes with documentation.
 
 Some acceptance tests run automatically as part of the product's test suite; others are manual tests, like those
 in User Acceptance Testing (UAT).
@@ -238,42 +280,25 @@ When <some input arrives>
 Then <expect some new state and/or output>
 ```
 
-This approach maps nicely to states and transitions of a Turing Machine or other automaton.
+This approach maps nicely to states and transitions of a Turing Machine or other automaton @@Martin2008.
 We therefore argue that at least all automated acceptance tests for functional requirements should take this form.
 For requirements around quality attributes other than functionality, this format may be too restrictive.
 
+If we look at acceptance criteria through the lens of event storming, then we see two specializations of the generic
+`Given/When/Then` format.
 
-## A better model for software applications
+This first is for aggregates:
 
-DDD and event storming gives us a new vocabulary to talk about what software does.
-We need to reconcile that with our vocabulary of [what software is](../introduction/software.md#model-of-software).
+```text
+Given <the aggregate is in some state>
+When <the aggregate accepts a command>
+Then <the aggregate has a new state and/or emits an event>
+```
 
-```dot process
-digraph ddd_application_concept_map {
-  node [shape=rect, style="rounded,filled", fixedsize=true, width=1.5, height=0.75, fillcolor=lightskyblue2,
-    color=steelblue4, penwidth=2];
-  edge [fontsize=11, color=steelblue4, penwidth=2];
+The second is for policies:
 
-  Application -> State [label="has"];
-  Application -> Transition [label="  allows"];
-  Transition -> State [label="from/to"];
-  Transition -> Input [label="  accepts"];
-  Transition -> Output [label="  produces"];
-  Transition -> Repository [label="  reads from & writes to"];
-  Repository -> Aggregate [label="  stores"];
-  Aggregate -> RE [label="  is defined by"];
-  RE[label="Root entity"];
-  RE -> Entity [label=" is a"];
-  Entity -> DO [label="is a"];
-  DO [label="Domain object"];
-  VO -> DO [label=" is a"];
-  VO [label="Value object"];
-  Entity -> VO [label=" refers to"];
-  Entity -> Entity [label="  contains"];
-  Entity -> Aggregate [label="is bound inside"];
-  Input -> DO [label="  refers to"];
-  Output -> DO [label="  refers to"];
-
-  { rank=same; State; Input; Output; Repository }
-}
+```text
+Given <the policy's read model returns some information>
+When <the policy reacts to an event>
+Then <the policy issues a command to an aggregate>
 ```
