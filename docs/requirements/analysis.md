@@ -86,7 +86,7 @@ The event storming notation consists of the following:
 - A **domain event** is anything that happens that's of interest to an SME.
 - A **command** triggers an event.
 - An **aggregate** accepts commands and emits events.
-- A **policy** contains the decision how to react to an event.
+- A **policy** contains the decision on how to react to an event.
 - A **read model** holds the information necessary to make a decision.
 - A **person** is a human being responsible for a given decision.
 - An **external system** is another system that generates events of interest to the system under consideration.
@@ -182,20 +182,23 @@ that reflect domain insight.
 These terms and relationships provide semantics for a language tailored to the domain while being precise enough
 for technical development.
 
-This language is the **ubiquitous language**, because it's used everywhere: requirements, code, tests, etc.
+This language is the **ubiquitous language**, because it's used everywhere: requirements, tests, code, etc.
 Using the same language prevents many misunderstandings and bugs.
 The basic terms in the ubiquitous language are the **domain objects**: entities and value objects.
 
 An **entity** is anything that has continuity and an identity, like a customer.
 When we need to bill the customer, we care whether we bill Adam Brooks or Charlie Davis.
+An entity may refer to or contain other entities.
 
 A **value object** is a concept without an identity, like an email address.
 For value objects, we only care about their attributes.
 Two email addresses with the same local name and internet domain are always the same, while two customers named
 John Smith can be different.
+A value object may contain other value objects, like when an address contains a zip code.
+An entity may refer to value objects, like when an order line item contains a quantity.
 
 An **aggregate** is a cluster of associated domain objects that we treat as a unit for data changes.
-For instance, we can save an order including its line items, but we can't save individual line items.
+For instance, we can create an order with line items, but we can't create individual line items without an order.
 The **root** of an aggregate is an entity, like order in the example.
 The aggregate may contain other entities, like line items.
 Anything outside the aggregate may only refer to the root entity.
@@ -217,7 +220,7 @@ The output of an application is an emitted event.
 Commands and events carry data.
 In DDD terms, that data takes the form of domain objects.
 
-Putting that all together, we get the following model for a software application:
+Putting all that together, we get the following model for a software application:
 
 ```dot process
 digraph ddd_application_concept_map {
@@ -242,8 +245,8 @@ digraph ddd_application_concept_map {
   DO [label="Domain object"];
   VO -> DO [label=" is a"];
   VO [label="Value object"];
+  DO -> DO [label="  contains"];
   Entity -> VO [label="refers\nto"];
-  Entity -> Entity [label="  contains"];
   Entity -> Aggregate [label="  bound\n  inside"];
   Command -> DO [label=" contains"];
   Event -> DO [label=" contains"];
@@ -273,7 +276,7 @@ For instance, stakeholders may require that the system comes with documentation.
 Some acceptance tests run automatically as part of the product's test suite; others are manual tests, like those
 in User Acceptance Testing (UAT).
 
-@@Adzic2009 argues that acceptance tests are best written using examples.
+@@Adzic2009 argues that all acceptance tests, whether manual or automated, are best written using examples.
 @@Smart2014 provides a template for doing that using the following form:
 
 ```text
@@ -302,5 +305,5 @@ The second is for policies:
 ```text
 Given <the policy's read model returns some information>
 When <the policy reacts to an event>
-Then <the policy issues a command to an aggregate>
+Then <the policy issues a command>
 ```
