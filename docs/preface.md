@@ -35,6 +35,6 @@ And maybe it'll help you too.
 
 
 Ray Sinnema<br>
-November 2023-???
+November 2023
 
 <!-- vale Google.FirstPerson = YES -->

@@ -34,9 +34,9 @@ Stakeholders can be internal or external to the project team and to the developi
 
 ```dot process
 digraph requirements_engineering {
-  node [shape=rect, style="rounded,filled", fixedsize=true, width=1.5, height=0.75, fillcolor=lightskyblue2,
-    color=steelblue4, penwidth=2];
-  edge [fontsize=11, color=steelblue4, penwidth=2];
+  node [shape=rect, style="filled", fixedsize=true, width=1, height=0.5, fillcolor=lightskyblue2,
+    color=steelblue4, penwidth=2, fontsize=10];
+  edge [fontsize=9, color=steelblue4, penwidth=2];
 
   RE [label="Requirements\nengineering"];
   RD [label="Requirements\ndevelopment"];

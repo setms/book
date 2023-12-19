@@ -327,9 +327,9 @@ Here's a concept map of a software application based on automata theory:
 
 ```dot process
 digraph basic_application_concept_map {
-  node [shape=rect, style="rounded,filled", fixedsize=true, width=1.5, height=0.75, fillcolor=lightskyblue2,
-    color=steelblue4, penwidth=2];
-  edge [fontsize=11, color=steelblue4, penwidth=2];
+  node [shape=rect, style="filled", fixedsize=true, width=1, height=0.5, fillcolor=lightskyblue2,
+    color=steelblue4, penwidth=2, fontsize=10];
+  edge [fontsize=9, color=steelblue4, penwidth=2];
 
   Application -> State [label="has"];
   Application -> Transition [label="  allows"];

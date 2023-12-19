@@ -224,33 +224,41 @@ Putting all that together, we get the following model for a software application
 
 ```dot process
 digraph ddd_application_concept_map {
-  node [shape=rect, style="rounded,filled", fixedsize=true, width=1.5, height=0.75, fillcolor=lightskyblue2,
-    color=steelblue4, penwidth=2];
-  edge [fontsize=11, color=steelblue4, penwidth=2];
+  node [shape=rect, style="filled", fixedsize=true, width=1, height=0.5, fillcolor=lightskyblue2,
+    color=steelblue4, penwidth=2, fontsize=10];
+  edge [fontsize=9, color=steelblue4, penwidth=2];
 
-  Application -> Policy [label="has"];
-  Policy -> Event [label="reacts  \nto\n\n"];
-  Policy -> RM [label="queries       "];
+  Policy -> Event [label="reacts to   ", color=steelblue, fontcolor=steelblue];
   RM [label="Read model"];
-  RM-> Repository [label="based on"];
-  Application -> Aggregate [label="has"];
-  Aggregate -> Event [label="emits    "];
-  Policy -> Command [label="\n\n issues"];
-  Aggregate -> Command [label="accepts  "];
-  Aggregate -> RE [label="defined\nby"];
+  RM-> Repository [label="  based on"];
+  Application -> Aggregate [label=" has"];
+  Aggregate -> Event [label="emits"];
+  Policy -> Command [label=" issues"];
+  Aggregate -> Command [label="accepts    "];
+  Aggregate -> RE [label="defined by"];
   RE[label="Root entity"];
-  RE -> Entity [label=" is a"];
-  RE -> Repository [label="stored\nin"];
-  Entity -> DO [label="is a   "];
+  RE -> Entity [label="  is a"];
+  RE -> Repository [label="stored in      "];
+  Entity -> DO [label="is a    "];
   DO [label="Domain object"];
   VO -> DO [label=" is a"];
   VO [label="Value object"];
   DO -> DO [label="  contains"];
-  Entity -> VO [label="refers\nto"];
-  Entity -> Aggregate [label="  bound\n  inside"];
-  Command -> DO [label=" contains"];
-  Event -> DO [label=" contains"];
-
+  Entity -> VO [label=" refers to"];
+  Entity -> Aggregate [label="bound   \ninside   "];
+  Command -> DO [label="contains"];
+  Event -> DO [label="contains"];
+  Application -> AP [label=" has"];
+  AP -> Policy [label="  is a"];
+  AP [label="Automatic\npolicy"];
+  AP -> RM [label="queries       ", color=steelblue, fontcolor=steelblue];
+  PMP -> Policy [label="  is a"];
+  PMP [label="Person-managed\npolicy"];
+  Person -> PMP [label=" executes   "];
+  Person -> Command [label="  initiates"];
+  ES -> Command [label=" issues"];
+  ES [label="External\nsystem"];
+  ES -> Event [label="emits"];
 }
 ```
 

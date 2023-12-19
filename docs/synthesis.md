@@ -3,8 +3,28 @@
 ## Requirements
 
 ```admonish info "Ideas"
-- Event storming: Find major parts of transition function of automaton
-- Specification by example: Completely define transition function
-- DDD: Find input and output alphabets of automaton
 - Fitness functions
+```
+
+## Design
+
+```admonish info "Ideas"
+- Code smells & refactoring
+- ASTs
+- Structure editors
+```
+
+## Construction
+
+```admonish info "Ideas"
+- As tests get more specific, code gets more generic
+- Transformations
+- Breaking up the monolith
+```
+
+## Testing
+
+```admonish info "Ideas"
+- TDD
+- TDD inside BDD
 ```
