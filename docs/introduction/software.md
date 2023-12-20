@@ -192,7 +192,7 @@ The set of words we can derive from a grammar $G$ is its language, $L(G)$.
 
 A **parse tree** is a tree representation of a derivation in a CFG $G$.
 The root of this tree is the start symbol $S$ of $G$.
-For every production $H \to b_1b2\mathellipsisb_n$, there is a child $b_i$ under parent $H$ and these children are in order.
+For some production $H \to b_1b_2\mathellipsis b_n$, there is a child $b_i$ under parent $H$ and these children are in order.
 
 Here's an example parse tree for $G_p$ that derives the palindrome $01010$:
 
