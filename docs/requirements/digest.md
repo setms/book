@@ -1,5 +1,10 @@
 # Digest of requirements literature
 
+In this section we review the generally accepted knowledge around requirements for software systems.
+
+
+## Definitions
+
 ```admonish tldr title="Definition"
 **Requirements** are a specification of what should be implemented.
 They are descriptions of how the system should behave, or of a system property or attribute.
@@ -10,7 +15,11 @@ They may be a constraint on the development of the system.
 
 @@Wiegers2013 recognizes different kinds of requirements:
 
-- **Business requirements** describe _why_ the organization is developing a system: the benefits they hope to achieve.
+- **Business requirements** describe _why_ the organization is developing a system; the benefits they hope to achieve
+  in the form of high-level business objectives.
+- **System requirements** describe the requirements for a system that consists of multiple subsystems.
+  An **external interface requirement** describes the connection between the system and other systems, hardware, or
+  users.
 - **User requirements** describe goals or tasks the users must be able to perform with the product to realize the
   business requirements.
   Most systems support multiple user classes, as well as other stakeholders, like legal officers and developers.
@@ -20,7 +29,6 @@ They may be a constraint on the development of the system.
   They describe what the developers must implement to enable the user requirements.
 - **Non-functional requirements** or **quality attributes** describe the product's characteristics in various
   dimensions that are important to stakeholders.
-- **System requirements** describe the requirements for a system that consists of multiple subsystems.
 
 ```admonish tldr title="Definition"
 A **stakeholder** is a person, group, or organization that is actively involved in a project, is affected by its process
@@ -29,6 +37,10 @@ Stakeholders can be internal or external to the project team and to the developi
 
 --- @@Wiegers2013
 ```
+
+**Business rules** are policies, guidelines, standards, or regulations that define or constrain some aspect of the
+business.
+They aren't requirements themselves, but lead to requirements.
 
 **Requirements engineering** is the discipline that deals with requirements:
 
@@ -59,7 +71,7 @@ Business analysts have their own body of knowledge @@BABOK2015.
 
 **Requirements development** aims to collect good enough requirements to allow the team to start design and
 construction at an acceptable level of risk @@Wiegers2013.
-Requirements development is an iterative process.
+Requirements development is an iterative process of progressive refinement of detail.
 
 
 ## Elicitation
@@ -77,8 +89,52 @@ described by a set of functional requirements.
 --- @@Wiegers2013
 ```
 
-It's important for non-business people to speak the language of the business.
+Lack of adequate customer involvement leads to an **expectation gap**, a gulf between what customers need and what
+developers deliver.
+To keep this gap to a minimum, arrange frequent contact point for customer representatives, especially users.
 Customers sometimes don't articulate points that they believe are common knowledge.
+
+**Direct users** operate the product.
+**Indirect users** receive output from the product without touching it themselves.
+
+Excellent software is the result of well-executed design based on excellent requirements.
+Excellent requirements result from effective collaboration between developers and customers.
+This requires that all parties know what they need to be successful and understand and respect what their
+collaborators need.
+The business analyst forges this collaborative partnership.
+
+It's important for non-business people to speak the language of the business.
+Put together a glossary of terms.
+
+The **vision and scope document** contains the business requirements.
+The vision provides a shared understanding of the desired outcome.
+The scope defines what's in and what's out.
+Together, they allow evaluating proposed requirements.
+
+Techniques for requirements elicitation:
+
+- Identify events.
+- Hold interviews with individual stakeholders.
+- Hold workshops with multiple stakeholders.
+- Observe user do their work.
+- Distribute questionnaires.
+- Analyze existing documents.
+- Examine problem reports.
+- Reuse requirements based on business rules.
+
+Software has a cost, which developers estimate.
+Customers should respect those estimates.
+Some features may be expensive or even infeasible.
+Sometimes changing features can make them attainable or cheaper.
+
+Customers set requirement priorities.
+Combined with cost estimates, these make it possible to deliver maximum value at the lowest cost at the right time.
+
+Customers must establish **acceptance criteria**, predefined conditions that the product must meet   to be acceptable.
+Without acceptance criteria, there is no way of knowing whether the product meets the requirement.
+
+Requirements may change as customers learn more and as the business evolves.
+See [change management](#requirements-management) below.
 
 
 ## Analysis
@@ -98,7 +154,7 @@ They should also be version-controlled.
 
 ## Validation
 
-**Validation** confirms that you have the correct set of requirements information to enable developers to build
+**Validation** confirms that you have the correct set of requirements to enable developers to build
 a solution that satisfies the business objectives.
 
 Various studies suggest that errors introduced during requirements activities account for 40-50% of all defects found
@@ -119,4 +175,11 @@ Prevent gold plating by tracing each bit of functionality back to requirements a
 
 ## Requirements management
 
-TODO
+Everyone must agree on the requirements:
+
+- Customers agree that the requirements address their needs.
+- Developers agree that the requirements are possible and verifiable.
+- The sponsor agrees that the requirements achieve the business objectives.
+
+A **requirements baseline** is a set of reviewed and agreed upon requirements that serves as the basis for development.
+The analyst should place the baseline under change control.
