@@ -104,7 +104,8 @@ collaborators need.
 The business analyst forges this collaborative partnership.
 
 It's important for non-business people to speak the language of the business.
-Put together a glossary of terms.
+Put together a glossary of terms, including synonyms, acronyms, and abbreviations.
+Conversely, it's useful to train stakeholders in the fundamentals of software development.
 
 The **vision and scope document** contains the business requirements.
 The vision provides a shared understanding of the desired outcome.
@@ -119,16 +120,12 @@ Techniques for requirements elicitation:
 - Observe user do their work.
 - Distribute questionnaires.
 - Analyze existing documents.
+- Analyze external interfaces.
 - Examine problem reports.
 - Reuse requirements based on business rules.
 
-Software has a cost, which developers estimate.
-Customers should respect those estimates.
-Some features may be expensive or even infeasible.
-Sometimes changing features can make them attainable or cheaper.
-
-Customers set requirement priorities.
-Combined with cost estimates, these make it possible to deliver maximum value at the lowest cost at the right time.
+Present requirements in different ways to stakeholders to reveal more insights.
+Text vs diagram, requirement vs acceptance test.
 
 Customers must establish **acceptance criteria**, predefined conditions that the product must meet   to be acceptable.
 Without acceptance criteria, there is no way of knowing whether the product meets the requirement.
@@ -141,7 +138,26 @@ See [change management](#requirements-management) below.
 
 **Analysis** involves reaching a richer and more precise understanding of each requirement and representing sets of
 requirements in multiple ways.
+
+Model the environment.
+A **context diagram** shows how the system fits in the ecosystem.
+An **ecosystem map** is similar, but also shows systems of interest that the product doesn't itself interact with.
+
+Model the system.
 An **analysis model** is a diagram that depicts requirements visually, which sometimes makes it easier to find flaws.
+Examples are DFDs, ERs, STDs, dialog maps, and decision trees.
+
+**Prototypes** are partial or preliminary implementations that make concepts and possibilities more tangible.
+They give users get more clarity on requirements, and developers more clarity on viability.
+
+Software has a cost, which developers estimate.
+Customers should respect those estimates.
+Some features may be expensive or even infeasible.
+Sometimes changing features can make them attainable or cheaper.
+
+Customers set requirement priorities.
+Combined with cost estimates, these make it possible to deliver maximum value at the lowest cost at the right time.
+Priorities can change over time.
 
 
 ## Specification
@@ -150,6 +166,14 @@ An **analysis model** is a diagram that depicts requirements visually, which som
 well-organized fashion.
 We should record requirements in a shareable form, rather than using an oral tradition.
 They should also be version-controlled.
+
+Use templates for consistency.
+
+Trace requirements back to their origin: use case, system requirement, or business rule.
+Record the stakeholders requesting each requirement.
+Assign a unique ID to each requirement.
+
+Keep business rules separate from requirements, since their scope is wider.
 
 
 ## Validation
@@ -170,7 +194,14 @@ To combat this:
 - Write tests against the requirements.
 - Build prototypes.
 
-Prevent gold plating by tracing each bit of functionality back to requirements and business objectives.
+Reject requirements that don't contribute to the stated business objectives.
+
+Ensure that requirements have acceptance criteria and, if possible, acceptance tests.
+Examples of acceptance criteria that aren't based on acceptance tests:
+
+- The number of open issues is under some maximum.
+- Training is in place.
+- Documentation is available.
 
 
 ## Requirements management
@@ -182,4 +213,15 @@ Everyone must agree on the requirements:
 - The sponsor agrees that the requirements achieve the business objectives.
 
 A **requirements baseline** is a set of reviewed and agreed upon requirements that serves as the basis for development.
-The analyst should place the baseline under change control.
+The analyst should place the baseline under change and version control.
+For effective change control, there needs to be a process for proposing, evaluating, and deciding on requirement changes.
+Impact analysis helps to assess the cost of proposed changes, as does having a traceability matrix.
+
+Each requirement is one record in a Requirements Management (RM) system.
+Requirements have attributes, like origin and status.
+
+A requirements traceability matrix is a set of links between requirements and other artifacts, such as design and code
+elements.
+It also links functional requirements to higher-level user and business requirements and other related requirements.
+
+When possible, organize requirements into related sets and deliver those sets incrementally.
