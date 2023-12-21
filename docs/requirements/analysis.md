@@ -5,7 +5,8 @@ However, we feel that some issues remain:
 
 - There isn't always someone who can give us the requirements.
 - Requirements elicitation takes a long time because the development team needs to learn the domain.
-- Software has a certain shape that should affect how we express requirements.
+- Software has a certain shape that should affect how we express functional requirements.
+- Guidance on specifying non-functional requirements is thin.
 
 Let's explore these issues in more detail.
 
@@ -285,7 +286,8 @@ Some acceptance tests run automatically as part of the product's test suite; oth
 in User Acceptance Testing (UAT).
 
 @@Adzic2009 argues that all acceptance tests, whether manual or automated, are best written using examples.
-@@Smart2014 provides a template for doing that using the following form:
+Examples elaborate requirements and can become tests that verify the requirements.
+This template for specifying examples makes them easy to turn into tests:
 
 ```text
 Given <some initial state>
@@ -296,6 +298,23 @@ Then <expect some new state and/or output>
 This approach maps nicely to states and transitions of a Turing Machine or other automaton @@Martin2008.
 We therefore argue that at least all automated acceptance tests for functional requirements should take this form.
 For requirements around quality attributes other than functionality, this format may be too restrictive.
+
+Many requirements need more than one example to fully specify them.
+The examples for a given requirement often deal with the same state and input.
+In such cases, it makes sense to condense the examples using a table.
+Tables make it easier to spot missing combinations.
+
+```text
+Given the order total is <total>
+When the order is confirmed
+Then the discount to subtract from it is <discount>
+
+Examples:
+| total   | discount |
+| $99.99  | $0.00    |
+| $100.00 | $1.00    |
+| $250.00 | $5.00    |
+```
 
 If we look at acceptance criteria through the lens of event storming, we see two specializations of the generic
 `Given/When/Then` format.
@@ -315,3 +334,74 @@ Given <the policy's read model returns some information>
 When <the policy reacts to an event>
 Then <the policy issues a command>
 ```
+
+
+## Specifying non-functional requirements
+
+**Non-functional requirements** are requirements that target a quality attribute other than _functionality_.
+These requirement don't deal so much with _what_ happens, but more with _how_: how fast, how easy, how secure, etc.
+That makes it less natural to express such requirements using the `Given/When/Then` format that focuses on the _what_.
+
+For instance, for the quality attribute _performance_, we may use the metrics of throughput and latency.
+**Throughput** is the number of requests per second the system processes, while **latency** is the number of seconds it
+takes to handle requests.
+
+We usually don't care much about the latency of a single request being over 3 seconds.
+If this happens only once over the lifetime of a system, then that's annoying but usually not a big deal.
+Unless we're talking about a safety-critical system, of course.
+
+The same holds for other non-functional requirements.
+Consider usability, for instance.
+We may require that 90% of the users can find the right next action within 5 seconds of the system presenting them
+some information.
+We don't care that one person one day was sleep-deprived and slow.
+
+What we care about instead, is that some metric is below its threshold _on average_ (50th percentile, or p50).
+Or in 95% of cases (p95), or some other statistical relationship.
+Often we want several such relationships to hold at the same time, like p50 $\leq$ 3s **and** p95 $\leq$ 5s.
+
+The statistical nature of such requirements means we can't test them with a single test, like we can for functional
+requirements.
+It also often means we must run the tests in production to get meaningful results.
+
+You may force acceptance tests for non-functional requirements into the `Given/When/Then` format:
+
+```text
+Given there are 100 concurrent users
+When users search for some order
+Then they receive search results within 3 seconds on average
+```
+
+However, this results in tests that are quite vague.
+What searches do the users perform?
+Are these searches finding the same orders?
+How many orders are there in the system?
+What's the interval between searches?
+
+We then risk such vagueness to spill over into the tests for functional requirements.
+That would be a shame.
+
+A better format is the following:
+
+1. **Objective**:
+  The non-functional requirement under consideration.
+  Define the quality attribute (performance, security, usability, etc).
+1. **Scenario**:
+  Describe conditions under which to test the non-functional requirement.
+  This may involve setting up certain environmental conditions or specifying user interactions.
+  The scenario corresponds to the `Given` part of the `Given/When/Then` format.
+1. **Criteria**:
+  Outline the metrics to collect.
+  Specify their thresholds or acceptable ranges using percentiles.
+1. **Procedure**:
+  Provide step-by-step instructions for conducting the test.
+  This may involve specific actions, measurements, or observations.
+  The procedure corresponds to the `When` part of `Given/When/Then`.
+  Some people refer to this as the **fitness function** @@Ford2017.
+1. **Expected results**:
+  State the expected outcomes based on the defined criteria.
+  Specify what success looks like and what would constitute a pass or fail for the acceptance test.
+  The results correspond to the `Then` part of `Given/When/Then`.
+1. **Constraints**:
+  Specify any limitations associated with the test, such as specific environments, user roles, or
+  other contextual factors.
