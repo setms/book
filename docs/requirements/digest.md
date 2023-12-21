@@ -67,7 +67,14 @@ Requirements engineering is the realm of the **business analyst**.
 This can be a job title or a role performed by people that also perform other roles.
 The analyst serves as the principal interpreter through which requirements flow between the customer community and
 the software development team @@Wiegers2013.
-Business analysts have their own body of knowledge @@BABOK2015.
+
+For consumer software, the **product manager** plays the role of business analyst.
+Both roles can also coexist, with the product manager focusing on the external market and user demands, and the BA
+converting those into functional requirements.
+
+Business analysts have their own body of knowledge @@BABOK2015, including an extension for Agile software
+development @@AgileBABOK2017.
+
 
 **Requirements development** aims to collect good enough requirements to allow the team to start design and
 construction at an acceptable level of risk @@Wiegers2013.
@@ -89,14 +96,6 @@ described by a set of functional requirements.
 --- @@Wiegers2013
 ```
 
-Lack of adequate customer involvement leads to an **expectation gap**, a gulf between what customers need and what
-developers deliver.
-To keep this gap to a minimum, arrange frequent contact point for customer representatives, especially users.
-Customers sometimes don't articulate points that they believe are common knowledge.
-
-**Direct users** operate the product.
-**Indirect users** receive output from the product without touching it themselves.
-
 Excellent software is the result of well-executed design based on excellent requirements.
 Excellent requirements result from effective collaboration between developers and customers.
 This requires that all parties know what they need to be successful and understand and respect what their
@@ -106,6 +105,20 @@ The business analyst forges this collaborative partnership.
 It's important for non-business people to speak the language of the business.
 Put together a glossary of terms, including synonyms, acronyms, and abbreviations.
 Conversely, it's useful to train stakeholders in the fundamentals of software development.
+
+In most cases, more than one category of user, or **user class**, exists.
+The analyst works with the business sponsor to select representatives of each, known as **product champions**.
+
+Lack of adequate customer involvement leads to an **expectation gap**, a gulf between what customers need and what
+developers deliver.
+To keep this gap to a minimum, arrange frequent contact points with product champions.
+
+If the product targets consumers, **focus groups** can take the place of product champions.
+It's then even more important to understand what job the consumer is trying to do that the software can help with
+@@Christensen2016.
+
+**Direct users** operate the product.
+**Indirect users** receive output from the product without touching it themselves.
 
 The **vision and scope document** contains the business requirements.
 The vision provides a shared understanding of the desired outcome.
@@ -146,6 +159,10 @@ An **ecosystem map** is similar, but also shows systems of interest that the pro
 Model the system.
 An **analysis model** is a diagram that depicts requirements visually, which sometimes makes it easier to find flaws.
 Examples are DFDs, ERs, STDs, dialog maps, and decision trees.
+
+Look for derived requirements that are a logical consequence of requests.
+Customers sometimes don't articulate points that they believe are obvious, so look for implicit requirements as well.
+Another source of missed requirements stem from error conditions.
 
 **Prototypes** are partial or preliminary implementations that make concepts and possibilities more tangible.
 They give users get more clarity on requirements, and developers more clarity on viability.
@@ -217,11 +234,11 @@ The analyst should place the baseline under change and version control.
 For effective change control, there needs to be a process for proposing, evaluating, and deciding on requirement changes.
 Impact analysis helps to assess the cost of proposed changes, as does having a traceability matrix.
 
-Each requirement is one record in a Requirements Management (RM) system.
-Requirements have attributes, like origin and status.
-
-A requirements traceability matrix is a set of links between requirements and other artifacts, such as design and code
+A **requirements traceability matrix** is a set of links between requirements and other artifacts, such as design and code
 elements.
 It also links functional requirements to higher-level user and business requirements and other related requirements.
+
+Each requirement is one record in a Requirements Management (RM) system.
+Requirements have attributes, like origin and status.
 
 When possible, organize requirements into related sets and deliver those sets incrementally.
