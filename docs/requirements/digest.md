@@ -16,7 +16,7 @@ They may be a constraint on the development of the system.
 @@Wiegers2013 recognizes different kinds of requirements:
 
 - **Business requirements** describe _why_ the organization is developing a system; the benefits they hope to achieve
-  in the form of high-level business objectives.
+  in the form of a project vision, high-level business objectives, and success metrics.
 - **System requirements** describe the requirements for a system that consists of multiple subsystems.
   An **external interface requirement** describes the connection between the system and other systems, hardware, or
   users.
@@ -107,7 +107,9 @@ Put together a glossary of terms, including synonyms, acronyms, and abbreviation
 Conversely, it's useful to train stakeholders in the fundamentals of software development.
 
 In most cases, more than one category of user, or **user class**, exists.
-The analyst works with the business sponsor to select representatives of each, known as **product champions**.
+Some people call user classes stakeholder profiles.
+The analyst works with the business sponsor to select representatives of each user class, known as **product champions**.
+The project's decision makers must resolve conflicts between user classes, focusing on the primary stakeholders.
 
 Lack of adequate customer involvement leads to an **expectation gap**, a gulf between what customers need and what
 developers deliver.
@@ -120,10 +122,25 @@ It's then even more important to understand what job the consumer is trying to d
 **Direct users** operate the product.
 **Indirect users** receive output from the product without touching it themselves.
 
-The **vision and scope document** contains the business requirements.
-The vision provides a shared understanding of the desired outcome.
-The scope defines what's in and what's out.
-Together, they allow evaluating proposed requirements.
+The **vision and scope document** contains the business requirements, scope, and business context.
+Other names for this document are project charter, business case document, or Market Requirements Document (MRD).
+Whatever the name, the business sponsor is the owner.
+
+The **vision** provides a shared understanding of the desired outcome: what the project is about and should become.
+It applies to the product as a whole and should change only when the company's business objectives do.
+
+The **scope** defines what part of the vision the current project or iteration addresses.
+At a high level, it's about what business objective to target.
+At a lower level, it's about what features to include.
+Vision and scope together allow evaluating proposed requirements for project fit.
+
+The vision and scope document also establishes priorities.
+Categorize the five dimensions (features, quality, schedule, cost, and staff) as either **constraint**, **driver**, or
+**degree of freedom**.
+Not all dimensions can be constraints or drivers; degrees of freedom allow responding to changes in requirements or
+project realities.
+For instance, many Agile methods treat schedule & quality as constraints, features & cost as drivers, and scope as
+a degree of freedom.
 
 Techniques for requirements elicitation:
 
@@ -153,12 +170,15 @@ See [change management](#requirements-management) below.
 requirements in multiple ways.
 
 Model the environment.
-A **context diagram** shows how the system fits in the ecosystem.
-An **ecosystem map** is similar, but also shows systems of interest that the product doesn't itself interact with.
+A **context diagram** shows how the system fits in the ecosystem @@Brown2016.
+An **ecosystem map** is similar, but also shows external systems that the product doesn't itself interact with.
+An **event list** identifies external events that trigger behavior in the system.
+Events originate from users, time, or external systems.
 
 Model the system.
 An **analysis model** is a diagram that depicts requirements visually, which sometimes makes it easier to find flaws.
 Examples are DFDs, ERs, STDs, dialog maps, and decision trees.
+A **feature tree** organizes features in logical groups and hierarchies.
 
 Look for derived requirements that are a logical consequence of requests.
 Customers sometimes don't articulate points that they believe are obvious, so look for implicit requirements as well.
@@ -172,8 +192,10 @@ Customers should respect those estimates.
 Some features may be expensive or even infeasible.
 Sometimes changing features can make them attainable or cheaper.
 
-Customers set requirement priorities.
+Customers set requirement priorities based on the contribution towards business objectives.
 Combined with cost estimates, these make it possible to deliver maximum value at the lowest cost at the right time.
+Non-functional requirements that affect the architecture should receive high priority, because rearchitecting is
+expensive.
 Priorities can change over time.
 
 
@@ -191,6 +213,8 @@ Record the stakeholders requesting each requirement.
 Assign a unique ID to each requirement.
 
 Keep business rules separate from requirements, since their scope is wider.
+
+To prevent recurring discussions, record rejected requirements and the reasons for their rejection.
 
 
 ## Validation
