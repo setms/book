@@ -77,6 +77,7 @@ The SWEBOK uses the word "engineering" a lot, but is what it describes actually 
 The year after SWEBOK V3 came out, Mary Shaw argued that what we're doing in software development isn't engineering
 @@Shaw2015.
 Alan Kay recently agreed @@Kay2021.
+This debate keeps flaring up from time to time @@DeMarco2009, @@Holub2023.
 
 Some random data points further support this assessment:
 
