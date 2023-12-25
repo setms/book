@@ -108,16 +108,24 @@ Conversely, it's useful to train stakeholders in the fundamentals of software de
 
 In most cases, more than one category of user, or **user class**, exists.
 Some people call user classes stakeholder profiles.
-The analyst works with the business sponsor to select representatives of each user class, known as **product champions**.
-The project's decision makers must resolve conflicts between user classes, focusing on the primary stakeholders.
+User classes needn't represent humans; they can also be external systems.
 
-Lack of adequate customer involvement leads to an **expectation gap**, a gulf between what customers need and what
-developers deliver.
-To keep this gap to a minimum, arrange frequent contact points with product champions.
+The analyst works with the business sponsor to select representatives of each user class, known as **product champions**.
+The project's decision makers must resolve conflicts between user classes, focusing on the primary stakeholders, also
+known as **favored user classes**.
+
+**Disfavored user classes** are groups who aren't supposed to use the product for legal, security, or safety reasons.
+Functional requirements for these user classes focus on making it hard for them to use the product, like authentication
+and authorization.
+In this context, some people talk about **abuse cases** instead of use cases.
 
 If the product targets consumers, **focus groups** can take the place of product champions.
 It's then even more important to understand what job the consumer is trying to do that the software can help with
 @@Christensen2016.
+
+Lack of adequate customer involvement leads to an **expectation gap**, a gulf between what customers need and what
+developers deliver.
+To keep this gap to a minimum, arrange frequent contact points with product champions.
 
 **Direct users** operate the product.
 **Indirect users** receive output from the product without touching it themselves.
