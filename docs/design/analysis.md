@@ -28,10 +28,14 @@ Security / compatibility:
 Performance / scalability:
 
 - Each aggregate and policy has implied queues for accepting commands and handling events.
-  Apply queueing theory to analyze performance characteristics for individual queues and for the system as a whole.
-  This analysis is usually computationally intractable, so it's best to measure arrival and service times
-  and store them as metrics.
-  Then scale dynamically based on those metrics.
+  In theory, we can use queueing theory to analyze such systems.
+  In practice, this approach runs into some issues, like unknown arrival and service time distributions.
+  The theoretical models usually assume that work for server processes is independent and can therefore occur in
+  parallel.
+  In practice, this is seldom the case, and Amdahl's law comes into play @@Amdahl1967.
+  These problems mean that mathematical analysis is usually computationally intractable or at least impractical.
+  It's best to measure arrival and service times, store these as metrics, and then scale dynamically based on the
+  collected metrics.
 - Some commands require synchronous processing, because the caller needs a result.
   The latency for processing such commands is the laterncy of the entire process.
   For asynchronous commands, the latency is just the work for validating the input.
