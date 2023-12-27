@@ -72,9 +72,11 @@ For consumer software, the **product manager** plays the role of business analys
 Both roles can also coexist, with the product manager focusing on the external market and user demands, and the BA
 converting those into functional requirements.
 
+In Agile projects, the **product owner** plays the role of business analyst, although sometimes both roles are
+present.
+
 Business analysts have their own body of knowledge @@BABOK2015, including an extension for Agile software
 development @@AgileBABOK2017.
-
 
 **Requirements development** aims to collect good enough requirements to allow the team to start design and
 construction at an acceptable level of risk @@Wiegers2013.
@@ -107,17 +109,23 @@ Put together a glossary of terms, including synonyms, acronyms, and abbreviation
 Conversely, it's useful to train stakeholders in the fundamentals of software development.
 
 In most cases, more than one category of user, or **user class**, exists.
-Some people call user classes stakeholder profiles.
+Some people call user classes **stakeholder profiles** or **personas**.
 User classes needn't represent humans; they can also be external systems.
+Document user classes and their responsibilities, characteristics, numbers, and locations.
 
 The analyst works with the business sponsor to select representatives of each user class, known as **product champions**.
+Product champions gather requirements for all users in their class, so make sure they have the authority and trust
+required to do that.
+Ideally, product champions are actual (intended) users of the system.
+
 The project's decision makers must resolve conflicts between user classes, focusing on the primary stakeholders, also
 known as **favored user classes**.
 
 **Disfavored user classes** are groups who aren't supposed to use the product for legal, security, or safety reasons.
 Functional requirements for these user classes focus on making it hard for them to use the product, like authentication
 and authorization.
-In this context, some people talk about **abuse cases** instead of use cases.
+In this context, some people talk about **abuse cases** that the system should prevent instead of use cases to make
+possible.
 
 If the product targets consumers, **focus groups** can take the place of product champions.
 It's then even more important to understand what job the consumer is trying to do that the software can help with
@@ -126,6 +134,7 @@ It's then even more important to understand what job the consumer is trying to d
 Lack of adequate customer involvement leads to an **expectation gap**, a gulf between what customers need and what
 developers deliver.
 To keep this gap to a minimum, arrange frequent contact points with product champions.
+Don't limit this interaction to requirements, but involve users in as many activities as sensible.
 
 **Direct users** operate the product.
 **Indirect users** receive output from the product without touching it themselves.
