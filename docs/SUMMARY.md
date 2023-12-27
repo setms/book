@@ -2,6 +2,7 @@
 
 <!-- vale Google.Headings = NO -->
 
+[](dedication.md)
 [Preface](preface.md)
 
 # Part I: Introduction
@@ -19,7 +20,11 @@
   - [Concepts](requirements/concepts.md)
   - [Analysis](requirements/analysis.md)
 
-- [Design](design.md)
+- [Design](design/index.md)
+  - [Digest](design/digest.md)
+  - [Concepts](design/concepts.md)
+  - [Analysis](design/analysis.md)
+
 - [Construction](construction.md)
 - [Testing](testing.md)
 - [Maintenance](maintenance.md)
