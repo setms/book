@@ -7,6 +7,7 @@ However, we feel that some issues remain:
 - Requirements elicitation takes a long time because the development team needs to learn the domain.
 - Software has a certain shape that should affect how we express functional requirements.
 - Guidance on specifying non-functional requirements is thin.
+- The Agile requirements process is misunderstood and weak.
 
 Let's explore these issues in more detail.
 
@@ -386,22 +387,87 @@ A better format is the following:
 1. **Objective**:
   The non-functional requirement under consideration.
   Define the quality attribute (performance, security, usability, etc).
-1. **Scenario**:
+2. **Scenario**:
   Describe conditions under which to test the non-functional requirement.
   This may involve setting up certain environmental conditions or specifying user interactions.
   The scenario corresponds to the `Given` part of the `Given/When/Then` format.
-1. **Criteria**:
+3. **Criteria**:
   Outline the metrics to collect.
   Specify their thresholds or acceptable ranges using percentiles.
-1. **Procedure**:
+4. **Procedure**:
   Provide step-by-step instructions for conducting the test.
   This may involve specific actions, measurements, or observations.
   The procedure corresponds to the `When` part of `Given/When/Then`.
   Some people refer to this as the **fitness function** @@Ford2017.
-1. **Expected results**:
+5. **Expected results**:
   State the expected outcomes based on the defined criteria.
   Specify what success looks like and what would constitute a pass or fail for the acceptance test.
   The results correspond to the `Then` part of `Given/When/Then`.
-1. **Constraints**:
+6. **Constraints**:
   Specify any limitations associated with the test, such as specific environments, user roles, or
   other contextual factors.
+
+
+## Requirements engineering in Agile methods
+
+Agile processes remain misunderstood.
+For instance, @@Wiegers2013 describes user stories as comparable to use cases.
+They're not.
+
+In Agile processes, a **user story** is "a promise for a conversation."
+Agile processes are lean, and user stories are a good example of their Just-In-Time (JIT) nature.
+We don't want to waste time elaborating on requirements until we're ready to implement them.
+A user story is a _scheduling tool_.
+We put user stories on the backlog until it's time to work on them.
+
+To schedule work, we need to understand its costs and benefits, so that we can prioritize it against other work.
+The product owner and development team discuss the work in just enough detail to get both.
+Once the team is ready to work on the user story in an iteration, it completes the requirements engineering work and
+implements the requirements.
+
+The confusion around user stories comes at least in part from its name, which isn't accurate.
+A user story is neither a story nor necessarily about a user.
+We can see this when we consider the canonical form of a user story:
+
+```text
+As a <stakeholder>,
+I want <some functionality>
+In order to <get a benefit>.
+```
+
+The stakeholder may be a user, or it may be a non-user stakeholder, like a compliance officer, business sponsor, or
+developer.
+Here's an example of the latter that shows that user stories are about work rather than requirements:
+
+```text
+As a developer,
+I want to upgrade Java to 21
+In order to improve the code using new language features
+```
+
+A user story's one sentence isn't a story, as @@Sommerville2011 thinks.
+This misunderstanding probably reflect the authors' lack of experience with Agile methods.
+Part of that lack of experience stems from resistance to try out Agile methods.
+This resistance, in turn, partly comes from a real or perceived lack of rigor.
+
+Some of that criticism is fair.
+
+Agile methods like eXtreme Programming @@Beck2000 have a strong oral culture around requirements.
+This works fine when staff turnover is low, but breaks down when people leave frequently and others join.
+The product owner is an especially critical role in that sense.
+New joiners have to rely on the shared memory of the existing team to relearn the requirements.
+This process is both slow and error-prone in the face of fading memories.
+Having acceptance tests helps, but they can't capture all acceptance criteria.
+And when they can, they still don't explain the rationale.
+
+You also can't link to a conversation people had in the past, so [requirements tracing](digest.md#specification)
+becomes impossible in an oral culture.
+That in turn makes it harder than necessary to perform an impact analysis of proposed changes.
+
+It doesn't have to be this way, though.
+We don't have to throw out the JIT baby with the oral requirements bath water.
+We can evolve the requirements documentation just like we evolve the code.
+Valuing working software over comprehensive documentation @@AgileManifesto doesn't mean we can't or shouldn't write
+documentation at all.
+Remember, `there is value in the items on the right` (documentation) when written to serve a need rather than for its
+own sake.
