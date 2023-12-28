@@ -20,6 +20,7 @@ They may be a constraint on the development of the system.
 - **System requirements** describe the requirements for a system that consists of multiple subsystems.
   An **external interface requirement** describes the connection between the system and other systems, hardware, or
   users.
+  Some people use this term to refer to what we here label functional requirements.
 - **User requirements** describe goals or tasks the users must be able to perform with the product to realize the
   business requirements.
   Most systems support multiple user classes, as well as other stakeholders, like legal officers and developers.
@@ -85,8 +86,45 @@ Requirements development is an iterative process of progressive refinement of de
 
 ## Elicitation
 
-**Elicitation** consists of activities involved with discovering requirements, such as interviews, workshops,
-document analysis, prototyping, etc.
+**Elicitation** is the process of identifying the needs and constraints of the various stakeholders.
+For any given project, you'll probably need to use more than one of the following elicitation techniques:
+
+- Identify **events**.
+- Hold **interviews** with individual stakeholders.
+  Come prepared with questions and use active listening @@Rogers1951.
+  When replacing an existing system, a good question is what annoys the user the most about it.
+  It also helps to come with a draft model that the user can critique.
+  Assign someone not actively participating in the discussion to take notes.
+- Hold **workshops** with multiple stakeholders.
+  These are especially useful for resolving disagreements, so hold them after using other techniques that surface those
+  disagreements.
+  Workshops may take on a life of their own, so refer to the business requirements to enforce scope and focus on the
+  right level of abstraction for the session's objectives.
+  Smaller groups work faster than larger ones.
+- **Observe** users do their work.
+  Limit sessions to two hours and focus on high-risk tasks.
+  Use silent observations when you can't interrupt users with questions.
+- Distribute **questionnaires**.
+  These are cheaper than alternatives when surveying large numbers of users.
+  Their analysis can serve as input for other techniques that target smaller numbers of users.
+- Analyze **existing systems**.
+  Attempt to find the underlying need for offered features and assess whether the new system must address the same needs.
+  Problem reports can give good ideas.
+- Analyze **existing documents**.
+  Examples are requirement specifications, business processes, user manuals, corporate and industry standards, and
+  comparative reviews.
+  Remember that documents may not be up-to-date.
+- Analyze **interfaces** with external systems.
+  This analysis gives technical requirements around data formats and data validation rules.
+- **Reuse** requirements based on pre-existing business rules.
+
+Try to keep design out of the requirements as much as possible.
+For instance, focus on user tasks rather than user interfaces.
+Reject the solutions that stakeholders often offer.
+Instead, describe the underlying needs that those solutions address.
+In other words, understand the job the customer is hiring the software to do @@Christensen2016.
+The _Five Whys_ technique may help to go from a proposed solution to the underlying need @@Ohno1988.
+
 Elicitation is usually either usage-centric or product-centric.
 The usage-centric approach emphasizes understanding and exploring user goals to derive functionality.
 The product-centric approach focuses on defining features expected to lead to marketplace or business success.
@@ -104,78 +142,56 @@ This requires that all parties know what they need to be successful and understa
 collaborators need.
 The business analyst forges this collaborative partnership.
 
-It's important for non-business people to speak the language of the business.
+A partnership requires that partners speak the same language, so learn the language of the business.
 Put together a glossary of terms, including synonyms, acronyms, and abbreviations.
-Conversely, it's useful to train stakeholders in the fundamentals of software development.
+Conversely, it may be useful to train stakeholders in the fundamentals of software development.
 
 In most cases, more than one category of user, or **user class**, exists.
 Some people call user classes **stakeholder profiles** or **personas**.
 User classes needn't represent humans; they can also be external systems.
 Document user classes and their responsibilities, characteristics, numbers, and locations.
+Decide which elicitation techniques to use with which user classes.
+
+**Direct users** operate the product.
+**Indirect users** receive output from the product without touching it themselves.
 
 The analyst works with the business sponsor to select representatives of each user class, known as **product champions**.
 Product champions gather requirements for all users in their class, so make sure they have the authority and trust
 required to do that.
-Ideally, product champions are actual (intended) users of the system.
+Ideally, product champions are actual users of the system.
 
-The project's decision makers must resolve conflicts between user classes, focusing on the primary stakeholders, also
-known as **favored user classes**.
+If the product targets customers outside the organization developing the software, focus groups can take the place
+of product champions.
+A **focus group** is a representative group of users who convene to generate input and ideas for requirements.
+
+The project's decision makers must resolve conflicts between user classes.
+The primary stakeholders, also known as **favored user classes**, get priority.
 
 **Disfavored user classes** are groups who aren't supposed to use the product for legal, security, or safety reasons.
-Functional requirements for these user classes focus on making it hard for them to use the product, like authentication
-and authorization.
-In this context, some people talk about **abuse cases** that the system should prevent instead of use cases to make
-possible.
-
-If the product targets consumers, **focus groups** can take the place of product champions.
-It's then even more important to understand what job the consumer is trying to do that the software can help with
-@@Christensen2016.
+Functional requirements for these user classes focus on making it hard for them to use the product.
+Examples are authentication to keep people from using the system at all, and authorization to prevent them from
+using specific features.
+In this context, some people talk about **abuse cases** that the system should prevent instead of use cases that make
+something possible.
 
 Lack of adequate customer involvement leads to an **expectation gap**, a gulf between what customers need and what
 developers deliver.
 To keep this gap to a minimum, arrange frequent contact points with product champions.
 Don't limit this interaction to requirements, but involve users in as many activities as sensible.
 
-**Direct users** operate the product.
-**Indirect users** receive output from the product without touching it themselves.
-
-The **vision and scope document** contains the business requirements, scope, and business context.
-Other names for this document are project charter, business case document, or Market Requirements Document (MRD).
-Whatever the name, the business sponsor is the owner.
-
-The **vision** provides a shared understanding of the desired outcome: what the project is about and should become.
-It applies to the product as a whole and should change only when the company's business objectives do.
-
-The **scope** defines what part of the vision the current project or iteration addresses.
-At a high level, it's about what business objective to target.
-At a lower level, it's about what features to include.
-Vision and scope together allow evaluating proposed requirements for project fit.
-
-The vision and scope document also establishes priorities.
-Categorize the five dimensions (features, quality, schedule, cost, and staff) as either **constraint**, **driver**, or
-**degree of freedom**.
-Not all dimensions can be constraints or drivers; degrees of freedom allow responding to changes in requirements or
-project realities.
-For instance, many Agile methods treat schedule & quality as constraints, features & cost as drivers, and scope as
-a degree of freedom.
-
-Techniques for requirements elicitation:
-
-- Identify events.
-- Hold interviews with individual stakeholders.
-- Hold workshops with multiple stakeholders.
-- Observe user do their work.
-- Distribute questionnaires.
-- Analyze existing documents.
-- Analyze external interfaces.
-- Examine problem reports.
-- Reuse requirements based on business rules.
-
-Present requirements in different ways to stakeholders to reveal more insights.
-Text vs diagram, requirement vs acceptance test.
-
-Customers must establish **acceptance criteria**, predefined conditions that the product must meet   to be acceptable.
+Stakeholders must establish **acceptance criteria**, predefined conditions that the product must meet to be acceptable.
 Without acceptance criteria, there is no way of knowing whether the product meets the requirement.
+Boundary values are especially interesting.
+
+It's easy to miss requirements:
+
+- **Assumed requirements** are those that users expect without explicitly expressing them.
+  Non-functional requirements are often assumed.
+- **Implied requirements** are those that are necessary because of another requirement.
+- Different user classes have different requirements, so make sure to involve representatives of all user classes.
+- High-level requirements are often too vague.
+  Decomposing them into more detail may bring to light other requirements, including implied ones.
+- A checklists of common functional areas may help to increase coverage.
 
 Requirements may change as customers learn more and as the business evolves.
 See [change management](#requirements-management) below.
@@ -220,10 +236,34 @@ Priorities can change over time.
 
 **Specification** involves representing and storing the collected requirements knowledge in a persistent and
 well-organized fashion.
-We should record requirements in a shareable form, rather than using an oral tradition.
+We should record requirements in a shareable form, rather than using an
+[oral tradition](analysis.md#requirements-engineering-in-agile-methods).
 They should also be version-controlled.
 
 Use templates for consistency.
+
+The **vision and scope document** contains the business requirements, scope, and business context.
+Other names for this document are project charter, business case document, or Market Requirements Document (MRD).
+Whatever the name, the business sponsor is the owner.
+
+The **vision** provides a shared understanding of the desired outcome: what the project is about and should become.
+It applies to the product as a whole and should change only when the company's business objectives do.
+
+The **scope** defines what part of the vision the current project or iteration addresses.
+At a high level, it's about what business objective to target.
+At a lower level, it's about what features to include.
+Vision and scope together allow evaluating proposed requirements for project fit.
+
+The vision and scope document also establishes priorities.
+Categorize the five dimensions (features, quality, schedule, cost, and staff) as either **constraint**, **driver**, or
+**degree of freedom**.
+Not all dimensions can be constraints or drivers; degrees of freedom allow responding to changes in requirements or
+project realities.
+For instance, many Agile methods treat schedule & quality as constraints, features & cost as drivers, and scope as
+a degree of freedom.
+
+Present requirements in different ways to stakeholders to reveal more insights.
+For instance, text vs diagram or use case vs acceptance test.
 
 Trace requirements back to their origin: use case, system requirement, or business rule.
 Record the stakeholders requesting each requirement.
