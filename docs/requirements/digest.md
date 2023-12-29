@@ -23,9 +23,6 @@ They may be a constraint on the development of the system.
   Some people use this term to refer to what we here label functional requirements.
 - **User requirements** describe goals or tasks the users must be able to perform with the product to realize the
   business requirements.
-  Most systems support multiple user classes, as well as other stakeholders, like legal officers and developers.
-  Direct users operate the system, while indirect users receive outputs from the system without touching it.
-  Make sure all stakeholders have a voice.
 - **Functional requirements** specify the behaviors the system must exhibit under specific conditions.
   They describe what the developers must implement to enable the user requirements.
 - **Non-functional requirements** or **quality attributes** describe the product's characteristics in various
@@ -86,6 +83,41 @@ Requirements development is an iterative process of progressive refinement of de
 
 ## Elicitation
 
+Excellent software is the result of well-executed design based on excellent requirements.
+Excellent requirements result from effective collaboration between developers and customers.
+This requires that all parties know what they need to be successful and understand and respect what their
+collaborators need.
+The business analyst forges this collaborative partnership.
+
+A partnership requires that partners speak the same language, so learn the language of the business.
+Put together a glossary of terms, including synonyms, acronyms, and abbreviations.
+Conversely, it may be useful to train stakeholders in the fundamentals of software development.
+
+In most cases, more than one category of user, or **user class**, exists.
+Some people call user classes **stakeholder profiles** or **personas**.
+User classes needn't represent humans; they can also be external systems.
+Document user classes and their responsibilities, characteristics, numbers, and locations.
+
+**Direct users** operate the product.
+**Indirect users** receive output from the product without touching it themselves.
+
+The analyst works with the business sponsor to select representatives of each user class, known as **product champions**.
+Product champions gather requirements for all users in their class, so make sure they have the authority and trust
+required to do that.
+Ideally, product champions are actual users of the system.
+
+If the product targets customers outside the organization developing the software, focus groups can take the place
+of product champions.
+A **focus group** is a representative group of users who convene to generate input and ideas for requirements.
+
+The project's decision makers must resolve conflicts between user classes.
+The primary stakeholders, also known as **favored user classes**, get priority.
+
+Lack of adequate stakeholder involvement leads to an **expectation gap**, a gulf between what customers need and what
+developers deliver.
+To keep this gap to a minimum, arrange frequent contact points with product champions.
+Don't limit this interaction to requirements, but involve users in as many activities as sensible.
+
 **Elicitation** is the process of identifying the needs and constraints of the various stakeholders.
 For any given project, you'll probably need to use more than one of the following elicitation techniques:
 
@@ -118,12 +150,7 @@ For any given project, you'll probably need to use more than one of the followin
   This analysis gives technical requirements around data formats and data validation rules.
 - **Reuse** requirements based on pre-existing business rules.
 
-Try to keep design out of the requirements as much as possible.
-For instance, focus on user tasks rather than user interfaces.
-Reject the solutions that stakeholders often offer.
-Instead, describe the underlying needs that those solutions address.
-In other words, understand the job the customer is hiring the software to do @@Christensen2016.
-The _Five Whys_ technique may help to go from a proposed solution to the underlying need @@Ohno1988.
+Different techniques work better for different user classes.
 
 Elicitation is usually either usage-centric or product-centric.
 The usage-centric approach emphasizes understanding and exploring user goals to derive functionality.
@@ -136,36 +163,39 @@ described by a set of functional requirements.
 --- @@Wiegers2013
 ```
 
-Excellent software is the result of well-executed design based on excellent requirements.
-Excellent requirements result from effective collaboration between developers and customers.
-This requires that all parties know what they need to be successful and understand and respect what their
-collaborators need.
-The business analyst forges this collaborative partnership.
+In usage-centric requirements elicitation, we capture user requirements in use cases.
+A **use case** describes a sequence of interactions between a system and an actor that results in value for the actor.
+An **actor** is person or external system that interacts with the system.
 
-A partnership requires that partners speak the same language, so learn the language of the business.
-Put together a glossary of terms, including synonyms, acronyms, and abbreviations.
-Conversely, it may be useful to train stakeholders in the fundamentals of software development.
+A use case consists of one or more scenarios.
+The **main success scenario** describes the happy path of the interaction.
+Secondary scenarios, or **alternative flows**, describe variations in interaction, including those for error
+conditions.
+Each scenario has a description, trigger, preconditions, interaction steps, and postconditions.
+Exceptions describe anticipated error conditions and how the system should handle them.
 
-In most cases, more than one category of user, or **user class**, exists.
-Some people call user classes **stakeholder profiles** or **personas**.
-User classes needn't represent humans; they can also be external systems.
-Document user classes and their responsibilities, characteristics, numbers, and locations.
-Decide which elicitation techniques to use with which user classes.
+Users may not be aware of all preconditions, so look to other sources as well.
+Business rules may drive some preconditions, like what role the user must have to perform the scenario.
+They may also define valid input values for or computations performed during the interaction steps.
 
-**Direct users** operate the product.
-**Indirect users** receive output from the product without touching it themselves.
+Users know about those postconditions that relate to the value created for them, but those are usually not the only ones.
+Developers and testers often need postconditions that aren't as visible to the user.
 
-The analyst works with the business sponsor to select representatives of each user class, known as **product champions**.
-Product champions gather requirements for all users in their class, so make sure they have the authority and trust
-required to do that.
-Ideally, product champions are actual users of the system.
+Activity or state diagrams can depict the interactions steps in a use case scenario.
 
-If the product targets customers outside the organization developing the software, focus groups can take the place
-of product champions.
-A **focus group** is a representative group of users who convene to generate input and ideas for requirements.
+The frequency of use gives a first estimation of concurrent usage and capacity requirements.
 
-The project's decision makers must resolve conflicts between user classes.
-The primary stakeholders, also known as **favored user classes**, get priority.
+For products where the complexity lies outside user interactions, you may need other techniques besides use cases,
+like event analysis.
+
+Use cases capture user requirements.
+They focus on the externally visible behavior of the system.
+To complete development, we need more information.
+The extra information takes the form of functional requirements that support the user requirements.
+
+Stakeholders must establish **acceptance criteria**, predefined conditions that the product must meet to be acceptable.
+Without acceptance criteria, there is no way of knowing whether the product meets the requirement.
+Boundary values are especially interesting.
 
 **Disfavored user classes** are groups who aren't supposed to use the product for legal, security, or safety reasons.
 Functional requirements for these user classes focus on making it hard for them to use the product.
@@ -174,14 +204,12 @@ using specific features.
 In this context, some people talk about **abuse cases** that the system should prevent instead of use cases that make
 something possible.
 
-Lack of adequate customer involvement leads to an **expectation gap**, a gulf between what customers need and what
-developers deliver.
-To keep this gap to a minimum, arrange frequent contact points with product champions.
-Don't limit this interaction to requirements, but involve users in as many activities as sensible.
-
-Stakeholders must establish **acceptance criteria**, predefined conditions that the product must meet to be acceptable.
-Without acceptance criteria, there is no way of knowing whether the product meets the requirement.
-Boundary values are especially interesting.
+Try to keep design out of the requirements as much as possible.
+For instance, focus on user tasks rather than user interfaces.
+Reject the solutions that stakeholders often offer.
+Instead, describe the underlying needs that those solutions address.
+In other words, understand the job the customer is hiring the software to do @@Christensen2016.
+The _Five Whys_ technique may help to go from a proposed solution to the underlying need @@Ohno1988.
 
 It's easy to miss requirements:
 
@@ -265,7 +293,7 @@ a degree of freedom.
 Present requirements in different ways to stakeholders to reveal more insights.
 For instance, text vs diagram or use case vs acceptance test.
 
-Trace requirements back to their origin: use case, system requirement, or business rule.
+Trace requirements back to their origin: business requirements, system requirement, or business rule.
 Record the stakeholders requesting each requirement.
 Assign a unique ID to each requirement.
 
