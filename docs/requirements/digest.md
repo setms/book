@@ -38,7 +38,37 @@ Stakeholders can be internal or external to the project team and to the developi
 
 **Business rules** are policies, guidelines, standards, or regulations that define or constrain some aspect of the
 business.
-They aren't requirements themselves, but lead to requirements.
+They aren't requirements themselves, but lead to requirements because they dictate properties that the system must
+have to conform to the rules.
+
+A **business process** describes a series of activities that transform inputs to outputs to achieve a specific
+result.
+Business rules influence business processes by establishing vocabulary, imposing restrictions, and governing how to
+compute something.
+
+A business rule falls into one of several categories: facts, constrains, action enablers, inferences, and computations.
+**Facts** are statements that are true about the business at a specified time.
+They describe associations between important business terms.
+Don't go overboard with collecting facts; focus on the ones relevant to the scope of the product.
+
+A **constraint** restricts the actions that the system or (some of) its users may perform.
+It can be positive (something must happen or something must be true for something else to happen) or negative
+(something must not happen).
+Many constraints are about authorization, which you can capture using a roles and permissions matrix.
+
+An **action enabler** is a rule that triggers some activity if specific conditions are true.
+These conditions may be complex combinations of simpler conditions.
+A decision table captures action enablers in a concise way using `if-then` statements.
+
+An **inference** creates new facts from other facts.
+`If-then` statements can capture inferences, where the `then` part specifies new knowledge rather than an action to take.
+
+**Computations** transform existing data into new data using specific mathematical formulas or algorithms.
+Many such rules come from outside the organization, like tax withholding formulas.
+Capture computations in mathematical form or decision table.
+
+
+## Requirements engineering
 
 **Requirements engineering** is the discipline that deals with requirements:
 
@@ -121,7 +151,9 @@ Don't limit this interaction to requirements, but involve users in as many activ
 **Elicitation** is the process of identifying the needs and constraints of the various stakeholders.
 For any given project, you'll probably need to use more than one of the following elicitation techniques:
 
-- Identify **events**.
+- Identify events.
+  An **event list** identifies external events that trigger behavior in the system.
+  Events originate from users, time, or external systems.
 - Hold **interviews** with individual stakeholders.
   Come prepared with questions and use active listening @@Rogers1951.
   When replacing an existing system, a good question is what annoys the user the most about it.
@@ -188,11 +220,6 @@ The frequency of use gives a first estimation of concurrent usage and capacity r
 For products where the complexity lies outside user interactions, you may need other techniques besides use cases,
 like event analysis.
 
-Use cases capture user requirements.
-They focus on the externally visible behavior of the system.
-To complete development, we need more information.
-The extra information takes the form of functional requirements that support the user requirements.
-
 Stakeholders must establish **acceptance criteria**, predefined conditions that the product must meet to be acceptable.
 Without acceptance criteria, there is no way of knowing whether the product meets the requirement.
 Boundary values are especially interesting.
@@ -203,6 +230,11 @@ Examples are authentication to keep people from using the system at all, and aut
 using specific features.
 In this context, some people talk about **abuse cases** that the system should prevent instead of use cases that make
 something possible.
+
+Use cases capture user requirements.
+They focus on the externally visible behavior of the system.
+To complete development, we need more information.
+The extra information takes the form of functional requirements that support the user requirements.
 
 Try to keep design out of the requirements as much as possible.
 For instance, focus on user tasks rather than user interfaces.
@@ -219,6 +251,7 @@ It's easy to miss requirements:
 - Different user classes have different requirements, so make sure to involve representatives of all user classes.
 - High-level requirements are often too vague.
   Decomposing them into more detail may bring to light other requirements, including implied ones.
+- Another source of missed requirements stem from error conditions.
 - A checklists of common functional areas may help to increase coverage.
 
 Requirements may change as customers learn more and as the business evolves.
@@ -233,17 +266,11 @@ requirements in multiple ways.
 Model the environment.
 A **context diagram** shows how the system fits in the ecosystem @@Brown2016.
 An **ecosystem map** is similar, but also shows external systems that the product doesn't itself interact with.
-An **event list** identifies external events that trigger behavior in the system.
-Events originate from users, time, or external systems.
 
 Model the system.
 An **analysis model** is a diagram that depicts requirements visually, which sometimes makes it easier to find flaws.
 Examples are DFDs, ERs, STDs, dialog maps, and decision trees.
 A **feature tree** organizes features in logical groups and hierarchies.
-
-Look for derived requirements that are a logical consequence of requests.
-Customers sometimes don't articulate points that they believe are obvious, so look for implicit requirements as well.
-Another source of missed requirements stem from error conditions.
 
 **Prototypes** are partial or preliminary implementations that make concepts and possibilities more tangible.
 They give users get more clarity on requirements, and developers more clarity on viability.
@@ -257,7 +284,7 @@ Customers set requirement priorities based on the contribution towards business 
 Combined with cost estimates, these make it possible to deliver maximum value at the lowest cost at the right time.
 Non-functional requirements that affect the architecture should receive high priority, because rearchitecting is
 expensive.
-Priorities can change over time.
+Priorities may change over time.
 
 
 ## Specification
@@ -298,6 +325,9 @@ Record the stakeholders requesting each requirement.
 Assign a unique ID to each requirement.
 
 Keep business rules separate from requirements, since their scope is wider.
+This allows reuse across products.
+Document the origin and expected frequency of change for each business rule.
+The business should own business rules, rather than the IT department.
 
 To prevent recurring discussions, record rejected requirements and the reasons for their rejection.
 
@@ -321,32 +351,32 @@ To combat this:
 - Build prototypes.
 
 Reject requirements that don't contribute to the stated business objectives.
+Likewise, exclude business rules that don't need implementing in software.
 
 Ensure that requirements have acceptance criteria and, if possible, acceptance tests.
 Examples of acceptance criteria that aren't based on acceptance tests:
 
 - The number of open issues is under some maximum.
-- Training is in place.
 - Documentation is available.
+- Users received training.
 
 
 ## Requirements management
 
 Everyone must agree on the requirements:
 
+- The sponsor agrees that the requirements achieve the business objectives.
 - Customers agree that the requirements address their needs.
 - Developers agree that the requirements are possible and verifiable.
-- The sponsor agrees that the requirements achieve the business objectives.
 
 A **requirements baseline** is a set of reviewed and agreed upon requirements that serves as the basis for development.
 The analyst should place the baseline under change and version control.
 For effective change control, there needs to be a process for proposing, evaluating, and deciding on requirement changes.
 Impact analysis helps to assess the cost of proposed changes, as does having a traceability matrix.
 
-A **requirements traceability matrix** is a set of links between requirements and other artifacts, such as design and code
-elements.
-It also links functional requirements to higher-level user and business requirements and other related requirements.
-
+A **requirements traceability matrix** is a set of links between requirements and other artifacts, such as design and
+code elements.
+It also links functional requirements to higher-level user requirements, business requirements, and business rules.
 Each requirement is one record in a Requirements Management (RM) system.
 Requirements have attributes, like origin and status.
 
