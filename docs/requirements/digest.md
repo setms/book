@@ -297,7 +297,7 @@ They should also be version-controlled.
 
 Use templates for consistency.
 
-The **vision and scope document** contains the business requirements, scope, and business context.
+The **Vision & Scope document** contains the business requirements, scope, and business context.
 Other names for this document are project charter, business case document, or Market Requirements Document (MRD).
 Whatever the name, the business sponsor is the owner.
 
@@ -317,19 +317,51 @@ project realities.
 For instance, many Agile methods treat schedule & quality as constraints, features & cost as drivers, and scope as
 a degree of freedom.
 
-Present requirements in different ways to stakeholders to reveal more insights.
-For instance, text vs diagram or use case vs acceptance test.
+Collect functional and non-functional requirements in a **Software Requirements Specification** (SRS).
+This practice enables downstream activities, like validation and change management.
+The SRS has different names in different contexts, like business requirements document, or functional specification.
+
+The SRS refers to the Vision & Scope document.
+It also describes the user classes and any design and construction constraints, like which programming language to use
+or which standards to follow.
+Documenting assumptions may prevent serious issues.
+An **assumption** is a statement that's the team believes to be true in the absence of proof.
+
+Writing requirements down may be tedious, but the cost of doing so is small compared to acquiring that knowledge.
+Or relearning it in the future by new hires.
+
+Learn just enough about requirements for prioritization, then flesh out more details when needed for design and
+construction.
+Label uncertain requirements as TBD and assign someone to resolve the issue.
 
 Trace requirements back to their origin: business requirements, system requirement, or business rule.
 Record the stakeholders requesting each requirement.
+
 Assign a unique ID to each requirement.
+The best format for such IDs is a text-based hierarchical tagging scheme.
+This practice gives rise to IDs like `Product.Discount.Error`.
+
+Present requirements in different ways to stakeholders to reveal more insights.
+For instance, text vs diagram or use case vs acceptance test.
+
+It's often useful to group requirements by features (or even a feature tree) or by user class.
+
+You may want to include a logical data model in the SRS, including how to collect, verify, process, protect, and
+destruct data.
+Descriptions of reports are also valuable.
+
+Don't forget to document non-functional requirements, like for usability (including localization and
+internationalization), performance, and security.
+Also include requirements around migrations from existing systems.
+
+To prevent recurring discussions, record rejected requirements and the reasons for their rejection.
+
+The SRS should contain a glossary.
 
 Keep business rules separate from requirements, since their scope is wider.
 This allows reuse across products.
 Document the origin and expected frequency of change for each business rule.
 The business should own business rules, rather than the IT department.
-
-To prevent recurring discussions, record rejected requirements and the reasons for their rejection.
 
 
 ## Validation
@@ -359,6 +391,11 @@ Examples of acceptance criteria that aren't based on acceptance tests:
 - The number of open issues is under some maximum.
 - Documentation is available.
 - Users received training.
+
+For stakeholders to validate requirements, they must understand them.
+Formal methods and certain diagram styles are foreign to most users, so the best way to specify requirements is still
+in text form.
+Structured natural language is often better than free-form text.
 
 
 ## Requirements management
