@@ -262,6 +262,7 @@ See [change management](#requirements-management) below.
 
 **Analysis** involves reaching a richer and more precise understanding of each requirement and representing sets of
 requirements in multiple ways.
+A **feature tree** organizes features in logical groups and hierarchies.
 
 Model the environment.
 A **context diagram** shows how the system fits in the ecosystem @@Brown2016.
@@ -269,8 +270,37 @@ An **ecosystem map** is similar, but also shows external systems that the produc
 
 Model the system.
 An **analysis model** is a diagram that depicts requirements visually, which sometimes makes it easier to find flaws.
-Examples are DFDs, ERs, STDs, dialog maps, and decision trees.
-A **feature tree** organizes features in logical groups and hierarchies.
+Analysis models blur the line between requirements and design, so be explicit about your intentions with a model.
+
+The different analysis models each have their own strengths and weaknesses, so pick something based on your situation:
+
+- A **Data Flow Diagram** (DFD) shows the processes of a system, the data stores, any external systems, and the flows
+  of data between them.
+  You can nest DFDs by expanding a process into its own DFD.
+  A  level-0 DFD looks a lot like a context diagram.
+- A **swimlane diagram** shows the steps of a business process or the operations of a software system.
+  They consist of several lanes that represent different systems or actors executing steps.
+  Swimlane diagrams can show what happens inside a process of a DFD.
+  They resemble UML activity diagrams.
+- A **State Transition Diagram** (STD) shows state changes.
+  We already saw this kind of model in the [introduction](../introduction/software.md#finite-automata).
+  UML has a similar diagram known as a _state machine diagram_ @@UML.
+  _Transition tables_ show the same information as STDs in matrix form.
+- A **dialog map** shows navigation between screens of the system.
+  It's basically a user interface modeled as an STD.
+  Dialog maps should show detailed screen layouts, but focus on the essence of the interactions.
+- A **decision table** lists the various values for all factors that influence the behavior of a system, along
+  with the expected response.
+  A **decision tree** shows the same information graphically.
+- An **event-response table** (aka event table, or event list) list all events that may occur in the system, along
+  with the expected response.
+  An **event** is a change or activity in the environment that requires a response from the system.
+  A **business event** comes from a human user, a **temporal event** from the passing of time, and a **signal event**
+  from hardware or an external system.
+  The expected response depends on the system's state.
+
+Different systems have differing needs for formality.
+Safety-critical, security-critical, and mission-critical elements of the system are good candidates for modeling.
 
 **Prototypes** are partial or preliminary implementations that make concepts and possibilities more tangible.
 They give users get more clarity on requirements, and developers more clarity on viability.
