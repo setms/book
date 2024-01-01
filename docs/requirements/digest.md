@@ -386,7 +386,7 @@ Reject requirements that don't contribute to the stated business objectives.
 Likewise, exclude business rules that don't need implementing in software.
 
 Ensure that requirements have acceptance criteria and, if possible, acceptance tests.
-Examples of acceptance criteria that aren't based on acceptance tests:
+Examples of acceptance criteria that unsuitable for capturing in acceptance tests:
 
 - The number of open issues is under some maximum.
 - Documentation is available.
