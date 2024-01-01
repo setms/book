@@ -358,6 +358,79 @@ To prevent recurring discussions, record rejected requirements and the reasons f
 
 The SRS should contain a glossary.
 
+Excellent requirements are:
+
+- **Correct**.
+  Requirements must accurately describe a capability that meets a stakeholder's need.
+  Formalize correctness using acceptance criteria.
+- **Complete**.
+  Each requirement must contain all information necessary for validation and implementation.
+  This includes what to do in case of errors.
+- **Unambiguous**.
+  Natural language is prone to ambiguity, but is necessary since stakeholders can't usually read formal specifications
+  well enough to validate requirements.
+
+  Ambiguity comes in two forms.
+  The first is when one person can see more than one way to interpret a requirement.
+  The harder type is where different people each see only one interpretation each, but those differ from each other.
+
+  To reduce ambiguity, we often use semi-structured text to constrain the text a bit.
+  Lists, tables, formulas, charts, and decision trees may be useful as well.
+  Use terms consistently and as defined in the glossary.
+  Synonyms are okay, as long as they're in the glossary as well.
+  Try to avoid adverbs, since they introduce subjectivity.
+- **Necessary**.
+  Required functionality should provide stakeholders with business value in line with the business objectives for the
+  product.
+  This includes compliance with laws, regulations, and standards.
+  Requirements must come from a source that has the authority to provide requirements.
+- **Feasible**.
+  It must be possible to implement the requirement in an economic fashion.
+- **Prioritized**.
+  Again, economics come into play, this time to make sure we can work on the most important things first.
+- **Verifiable**.
+  Write individually testable requirements, with a small number of related test cases each.
+  The count of testable requirements is actually a metric for product size.
+  Rephrase negative requirements into positives so that they're clearer and thus easier to verify.
+
+It's best to use templates to specify requirements so that all these properties get addressed.
+For _system requirements_, @@Wiegers2013 suggests the Easy Approach to Requirements Syntax (EARS, @@Mavin2022), which
+offers this template:
+
+```text
+While <precondition(s)>
+when <trigger>
+the <system name>
+shall <system response>.
+```
+
+The `while` and `when` parts are optional.
+**Preconditions** define conditions that must be true for a requirement to become active.
+The **trigger** defines a discrete event detected by the system that activates a requirement.
+The **system name** must be explicit.
+The **system response** defines what the system must do when the requirement becomes active.
+
+For _user requirements_, @@Wiegers2013 suggests a template from @@Alexander2002 with this structure:
+
+```text
+The [user class]
+shall be able to [do something]
+[to some object]
+[qualifying conditions, response time, or quality statement].
+```
+
+The SRS as a whole should have some desired properties as well:
+
+- **Complete**.
+  No requirement is missing.
+- **Consistent**.
+  Requirements don't contradict each other.
+- **Modifiable**.
+  Requirement collections should have a browsable history, especially after baselining.
+- **Traceable**.
+  Link requirements both backward to their origin and forward to derived requirements and later-stage artifacts,
+  such as code and tests.
+
 Keep business rules separate from requirements, since their scope is wider.
 This allows reuse across products.
 Document the origin and expected frequency of change for each business rule.

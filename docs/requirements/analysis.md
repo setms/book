@@ -300,6 +300,11 @@ This approach maps nicely to states and transitions of a Turing Machine or other
 We therefore argue that at least all automated acceptance tests for functional requirements should take this form.
 For requirements around quality attributes other than functionality, this format may be too restrictive.
 
+The `Given/When/Then` form looks a lot like the template used by EARS @@Mavin2022.
+The `Given` clause is a combination of the `While` and `When` clauses of EARS.
+We prefer the `Given/When/Then` format, because it has more traction in the field and because it maps so nicely to
+state machines.
+
 Many requirements need more than one example to fully specify them.
 The examples for a given requirement often deal with the same state and input.
 In such cases, it makes sense to condense the examples using a table.
