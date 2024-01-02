@@ -121,7 +121,10 @@ The business analyst forges this collaborative partnership.
 
 A partnership requires that partners speak the same language, so learn the language of the business.
 Put together a glossary of terms, including synonyms, acronyms, and abbreviations.
-Conversely, it may be useful to train stakeholders in the fundamentals of software development.
+
+A **data dictionary** stores more detail about terms in the glossary.
+It's a shared repository that defines the meaning, composition, data type, length, format, and
+allowed values for data elements used in the application.
 
 In most cases, more than one category of user, or **user class**, exists.
 Some people call user classes **stakeholder profiles** or **personas**.
@@ -236,6 +239,12 @@ They focus on the externally visible behavior of the system.
 To complete development, we need more information.
 The extra information takes the form of functional requirements that support the user requirements.
 
+One example is about reporting.
+A use case may show that the system compiles a report for a user class, but not the details of the report.
+A **report specification** describes the purpose and contents of a report.
+A **dashboard** uses multiple textual and/or graphical representations of data that provide a consolidated view
+of a process.
+
 Try to keep design out of the requirements as much as possible.
 For instance, focus on user tasks rather than user interfaces.
 Reject the solutions that stakeholders often offer.
@@ -278,6 +287,17 @@ The different analysis models each have their own strengths and weaknesses, so p
   of data between them.
   You can nest DFDs by expanding a process into its own DFD.
   A  level-0 DFD looks a lot like a context diagram.
+- A **data model** depicts the system's data relationships.
+  It provides a high-level view of the data, while the data dictionary gives the details.
+  An **Entity Relationship Diagram** (ERD) is a common format for a data model.
+  In an ERD, rectangles represent **entities**, the physical items, people, or aggregation of data.
+  Entities are also known as records or data structures.
+  Entities have attributes, which the data dictionary describes.
+  Diamond shapes in the ERD represent relationships between entities.
+  Numbers show the cardinality of the relationships.
+  Entities show up in data stores in a DFD.
+  Their attributes appear in report specifications.
+  A **CRUD matrix** correlates use cases with Create, Read, Update, and Delete actions on entities.
 - A **swimlane diagram** shows the steps of a business process or the operations of a software system.
   They consist of several lanes that represent different systems or actors executing steps.
   Swimlane diagrams can show what happens inside a process of a DFD.
