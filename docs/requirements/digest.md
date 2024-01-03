@@ -245,12 +245,26 @@ A **report specification** describes the purpose and contents of a report.
 A **dashboard** uses multiple textual and/or graphical representations of data that provide a consolidated view
 of a process.
 
-Try to keep design out of the requirements as much as possible.
-For instance, focus on user tasks rather than user interfaces.
-Reject the solutions that stakeholders often offer.
-Instead, describe the underlying needs that those solutions address.
-In other words, understand the job the customer is hiring the software to do @@Christensen2016.
-The _Five Whys_ technique may help to go from a proposed solution to the underlying need @@Ohno1988.
+Non-functional requirements are constraints or quality attributes.
+**Quality attributes** define _how well_ the systems works.
+Examples are how easy it's to use, how fast it executes, and how often it fails.
+External quality attributes are important to users, while internal quality attributes are important to developers,
+operators, and support staff.
+
+@@ISO25010 defines eight quality characteristics, each of which consist of several quality attributes.
+Note that the first characteristic is function suitability, which refers to functional requirements.
+ISO recommends you select a subset of quality attributes that are important for your system.
+
+![ISO 25019 quality attributes](../img/iso25010.jpg)
+
+Eliciting requirements for quality attributes is difficult.
+When given a choice, stakeholders always opt for the fastest, most reliable, most secure, etc.
+Ask them instead what defines _unacceptable_ performance, reliability, security, etc.
+
+A **constraint** places restrictions on the design or implementation choices available to developers.
+It's another kind of non-functional requirement, different from quality attributes.
+Constraints can come from stakeholders (like compliance officers), external systems that the product must interact with,
+or from other activities, like transition and maintenance.
 
 It's easy to miss requirements:
 
@@ -265,6 +279,13 @@ It's easy to miss requirements:
 
 Requirements may change as customers learn more and as the business evolves.
 See [change management](#requirements-management) below.
+
+Try to keep design out of the requirements as much as possible.
+For instance, focus on user tasks rather than user interfaces.
+Reject the solutions that stakeholders often offer.
+Instead, describe the underlying needs that those solutions address.
+In other words, understand the job the customer is hiring the software to do @@Christensen2016.
+The _Five Whys_ technique may help to go from a proposed solution to the underlying need @@Ohno1988.
 
 
 ## Analysis
@@ -324,14 +345,24 @@ Safety-critical, security-critical, and mission-critical elements of the system 
 
 **Prototypes** are partial or preliminary implementations that make concepts and possibilities more tangible.
 They give users get more clarity on requirements, and developers more clarity on viability.
+Prototypes can be especially useful when investigating how to implement difficult non-functional requirements.
+
+Customers set requirement priorities based on the contribution towards business objectives.
+Priorities are especially important for non-functional requirements, since conflicts between quality attributes are a
+fact of life.
+You need to define which quality attributes are most important for the system, so that developers can make proper
+trade-offs.
+Priorities may be different for different parts of the system.
+
+Make sure to cover all stakeholders when setting priorities.
+It's easy to forget about support staff, for example.
 
 Software has a cost, which developers estimate.
 Customers should respect those estimates.
 Some features may be expensive or even infeasible.
 Sometimes changing features can make them attainable or cheaper.
 
-Customers set requirement priorities based on the contribution towards business objectives.
-Combined with cost estimates, these make it possible to deliver maximum value at the lowest cost at the right time.
+Priorities and cost estimates together make it possible to deliver maximum value at the lowest cost at the right time.
 Non-functional requirements that affect the architecture should receive high priority, because rearchitecting is
 expensive.
 Priorities may change over time.
@@ -468,6 +499,22 @@ shall be able to [do something]
 [to some object]
 [qualifying conditions, response time, or quality statement].
 ```
+
+_Non-functional requirements_ should be SMART: **S**pecific, **M**easurable, **A**ttainable, **R**elevant, and
+**T**ime-sensitive.
+@@Wiegers2013 gives this example for availability:
+
+```text
+The system shall be at least 95 percent available on weekdays
+between 6:00 AM and midnight Eastern Time,
+and at least 99 percent available on weekdays
+between 3:00 PM and 5:00 PM Eastern Time.
+```
+
+It's possible to define requirements more formally using specification languages like Planguage @@Gilb2005.
+
+Many measurements of quality attributes are **lagging indicators**.
+This means you can't tell whether the system achieved its goals until after it's been in operation for a while.
 
 The SRS as a whole should have some desired properties as well:
 

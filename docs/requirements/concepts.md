@@ -28,6 +28,8 @@ digraph requirements_concept_map {
   Compliance -> Stakeholder [label="  is a"];
   Developer -> Stakeholder [label=" is a"];
   Operator -> Stakeholder [label="  is a"];
+  Support -> Stakeholder [label="  is a"];
+  Support [label="Support\nagent"];
   Stakeholder -> Requirement [label="  provides"];
   Requirement -> Illity [label="  supports"];
   Illity -> Metric [label="measured by    "];
