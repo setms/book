@@ -344,8 +344,50 @@ Different systems have differing needs for formality.
 Safety-critical, security-critical, and mission-critical elements of the system are good candidates for modeling.
 
 **Prototypes** are partial or preliminary implementations that make concepts and possibilities more tangible.
-They give users get more clarity on requirements, and developers more clarity on viability.
-Prototypes can be especially useful when investigating how to implement difficult non-functional requirements.
+Their main goal is to reduce risk, so only build them to address high-risk or high-impact issues.
+A prototype is an experiment to validate the hypothesis that requirements are sufficiently defined and that
+user interaction and architectural issues are sufficiently addressed.
+Seen from that lens, it makes sense to build several prototypes.
+
+Prototypes focus either on user experience (mock-up) or technical soundness of a proposed approach (proof of concept).
+
+**Mock-ups**, also known as horizontal prototypes, imply behavior without implementing it.
+They can be self-contained screens or a structure the user can navigate (dialog map).
+They often address the look and feel of the user interface.
+Mock-ups help stakeholders state requirements, because it's easier to critique than to conceive, especially
+when it comes to completeness and errors.
+
+A **proof of concept**, or vertical prototype, implements a slice of functionality from user interface through all the
+technical layers.
+Use it to test a proposed technical approach, or to optimize algorithms.
+Where a mock-up focuses on usability, proof of concepts focus on more technical quality attributes.
+
+You can build mock-ups and proof of concepts with different precision.
+
+Paper and electronic sketches or diagrams are **low-fidelity prototypes** used to explore functionality and flow.
+**High-fidelity prototypes** allow definition of a precise look and feel.
+Low-fidelity prototypes are faster to develop and thus allow for faster iteration on ideas.
+High-fidelity prototypes risk endless discussions about details, so remind everyone that we're just trying to get the
+requirements right, not designing yet.
+
+A **throwaway prototype** lives only as long as required to reduce risk.
+You build it as fast as possible, without regards for sound engineering practices.
+Stakeholders may pressure the team to grow a throwaway prototype into the final product, but this is seldom a good idea.
+It would be expensive to get it up to quality standards.
+Low-fidelity prototypes are less susceptible to this pressure than high-fidelity ones.
+Address this potential pressure up front by setting specific expectations about the purpose of the prototype, or
+what experiment you're running.
+If you build a high-fidelity throwaway prototype, add in time delays to prevent stakeholders getting the wrong
+impression about performance.
+
+An **evolutionary prototype**, in contrast, is an increment on the path towards a final product.
+It must therefore meet all applicable quality standards.
+When planned well, the first couple of increments can reduce risk just like for throwaway prototypes, although they take
+a bit more time to develop.
+
+You'll learn more from observing users work with a prototype than from asking them about it.
+Don't forget to include all relevant stakeholders when evaluating a prototype.
+
 
 Customers set requirement priorities based on the contribution towards business objectives.
 Priorities are especially important for non-functional requirements, since conflicts between quality attributes are a
