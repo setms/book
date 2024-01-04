@@ -16,7 +16,12 @@
 # Part II: Analysis of knowledge areas
 
 - [Requirements](requirements/index.md)
-  - [Digest](requirements/digest.md)
+  - [Digest](requirements/digest/index.md)
+    - [Elicitation](requirements/digest/elicitation.md)
+    - [Analysis](requirements/digest/analysis.md)
+    - [Specification](requirements/digest/specification.md)
+    - [Validation](requirements/digest/validation.md)
+    - [Management](requirements/digest/management.md)
   - [Concepts](requirements/concepts.md)
   - [Analysis](requirements/analysis.md)
 

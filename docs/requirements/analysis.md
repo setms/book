@@ -465,7 +465,7 @@ This process is both slow and error-prone in the face of fading memories.
 Having acceptance tests helps, but they can't capture all acceptance criteria.
 And when they can, they still don't explain the rationale.
 
-You also can't link to a conversation people had in the past, so [requirements tracing](digest.md#specification)
+You also can't link to a conversation people had in the past, so [requirements tracing](digest/index#specification)
 becomes impossible in an oral culture.
 That in turn makes it harder than necessary to perform an impact analysis of proposed changes.
 
