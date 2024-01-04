@@ -171,7 +171,7 @@ It's easy to miss requirements:
 - A checklists of common functional areas may help to increase coverage.
 
 Requirements may change as customers learn more and as the business evolves.
-See [change management](#requirements-management) below.
+See [change management](management.md) below.
 
 Try to keep design out of the requirements as much as possible.
 For instance, focus on user tasks rather than user interfaces.
@@ -179,5 +179,3 @@ Reject the solutions that stakeholders often offer.
 Instead, describe the underlying needs that those solutions address.
 In other words, understand the job the customer is hiring the software to do @@Christensen2016.
 The _Five Whys_ technique may help to go from a proposed solution to the underlying need @@Ohno1988.
-
-
