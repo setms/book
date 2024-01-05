@@ -113,6 +113,45 @@ Priorities may be different for different parts of the system.
 
 Make sure to cover all stakeholders when setting priorities.
 It's easy to forget about support staff, for example.
+Achieving consensus among all stakeholders may be challenging.
+Define a set of criteria upfront for judging whether one requirement has higher priority than another.
+Examples of such criteria are business value, technical risk, cost, time to market, and contractual commitments.
+In case of conflicts, favored user classes get preference.
+
+One tool for resolving conflicts is a matrix of requirements against themselves, where the cells show which is
+more important.
+However, this approach becomes unwieldy for larger requirement sets.
+
+A better tool is to divide all requirements into high, medium, and low.
+Assess each requirement on the dimensions of importance and urgency.
+Then urgent/important simplifies to high, not urgent/important to medium, not important/not urgent to low.
+Don't do urgent/not important at all or, if you must, assign them low priority.
+
+Most stakeholders assign high-priority to 85% of all requirements.
+To prevent that, run the important/urgent method again on just the high features, using the labels highest/higher/high
+instead of high/medium/low.
+Map high and higher to medium in the original set of requirements and keep only highest as high.
+
+**Quality Function Deployment** (QFD) is a more rigorous technique.
+It's based on the benefit provided by a feature, the penalty paid if that feature is absent, its cost, and
+implementation risk.
+Construct a matrix with these factors as columns and the requirements as rows.
+Each cell gets a value between 1 and 9, inclusive, and each factor gets a weight.
+Calculate the total value as the weighted average of benefit and penalty.
+Calculate the percentage of total cost and total risk as well.
+Then priority = value / (cost % + risk %).
+
+Using QFD takes a lot of effort, especially since you need to calibrate the weights.
+You may want to spend this effort only for high priority requirements, as obtained by other methods, or when
+stakeholders can't reach consensus.
+
+Other prioritization techniques exists, like MoSCoW, or giving participants $100 to "buy" requirements.
+These often have considerable drawbacks, such as being open to gaming.
+
+The priority of a requirement should be one if its attributes in the SRS.
+
+A high-priority requirement may depend on a lower-priority requirement.
+In that case, the lower-priority requirement must come first despite its lower priority.
 
 Software has a cost, which developers estimate.
 Customers should respect those estimates.
