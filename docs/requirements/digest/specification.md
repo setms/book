@@ -104,6 +104,9 @@ Excellent requirements are:
   Required functionality should provide stakeholders with business value in line with the business objectives for the
   product.
   This includes compliance with laws, regulations, and standards.
+  Reject requirements that don't contribute to the stated business objectives.
+  Likewise, exclude business rules that don't need implementing in software.
+
   Requirements must come from a source that has the authority to provide requirements.
 - **Feasible**.
   It must be possible to implement the requirement in an economic fashion.
@@ -152,6 +155,9 @@ between 3:00 PM and 5:00 PM Eastern Time.
 ```
 
 It's possible to define requirements more formally using specification languages like Planguage @@Gilb2005.
+However, formal methods and certain kinds of diagrams are foreign to most users, so the best way to specify
+requirements is still in text form.
+Structured natural language, like used in the templates above, is often better than free-form text.
 
 Many measurements of quality attributes are **lagging indicators**.
 This means you can't tell whether the system achieved its goals until after it's been in operation for a while.
