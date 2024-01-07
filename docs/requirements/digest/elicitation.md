@@ -138,7 +138,8 @@ A **report specification** describes the purpose and contents of a report.
 A **dashboard** uses multiple textual and/or graphical representations of data that provide a consolidated view
 of a process.
 
-Non-functional requirements are constraints or quality attributes.
+**Non-functional requirements** are constraints or quality attributes.
+
 **Quality attributes** define _how well_ the systems works.
 Examples are how easy it's to use, how fast it executes, and how often it fails.
 External quality attributes are important to users, while internal quality attributes are important to developers,
@@ -179,3 +180,34 @@ Reject the solutions that stakeholders often offer.
 Instead, describe the underlying needs that those solutions address.
 In other words, understand the job the customer is hiring the software to do @@Christensen2016.
 The _Five Whys_ technique may help to go from a proposed solution to the underlying need @@Ohno1988.
+
+
+## Reuse
+
+It's possible to reuse requirements, just like other software development artifacts.
+Reuse improves quality and increases productivity, but comes with its own risks, like pulling in unneeded requirements
+via links to related requirements.
+
+Requirements reuse ranges from individual requirement statements to sets of requirements along with associated design,
+code, and tests.
+Reused requirements often need modification, like changing their [attributes](management.md).
+You can copy requirements from another product or from a library of reusable requirements, or you can link them to a
+source.
+The latter makes it hard to change the reused requirements.
+
+Glossaries and data dictionaries are good sources of reusable information.
+Common capabilities in products, like security features, are also good candidates for reuse.
+**Software product lines**, a set of software products in a family, share a lot of functionality and thus opportunities
+for reuse.
+If the product replaces another system, then you always reuse requirements, even if not explicitly.
+
+**Requirement patterns** offer a different form of reuse.
+They package considerable knowledge about a particular kind of requirement in a way that makes it convenient to define
+such a requirement.
+A pattern gives guidance about applicability, an explanation about the content in the requirement, and a template
+for a requirement definition.
+It also gives examples, links to other patterns, and offers considerations for development and testing.
+
+While reuse saves you time, making requirements reusable costs extra time.
+[Requirements management tools](management.md) can make reuse of requirements easier and help with finding
+reuable requirements.
