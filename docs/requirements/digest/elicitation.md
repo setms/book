@@ -175,7 +175,8 @@ Requirements may change as customers learn more and as the business evolves.
 See [change management](management.md) below.
 
 Try to keep design out of the requirements as much as possible.
-For instance, focus on user tasks rather than user interfaces.
+For instance, focus on user _tasks_ rather than user _interfaces_.
+
 Reject the solutions that stakeholders often offer.
 Instead, describe the underlying needs that those solutions address.
 In other words, understand the job the customer is hiring the software to do @@Christensen2016.
@@ -199,7 +200,13 @@ Glossaries and data dictionaries are good sources of reusable information.
 Common capabilities in products, like security features, are also good candidates for reuse.
 **Software product lines**, a set of software products in a family, share a lot of functionality and thus opportunities
 for reuse.
-If the product replaces another system, then you always reuse requirements, even if not explicitly.
+
+If the product replaces another system, then you're always reusing requirements, even if implicitly.
+However, you shouldn't carry over all requirements without evaluation.
+Look for usage data that allows you to remove features that are rarely used.
+Check features against the business objectives, since these may have changed.
+Also look for new requirements, including transition requirements.
+Remember that existing systems set expectations for quality attributes, like usability, performance, and throughput.
 
 **Requirement patterns** offer a different form of reuse.
 They package considerable knowledge about a particular kind of requirement in a way that makes it convenient to define

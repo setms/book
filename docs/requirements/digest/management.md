@@ -15,12 +15,12 @@ A **requirements traceability matrix** is a set of links between requirements an
 code elements.
 It also links functional requirements to higher-level user requirements, business requirements, and business rules.
 Each requirement is one record in a Requirements Management (RM) system.
-Requirements have attributes, like origin and status.
+Requirements have attributes, like origin, priority, and status.
 
 When possible, organize requirements into related sets and deliver those sets incrementally.
-This helps in dealing with change.
+Breaking delivery down like this helps in dealing with changes.
 
-Change in requirements is inevitable:
+Changes in requirements are inevitable:
 
 - Stakeholders don't know precisely what they want at te beginning of the project.
 - Stakeholders can sometimes articulate what they want only after seeing something that doesn't quite match their vision.
