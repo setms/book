@@ -37,6 +37,7 @@ The different analysis models each have their own strengths and weaknesses, so p
   We already saw this kind of model in the [introduction](../../introduction/software.md#finite-automata).
   UML has a similar diagram known as a _state machine diagram_ @@UML.
   _Transition tables_ show the same information as STDs in matrix form.
+  These models are especially relevant for real-time systems.
 - A **dialog map** shows navigation between screens of the system.
   It's basically a user interface modeled as an STD.
   Dialog maps should show detailed screen layouts, but focus on the essence of the interactions.
@@ -49,6 +50,7 @@ The different analysis models each have their own strengths and weaknesses, so p
   A **business event** comes from a human user, a **temporal event** from the passing of time, and a **signal event**
   from hardware or an external system.
   The expected response depends on the system's state.
+  Event-response analysis is especially valuable for real-time systems.
 
 Different systems have differing needs for formality.
 Safety-critical, security-critical, and mission-critical elements of the system are good candidates for modeling.

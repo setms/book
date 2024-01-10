@@ -76,6 +76,10 @@ To prevent recurring discussions, record rejected requirements and the reasons f
 
 The SRS should contain a glossary.
 
+For a software product that's part of a larger system, capture the system requirements in a Systems Requirements
+Specification (SyRS).
+Requirements in the SyRS may need decomposing into individual requirements for hardware, software, and humans.
+
 
 ## Writing requirements
 

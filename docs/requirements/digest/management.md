@@ -13,7 +13,8 @@ Impact analysis helps to assess the cost of proposed changes, as does having a t
 
 A **requirements traceability matrix** is a set of links between requirements and other artifacts, such as design and
 code elements.
-It also links functional requirements to higher-level user requirements, business requirements, and business rules.
+It also links functional requirements to higher-level user requirements, business requirements, business rules, and
+system requirements.
 Each requirement is one record in a Requirements Management (RM) system.
 Requirements have attributes, like origin, priority, and status.
 

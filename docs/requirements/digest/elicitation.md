@@ -137,6 +137,8 @@ A use case may show that the system compiles a report for a user class, but not 
 A **report specification** describes the purpose and contents of a report.
 A **dashboard** uses multiple textual and/or graphical representations of data that provide a consolidated view
 of a process.
+Dashboards and reports may show predictive as well as descriptive analytics, which require understanding the underlying
+models and statistical calculations.
 
 **Non-functional requirements** are constraints or quality attributes.
 
@@ -148,6 +150,8 @@ operators, and support staff.
 @@ISO25010 defines eight quality characteristics, each of which consist of several quality attributes.
 Note that the first characteristic is function suitability, which refers to functional requirements.
 ISO recommends you select a subset of quality attributes that are important for your system.
+For instance, hard real-time systems have stringent performance and efficiency requirements.
+Safety-critical systems place more emphasis on reliability.
 
 ![ISO 25019 quality attributes](../../img/iso25010.jpg)
 
@@ -166,6 +170,8 @@ It's easy to miss requirements:
   Non-functional requirements are often assumed.
 - **Implied requirements** are those that are necessary because of another requirement.
 - Different user classes have different requirements, so make sure to involve representatives of all user classes.
+  For instance, the sponsor may not use the product directly, but may need KPIs that the product must collect
+  measurements for.
 - High-level requirements are often too vague.
   Decomposing them into more detail may bring to light other requirements, including implied ones.
 - Another source of missed requirements stem from error conditions.
@@ -176,6 +182,11 @@ See [change management](management.md) below.
 
 Try to keep design out of the requirements as much as possible.
 For instance, focus on user _tasks_ rather than user _interfaces_.
+You can only go so far with that, however.
+For instance, sometimes you need to design (part of) the architecture to enable analysis of requirements.
+When dealing with systems of systems, you need to know whether the requirement is for the software or for a
+non-software component.
+You also need to know what the interface requirements are.
 
 Reject the solutions that stakeholders often offer.
 Instead, describe the underlying needs that those solutions address.
