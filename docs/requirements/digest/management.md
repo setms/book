@@ -64,4 +64,13 @@ A **requirements traceability matrix** is a set of links between requirements an
 code elements.
 It also links functional requirements to higher-level user requirements, business requirements, business rules, and
 system requirements.
-Some RM tools offer traceability functionality.
+For products in some fields, like aviation, regulations dictate that you can trace requirements forward to design and
+code.
+
+Non-functional requirements often don't trace forward to code.
+Some non-functional requirements, like for security, trace forward to functional requirements, like authentication,
+that do trace forward to code.
+
+For all but the smallest projects, manually maintaining traceability is impractical.
+Commercial RM tools often offer traceability functionality.
+You still have to manually add most links, but then the tool can assist with changes.
