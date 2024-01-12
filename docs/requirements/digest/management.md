@@ -43,7 +43,20 @@ requirement changes.
 The process should include a "fast path" to ensure that low-risk, low-investment change requests don't get bogged down
 in bureaucracy.
 
+Capture the change control process in a policy before changes arrive.
+The policy describes the lifecycle of a change request and the roles involved.
+The **Change Control Board** (CCB) executes the policy by accepting or rejecting changes.
+They assess change requests (see impact analysis below), make decisions, and see to implementation and verification of
+approved changes.
+
 Change requests share similarities with defect reports, and you can use the same tools to track them.
+You should capture change request attributes, like requester, type, date received, status, etc.
+
+A **requirements volatility chart** tracks the rate at which change requests arrive after a baseline.
+It should trend towards zero as the project nears completion.
+A sustained high rate implies a schedule risk.
+The CCB then may need to renegotiate schedule, staff, budget, or quality to accommodate changes.
+Tracking the origin of change requests is also illuminating.
 
 **Impact analysis** is the process of assessing the consequences of a change.
 A traceability matrix helps with impact analysis.
