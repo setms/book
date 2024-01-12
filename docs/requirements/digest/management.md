@@ -24,8 +24,8 @@ The analyst should place a baseline under change and version control to deal wit
 
 **Requirements management** includes all activities that maintain the integrity, accuracy, and currency of
 requirements agreements throughout the project.
-The business analyst sets up requirement storage mechanisms, defines attributes, coordinate status, and monitors
-changes.
+The business analyst sets up requirement storage mechanisms, defines attributes, coordinates status, and monitors
+change.
 
 Conceptually, each requirement is one record in a Requirements Management (RM) system.
 RM systems range from generic issue trackers and wikis to specialized tools.
@@ -42,9 +42,9 @@ For effective change control, there needs to be a **change control process** for
 requirement changes.
 The process should include a "fast path" to ensure that low-risk, low-investment change requests don't get bogged down
 in bureaucracy.
-
-Capture the change control process in a policy before changes arrive.
+Capture the change control process in a **change control policy** before changes arrive.
 The policy describes the lifecycle of a change request and the roles involved.
+
 The **Change Control Board** (CCB) executes the policy by accepting or rejecting changes.
 They assess change requests (see impact analysis below), make decisions, and see to implementation and verification of
 approved changes.
@@ -69,7 +69,7 @@ code.
 
 Non-functional requirements often don't trace forward to code.
 Some non-functional requirements, like for security, trace forward to functional requirements, like authentication,
-that do trace forward to code.
+that in turn do trace forward to code.
 
 For all but the smallest projects, manually maintaining traceability is impractical.
 Commercial RM tools often offer traceability functionality.
