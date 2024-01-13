@@ -76,3 +76,55 @@ that in turn do trace forward to code.
 For all but the smallest projects, manually maintaining traceability is impractical.
 Commercial RM tools often offer traceability functionality.
 You still have to manually add most links, but then the tool can assist with changes.
+
+
+## Risk management
+
+Requirements management relates to risk management.
+A **risk** is a condition that may cause something bad to happen.
+**Risk management** is the process of identifying, evaluating, and controlling risks before they harm your project:
+
+```dot process
+digraph risk_management {
+  node [shape=rect, style="filled", fixedsize=true, width=1, height=0.5, fillcolor=lightskyblue2,
+    color=steelblue4, penwidth=2, fontsize=10];
+  edge [fontsize=9, color=steelblue4, penwidth=2];
+
+  RM [label="Risk\nmanagement"];
+  MP [label="Management\nplanning"];
+
+  RM -> Assessment;
+  RM -> Avoidance;
+  RM -> Control;
+
+  Assessment -> Identification;
+  Assessment -> Analysis;
+  Assessment -> Prioritization;
+
+  Control -> MP;
+  Control -> Resolution;
+  Control -> Monitoring;
+
+}
+```
+
+Typical requirements risks include inadequate stakeholder involvement, misunderstanding of requirements,
+incomplete requirements, infeasible requirements, and continually changing requirements.
+
+Risk prioritization helps to focus on the risks with the highest exposure first.
+**Risk exposure** is a function of likelihood (probability of bad thing happening) and impact (magnitude of bad thing
+happening).
+
+Risk resolution executes plans to deal with risks.
+Some risks have such low exposure, that you can just **accept** them.
+If not, you need to decide how to deal with the risk.
+If you're lucky, you can **transfer** a risk to someone else.
+Most of the time, however, you'll have to **mitigate** the risk, meaning you work to reduce its likelihood or impact.
+
+You should document risks and track them over time to see if your plans are working.
+Use the condition-consequence format for documenting risks.
+One condition may result in several consequences.
+Most of the time it suffices to record likelihood and impact using a low/medium/high scale.
+These should change when a mitigation action completes, so reevaluate them then.
+
+You should also collect ways of dealing with any risks that materialize.
