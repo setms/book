@@ -27,13 +27,15 @@ requirements agreements throughout the project.
 The business analyst sets up requirement storage mechanisms, defines attributes, coordinates status, and monitors
 change.
 
-Conceptually, each requirement is one record in a Requirements Management (RM) system.
-RM systems range from generic issue trackers and wikis to specialized tools.
-Some RM systems are part of larger suites or connected to issue trackers.
-
 Requirements have attributes, like origin, creation date, priority, and status.
 Common statuses include proposed, drafted, approved, in progress, implemented, verified, and rejected.
 Tracking the distribution of statuses throughout the project shows the progress the team is making.
+
+**Requirements Management (RM) systems** help manage changes to requirements, track status, and trace requirements to
+other artifacts.
+RM tools range from generic issue trackers and wikis to specialized products.
+Some RM systems are part of larger suites or connected to issue trackers.
+The specialized tools generate some attributes and let you enter others.
 
 **Version control** uniquely identifies different versions of requirements and requirement sets.
 RM tools offer version control and more.

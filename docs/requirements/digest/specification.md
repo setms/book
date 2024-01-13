@@ -177,3 +177,8 @@ The SRS as a whole should have some desired properties as well:
 - **Traceable**.
   Link requirements both backward to their origin and forward to derived requirements and later-stage artifacts,
   such as code and tests.
+
+Conceptually, each requirement is one record in a Requirements Development (RD) system.
+**Requirements Development tools** help eliciting requirements and judge whether they're well-written.
+For instance, they can scan for vague an ambiguous words.
+RD tools offer different communication methods for stakeholders and some can convert text to diagrams.
