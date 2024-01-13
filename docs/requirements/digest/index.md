@@ -109,3 +109,19 @@ development @@AgileBABOK2017.
 **Requirements development** aims to collect good enough requirements to allow the team to start design and
 construction at an acceptable level of risk @@Wiegers2013.
 Requirements development is an iterative process of progressive refinement of detail.
+
+Requirements engineering is a process and, like any process, we can improve it over time.
+Process improvement should be a continuous and evolutionary activity.
+Change is only accepted when people have an incentive to change.
+The biggest incentive is pain, so start by making problems visible by collecting metrics.
+These metrics serve as the baseline to compare improvements to.
+The Goal-Question-Metric (GQM) approach tells you which metrics to collect @@Basili1982.
+
+Perform root-cause analysis to determine improvement hypotheses.
+Pick one at a time and set clear goals for it.
+Treat improvement efforts as a mini-project, including proper planning, staffing, and change management.
+Make sure to revisit the goal to check whether the experiment worked using the metrics defined earlier.
+Keep in mind that change usually leads to an initial productivity drop while people figure out the new way of working.
+Also, most metrics are lagging indicators, so it make take a while before improvements become visible.
+
+Use a change budget to limit the amount of change to a level that people can absorb.
