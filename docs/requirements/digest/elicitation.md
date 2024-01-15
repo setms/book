@@ -68,7 +68,7 @@ For any given project, you'll probably need to use more than one of the followin
   Workshops may take on a life of their own, so refer to the business requirements to enforce scope and focus on the
   right level of abstraction for the session's objectives.
   Smaller groups work faster than larger ones.
-- **Observe** users do their work.
+- **Observe** users do their work (ethnography).
   Limit sessions to two hours and focus on high-risk tasks.
   Use silent observations when you can't interrupt users with questions.
 - Distribute **questionnaires**.
