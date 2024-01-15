@@ -158,6 +158,8 @@ and at least 99 percent available on weekdays
 between 3:00 PM and 5:00 PM Eastern Time.
 ```
 
+Such statements require precise definitions of the metrics used, such as `available` in the previous example.
+
 It's possible to define requirements more formally using specification languages like Planguage @@Gilb2005.
 However, formal methods and certain kinds of diagrams are foreign to most users, so the best way to specify
 requirements is still in text form.

@@ -9,10 +9,19 @@ You can't just look at all the requirements and come up with a design that satis
 By necessity, you start with a subset and expand from there.
 Therefore, you may as well take them one by one.
 
+There isn't a good theory to go from requirements to design.
+Part of the problem comes from there being different kinds of design: interaction design, user interface
+design, architecture, low-level design, database design, and code.
+Code is low-level design; construction is just compilation.
+
+
+### Architecture
+
 Architecture is the big picture design.
-You should tackle that first before you go into detailed design.
+You should tackle that first before you go into lower-level design.
 Architecture is about meeting non-functional requirements.
-Analyze the quality attributes one by one to constrain the high-level design.
+Start with a single monolithic application deployed as a single instance.
+Then analyze the quality attributes one by one to make the architecture as complicated as it needs to be.
 
 Maintainability / portability:
 
@@ -36,8 +45,8 @@ Performance / scalability:
   These problems mean that mathematical analysis is usually computationally intractable or at least impractical.
   It's best to measure arrival and service times, store these as metrics, and then scale dynamically based on the
   collected metrics.
-- Some commands require synchronous processing, because the caller needs a result.
-  The latency for processing such commands is the laterncy of the entire process.
+- Some commands require synchronous processing, because the caller needs a result right away.
+  The latency for processing such commands is the latency of the entire process.
   For asynchronous commands, the latency is just the work for validating the input.
   Use asynchronous commands where possible, to give faster feedback.
 - Split off command/event handlers that have significantly different scaling requirements into their own processes, so
@@ -55,3 +64,23 @@ Resilience:
 
 Once done with non-functional requirements, continue with functional requirements.
 Again, do one requirement at a time.
+
+
+### Design
+
+Canon TDD:
+
+1. Write a list of the test scenarios you want to cover
+2. Turn one item on the list into an actual, concrete, runnable test
+3. Change the code to make the test (& all previous tests) pass (adding items to the list as you discover them)
+4. Optionally refactor to improve the implementation design
+5. Until the list is empty, go back to #2
+
+Issues:
+
+1. How to compile the initial list: embed TDD inside BDD; BDD scenarios follow directly from acceptance criteria for
+  requirements.
+2. How to order the tests? How to design the code-level API when writing a test? How to test non-functional requirements?
+3. Are the transformations in the TPP complete? How to perform the vague ones, like `statement->statements`? How to deal
+  with big jumps?
+4. Is there an order to code smells? When to fix a smell and when to wait a bit?

@@ -36,8 +36,8 @@ Stakeholders can be internal or external to the project team and to the developi
 --- @@Wiegers2013
 ```
 
-**Business rules** are policies, guidelines, standards, or regulations that define or constrain some aspect of the
-business.
+**Business rules**, or **domain requirements**, are policies, guidelines, standards, or regulations that define or
+constrain some aspect of the business.
 They aren't requirements themselves, but lead to requirements because they dictate properties that the system must
 have to conform to the rules.
 
