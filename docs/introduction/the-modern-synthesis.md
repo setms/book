@@ -1,11 +1,6 @@
 # Book organization
 
-The rest of this book attempts to answer the question of how to make software development a real engineering discipline.
-
-First we'll look into each of the SWEBOK knowledge areas and see how much they conform to the engineering approach.
-Then we'll see if we can synthesize an actual engineering process out of their combination.
-
-Before we get into all that, a quick note on the book's title.
+Before we look at the book's organization, a quick word on its title.
 
 
 ## Evolution
@@ -58,4 +53,15 @@ The two pillars of evolution were fist brought together in the seminal book _Evo
 @@Huxley1948.
 
 The current book similarly aspires to bring together the various pillars of software engineering.
+
+The only constant in life is change and this is especially true in software development.
+Requirements change, technology changes, markets change, organizations change, and the development team changes.
+All these changes have an impact on how to develop software.
+As we'll see, the best way to deal with all these changes is to be agile and evolve the software.
+
+The rest of this book attempts to answer the question of how to make software development a real engineering discipline.
+
+First we'll look into each of the SWEBOK knowledge areas and see how much they conform to the engineering approach.
+Then we'll see if we can synthesize an actual engineering process out of their combination.
+
 Let's get started.
