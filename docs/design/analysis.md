@@ -20,10 +20,10 @@ Code is low-level design; construction is just compilation.
 Architecting consists of the following activities:
 
 1. Group requirements and assign the groups to components.
-2. Decide how components interact.
-3. Divide components into standard components to acquire (like databases and container orchestration systems)
+2. Divide components into standard components to acquire (like databases and container orchestration systems)
    and custom components to build.
-4. Select existing implementations of standard components.
+3. Select existing implementations of standard components.
+4. Decide how components interact.
 5. Select technologies to implement custom components and their interfaces.
 
 ```dot process
