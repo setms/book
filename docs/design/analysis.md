@@ -17,10 +17,46 @@ Code is low-level design; construction is just compilation.
 
 ### Architecture
 
-Architecture is the big picture design.
-You should tackle that first before you go into lower-level design.
-Architecture is about meeting non-functional requirements.
-Start with a single monolithic application deployed as a single instance.
+Architecting consists of the following activities:
+
+1. Group requirements and assign the groups to components.
+2. Decide how components interact.
+3. Divide components into standard components to acquire and custom components to build.
+4. Select existing implementations of standard components.
+5. Select technologies to implement custom components and their interfaces.
+
+```dot process
+digraph architecting {
+  node [shape=rect, style="filled", fixedsize=true, width=1, height=0.5, fillcolor=lightskyblue2,
+    color=steelblue4, penwidth=2, fontsize=10];
+  edge [fontsize=9, color=steelblue4, penwidth=2];
+
+  R [label="Requirement"];
+  RG [label="Requirements\ngroup"];
+  C [label="Component"];
+  SC [label="Standard\ncomponent"];
+  CC [label="Custom\ncomponent"];
+  I [label="Interface"];
+  T [label="Technology"];
+
+  R -> RG [label=" is part of"];
+  C -> RG [label="implements   "];
+  C -> T [label="  uses"];
+  I -> T [label=" uses"];
+  SC -> C [label="is a"];
+  CC -> C [label=" is a"];
+  C -> I [label=" provides   "];
+  C -> I [label="  requires"];
+}
+```
+
+Inputs to the architecting process:
+
+- Requirements
+- Architectural styles and patterns
+- Sanctioned technologies and vendors
+
+Start with a single component deployed as a single instance.
 Then analyze the quality attributes one by one to make the architecture as complicated as it needs to be.
 
 Maintainability / portability:
@@ -49,20 +85,22 @@ Performance / scalability:
   The latency for processing such commands is the latency of the entire process.
   For asynchronous commands, the latency is just the work for validating the input.
   Use asynchronous commands where possible, to give faster feedback.
-- Split off command/event handlers that have significantly different scaling requirements into their own processes, so
+- Split off command/event handlers that have significantly different scaling requirements into their own components, so
   they can scale independently.
 
 Resilience:
 
-- Make some queues explicit to handle issues during processing of commands/events by retries.
+- Make some queues explicit as components to handle issues during processing of commands/events by retries.
   This requires that the handling code is idempotent.
 - Split off command/event handlers that have a big risk of causing issues, like OOM, to reduce impact on other parts.
 - Define what liveness means for each process.
- Use an orchestration tool to automatically restart processes that fail the liveness test.
+ Use an orchestration tool (another component) to automatically restart processes that fail the liveness test.
 - Use load shedding when performance requirements aren't met to preserve uptime.
   Detect this using the metrics defined in these requirements.
 
-Once done with non-functional requirements, continue with functional requirements.
+Once done with non-functional requirements, you should have identified all components.
+Perform make or buy decisions on all components.
+For each custom component, implement all functional requirements in all groups implemented by the component.
 Again, do one requirement at a time.
 
 
