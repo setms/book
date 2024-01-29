@@ -6,3 +6,5 @@ deals with requirements.
 The SWEBOK gives @@Wiegers2013 and @@Sommerville2011 (chapters 4, 10, and 12) as the main reference material for this
 knowledge area.
 We first [summarize](digest/index) that literature and then present a preliminary [analysis](analysis.md).
+
+ISO/IEC/IEEE 29148:2011(E)  also covers requirements engineering @@ISO29148.

@@ -52,6 +52,7 @@ Don't limit this interaction to requirements, but involve users in as many activ
 ## Techniques
 
 **Elicitation** is the process of identifying the needs and constraints of the various stakeholders.
+It focuses on how they do their work and how the system helps support that work.
 For any given project, you'll probably need to use more than one of the following elicitation techniques:
 
 - Identify events.
@@ -60,7 +61,7 @@ For any given project, you'll probably need to use more than one of the followin
 - Hold **interviews** with individual stakeholders.
   Come prepared with questions and use active listening @@Rogers1951.
   When replacing an existing system, a good question is what annoys the user the most about it.
-  It also helps to come with a draft model that the user can critique.
+  It also helps to come with a draft model or prototype that the user can critique.
   Assign someone not actively participating in the discussion to take notes.
 - Hold **workshops** with multiple stakeholders.
   These are especially useful for resolving disagreements, so hold them after using other techniques that surface those
@@ -69,6 +70,7 @@ For any given project, you'll probably need to use more than one of the followin
   right level of abstraction for the session's objectives.
   Smaller groups work faster than larger ones.
 - **Observe** users do their work (ethnography).
+  This helps understand the social and organizational context in which the work takes place.
   Limit sessions to two hours and focus on high-risk tasks.
   Use silent observations when you can't interrupt users with questions.
 - Distribute **questionnaires**.

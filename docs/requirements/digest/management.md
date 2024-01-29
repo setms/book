@@ -13,11 +13,13 @@ Breaking delivery down like this helps in dealing with changes.
 
 Changes in requirements are inevitable:
 
+<!-- vale Google.FirstPerson = NO -->
 - Stakeholders don't know precisely what they want at te beginning of the project.
 - Stakeholders can sometimes articulate what they want precisely only after seeing something that doesn't quite match
-  their vision.
+  their vision ("I know it when I see it").
 - Business needs may change during the course of the project.
 - The legal and regulatory environment may change.
+<!-- vale Google.FirstPerson = YES -->
 
 Requirements typically grow 1-3% per month.
 The analyst should place a baseline under change and version control to deal with these changes.

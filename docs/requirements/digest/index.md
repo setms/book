@@ -27,6 +27,8 @@ They may be a constraint on the development of the system.
   They describe what the developers must implement to enable the user requirements.
 - **Non-functional requirements** or **quality attributes** describe the product's characteristics in various
   dimensions that are important to stakeholders.
+  Non-functional requirements often apply to the system as a whole rather than individual features or services.
+  They constrain the system, for instance by stating how fast it must respond.
 
 ```admonish tldr title="Definition"
 A **stakeholder** is a person, group, or organization that is actively involved in a project, is affected by its process
