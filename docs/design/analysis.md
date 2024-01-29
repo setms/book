@@ -63,8 +63,9 @@ Outputs of the architecting process:
 - Container diagram.
 - Architecture Decision Records (ADRs).
 
-Start with a single component.
-Then analyze the quality attributes one by one to make the architecture as complicated as it needs to be.
+The starting point is an application consisting of a single component.
+Then analyze the quality attributes one by one to see if components need splitting.
+Only make the architecture as complicated as it needs to be to meet the requirements.
 
 Performance / scalability:
 
@@ -86,11 +87,12 @@ Performance / scalability:
 
 Resilience:
 
-- Make some queues explicit as components to handle issues during processing of commands/events by retries.
+- Make some queues explicit as components so that retries can handle issues during processing of commands/events.
   This requires that the handling code is idempotent.
 - Split off command/event handlers that have a big risk of causing issues, like OOM, to reduce impact on other parts.
 - Define what liveness means for each process.
- Use an orchestration tool (another component) to automatically restart processes that fail the liveness test.
+  Consider using an orchestration tool (another component) to automatically restart processes that fail the liveness
+  test.
 - Consider load shedding when performance requirements aren't met to preserve uptime.
   Detect this using the metrics defined in these requirements.
 
@@ -107,8 +109,9 @@ Maintainability / portability:
 
 Once done with non-functional requirements, you should have identified all components.
 Perform make or buy decisions on all components.
-For each custom component, implement all functional requirements in all groups implemented by the component.
+For each custom component, implement all functional requirements in the requirements group implemented by the component.
 Again, do one requirement at a time.
+Non-functional requirements apply to all components.
 
 
 ### Design
@@ -156,17 +159,17 @@ digraph coding {
 Canon TDD:
 
 1. Write a list of the test scenarios you want to cover.
-2. Turn one item on the list into an actual, concrete, runnable test.
+2. Turn one item of the list into an actual, concrete, runnable test.
 3. Change the code to make the test (& all previous tests) pass (adding items to the list as you discover them).
 4. Optionally refactor to improve the implementation design.
 5. If the test list isn't empty, go back to #2.
 
 Issues:
 
-1. How to compile the initial list: embed TDD inside BDD; BDD scenarios follow directly from acceptance criteria for
-  requirements.
-2. How to order the tests? Select one which requires code transformation with the highest priority.
-  How to design the code-level API when writing a test? How to test non-functional requirements?
-3. Are the transformations in the TPP complete? How to perform the vague ones, like `statement->statements`? How to deal
-  with big jumps?
-4. Is there an order to code smells? When to fix a smell and when to wait a bit?
+- How to order the initial list of tests? Select one which requires the code transformation with the highest priority.
+- How to design the code-level API when writing a test? How to test non-functional requirements?
+- Are the transformations in the TPP complete?
+- How to perform the vague ones, like `statement->statements`?
+- How to deal with big jumps?
+- Is there an order to code smells as well?
+- When should we fix a smell and when should we wait a bit?
