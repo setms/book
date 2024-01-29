@@ -19,12 +19,12 @@ Code is low-level design; construction is just compilation.
 
 Architecting consists of the following activities:
 
-1. Group requirements and assign the groups to components.
-2. Divide components into standard components to acquire (like databases and container orchestration systems)
-   and custom components to build.
-3. Select existing implementations of standard components.
-4. Decide how components interact.
-5. Select technologies to implement custom components and their interfaces.
+1. Divide the application into components based on requirements.
+2. Group functional requirements and assign the groups to components.
+3. Divide components into standard components to acquire (like databases) and custom components to build.
+4. Select existing implementations for standard components.
+5. Decide how components interact.
+6. Select technologies to implement custom components and their interfaces.
 
 ```dot process
 digraph architecting {
@@ -57,7 +57,13 @@ Inputs to the architecting process:
 - Architectural styles and patterns
 - Sanctioned technologies and vendors
 
-Start with a single component deployed as a single instance.
+Outputs of the architecting process:
+
+- Requirements grouping.
+- Container diagram.
+- Architecture Decision Records (ADRs).
+
+Start with a single component.
 Then analyze the quality attributes one by one to make the architecture as complicated as it needs to be.
 
 Performance / scalability:
@@ -85,12 +91,12 @@ Resilience:
 - Split off command/event handlers that have a big risk of causing issues, like OOM, to reduce impact on other parts.
 - Define what liveness means for each process.
  Use an orchestration tool (another component) to automatically restart processes that fail the liveness test.
-- Use load shedding when performance requirements aren't met to preserve uptime.
+- Consider load shedding when performance requirements aren't met to preserve uptime.
   Detect this using the metrics defined in these requirements.
 
 Security / compatibility:
 
-- Commands arrives over a wire protocol.
+- Commands arrive over a wire protocol.
   Apply input validation while mapping their data to domain objects.
 - Apply output encoding when mapping domain objects to outputs.
 
@@ -111,7 +117,7 @@ Design happens for each custom component:
 
 1. Collect all requirements in the requirements group that the custom component must implement.
 2. Implement requirements one at a time.
-3. For a given requirement, translate its acceptance tests in a list of detailed tests.
+3. For a given requirement, translate its acceptance tests into a list of detailed tests.
 4. Write code based on those tests using TDD.
 
 ```dot process
@@ -149,11 +155,11 @@ digraph coding {
 
 Canon TDD:
 
-1. Write a list of the test scenarios you want to cover
-2. Turn one item on the list into an actual, concrete, runnable test
-3. Change the code to make the test (& all previous tests) pass (adding items to the list as you discover them)
-4. Optionally refactor to improve the implementation design
-5. Until the list is empty, go back to #2
+1. Write a list of the test scenarios you want to cover.
+2. Turn one item on the list into an actual, concrete, runnable test.
+3. Change the code to make the test (& all previous tests) pass (adding items to the list as you discover them).
+4. Optionally refactor to improve the implementation design.
+5. If the test list isn't empty, go back to #2.
 
 Issues:
 
