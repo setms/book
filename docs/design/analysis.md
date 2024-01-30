@@ -19,7 +19,7 @@ Code is low-level design; construction is just compilation.
 
 Architecting consists of the following activities:
 
-1. Divide the system into subsystemss based on requirements.
+1. Divide the system into subsystems based on requirements.
 2. Group functional requirements and assign the groups to subsystems.
 3. Divide subsystems into standard subsystems to acquire (like databases) and custom subsystems to build.
 4. Select existing implementations for standard subsystems.
