@@ -22,25 +22,32 @@ digraph software_development {
   P [label="Package"];
   E [label="Running\nsoftware"];
 
-  N -> R [label="Requirements\nelicitation"];
-  R -> S [label="Architecting"];
-  R -> AT [label="\n\nRequirements\nspecification"];
-  S -> UT [label=""];
-  AT -> UT [label="Detailed\nspecification"];
-  UT -> C [label="TDD"];
-  C -> P [label="CI"];
-  P -> E [label="CD"];
+    subgraph cluster_main {
+        style="rounded,filled";
+        fillcolor="azure";
+        label="Per sub-system";
+
+        UT -> C [label="TDD"];
+        C -> P [label="CI"];
+        P -> E [label="CD"];
+    }
+
+    N -> R [label="Requirements\nelicitation"];
+    R -> S [label="Architecting"];
+    R -> AT [label="Requirements\nspecification"];
+    AT -> UT [label="detailed\nspecification"];
+    S -> UT;
 }
 ```
 
-This process consisting of multiple steps.
-Since different actors (people / software processes) may execute different steps, there are hand-offs and therefore
-queues and waiting time.
+This process consists of multiple steps.
+Since different actors (people or software processes) may execute different steps, there are hand-offs of work items.
+Hand-offs imply queues and their associated waiting time.
 Queuing theory suggests that we can reduce the total time by limiting the number of items in process @@Kleinrock1974.
 
 You can't look at the requirements and come up with a design that satisfies them all in one go anyway.
 By necessity, you start with a subset and expand from there.
-Therefore, you may as well take them one by one.
+Therefore, you may as well take them one by one or in small batches.
 
 
 ### Architecture
