@@ -33,15 +33,14 @@ digraph software_development {
 }
 ```
 
+This process consisting of multiple steps.
+Since different actors (people / software processes) may execute different steps, there are hand-offs and therefore
+queues and waiting time.
+Queuing theory suggests that we can reduce the total time by limiting the number of items in process @@Kleinrock1974.
 
-You can't just look at all the requirements and come up with a design that satisfies them all.
+You can't look at the requirements and come up with a design that satisfies them all in one go anyway.
 By necessity, you start with a subset and expand from there.
 Therefore, you may as well take them one by one.
-
-There isn't a good theory to go from requirements to design.
-Part of the problem comes from there being different kinds of design: interaction design, user interface
-design, architecture, low-level design, database design, and code.
-Code is low-level design; construction is just compilation.
 
 
 ### Architecture
