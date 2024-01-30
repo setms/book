@@ -1,9 +1,38 @@
 # Preliminary analysis
 
-The books referenced by SWEBOK present generally accepted knowledge in the software design field.
-
 
 ## Ideas
+
+Software development is a process that starts with stakeholder needs and ends with running software that meets those
+needs:
+
+```dot process
+digraph software_development {
+  node [shape=rect, style="filled", fixedsize=true, width=1, height=0.5, fillcolor=lightskyblue2,
+  color=steelblue4, penwidth=2, fontsize=10];
+  edge [fontsize=9, color=steelblue4, penwidth=2];
+  rankdir=LR;
+
+  N [label="Stakeholder\nneeds"];
+  R [label="Requirements"];
+  S [label="Subsystems"];
+  AT [label="Acceptance\ntests"];
+  UT [label="Unit\ntests"];
+  C [label="Code"];
+  P [label="Package"];
+  E [label="Running\nsoftware"];
+
+  N -> R [label="Requirements\nelicitation"];
+  R -> S [label="Architecting"];
+  R -> AT [label="\n\nRequirements\nspecification"];
+  S -> UT [label=""];
+  AT -> UT [label="Detailed\nspecification"];
+  UT -> C [label="TDD"];
+  C -> P [label="CI"];
+  P -> E [label="CD"];
+}
+```
+
 
 You can't just look at all the requirements and come up with a design that satisfies them all.
 By necessity, you start with a subset and expand from there.
@@ -40,11 +69,11 @@ digraph architecting {
   I [label="Interface"];
   T [label="Technology"];
 
-  R -> RG [label=" is part of"];
-  C -> RG [label="implements   "];
+  R -> RG [label="  is part of"];
+  RG -> C [label="implemented       \nby"];
   C -> T [label="  uses"];
   I -> T [label=" uses"];
-  SC -> C [label="is a"];
+  SC -> C [label="  is a"];
   CC -> C [label=" is a"];
   C -> I [label=" provides   "];
   C -> I [label="  requires"];
