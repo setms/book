@@ -51,6 +51,19 @@ The different analysis models each have their own strengths and weaknesses, so p
   from hardware or an external system.
   The expected response depends on the system's state.
   Event-response analysis is especially valuable for real-time systems.
+- **Formal methods** are mathematical approaches to software development where you define a formal model of the
+  software.
+  You may formally analyze this model to search for errors and inconsistencies, prove that a program is consistent with
+  the model, or apply a series of correctness-preserving transformations to the model to generate a program.
+  Large-scale automated theorem-proving software supports program proving.
+  However, developing the proof obligations for theorem provers is a difficult and specialized task, so formal
+  verification isn't widely used.
+
+  The starting point for all formal methods is a mathematical model, which acts as the system specification.
+  To create this model, translate the requirements, expressed in natural language, diagrams, and tables, into a
+  mathematical language that has formally defines semantics.
+  Constructing a formal specification forces a detailed analysis if the requirements and is an effective way of
+  discovering requirements problems.
 
 Different systems have differing needs for formality.
 Safety-critical, security-critical, and mission-critical elements of the system are good candidates for modeling.

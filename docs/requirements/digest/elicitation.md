@@ -142,6 +142,9 @@ of a process.
 Dashboards and reports may show predictive as well as descriptive analytics, which require understanding the underlying
 models and statistical calculations.
 
+
+## Non-functional requirements
+
 **Non-functional requirements** are constraints or quality attributes.
 
 **Quality attributes** define _how well_ the systems works.
@@ -160,6 +163,27 @@ Safety-critical systems place more emphasis on reliability.
 Eliciting requirements for quality attributes is difficult.
 When given a choice, stakeholders always opt for the fastest, most reliable, most secure, etc.
 Ask them instead what defines _unacceptable_ performance, reliability, security, etc.
+
+The term **dependability** covers the related quality attributes of availability, reliability, safety, security, and
+resilience.
+**Availability** is the probability that the system is up and running and able to deliver useful services to users
+at any given time.
+**Reliability** is the probability that, over a given period of time, the system delivers correct services as
+expected by users.
+**Safety** is a judgement of the likelihood that the system doesn't cause damage to people or the environment.
+**Security** is a judgement of the likelihood that the system can resist accidental or deliberate intrusions.
+**Resilience** is a judgement of how well the system can continue offering its critical services in the presence of
+disruptive events.
+
+These are emergent properties of the **sociotechnical system**, which contains hardware, software, and non-technical
+elements such as people, processes, and regulations.
+Sociotechnical systems are so complex that you can't understand them as a whole.
+Rather, you have to view them as layers: equipment, operating system, networks, applications, business processes,
+organization, and society.
+
+The society layer contains governments, which mandate that organizations follow certain standards that ensure
+products are safe and secure.
+Governments establish regulatory bodies with wide powers that enforce compliance with these rules.
 
 A **constraint** places restrictions on the design or implementation choices available to developers.
 It's another kind of non-functional requirement, different from quality attributes.
