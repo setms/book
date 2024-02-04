@@ -83,88 +83,36 @@ By giving them a standard notation, non-experts can follow what they're doing an
 It allows them to ask the hard questions and bring conflicts out for resolution.
 Everybody's learning compresses while the domain model emerges as a natural byproduct.
 
-The event storming notation consists of the following:
+The event storming notation consists of the following items:
 
-- A **domain event** is anything that happens that's of interest to an SME.
-- A **command** triggers an event.
-- An **aggregate** accepts commands and emits events.
-- A **policy** contains the decision on how to react to an event.
-- A **read model** holds the information necessary to make a decision.
-- A **person** is a human being responsible for a given decision.
-- An **external system** is another system that generates events of interest to the system under consideration.
+- A <span style="color: #e2871a;">**domain event**</span> is anything that happens that's of interest to an SME.
+- A <span style="color: #1d6eff;">**command**</span> triggers an event.
+- An <span style="color: #efb600;">**aggregate**</span> accepts commands and emits events.
+- A <span style="color: #b300b3;">**policy**</span> contains the decision on how to react to an event.
+- A <span style="color: #007300;">**read model**</span> holds the information necessary to make a decision.
+- A <span style="color: #efb600;">**person**</span> is a human being responsible for a given decision.
+- An <span style="color: #ff00ff;">**external system**</span> is another system that interacts with the system under
+  consideration.
 
 In an event storming workshop, sticky notes of a particular color represent each of these concepts.
 Workshop participants place the stickies on a wall in timeline order to visualize the entire business process.
 
 A specific grammar governs event storming concepts @@Brandolini2022, in the sense that certain things
 always come before or after others.
-It's this grammar that allow non-experts to ask intelligent questions, like what emits this event?
+It's this grammar that allows people who aren't domain experts to ask intelligent questions, like what emits this event?
 
 The main part of the grammar is when a user of the system issues a command based on some information:
 
-```dot process
-digraph event_storming {
-  rankdir=LR;
-  node[shape=rectangle, style=filled, fontcolor=black];
-
-  RM -> U1;
-  RM [label="Read\nmodel", fillcolor=olivedrab2];
-  U1 [label="Person", fillcolor=khaki1];
-  U1 -> C;
-  C [label="Command", fillcolor=deepskyblue];
-  C -> S;
-  S [label="Aggregate", fillcolor=khaki1];
-  S -> E;
-  E [label="Event", fillcolor=orange];
-  U2 [label="Person", fillcolor=khaki1];
-  U2 -> PMP;
-  PMP [label="Person-managed\npolicy", fillcolor=lavender];
-  E -> PMP;
-  PMP -> C2;
-  C2 [label="Command", fillcolor=deepskyblue];
-  E -> AP;
-  AP [label="Automatic\npolicy", fillcolor=lavender];
-  RM2 [label="Read\nmodel", fillcolor=olivedrab2];
-  RM2 -> AP;
-  AP -> C3;
-  C3 [label="Command", fillcolor=deepskyblue];
-}
-```
+![](../img/event-storming-grammar-1.png)
 
 Some alternatives flows exist as well.
 An external system rather than a person may issue a command:
 
-```dot process
-digraph event_storming {
-  rankdir=LR;
-  node[shape=rectangle, style=filled, fontcolor=black];
-
-  ES [label="External\nSystem", fillcolor=lightpink];
-  ES -> C;
-  C [label="Command", fillcolor=deepskyblue];
-  C -> rest;
-  rest [shape=plaintext, label="...", style=""];
-}
-```
+![](../img/event-storming-grammar-2.png)
 
 Events can also come from outside, either from an external system or from the passing of time:
 
-```dot process
-digraph event_storming {
-  rankdir=LR;
-  node[shape=rectangle, style=filled, fontcolor=black];
-
-  ES [label="External\nSystem", fillcolor=lightpink];
-  ES -> E;
-  E [label="Event", fillcolor=orange];
-  E1 [label=<&#x1F4C5; Calendar event>, fillcolor=orange];
-  E2 [label=<&#x1F551; Timer event>, fillcolor=orange];
-  E2 -> rest;
-  E1 -> rest;
-  E -> rest;
-  rest [shape=plaintext, label="...", style=""];
-}
-```
+![](../img/event-storming-grammar-3.png)
 
 With the big picture defined, we can flesh out the domain model further.
 The domain model is a concept from _Domain-Driven Design_ (DDD) @@Evans2014.
@@ -465,7 +413,7 @@ This process is both slow and error-prone in the face of fading memories.
 Having acceptance tests helps, but they can't capture all acceptance criteria.
 And when they can, they still don't explain the rationale.
 
-You also can't link to a conversation people had in the past, so [requirements tracing](digest/index#specification)
+You also can't link to a conversation people had in the past, so [requirements tracing](digest/management.md)
 becomes impossible in an oral culture.
 That in turn makes it harder than necessary to perform an impact analysis of proposed changes.
 
