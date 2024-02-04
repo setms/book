@@ -119,7 +119,10 @@ Excellent requirements are:
 - **Verifiable**.
   Write individually testable requirements, with a small number of related test cases each.
   The count of testable requirements is actually a metric for product size.
-  Rephrase negative requirements into positives so that they're clearer and thus easier to verify.
+  Rephrase negative requirements into positives (where possible) so that they're clearer and thus easier to verify.
+
+  Acceptance tests are programs that verify that the software meets its requirements.
+  They map to individually testable requirements.
 
 It's best to use templates to specify requirements so that all these properties get addressed.
 For _system requirements_, @@Wiegers2013 suggests the Easy Approach to Requirements Syntax (EARS, @@Mavin2022), which
