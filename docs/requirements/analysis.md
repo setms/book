@@ -103,16 +103,16 @@ It's this grammar that allows people who aren't domain experts to ask intelligen
 
 The main part of the grammar is when a user of the system issues a command based on some information:
 
-![](../img/event-storming-grammar-1.png)
+![Main event storming grammar](../img/event-storming-grammar-1.png)
 
 Some alternatives flows exist as well.
 An external system rather than a person may issue a command:
 
-![](../img/event-storming-grammar-2.png)
+![External system issues command](../img/event-storming-grammar-2.png)
 
 Events can also come from outside, either from an external system or from the passing of time:
 
-![](../img/event-storming-grammar-3.png)
+![Other sources of events](../img/event-storming-grammar-3.png)
 
 With the big picture defined, we can flesh out the domain model further.
 The domain model is a concept from _Domain-Driven Design_ (DDD) @@Evans2014.
