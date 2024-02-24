@@ -24,7 +24,7 @@ This would put requirements development in the _Complex_
 realm of engineering.
 
 The Build-Measure-Learn cycle in Lean Startup corresponds to the probe-sense-response approach suited for the
-_Complicated_ domain.
+_Complex_ domain.
 This process moves the undertaking from _Complex_ to _Complicated_.
 Once the company establishes product/market fit, its requirements process normalizes.
 
@@ -137,7 +137,7 @@ Using the same language prevents many misunderstandings and bugs.
 The basic terms in the ubiquitous language are the **domain objects**: entities and value objects.
 
 An **entity** is anything that has continuity and an identity, like a customer.
-When we need to bill the customer, we care whether we bill Adam Brooks or Charlie Davis.
+When we need to bill the customer, we care whether we bill Alice Brooks or Charlie Davis.
 An entity may refer to or contain other entities.
 
 A **value object** is a concept without an identity, like an email address.
@@ -293,7 +293,7 @@ Then <the policy issues a command>
 ## Specifying non-functional requirements
 
 **Non-functional requirements** are requirements that target a quality attribute other than _functionality_.
-These requirement don't deal so much with _what_ happens, but more with _how_: how fast, how easy, how secure, etc.
+These requirements don't deal so much with _what_ happens, but more with _how_: how fast, how easy, how secure, etc.
 That makes it less natural to express such requirements using the `Given/When/Then` format that focuses on the _what_.
 
 For instance, for the quality attribute _performance_, we may use the metrics of throughput and latency.
@@ -302,7 +302,7 @@ takes to handle requests.
 
 We usually don't care much about the latency of a single request being over 3 seconds.
 If this happens only once over the lifetime of a system, then that's annoying but usually not a big deal.
-Unless we're talking about a safety-critical system, of course.
+(Unless we're talking about a safety-critical system, of course.)
 
 The same holds for other non-functional requirements.
 Consider usability, for instance.
