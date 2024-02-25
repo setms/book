@@ -55,20 +55,16 @@ may look like this for a suitable $\delta$:
 <!-- vale Openly.SentenceLength = YES -->
 <!-- markdownlint-enable MD013 -->
 
-```dot process
-digraph transition_diagram {
-  rankdir=LR;
-
-  Start [penwidth=0,fixedsize=true,width=0.5];
-  r [peripheries=2];
-
-  Start -> p;
-  p -> p [label="1"]
-  p -> q [label="0"];
-  q -> q [label="0"];
-  q -> r [label="1"]
-  r -> r [label="0,1"];
-}
+```mermaid
+stateDiagram-v2
+  direction LR
+  [*] --> p
+  p --> p: 1
+  p --> q: 0
+  q --> q: 0
+  q --> r: 1
+  r --> r: 0,1
+  r --> [*]
 ```
 
 An alternative description of a DFA uses a table format.
@@ -196,26 +192,23 @@ For some production $H \to b_1b_2\mathellipsis b_n$, there is a child $b_i$ unde
 
 Here's an example parse tree for $G_p$ that derives the palindrome $01010$:
 
-```dot process
-graph parse_tree_example {
-  A [label="P"];
-  A -- {B C D}
-  C -- {E F G}
-  C [label="P"];
-  F -- H
-  F [label="P"];
-
-  subgraph {
-    rank=same;
-    bb="0,0,0,0";
-
-    B [label="0"];
-    E [label="1"];
-    H [label="0"];
-    G [label="1"];
-    D [label="0"];
-  }
-}
+```mermaid
+graph TB
+  A[P]
+  B[0]
+  C[P]
+  D[0]
+  E[1]
+  F[P]
+  G[1]
+  H[0]
+  A --- B
+  A --- C
+  A --- D
+  C --- E
+  C --- F
+  C --- G
+  F --- H
 ```
 
 The leaves from left to right spell the derived word.
@@ -228,14 +221,13 @@ Context-free languages can recognize programming languages.
 A parse tree of a CFG for a programming language describes a single program in that language.
 For instance, here's a fictitional parse tree for the infamous $Hello, world!$ program in C:
 
-```dot process
-graph parse_tree {
-  Program -- Function -- Declaration -- TypeSpecifier -- "int"
-  Function -- CompoundStatement -- Statement -- ExpressionStatement -- CallExpression -- Identifier -- "printf"
-  CallExpression -- StringLiteral
+```mermaid
+graph TB
+  Program --- Function --- Declaration --- TypeSpecifier --- int
+  Function --- CompoundStatement --- Statement --- ExpressionStatement --- CallExpression --- Identifier --- printf
+  CallExpression --- StringLiteral
 
-  StringLiteral [label="\"Hello, world!\""]
-}
+  StringLiteral["&quot;Hello, world!&quot;"]
 ```
 
 We now have the vocabulary to describe the _structure_ of a program and of programming languages.
@@ -325,19 +317,14 @@ The lexer must output the token it accepted, so that the parser can use it in it
 
 Here's a concept map of a software application based on automata theory:
 
-```dot process
-digraph basic_application_concept_map {
-  node [shape=rect, style="filled", fixedsize=true, width=1, height=0.5, fillcolor=lightskyblue2,
-    color=steelblue4, penwidth=2, fontsize=10];
-  edge [fontsize=9, color=steelblue4, penwidth=2];
-
-  Application -> State [label="has"];
-  Application -> Transition [label="  allows"];
-  Transition -> State [label="from/to"];
-  Transition -> Input [label="  accepts"];
-  Transition -> Output [label="  produces"];
-  Transition -> "External storage" [label="  reads from & writes to"];
-}
+```mermaid
+graph
+  Application --has--> State
+  Application --allows--> Transition
+  Transition --from/to --> State
+  Transition --accepts--> Input
+  Transition --produces--> Output
+  Transition --reads from &\nwrites to --> ES[External storage]
 ```
 
 This model is admittedly not super useful yet, but it'll serve as the basis for later enhancements.

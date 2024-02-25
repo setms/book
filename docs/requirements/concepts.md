@@ -1,71 +1,66 @@
 # Requirements concepts
 
-```dot process
-digraph requirements_concept_map {
-  node [shape=rect, style="filled", fixedsize=true, width=1, height=0.5, fillcolor=lightskyblue2,
-    color=steelblue4, penwidth=2, fontsize=10];
-  edge [fontsize=9, color=steelblue4, penwidth=2];
-
+```mermaid
+flowchart LR
   Sponsor;
-  DU [label="Direct\nuser"];
-  IU [label="Indirect\nuser"];
+  DU[Direct\nuser]
+  IU[Indirect\nuser]
   User;
-  Compliance [label="Compliance\nofficer"];
-  Illity [label="Quality\nattribute"];
+  Compliance[Compliance\nofficer]
+  Illity[Quality\nattribute]
 
-  Sponsor -> Stakeholder [label="  is a"];
-  DU -> User [label="  is a"];
-  IU -> User [label="  is a"];
-  User -> Stakeholder [label="  is a"];
-  User -> Class [label="  part of"];
-  Class [label="User class"];
-  Class -> Champion [label="  represented\nby"];
-  Champion [label="Product\nchampion"];
-  Champion -> User [label="is a"];
-  Class -> Focus [label="  represented\nby"];
-  Focus [label="Focus group"];
-  Focus -> User [label="consists\nof"];
-  Compliance -> Stakeholder [label="  is a"];
-  Developer -> Stakeholder [label=" is a"];
-  Operator -> Stakeholder [label="  is a"];
-  Support -> Stakeholder [label="  is a"];
-  Support [label="Support\nagent"];
-  Stakeholder -> Requirement [label="  provides"];
-  Requirement -> Illity [label="  supports"];
-  Illity -> Metric [label="measured by    "];
-  Illity -> Standard [label=" defined in  "];
-  Illity -> Law [label="defined in        "];
-  Law [label="Law or\nregulation"];
-  Requirement -> AC [label=" has"];
-  AC [label="Acceptance\ncriterion"];
-  AC -> AT [label="  captured in"];
-  AT [label="Acceptance\ntest"];
+  Sponsor --is a--> Stakeholder
+  DU --is a--> User
+  IU --is a--> User
+  User --is a--> Stakeholder
+  User --part of--> Class
+  Class[User class]
+  Class --represented\nby--> Champion
+  Champion[Product\nchampion]
+  Champion --is a--> User
+  Class --represented\nby--> Focus
+  Focus[Focus group]
+  Focus --consists\nof--> User
+  Compliance --is a--> Stakeholder
+  Developer --is a--> Stakeholder
+  Operator --is a--> Stakeholder
+  Support --is a--> Stakeholder
+  Support[Support\nagent]
+  Stakeholder --provides--> Requirement
+  Requirement --supports--> Illity
+  Illity --measured by--> Metric
+  Illity --defined in--> Standard
+  Illity --defined in--> Law
+  Law[Law or\nregulation]
+  Requirement --has--> AC
+  AC[Acceptance\ncriterion]
+  AC --captured in--> AT
+  AT[Acceptance\ntest]
 
-  BR [label="Business\nrequirement"];
-  BR -> Requirement [label=" is a"];
-  Vision -> BR [label="  captures"];
-  Vision [label="Vision & scope\ndocument"];
-  UR [label="User\nrequirement"];
-  UR -> Requirement [label="is a"];
-  UR -> BR [label=" supports   "];
-  UC -> UR [label=" captures"];
-  UC [label="Use case"];
-  FR [label="Functional\nrequirement"];
-  FR -> Requirement [label="  is a"];
-  FR -> UR [label=" supports  "];
-  SRS -> FR [label="captures  "];
-  SRS [label="Software\nrequirements\nspecification"];
+  BR[Business\nrequirement]
+  BR --is a--> Requirement
+  Vision --captures--> BR
+  Vision[Vision & scope\ndocument]
+  UR[User\nrequirement]
+  UR --is a--> Requirement
+  UR --supports--> BR
+  UC --captures--> UR
+  UC[Use case]
+  FR[Functional\nrequirement]
+  FR --is a--> Requirement
+  FR --supports--> UR
+  SRS --captures--> FR
+  SRS[Software\nrequirements\nspecification]
 
-  System -> Requirement [label="is a"];
-  System [label="System\nrequirement"];
-  SyRS -> System[label="  captures"];
-  SyRS [label="System\nRequirements\nspecification"];
+  System --is a--> Requirement
+  System[System\nrequirement]
+  SyRS --captures--> System
+  SyRS[System\nRequirements\nspecification]
 
-  Rule [label="Business\nrule"];
-  Rule -> BR [label="  leads to"];
-  Rule -> UR [label=" leads to"];
-  Rule -> FR [label="leads to"];
+  Rule[Business\nrule]
+  Rule --leads to--> BR
+  Rule --leads to--> UR
+  Rule --leads to--> FR
 
-  Feature -> FR [label="  bundles"];
-}
+  Feature --bundles--> FR
 ```

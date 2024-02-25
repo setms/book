@@ -172,44 +172,39 @@ In DDD terms, that data takes the form of domain objects.
 
 Putting all that together, we get the following model for a software application:
 
-```dot process
-digraph ddd_application_concept_map {
-  node [shape=rect, style="filled", fixedsize=true, width=1, height=0.5, fillcolor=lightskyblue2,
-    color=steelblue4, penwidth=2, fontsize=10];
-  edge [fontsize=9, color=steelblue4, penwidth=2];
-
-  Policy -> Event [label="reacts to   ", color=steelblue, fontcolor=steelblue];
-  RM [label="Read model"];
-  RM-> Repository [label="  based on"];
-  Application -> Aggregate [label=" has"];
-  Aggregate -> Event [label="emits"];
-  Policy -> Command [label=" issues"];
-  Aggregate -> Command [label="accepts    "];
-  Aggregate -> RE [label="defined by"];
-  RE[label="Root entity"];
-  RE -> Entity [label="  is a"];
-  RE -> Repository [label="stored in      "];
-  Entity -> DO [label="is a    "];
-  DO [label="Domain object"];
-  VO -> DO [label=" is a"];
-  VO [label="Value object"];
-  DO -> DO [label="  contains"];
-  Entity -> VO [label=" refers to"];
-  Entity -> Aggregate [label="bound   \ninside   "];
-  Command -> DO [label="contains"];
-  Event -> DO [label="contains"];
-  Application -> AP [label=" has"];
-  AP -> Policy [label="  is a"];
-  AP [label="Automatic\npolicy"];
-  AP -> RM [label="queries       ", color=steelblue, fontcolor=steelblue];
-  PMP -> Policy [label="  is a"];
-  PMP [label="Person-managed\npolicy"];
-  Person -> PMP [label=" executes   "];
-  Person -> Command [label="  initiates"];
-  ES -> Command [label=" issues"];
-  ES [label="External\nsystem"];
-  ES -> Event [label="emits"];
-}
+```mermaid
+flowchart TB
+  Policy --reacts to--> Event
+  RM[Read model]
+  RM --based on--> Repository
+  Application --has--> Aggregate
+  Aggregate --emits--> Event
+  Policy --issues--> Command
+  Aggregate --accepts--> Command
+  Aggregate --defined by--> RE
+  RE[Root entity]
+  RE --is a--> Entity
+  RE --stored in--> Repository
+  Entity --is a--> DO
+  DO[Domain object]
+  VO --is a--> DO
+  VO[Value object]
+  DO --contains--> DO
+  Entity --refers to--> VO
+  Entity --bound\ninside--> Aggregate
+  Command --contains--> DO
+  Event --contains--> DO
+  Application --has--> AP
+  AP --is a--> Policy
+  AP[Automatic\npolicy]
+  AP --queries--> RM
+  PMP --is a--> Policy
+  PMP[Person-managed\npolicy]
+  Person --executes--> PMP
+  Person --initiates--> Command
+  ES --issues--> Command
+  ES[External\nsystem]
+  ES --emits--> Event
 ```
 
 ## Requirements for software

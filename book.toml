@@ -17,12 +17,14 @@ render-bib = "cited"
 [preprocessor.katex]
 after = ["links"]
 
-[preprocessor.graphviz]
-command = "mdbook-graphviz"
-output-to-file = false
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
 
 [output]
 
 [output.html]
 additional-css = ["./mdbook-admonish.css"]
 curly-quotes = true
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
+
+[output.wordcount]

@@ -86,28 +86,22 @@ Requirements management relates to risk management.
 A **risk** is a condition that may cause something bad to happen.
 **Risk management** is the process of identifying, evaluating, and controlling risks before they harm your project:
 
-```dot process
-digraph risk_management {
-  node [shape=rect, style="filled", fixedsize=true, width=1, height=0.5, fillcolor=lightskyblue2,
-    color=steelblue4, penwidth=2, fontsize=10];
-  edge [fontsize=9, color=steelblue4, penwidth=2];
+```mermaid
+flowchart TB
+  RM[Risk\nmanagement]
+  MP[Management\nplanning]
 
-  RM [label="Risk\nmanagement"];
-  MP [label="Management\nplanning"];
+  RM --> Assessment
+  RM --> Avoidance
+  RM --> Control
 
-  RM -> Assessment;
-  RM -> Avoidance;
-  RM -> Control;
+  Assessment --> Identification
+  Assessment --> Analysis
+  Assessment --> Prioritization
 
-  Assessment -> Identification;
-  Assessment -> Analysis;
-  Assessment -> Prioritization;
-
-  Control -> MP;
-  Control -> Resolution;
-  Control -> Monitoring;
-
-}
+  Control --> MP
+  Control --> Resolution
+  Control --> Monitoring
 ```
 
 Typical requirements risks include inadequate stakeholder involvement, misunderstanding of requirements,

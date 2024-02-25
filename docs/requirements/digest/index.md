@@ -74,23 +74,18 @@ Capture computations in mathematical form or decision table.
 
 **Requirements engineering** is the discipline that deals with requirements:
 
-```dot process
-digraph requirements_engineering {
-  node [shape=rect, style="filled", fixedsize=true, width=1, height=0.5, fillcolor=lightskyblue2,
-    color=steelblue4, penwidth=2, fontsize=10];
-  edge [fontsize=9, color=steelblue4, penwidth=2];
+```mermaid
+flowchart TB
+  RE[Requirements\nengineering]
+  RD[Requirements\ndevelopment]
+  RM[Requirements\nmanagement]
 
-  RE [label="Requirements\nengineering"];
-  RD [label="Requirements\ndevelopment"];
-  RM [label="Requirements\nmanagement"];
-
-  RE -> RD;
-  RE -> RM;
-  RD -> Elicitation;
-  RD -> Analysis;
-  RD -> Specification;
-  RD -> Validation;
-}
+  RE --> RD
+  RE --> RM
+  RD --> Elicitation
+  RD --> Analysis
+  RD --> Specification
+  RD --> Validation
 ```
 
 Requirements engineering is the realm of the **business analyst**.

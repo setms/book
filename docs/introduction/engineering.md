@@ -41,20 +41,12 @@ The scientific method involves making observations, formulating hypotheses based
 running experiments to falsify the hypotheses, and generalizing hypotheses into a cohesive theory.
 These activities form a loop:
 
-```dot process
-digraph scientific_method {
-  size="6!";
-  layout="circo";
-  splines="curved";
-  node [shape=rect, style="rounded,filled", fixedsize=true, width=1.5, height=0.75, fillcolor=lightskyblue2,
-    color=steelblue4, penwidth=2];
-  edge [fontsize=11, color=steelblue4, penwidth=2];
-
-  Experiment -> Observation [label = "\n\nPerform the\nexperiment"];
-  Observation -> Theory [label = "Create or modify\nthe theory"];
-  Theory -> Hypothesis [label = "Use the theory\nto form a\nhypothesis"];
-  Hypothesis -> Experiment [label = "Design an\nexperiment to\ntest the hypothesis"];
-}
+```mermaid
+flowchart LR
+  Experiment --Perform the\nexperiment--- Observation
+  Observation --Create or modify\nthe theory--- Theory
+  Theory --Use the theory\nto form a\nhypothesis--- Hypothesis
+  Hypothesis --Design an\nexperiment to\ntest the hypothesis--- Experiment
 ```
 
 Scientific knowledge grows over time.
@@ -80,26 +72,19 @@ Edges are either **directed** (with arrows) or **undirected** (without).
 
 Here's an example of an undirected graph:
 
-```dot process
-digraph nodes_and_edges {
-  layout="neato";
-  node [shape=circle, style=filled, fixedsize=true, width=0.15, height=0.15, fillcolor=lightskyblue2,
-    color=steelblue4, label=""];
-  edge [color=steelblue4, dir=none];
-
-
-  a -> b;
-  b -> c;
-  c -> d;
-  c -> e;
-  c -> f;
-  e -> f;
-  f -> g;
-  b -> h;
-  h -> i;
-  c -> i;
-  i -> j
-}
+```mermaid
+graph LR
+  a((a)) --- b((b))
+  b --- c((c))
+  c --- d((d))
+  c --- e((e))
+  c --- f((f))
+  e --- f
+  f --- g((g))
+  b --- h((h))
+  h --- i((i))
+  c --- i
+  i --- j((j))
 ```
 
 A **concept map** is a graph where the nodes represent concepts and the edges the relationships between them.

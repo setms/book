@@ -23,20 +23,12 @@ The scientific theory of evolution rests on two pillars:
 
 On a high level, evolution works as follows:
 
-```dot process
-digraph evolutoin {
-  size="6!";
-  layout="circo";
-  splines="curved";
-  node [shape=rect, style="rounded,filled", fixedsize=true, width=1.5, height=0.75, fillcolor=lightskyblue2,
-    color=steelblue4, penwidth=2];
-  edge [fontsize=11, color=steelblue4, penwidth=2];
-
-  "Parents &\noffspring" -> Survivors [label = "\nLimited resources\nensure only the\nfittest survive"];
-  Survivors -> Population [label = "Survivors form\nthe new population  "];
-  Population -> Offspring [label = "Parents produce\noffspring with\nsmall changes\nin traits"];
-  Offspring -> "Parents &\noffspring" [label = "\nOffspring expand\nthe population"];
-}
+```mermaid
+graph LR
+  P[Parents &\noffspring] --Limited resources\nensure only the\nfittest survive--> Survivors
+  Survivors --Survivors form\nthe new population--> Population
+  Population --Parents produce\noffspring with\nsmall changes\nin traits--> Offspring
+  Offspring --Offspring expand\nthe population--> P
 ```
 
 Note how this process resembles the [scientific method](engineering.md#science):

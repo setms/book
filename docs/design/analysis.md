@@ -6,38 +6,26 @@
 Software development is a process that starts with stakeholder needs and ends with running software that meets those
 needs:
 
-```dot process
-digraph software_development {
-  node [shape=rect, style="filled", fixedsize=true, width=1, height=0.5, fillcolor=lightskyblue2,
-  color=steelblue4, penwidth=2, fontsize=10];
-  edge [fontsize=9, color=steelblue4, penwidth=2];
-  rankdir=LR;
+```mermaid
+flowchart LR
+  N[Stakeholder\nneeds]
+  R[Requirements]
+  S[Subsystems]
+  AT[Acceptance\ntests]
+  UT[Unit\ntests]
+  C[Code]
+  P[Package]
+  E[Running\nsoftware]
 
-  N [label="Stakeholder\nneeds"];
-  R [label="Requirements"];
-  S [label="Subsystems"];
-  AT [label="Acceptance\ntests"];
-  UT [label="Unit\ntests"];
-  C [label="Code"];
-  P [label="Package"];
-  E [label="Running\nsoftware"];
+  UT --TDD--> C
+  C --CI--> P
+  P --CD--> E
 
-    subgraph cluster_main {
-        style="rounded,filled";
-        fillcolor="azure";
-        label="Per sub-system";
-
-        UT -> C [label="TDD"];
-        C -> P [label="CI"];
-        P -> E [label="CD"];
-    }
-
-    N -> R [label="Requirements\nelicitation"];
-    R -> S [label="Architecting"];
-    R -> AT [label="Requirements\nspecification"];
-    AT -> UT [label="detailed\nspecification"];
-    S -> UT;
-}
+  N --Requirements\nelicitation-->
+  R --Architecting--> S
+  R --Requirements\nspecification--> AT
+  AT --detailed\nspecification--> UT
+  S --> UT
 ```
 
 This process consists of multiple steps.
@@ -61,29 +49,24 @@ Architecting consists of the following activities:
 5. Decide how subsystems interact.
 6. Select technologies to implement custom subsystems and their interfaces.
 
-```dot process
-digraph architecting {
-  node [shape=rect, style="filled", fixedsize=true, width=1, height=0.5, fillcolor=lightskyblue2,
-    color=steelblue4, penwidth=2, fontsize=10];
-  edge [fontsize=9, color=steelblue4, penwidth=2];
+```mermaid
+flowchart TB
+  R[Requirement]
+  RG[Requirements\ngroup]
+  C[Subsystem]
+  SC[Standard\nsubsystem]
+  CC[Custom\nsubsystem]
+  I[Interface]
+  T[Technology]
 
-  R [label="Requirement"];
-  RG [label="Requirements\ngroup"];
-  C [label="Subsystem"];
-  SC [label="Standard\nsubsystem"];
-  CC [label="Custom\nsubsystem"];
-  I [label="Interface"];
-  T [label="Technology"];
-
-  R -> RG [label="  is part of"];
-  RG -> C [label="implemented       \nby"];
-  C -> T [label="  uses"];
-  I -> T [label=" uses"];
-  SC -> C [label="  is a"];
-  CC -> C [label=" is a"];
-  C -> I [label=" provides   "];
-  C -> I [label="  requires"];
-}
+  R --is part of--> RG
+  RG --implemented by--> C
+  C --uses--> T
+  I --uses--> T
+  SC --is a--> C
+  CC --is a--> C
+  C --provides--> I
+  C --requires--> I
 ```
 
 Inputs to the architecting process:
@@ -158,36 +141,30 @@ Design happens for each custom subsystem:
 3. For a given requirement, translate its acceptance tests into a list of detailed tests.
 4. Write code based on those tests using TDD.
 
-```dot process
-digraph coding {
-  node [shape=rect, style="filled", fixedsize=true, width=1, height=0.5, fillcolor=lightskyblue2,
-    color=steelblue4, penwidth=2, fontsize=10];
-  edge [fontsize=9, color=steelblue4, penwidth=2];
-  rankdir=LR;
+```mermaid
+flowchart BT
+  R[Requirement]
+  RG[Requirements\ngroup]
+  CC[Custom\nsubsystem]
+  I[Interface]
+  AT[Acceptance\ntest]
+  UT[Unit test]
+  C[Code]
+  PL[Programming\nlanguage]
+  T[Technology]
 
-  R [label="Requirement"];
-  RG [label="Requirements\ngroup"];
-  CC [label="Custom\nsubsystem"];
-  I [label="Interface"];
-  AT [label="Acceptance\ntest"];
-  UT [label="Unit test"];
-  C [label="Code"];
-  PL [label="Programming\nlanguage"];
-  T [label="Technology"];
-
-  AT -> R [label="specifies"];
-  UT -> AT [label="implements\npart of"];
-  UT -> C [label="validates"];
-  C -> CC [label="implements"];
-  C -> I [label="implements"];
-  CC -> RG [label="implements"];
-  R -> RG [label="is part of"];
-  CC -> I [label="provides"];
-  CC -> I [label="requires"];
-  C -> PL [label="written in"];
-  UT -> PL [label="written in"];
-  PL -> T [label="is a"];
-}
+  AT --specifies--> R
+  UT --implements\npart of--> AT
+  UT --validates--> C
+  C --implements--> CC
+  C --implements--> I
+  CC --implements--> RG
+  R --is part of--> RG
+  CC --provides--> I
+  CC --requires--> I
+  C --written in--> PL
+  UT --written in--> PL
+  PL --is a--> T
 ```
 
 
