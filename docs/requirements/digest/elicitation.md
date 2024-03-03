@@ -61,7 +61,7 @@ For any given project, you'll probably need to use more than one of the followin
 - Hold **interviews** with individual stakeholders.
   Come prepared with questions and use active listening @@Rogers1951.
   When replacing an existing system, a good question is what annoys the user the most about it.
-  It also helps to come with a draft model or prototype that the user can critique.
+  It also helps to come with a draft model or [prototype](analysis.md#prototypes) that the user can critique.
   Assign someone not actively participating in the discussion to take notes.
 - Hold **workshops** with multiple stakeholders.
   These are especially useful for resolving disagreements, so hold them after using other techniques that surface those

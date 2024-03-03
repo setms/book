@@ -30,6 +30,10 @@ They may be a constraint on the development of the system.
   Non-functional requirements often apply to the system as a whole rather than individual features or services.
   They constrain the system, for instance by stating how fast it must respond.
 
+These terms aren't used consistently.
+For instance, @@Sommerville2011 uses the term _system requirement_ where @@Wiegers2013 uses _functional requirement_.
+We'll stick with the above definitions.
+
 ```admonish tldr title="Definition"
 A **stakeholder** is a person, group, or organization that is actively involved in a project, is affected by its process
 or outcome, or can influence its process or outcome.

@@ -10,7 +10,7 @@ Use templates for consistency.
 Keep business rules separate from requirements, since their scope is wider.
 This allows reuse across products.
 Document the origin and expected frequency of change for each business rule.
-The business should own business rules, rather than the IT department.
+The business should own business rules, rather than the software development organization.
 
 
 ## Specification documents
@@ -163,14 +163,6 @@ between 3:00 PM and 5:00 PM Eastern Time.
 
 Such statements require precise definitions of the metrics used, such as `available` in the previous example.
 
-It's possible to define requirements more formally using specification languages like Planguage @@Gilb2005.
-However, stakeholders can't understand a formal specification, so they can't check that it accurately represents
-their requirements.
-Software engineers, who understand the formal specification, may not understand the application domain, so they
-can't be sure the formal specification is accurate either.
-Therefore, the best way to specify requirements is still in natural language.
-Structured natural language, like used in the templates above, is often better than free-form text.
-
 Many measurements of quality attributes are **lagging indicators**.
 This means you can't tell whether the system achieved its goals until after it's been in operation for a while.
 
@@ -190,3 +182,32 @@ Conceptually, each requirement is one record in a Requirements Development (RD) 
 **Requirements Development tools** help eliciting requirements and judge whether they're well-written.
 For instance, they can scan for vague an ambiguous words.
 RD tools offer different communication methods for stakeholders and some can convert text to diagrams.
+
+
+## Formal specification
+
+It's possible to define requirements more formally using specification languages like Planguage @@Gilb2005.
+However, stakeholders can't understand a formal specification, so they can't check that it accurately represents
+their requirements.
+Software engineers, who understand the formal specification, may not understand the application domain, so they
+can't be sure the formal specification is accurate either.
+Therefore, the best way to specify requirements is still in natural language.
+Structured natural language, like used in the templates above, is often better than free-form text.
+
+For safety-critical systems, this trade-off may be different and formal methods may be the right tool.
+
+**Formal methods** rely on a formal model of the system that serves as the specification.
+These methods mathematically analyze the model and may transform it into more detailed representations, sometimes all
+the way to code, while preserving semantics.
+
+Verifying a nontrivial software system takes a great deal of time.
+It requires mathematical expertise and specialized software tools, like theorem provers.
+It's an expensive process and the costs increase disproportionately with system size.
+
+An alternative approach is **model checking**.
+The models used by model-checking systems are finite state models, usually created from program code.
+The analyst identifies desirable system properties and writes them in a formal notation, usually based on temporal
+logic.
+The model checker explores all paths through the model and checks whether the desired properties hold for each
+of them.
+If a property isn't guaranteed, the model checker outputs a counterexample.

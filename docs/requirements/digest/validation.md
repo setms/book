@@ -38,7 +38,17 @@ You can't perform acceptance tests until you have running software, but just wri
 ambiguities, and omissions in requirements.
 
 Automate acceptance tests as much as possible.
+Automated tests fall on a spectrum from white box to black box.
+In black box testing, the tests can only work with the system's observable external interface.
+In white box testing, the tests can see inside the system they check.
+Developers can write white box tests before the code, in a practice known as test-driven development @@Beck2002.
+
 Users may also manually perform acceptance tests in User Acceptance Testing (UAT).
+
+Some non-functional requirements may require experts to validate them.
+For instance, many organizations hire penetration testers to validate security requirements.
+Other non-functional requirements may be hard to validate because they state that some things should _not_ happen,
+like safety and compliance requirements.
 
 
 ## Inspections
