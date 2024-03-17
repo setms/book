@@ -137,7 +137,16 @@ engineering environments.
 The design process to solve an engineering problem consists of the following steps @@Voland2004 :
 
 1. **Needs assessment**.
-  Establish the need for a solution.
+    Establish the need for a solution.
+    This may be an unmet need or an improvement of an earlier solution with weaknesses or shortcomings.
+
+    The output of this phase is a **design proposal**, which justifies the need for a solution and expresses this need
+    in precise and accurate terms.
+    The design proposal lists the objective (why), background (who, where), method (how, when), expected results
+    (what), and costs (how much).
+
+    The background describes the users to serve and the environment in which the solution must operate.
+    It also evaluates existing solutions and prior work.
 2. **Problem formulation**.
   Define the problem in the form of design goals that any viable solution must meet, using specifications and
   requirements.
@@ -150,11 +159,15 @@ The design process to solve an engineering problem consists of the following ste
   Test/evaluate/refine alternative designs. This may include building prototypes.
   Select the best alternative.
 5. **Implementation**.
-  Develop the final solution and distribute it to the intended clients/customers/users.
-  Receive feedback for the next-generation design.
-  Since designing requires making trade-offs, there is seldom a perfect solution to the problem.
-  Therefore, it's common to repeat the whole process multiple times, each time incorporating learnings from
-  real-world usage.
+     Develop the final solution and distribute it to the intended clients/customers/users.
+     Receive feedback for the next-generation design.
+     Since designing requires making trade-offs, there is seldom a perfect solution to the problem.
+     Therefore, it's common to repeat the whole process multiple times, each time incorporating learnings from
+     real-world usage.
+
+    Before a system becomes active, we must test it.
+    After testing, activate safety-critical subsystems first and start monitoring the system.
+
 6. **Reflection.**
   Contemplate the lessons learned and knowledge acquired and optionally report on the project.
 
