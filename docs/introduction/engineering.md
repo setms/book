@@ -43,10 +43,10 @@ These activities form a loop:
 
 ```mermaid
 flowchart LR
-  Experiment --Perform the\nexperiment--- Observation
-  Observation --Create or modify\nthe theory--- Theory
-  Theory --Use the theory\nto form a\nhypothesis--- Hypothesis
-  Hypothesis --Design an\nexperiment to\ntest the hypothesis--- Experiment
+  Experiment --Perform the\nexperiment--> Observation
+  Observation --Create or modify\nthe theory--> Theory
+  Theory --Use the theory\nto form a\nhypothesis--> Hypothesis
+  Hypothesis --Design an\nexperiment to\ntest the hypothesis--> Experiment
 ```
 
 Scientific knowledge grows over time.
@@ -66,7 +66,7 @@ Engineers apply scientific theories by constructing models of their designs @@Br
 A **model** is an approximation of a real system that responds in a similar way.
 
 Since everything connects to everything, networks are important models.
-A **graph** is a model of a network, where the **nodes** are things and the **edges** are relationships between the
+A **graph** is a visualization of a network, where the **nodes** are things and the **edges** are relationships between the
 things.
 Edges are either **directed** (with arrows) or **undirected** (without).
 
@@ -88,6 +88,7 @@ graph LR
 ```
 
 A **concept map** is a graph where the nodes represent concepts and the edges the relationships between them.
+Concepts maps are useful for organizing and structuring knowledge.
 
 A **system** is part of a network inside a boundary @@Brockman2009.
 Everything outside the boundary is the **environment**.
@@ -120,8 +121,8 @@ A producer produces an artifact in the **engineering environment**, while an ope
 Operators have performance goals, or **specifications**.
 Producers have cost goals, or **requirements**.
 An engineer expresses goals quantitatively as constraints or objectives.
-A **constraint** is a hard limit, for instance water-resistant up to 20m.
-An **objective** is a desire for minimizing or maximizing a value, for example as thin as possible.
+A **constraint** is a hard limit, for instance _water-resistant up to 20m_.
+An **objective** is a desire for minimizing or maximizing a value, for example _as thin as possible_.
 
 The engineering design process basically refines the form until it's acceptable in both the operating and
 engineering environments.
@@ -161,7 +162,7 @@ At most steps, the engineer may learn something that affects a "prior" step.
 ## Evolution of an engineering discipline
 
 Engineering applies science, which takes time to develop.
-A new field of engineering necessarily grows from humble beginnings.
+A new field of engineering therefore necessarily grows from humble beginnings.
 @@Shaw1990 provides the following model of such evolution:
 
 ![Evolution of an engineering discipline](https://www.researchgate.net/profile/Trevor-Bihl/publication/339029049/figure/download/fig2/AS:854876443660288@1580829835253/Shaws-Model-of-the-evolution-of-engineering-disciplines-from-14.png)

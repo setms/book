@@ -194,7 +194,8 @@ can't be sure the formal specification is accurate either.
 Therefore, the best way to specify requirements is still in natural language.
 Structured natural language, like used in the templates above, is often better than free-form text.
 
-For safety-critical systems, this trade-off may be different and formal methods may be the right tool.
+For safety-critical systems, the trade-off between understandability and rigor may be different and formal methods
+may be the right tool.
 
 **Formal methods** rely on a formal model of the system that serves as the specification.
 These methods mathematically analyze the model and may transform it into more detailed representations, sometimes all
