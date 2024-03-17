@@ -62,6 +62,10 @@ Application of the scientific method leads to scientific theories that engineeri
 problems.
 For instance, electrical engineering applies the theory of electromagnetism @@Jackson1999.
 
+The methodical and iterative transition between scientific theory and its practical application successively develops
+and refines both the theory itself and its application.
+This forms the essence of good engineering practice @@Voland2004.
+
 Engineers apply scientific theories by constructing models of their designs @@Brockman2009.
 A **model** is an approximation of a real system that responds in a similar way.
 
@@ -114,7 +118,11 @@ A **class hierarchy** or **taxonomy** is a tree where all relationships are `is-
 
 ## Design process
 
-Artifacts have form and purpose, and the form must be appropriate for the purpose @@Brockman2009.
+Engineers focus on problems for which there are many practical solutions.
+They seek the best solution from among these alternatives.
+To help with that, they follow a procedure known as the engineering design process @@Voland2004.
+
+The artifacts to design have form and purpose, and the form must be appropriate for the purpose @@Brockman2009.
 A producer produces an artifact in the **engineering environment**, while an operator uses the artifact in the
 **operating environment**.
 
@@ -124,39 +132,37 @@ An engineer expresses goals quantitatively as constraints or objectives.
 A **constraint** is a hard limit, for instance _water-resistant up to 20m_.
 An **objective** is a desire for minimizing or maximizing a value, for example _as thin as possible_.
 
-The engineering design process basically refines the form until it's acceptable in both the operating and
+The engineering design process refines the form until it's acceptable in both the operating and
 engineering environments.
-However, the problem itself, or at least the engineer's understanding of it, also evolves in this process.
-It may help to grow this understanding by building up a decision tree.
+The design process to solve an engineering problem consists of the following steps @@Voland2004 :
+
+1. **Needs assessment**.
+  Establish the need for a solution.
+2. **Problem formulation**.
+  Define the problem in the form of design goals that any viable solution must meet, using specifications and
+  requirements.
+  Prioritize the design goals.
+3. **Abstraction and synthesis**.
+  Look up or develop general concepts or approaches which allow solving the problem.
+  Generate detailed alternative solutions or designs for the problem.
+4. **Analysis**.
+  Establish objective evaluation criteria, including how easy the design is to implement.
+  Test/evaluate/refine alternative designs. This may include building prototypes.
+  Select the best alternative.
+5. **Implementation**.
+  Develop the final solution and distribute it to the intended clients/customers/users.
+  Receive feedback for the next-generation design.
+  Since designing requires making trade-offs, there is seldom a perfect solution to the problem.
+  Therefore, it's common to repeat the whole process multiple times, each time incorporating learnings from
+  real-world usage.
+6. **Reflection.**
+  Contemplate the lessons learned and knowledge acquired and optionally report on the project.
+
+The problem itself, or at least the engineer's understanding of it, evolves during this process.
+The design process is therefore not a linear sequence of steps, but more of an iterative process.
+
+The engineer can capture their growing understanding of the both the problem and the solution using a decision tree.
 A **decision tree** is a hierarchy where child nodes are alternative options to meet the goal of their parent node.
-
-The design process to solve an engineering problem consists of the following steps:
-
-1. **Define**.
-  Identify the knowns and unknowns. Restate the problem in your own words. Visualize it.
-2. **Explore**.
-  Does the problem make sense? What are the assumptions? Possible approaches? Can we re-use (partial) existing solutions?
-3. **Plan**.
-  Determine the sequence of steps.
-  Create a tree where the root represents the main goal, intermediate nodes represent subgoals, and leaves the givens
-  and assumptions.
-4. **Implement**.
-  Solve equations, assemble the structure, write a program, etc.
-  Take small steps and document them.
-  Expect to iterate between this step and the plan step.
-5. **Check**.
-  Do a sanity check.
-  Run through **test cases**, known solutions to an instance of a general problem.
-  You may need to iterate again.
-6. **Generalize**.
-  Reflect on learnings.
-  Would this approach also work for other problems?
-  Did you encounter problems to watch out for in future endeavors?
-7. **Present results**.
-  Prepare to present to both experts and lay people.
-
-While the above list may suggest a linear approach, this is seldom the case.
-At most steps, the engineer may learn something that affects a "prior" step.
 
 
 ## Evolution of an engineering discipline
