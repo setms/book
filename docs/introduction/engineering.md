@@ -148,16 +148,32 @@ The design process to solve an engineering problem consists of the following ste
     The background describes the users to serve and the environment in which the solution must operate.
     It also evaluates existing solutions and prior work.
 2. **Problem formulation**.
-  Define the problem in the form of design goals that any viable solution must meet, using specifications and
-  requirements.
-  Prioritize the design goals.
+    Define the problem in the form of design goals that any viable solution must meet, using specifications and
+    requirements.
+
+    The "real" problem to solve is usually different from the initial statement.
+    Several heuristics help with discovering what this is.
+
+    - The **statement-restatement technique** rewrites the initial statement in different ways to gain more insight
+      into the real problem.
+      You can use words, diagrams, or mathematical formulas.
+    - A **why-why diagram** places the initial statement on the left and possible underlying sources on the right.
+      One can identify the sources for those sources again, etc. to get more and more specific.
+    - A **Duncker diagram** matches present and desired state.
+      One keeps rewriting these until there is satisfactory correlation between them.
+      Under each state one then lists solutions at three levels: general, functional, and specific.
+      General solutions can either take an action to achieve the desired state, or transform the present state to make
+      it acceptable.
+    - For **Kepner-Tregoe situation analysis**, see below.
+
+    Prioritize the design goals.
 3. **Abstraction and synthesis**.
-  Look up or develop general concepts or approaches which allow solving the problem.
-  Generate detailed alternative solutions or designs for the problem.
+     Look up or develop general concepts or approaches which allow solving the problem.
+     Generate detailed alternative solutions or designs for the problem.
 4. **Analysis**.
-  Establish objective evaluation criteria, including how easy the design is to implement.
-  Test/evaluate/refine alternative designs. This may include building prototypes.
-  Select the best alternative.
+     Establish objective evaluation criteria, including how easy the design is to implement.
+     Test/evaluate/refine alternative designs. This may include building prototypes.
+     Select the best alternative.
 5. **Implementation**.
      Develop the final solution and distribute it to the intended clients/customers/users.
      Receive feedback for the next-generation design.
@@ -169,13 +185,38 @@ The design process to solve an engineering problem consists of the following ste
     After testing, activate safety-critical subsystems first and start monitoring the system.
 
 6. **Reflection.**
-  Contemplate the lessons learned and knowledge acquired and optionally report on the project.
+    Contemplate the lessons learned and knowledge acquired and optionally write a report on the project.
 
 The problem itself, or at least the engineer's understanding of it, evolves during this process.
 The design process is therefore not a linear sequence of steps, but more of an iterative process.
 
 The engineer can capture their growing understanding of the both the problem and the solution using a decision tree.
 A **decision tree** is a hierarchy where child nodes are alternative options to meet the goal of their parent node.
+
+
+### Kepner-Tregoe analysis
+
+Kepner-Tregoe analysis consists of the following steps:
+
+1. **Situation analysis**.
+    Identify the most urgent or critical aspects of the situation based on the criteria of timing (relative urgency),
+    trend (expected growth pattern of the subproblem), and impact (severity of negative consequences).
+    Rank each aspect of the problem on each criterion using High, Medium, or Low.
+2. **Problem analysis**.
+    Now look at the problem in the dimensions of characteristics (what), timing (when), location (where), and
+    magnitude (how much).
+    For each dimension, look at the positive and negative, then at the difference.
+    For instance, ask what the problem is and what it's not, how those answers differ, and what causes the distinction.
+    Looking at all these different angles helps to determine the causes of the problem.
+3. **Decision analysis**.
+    Divide the design goals into MUSTs and WANTs.
+    Reject alternatives that fail to meet all MUST goals.
+    Rank the remaining alternatives based on their scores on the WANT goals, just like with a decision matrix.
+4. **Potential problem analysis**.
+    Consider any risks or hazards associated with the winning alternative.
+    Calculate the threat associated with each risk as the product of its probability and severity, and sum the threats.
+    If the total threat associated with the winning alternative is too high, repeat for the second-best alternative,
+    etc. until you find an acceptable solution.
 
 
 ## Evolution of an engineering discipline
