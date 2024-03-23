@@ -152,7 +152,7 @@ The design process to solve an engineering problem consists of the following ste
     requirements.
 
     The "real" problem to solve is usually different from the initial statement.
-    Several heuristics help with discovering what this is.
+    Several heuristics help with discovering the "real" problem:
 
     - The **statement-restatement technique** rewrites the initial statement in different ways to gain more insight
       into the real problem.
@@ -164,9 +164,18 @@ The design process to solve an engineering problem consists of the following ste
       Under each state one then lists solutions at three levels: general, functional, and specific.
       General solutions can either take an action to achieve the desired state, or transform the present state to make
       it acceptable.
-    - For **Kepner-Tregoe situation analysis**, see below.
+    - **Kepner-Tregoe situation analysis**, see below.
 
-    Prioritize the design goals.
+    For most problems, the solution space is too large to search exhaustively.
+    A more practical approach is look at the problem state and desired solution state and then develop a strategy for
+    traversing the path between them.
+
+    One such a strategy is to decompose the problem into a set of **design goals** that any viable solution must achieve.
+    Design goals can be generic (like safety, reliability, performance, minimum costs, etc.) or problem-specific.
+    Some design goals require complete achievement (MUSTs), whereas others (WANTs) have associated quantitative
+    boundaries within which solutions must fit.
+
+    Once you've settled on the design goals, you should prioritize them.
 3. **Abstraction and synthesis**.
      Look up or develop general concepts or approaches which allow solving the problem.
      Generate detailed alternative solutions or designs for the problem.
