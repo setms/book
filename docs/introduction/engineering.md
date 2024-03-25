@@ -66,6 +66,12 @@ The methodical and iterative transition between scientific theory and its practi
 and refines both the theory itself and its application.
 This forms the essence of good engineering practice @@Voland2004.
 
+Engineers must acquire broad and deep technical knowledge, which begins with an understanding of scientific principles.
+State-of-the-art designs require a deep understanding of one or more specialized engineering domains.
+A broad view of how such an area of expertise relates to other domains provides opportunities to apply knowledge in
+novel ways.
+Engineers must also be familiar with historical design failures to avoid repeating the mistakes of the past.
+
 Engineers apply scientific theories by constructing models of their designs @@Brockman2009.
 A **model** is an approximation of a real system that responds in a similar way.
 
