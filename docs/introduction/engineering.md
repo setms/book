@@ -192,10 +192,18 @@ The design process to solve an engineering problem consists of the following ste
     Models are approximations that leave out unnecessary detail.
 
     **Synthesis** uses the building blocks identified during analysis to generate solutions to the original problem.
+    Synthesis is the creative phase, so use creativity-stimulating techniques like brainstorming to generate ideas.
+    Try to avoid rejecting impractical ideas outright, but mold them into revised forms that are feasible.
+
+    A morphological chart can help with synthesis.
+    The rows correspond to design goals and the columns to different ways to achieve them.
+    A solution is a combination of cells, one per column.
 4. **Analysis**.
-     Establish objective evaluation criteria, including how easy the design is to implement.
-     Test/evaluate/refine alternative designs. This may include building prototypes.
-     Select the best alternative.
+    Establish objective evaluation criteria, including how easy the design is to implement and to misuse or abuse.
+    Don't forget adherence to ethical standards, since an engineer must always keep in mind their primary obligation to
+    protect the safety, health, property, and welfare of the public.
+    Test/evaluate/refine alternative designs. This may include building prototypes.
+    Select the best alternative.
 5. **Implementation**.
      Develop the final solution and distribute it to the intended clients/customers/users.
      Receive feedback for the next-generation design.
