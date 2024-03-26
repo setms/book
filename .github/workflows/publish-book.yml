@@ -19,14 +19,14 @@ jobs:
     container:
       image: jdkato/vale:v2.10.2
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: vale docs
   megalinter:
     runs-on: ubuntu-latest
     container:
       image: oxsecurity/megalinter-documentation
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           # This action in a docker container means we have a folder structure
           # like `docs/docs/docs/index.md` which is confusing the FILTER_REGEX_INCLUDE.
@@ -45,7 +45,7 @@ jobs:
       - vale
       - megalinter
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Build Docker image
         run: docker build -t mdbook .
       - name: Set up Pages
