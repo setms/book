@@ -31,11 +31,16 @@ flowchart LR
 This process consists of multiple steps.
 Since different actors (people or software processes) may execute different steps, there are hand-offs of work items.
 Hand-offs imply queues and their associated waiting time.
-Queuing theory suggests that we can reduce the total time by limiting the number of items in process @@Kleinrock1974.
+Queuing theory proves that we can reduce the total time by limiting the number of items in process @@Kleinrock1974.
 
 You can't look at the requirements and come up with a design that satisfies them all in one go anyway.
 By necessity, you start with a subset and expand from there.
 Therefore, you may as well take them one by one or in small batches.
+
+Software development is process that results in software, which is a prescription for a process.
+The concept of a process is therefore fundamental to software development.
+Event storming uncovers processes.
+TODO: Apply event storming to software development.
 
 
 ### Architecture

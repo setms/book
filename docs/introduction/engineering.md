@@ -183,10 +183,11 @@ The design process to solve an engineering problem consists of the following ste
 
     Once you've settled on the design goals, you should prioritize them.
 3. **Abstraction and synthesis**.
-    In **analysis**, the engineer breaks the problem down into as many different functional parts as possible, where the
+
+    In **abstraction**, the engineer breaks the problem down into as many different functional parts as possible, where the
     subproblems ideally are independent.
 
-    During analysis, models help recognize what we know and what not about a problem and its solution.
+    Models help recognize what we know and what not about a problem and its solution.
     They can transform an unfamiliar problem into a set of recognizable subproblems that may be much easier to solve.
     Examples of models are miniatures, diagrams, sets of mathematical equations, and computer simulations.
     Models are approximations that leave out unnecessary detail.
