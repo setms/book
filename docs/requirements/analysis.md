@@ -213,7 +213,7 @@ flowchart TB
   ES --emits--> Event
 ```
 
-## Requirements for software
+## Requirements for _software_
 
 Another potential issue with the generally accepted requirements engineering knowledge, is the advice to state
 requirements in relation to a user's needs only.
@@ -225,9 +225,10 @@ Software has a [particular shape](../introduction/software.md) and that should a
 
 Most people suggest to write requirements as use cases consisting of scenarios and to do so in text form.
 Use cases and their scenarios describe processes in which the software plays a role.
-Rather than text, it makes sense to model these processes using some process model.
+Rather than text, it makes sense to model these processes using _to-be_ process models.
 This corresponds to the _abstraction_ phase of the engineering
-[design process](../introduction/engineering.md#design-process) where the engineer uses models to get to a design.
+[design process](../introduction/engineering.md#design-process) where the engineer uses models to formalize the problem
+and get to solutions.
 
 Whatever notation you decide to use to model processes, you'll run into the problem that SMEs aren't well-versed in it.
 This makes it hard for them to check the model.
@@ -274,9 +275,8 @@ We prefer the `Given/When/Then` format, because it has more traction in the fiel
 state machines.
 
 Many requirements need more than one example to fully specify them.
-The examples for a given requirement often deal with the same state and input.
 In such cases, it makes sense to condense the examples using a table.
-Tables make it easier to spot missing combinations.
+Tables also make it easier to spot missing combinations.
 
 ```text
 Given the order total is <total>
@@ -290,8 +290,8 @@ Examples:
 | $250.00 | $5.00    |
 ```
 
-If we look at acceptance criteria through the lens of event storming, we see two specializations of the generic
-`Given/When/Then` format.
+If we look at acceptance criteria through the lens of an event storming process model, we see two specializations of the
+generic `Given/When/Then` format.
 
 This first is for aggregates:
 
@@ -426,12 +426,13 @@ This resistance, in turn, partly comes from a real or perceived lack of rigor.
 Some of that criticism is fair.
 
 Agile methods like eXtreme Programming @@Beck2000 have a strong oral culture around requirements.
-This works fine when staff turnover is low, but breaks down when people leave frequently and others join.
+This works fine when staff turnover is low, but breaks down when people leave and others join frequently.
 The product owner is an especially critical role in that sense.
 New joiners have to rely on the shared memory of the existing team to relearn the requirements.
+
 This process is both slow and error-prone in the face of fading memories.
 Having acceptance tests helps, but they can't capture all acceptance criteria.
-And when they can, they still don't explain the rationale.
+And when they can, they still don't explain the rationale behind them.
 
 You also can't link to a conversation people had in the past, so [requirements tracing](digest/management.md)
 becomes impossible in an oral culture.
