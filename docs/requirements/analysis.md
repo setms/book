@@ -46,7 +46,11 @@ problem.
 
 ## Learning the domain
 
-Most engineering disciplines specialize around a domain.
+Once a company achieves product/market fit, it should have a clear sense of what jobs the customer is hiring the
+software for @@Christensen2016.
+These jobs always occur within a larger process @@Dumas2018 in a certain domain.
+
+Most engineering disciplines specialize around such domains.
 Engineers trained in that field speak the same language as the people requesting them to build a system.
 In contrast, software developers need to learn the language of the domain.
 
@@ -65,7 +69,7 @@ They've accumulated a lot of knowledge over a long period of time.
 It's hard for them to think back to when they didn't have all that knowledge.
 This makes it hard for them to know what to explain or not, and even what to mention at all.
 And since the business analyst is new to the domain, they don't know what questions to ask.
-The result is an iterative process that takes a lot of time.
+The result is an iterative process of discovery that takes a lot of time.
 
 Worse, it's uncommon for SMEs to be experts in the entire domain.
 More often, multiple SMEs each have a clear picture of one part of the process and nobody of the whole.
@@ -74,8 +78,7 @@ However, it takes a while before the analyst knows enough to ask the hard questi
 
 _Event storming_ is a technique that solves these issues @@Brandolini2013 @@Webber2017.
 It's a workshop where the key stakeholders work together to build up a consistent picture of the entire process.
-It uses a simple notation that, unlike _Business Process Model and Notation_ @@BPMN2013, is easy for
-non-technical people to understand.
+It introduces just enough notation just in time for non-technical people to collaborate.
 It lets the stakeholders and development team build up a _domain model_ in hours or days rather than weeks or months.
 
 In event storming, the SMEs perform the integration of various perspectives rather than the analyst.
@@ -96,6 +99,9 @@ The event storming notation consists of the following items:
 
 In an event storming workshop, sticky notes of a particular color represent each of these concepts.
 Workshop participants place the stickies on a wall in timeline order to visualize the entire business process.
+
+In the following, we'll use custom symbols for these concepts, keeping the colors.
+This makes it easier to visualize processes.
 
 A specific grammar governs event storming concepts @@Brandolini2022, in the sense that certain things
 always come before or after others.
@@ -217,9 +223,28 @@ However, this approach also keeps out the fact that the requirements are for _so
 procedures or for some other medium.
 Software has a [particular shape](../introduction/software.md) and that should affect how we define requirements.
 
+Most people suggest to write requirements as use cases consisting of scenarios and to do so in text form.
+Use cases and their scenarios describe processes in which the software plays a role.
+Rather than text, it makes sense to model these processes using some process model.
+This corresponds to the _abstraction_ phase of the engineering
+[design process](../introduction/engineering.md#design-process) where the engineer uses models to get to a design.
+
+Whatever notation you decide to use to model processes, you'll run into the problem that SMEs aren't well-versed in it.
+This makes it hard for them to check the model.
+Therefore, we need a notation that we can automatically transform back to text that the SMEs can verify.
+
+We also need a notation that allows us to decompose processes into smaller pieces.
+Finally, we need a tackle requirements in small batches, rather than all at once.
+We need to be able to decompose some parts of a process, while keeping others at a high level.
+
+The international standard for modeling processes is Business Process Model and Notation (BPMN) @@Dumas2018.
+However, we'll argue [later](../design/analysis.md) that the model presented by event storming is actually easier to
+transform into a design.
+
 Requirements should have **acceptance criteria**, predefined conditions that the product must meet to be
 acceptable in the operating environment.
 Without acceptance criteria, there is no way of knowing whether the product meets the requirement.
+The process model should guide us to the places where we need acceptance criteria, for instance where decisions get made.
 
 At least some acceptance criteria take the form of acceptance tests.
 An **acceptance test** verifies whether the system meets a requirement.
