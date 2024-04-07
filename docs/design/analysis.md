@@ -79,6 +79,7 @@ Inputs to the architecting process:
 - Requirements
 - Architectural styles and patterns
 - Sanctioned technologies and vendors
+- Teams and their skill levels
 
 Outputs of the architecting process:
 

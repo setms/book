@@ -200,11 +200,27 @@ The design process to solve an engineering problem consists of the following ste
     The rows correspond to design goals and the columns to different ways to achieve them.
     A solution is a combination of cells, one per column.
 4. **Analysis**.
-    Establish objective evaluation criteria, including how easy the design is to implement and to misuse or abuse.
-    Don't forget adherence to ethical standards, since an engineer must always keep in mind their primary obligation to
-    protect the safety, health, property, and welfare of the public.
-    Test/evaluate/refine alternative designs. This may include building prototypes.
+    Each design alternative has its own strengths and weaknesses.
+    Establish objective evaluation criteria to evaluate them, including how easy the design is to implement and to
+    misuse or abuse.
+    Cost is almost always a criterion.
+    You can use different measures for this, like Return on Investment (ROI) or Net Present Value (NPV).
+
+    Rank-order the design goals.
+    Assign weights to them, either directly or indirectly via categories, like critical/important/optional.
+
+    Rate each design alternative on every evaluation criterion.
+    If a natural way of scoring (like dollars for cost) is available, then use that.
+    Otherwise, use a ranking scale, like excellent = 10, good = 8, etc.
+    You may have to build prototypes to get the scores.
+
+    Add the scores to a decision matrix, where the rows represent the alternatives and the columns the criteria.
+    For each criterion, multiply the alternative's score by the weight.
+    Then sum over all criteria to get a total score.
+    Consider scores that differ less than 10% as ties.
+
     Select the best alternative.
+   (Kepner-Tregoe analysis builds upon this basic approach.)
 5. **Implementation**.
      Develop the final solution and distribute it to the intended clients/customers/users.
      Receive feedback for the next-generation design.
