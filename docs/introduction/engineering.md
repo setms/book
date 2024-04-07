@@ -220,17 +220,26 @@ The design process to solve an engineering problem consists of the following ste
     Consider scores that differ less than 10% as ties.
 
     Select the best alternative.
-   (Kepner-Tregoe analysis builds upon this basic approach.)
+    Kepner-Tregoe analysis (see below) builds upon this basic approach.
 5. **Implementation**.
-     Develop the final solution and distribute it to the intended clients/customers/users.
-     Receive feedback for the next-generation design.
-     Since designing requires making trade-offs, there is seldom a perfect solution to the problem.
-     Therefore, it's common to repeat the whole process multiple times, each time incorporating learnings from
-     real-world usage.
+    Develop the final solution, converting the design and raw materials into the desired product or system.
 
-    Before a system becomes active, we must test it.
-    After testing, activate safety-critical subsystems first and start monitoring the system.
+    Materials have properties that we classify in categories, like mechanical, electrical, physical, chemical, thermal,
+    and economic.
+    The materials' properties must match both the performance and functional requirements of the product and the
+    processing requirements for its manufacture.
+    Engineers must be aware of the properties of the various materials when they design alternatives to prevent
+    coming up with infeasible designs.
 
+    During implementation, test whether the product does indeed meet its requirements before going into full-scale
+    manufacturing.
+    Distribute the finished product or system to the intended clients/customers/users.
+    Activate any safety-critical subsystems first and start monitoring the system's performance.
+
+    Receive feedback for the next-generation design.
+    Since designing requires making trade-offs, there is seldom a perfect solution to the problem.
+    Therefore, it's common to repeat the whole process multiple times, each time incorporating learnings from
+    real-world usage.
 6. **Reflection.**
     Contemplate the lessons learned and knowledge acquired and optionally write a report on the project.
 
