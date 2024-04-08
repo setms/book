@@ -55,14 +55,14 @@ Don't limit this interaction to requirements, but involve users in as many activ
 It focuses on how they do their work and how the system helps support that work.
 For any given project, you'll probably need to use more than one of the following elicitation techniques:
 
-- Identify events.
-  An **event list** identifies external events that trigger behavior in the system.
-  Events originate from users, time, or external systems.
 - Hold **interviews** with individual stakeholders.
   Come prepared with questions and use active listening @@Rogers1951.
   When replacing an existing system, a good question is what annoys the user the most about it.
   It also helps to come with a draft model or [prototype](analysis.md#prototypes) that the user can critique.
   Assign someone not actively participating in the discussion to take notes.
+- Identify events.
+  An **event list** identifies external events that trigger behavior in the system.
+  Events originate from users, time, or external systems.
 - Hold **workshops** with multiple stakeholders.
   These are especially useful for resolving disagreements, so hold them after using other techniques that surface those
   disagreements.
@@ -82,7 +82,7 @@ For any given project, you'll probably need to use more than one of the followin
 - Analyze **existing documents**.
   Examples are requirement specifications, business processes, user manuals, corporate and industry standards, and
   comparative reviews.
-  Remember that documents may not be up-to-date.
+  Remember that documents may not be up-to-date or even incorrect.
 - Analyze **interfaces** with external systems.
   This analysis gives technical requirements around data formats and data validation rules.
 - **Reuse** requirements based on pre-existing business rules.
@@ -102,7 +102,7 @@ described by a set of functional requirements.
 
 In usage-centric requirements elicitation, we capture user requirements in use cases.
 A **use case** describes a sequence of interactions between a system and an actor that results in value for the actor.
-An **actor** is person or external system that interacts with the system.
+An **actor** is a person or external system that interacts with the system.
 
 A use case consists of one or more scenarios.
 The **main success scenario** describes the happy path of the interaction.
@@ -153,7 +153,7 @@ External quality attributes are important to users, while internal quality attri
 operators, and support staff.
 
 @@ISO25010 defines eight quality characteristics, each of which consist of several quality attributes.
-Note that the first characteristic is function suitability, which refers to functional requirements.
+Note that the first characteristic is functional suitability, which refers to functional requirements.
 ISO recommends you select a subset of quality attributes that are important for your system.
 For instance, hard real-time systems have stringent performance and efficiency requirements.
 Safety-critical systems place more emphasis on reliability.
@@ -188,7 +188,7 @@ Governments establish regulatory bodies with wide powers that enforce compliance
 A **constraint** places restrictions on the design or implementation choices available to developers.
 It's another kind of non-functional requirement, different from quality attributes.
 Constraints can come from stakeholders (like compliance officers), external systems that the product must interact with,
-or from other activities, like transition and maintenance.
+or from other development activities, like transition and maintenance.
 
 It's easy to miss requirements:
 
@@ -204,7 +204,7 @@ It's easy to miss requirements:
 - A checklists of common functional areas may help to increase coverage.
 
 Requirements may change as customers learn more and as the business evolves.
-See [change management](management.md) below.
+See [change management](management.md).
 
 Try to keep design out of the requirements as much as possible.
 For instance, focus on user _tasks_ rather than user _interfaces_.

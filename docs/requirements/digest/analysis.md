@@ -62,11 +62,12 @@ The different analysis models each have their own strengths and weaknesses, so p
   The starting point for all formal methods is a mathematical model, which acts as the system specification.
   To create this model, translate the requirements, expressed in natural language, diagrams, and tables, into a
   mathematical language that has formally defines semantics.
-  Constructing a formal specification forces a detailed analysis if the requirements and is an effective way of
+  Constructing a formal specification forces a detailed analysis of the requirements and is an effective way of
   discovering requirements problems.
 
-Different systems have differing needs for formality.
-Safety-critical, security-critical, and mission-critical elements of the system are good candidates for modeling.
+  Different systems have differing needs for formality.
+  Safety-critical, security-critical, and mission-critical elements of the system are good candidates for modeling
+  using formal methods.
 
 
 ## Prototypes
@@ -163,10 +164,13 @@ stakeholders can't reach consensus.
 Other prioritization techniques exists, like MoSCoW, or giving participants $100 to "buy" requirements.
 These often have considerable drawbacks, such as being open to gaming.
 
-The priority of a requirement should be one if its attributes in the SRS.
+The priority of a requirement should be one if its [attributes](management.md) in the
+[SRS](specification.md#specification-documents).
 
 A high-priority requirement may depend on a lower-priority requirement.
 In that case, the lower-priority requirement must come first despite its lower priority.
+Non-functional requirements that affect the architecture should receive high priority, because rearchitecting is
+expensive.
 
 Software has a cost, which developers estimate.
 Customers should respect those estimates.
@@ -174,6 +178,4 @@ Some features may be expensive or even infeasible.
 Sometimes changing features can make them attainable or cheaper.
 
 Priorities and cost estimates together make it possible to deliver maximum value at the lowest cost at the right time.
-Non-functional requirements that affect the architecture should receive high priority, because rearchitecting is
-expensive.
 Priorities may change over time.

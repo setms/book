@@ -43,7 +43,7 @@ The SRS refers to the Vision & Scope document.
 It also describes the user classes and any design and construction constraints, like which programming language to use
 or which standards to follow.
 Documenting assumptions may prevent serious issues.
-An **assumption** is a statement that's the team believes to be true in the absence of proof.
+An **assumption** is a statement that the team believes to be true in the absence of proof.
 
 Writing requirements down may be tedious, but the cost of doing so is small compared to acquiring that knowledge.
 Or relearning it in the future by new hires.
@@ -180,7 +180,7 @@ The SRS as a whole should have some desired properties as well:
 
 Conceptually, each requirement is one record in a Requirements Development (RD) system.
 **Requirements Development tools** help eliciting requirements and judge whether they're well-written.
-For instance, they can scan for vague an ambiguous words.
+For instance, they can scan for vague and ambiguous words.
 RD tools offer different communication methods for stakeholders and some can convert text to diagrams.
 
 

@@ -20,7 +20,6 @@ They may be a constraint on the development of the system.
 - **System requirements** describe the requirements for a system that consists of multiple subsystems.
   An **external interface requirement** describes the connection between the system and other systems, hardware, or
   users.
-  Some people use this term to refer to what we here label functional requirements.
 - **User requirements** describe goals or tasks the users must be able to perform with the product to realize the
   business requirements.
 - **Functional requirements** specify the behaviors the system must exhibit under specific conditions.
@@ -52,26 +51,23 @@ result.
 Business rules influence business processes by establishing vocabulary, imposing restrictions, and governing how to
 compute something.
 
-A business rule falls into one of several categories: facts, constrains, action enablers, inferences, and computations.
-**Facts** are statements that are true about the business at a specified time.
-They describe associations between important business terms.
-Don't go overboard with collecting facts; focus on the ones relevant to the scope of the product.
+A business rule falls into one of several categories:
 
-A **constraint** restricts the actions that the system or (some of) its users may perform.
-It can be positive (something must happen or something must be true for something else to happen) or negative
-(something must not happen).
-Many constraints are about authorization, which you can capture using a roles and permissions matrix.
-
-An **action enabler** is a rule that triggers some activity if specific conditions are true.
-These conditions may be complex combinations of simpler conditions.
-A decision table captures action enablers in a concise way using `if-then` statements.
-
-An **inference** creates new facts from other facts.
-`If-then` statements can capture inferences, where the `then` part specifies new knowledge rather than an action to take.
-
-**Computations** transform existing data into new data using specific mathematical formulas or algorithms.
-Many such rules come from outside the organization, like tax withholding formulas.
-Capture computations in mathematical form or decision table.
+- **Facts** are statements that are true about the business at a specified time.
+  They describe associations between important business terms.
+  Don't go overboard with collecting facts; focus on the ones relevant to the scope of the product.
+- A **constraint** restricts the actions that the system or (some of) its users may perform.
+  It can be positive (something must happen or something must be true for something else to happen) or negative
+  (something must not happen).
+  Many constraints are about authorization, which you can capture using a roles and permissions matrix.
+- An **action enabler** is a rule that triggers some activity if specific conditions are true.
+  These conditions may be complex combinations of simpler conditions.
+  A decision table captures action enablers in a concise way using `if-then` statements.
+- An **inference** creates new facts from other facts.
+  `If-then` statements can capture inferences, where the `then` part specifies new knowledge rather than an action to take.
+- **Computations** transform existing data into new data using specific mathematical formulas or algorithms.
+  Many such rules come from outside the organization, like tax withholding formulas.
+  Capture computations in mathematical form or in decision tables.
 
 
 ## Requirements engineering
@@ -92,7 +88,7 @@ flowchart TB
   RD --> Validation
 ```
 
-Requirements engineering is the realm of the **business analyst**.
+Requirements engineering is the realm of the **business analyst** (BA).
 This can be a job title or a role performed by people that also perform other roles.
 The analyst serves as the principal interpreter through which requirements flow between the customer community and
 the software development team @@Wiegers2013.
