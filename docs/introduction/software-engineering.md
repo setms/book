@@ -194,7 +194,7 @@ If that did happen, they would throw away their design and start afresh.
 Yet these types of requirement changes are what we see in software development all the time.
 This prompted the Agile movement to adopt a different way of working that embraces change @@AgileManifesto.
 
-Thi is a sign that at least some parts of software development fall in the _Complex_ domain.
+That's a sign that at least some parts of software development fall in the _Complex_ domain.
 Signs aren't proof, however.
 In fact, different aspects may be in different domains.
 This matters, because we should approach problems in the two domains differently.

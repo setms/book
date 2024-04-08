@@ -78,7 +78,7 @@ For example, the PDA above looks like this:
 | **1** | p | r | r |
 
 
-Let $w$ be a word made up of symbols $a_i \in \Sigma$ such that $w = a_1a_2\mathellipsisa_n$.
+Let $w$ be a word made up of symbols $a_i \in \Sigma$ such that $w = a_1 a_2 \mathellipsis a_n$.
 If there are transitions in $\delta$ such that $q_1 = \delta(q_0, a_1)$, $q_2 = \delta(q_1, a_2)$, etc. and
 $q_n \in F$, then $A$ **accepts** $w$.
 The set of all words that $A$ accepts is the **language** of $A$, $L(A)$.
@@ -139,7 +139,7 @@ We can visualize PDAs using transition diagrams, just like DFAs.
 The edges show both the input symbol consumed and the old and new top of the stack.
 For instance, an edge labeled $a, X / \gamma$ between nodes $p$ and $q$ means that $\delta(p,a, X)$ contains the pair
 $(q, \gamma)$.
-Here, $\gamma = \gamma_1\gamma_2\mathellipsis\gamma_n$, where $\gamma_i \in \Gamma$.
+Here, $\gamma = \gamma_1 \gamma_2 \mathellipsis \gamma_n$, where $\gamma_i \in \Gamma$.
 
 A PDA can accept a word in two ways:
 
@@ -166,7 +166,7 @@ A **Context-Free Grammar** (CFG), or just grammar, is a tuple $G = \lang V, T, P
   A **terminal** is a symbol in the language the grammar defines.
 - $P$ is a set of productions.
   A **production** is of the form $H \to B$, where $H \in V$ is the **head** and
-  $B = \text{\textbraceleft} b_1b_2\mathellipsisb_n \mid b_i \in V \cup T \text{\textbraceright}$ is the **body**.
+  $B = \text{\textbraceleft} b_1 b_2 \mathellipsis b_n \mid b_i \in V \cup T \text{\textbraceright}$ is the **body**.
   A body consists of zero or more variables and terminals.
 - $S \in V$ is the start symbol.
 

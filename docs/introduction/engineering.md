@@ -43,10 +43,10 @@ These activities form a loop:
 
 ```mermaid
 flowchart LR
+  Hypothesis --Design an\nexperiment to\ntest the hypothesis--> Experiment
   Experiment --Perform the\nexperiment--> Observation
   Observation --Create or modify\nthe theory--> Theory
   Theory --Use the theory\nto form a\nhypothesis--> Hypothesis
-  Hypothesis --Design an\nexperiment to\ntest the hypothesis--> Experiment
 ```
 
 Scientific knowledge grows over time.
@@ -129,7 +129,7 @@ They seek the best solution from among these alternatives.
 To help with that, they follow a procedure known as the engineering design process @@Voland2004.
 
 The artifacts to design have form and purpose, and the form must be appropriate for the purpose @@Brockman2009.
-A producer produces an artifact in the **engineering environment**, while an operator uses the artifact in the
+A _producer_ produces an artifact in the **engineering environment**, while an _operator_ uses the artifact in the
 **operating environment**.
 
 Operators have performance goals, or **specifications**.
@@ -173,7 +173,7 @@ The design process to solve an engineering problem consists of the following ste
     - **Kepner-Tregoe situation analysis**, see below.
 
     For most problems, the solution space is too large to search exhaustively.
-    A more practical approach is look at the problem state and desired solution state and then develop a strategy for
+    A more practical approach is to look at the problem state and desired solution state and develop a strategy for
     traversing the path between them.
 
     One such a strategy is to decompose the problem into a set of **design goals** that any viable solution must achieve.
@@ -214,12 +214,12 @@ The design process to solve an engineering problem consists of the following ste
     Otherwise, use a ranking scale, like excellent = 10, good = 8, etc.
     You may have to build prototypes to get the scores.
 
-    Add the scores to a decision matrix, where the rows represent the alternatives and the columns the criteria.
+    Add the scores to a **decision matrix**, where the rows represent the alternatives and the columns the criteria.
     For each criterion, multiply the alternative's score by the weight.
     Then sum over all criteria to get a total score.
     Consider scores that differ less than 10% as ties.
-
     Select the best alternative.
+
     Kepner-Tregoe analysis (see below) builds upon this basic approach.
 5. **Implementation**.
     Develop the final solution, converting the design and raw materials into the desired product or system.
