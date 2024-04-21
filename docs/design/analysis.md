@@ -3,44 +3,20 @@
 
 ## Ideas
 
-Software development is a process that starts with stakeholder needs and ends with running software that meets those
-needs:
-
-```mermaid
-flowchart LR
-  N[Stakeholder\nneeds]
-  R[Requirements]
-  S[Subsystems]
-  AT[Acceptance\ntests]
-  UT[Unit\ntests]
-  C[Code]
-  P[Package]
-  E[Running\nsoftware]
-
-  UT --TDD--> C
-  C --CI--> P
-  P --CD--> E
-
-  N --Requirements\nelicitation-->
-  R --Architecting--> S
-  R --Requirements\nspecification--> AT
-  AT --detailed\nspecification--> UT
-  S --> UT
-```
-
-This process consists of multiple steps.
-Since different actors (people or software processes) may execute different steps, there are hand-offs of work items.
-Hand-offs imply queues and their associated waiting time.
-Queuing theory proves that we can reduce the total time by limiting the number of items in process @@Kleinrock1974.
-
-You can't look at the requirements and come up with a design that satisfies them all in one go anyway.
-By necessity, you start with a subset and expand from there.
-Therefore, you may as well take them one by one or in small batches.
-
-Software development is process that results in software, which is a prescription for a process.
-The concept of a process is therefore fundamental to software development.
-Event storming uncovers processes.
-TODO: Apply event storming to software development.
+1. Put the requirements in Rigorous Event Storming Icon Notation (RESIN) and resolve hotspots.
+    See the [GDPR example](../examples/GDPR.md).
+2. For all **read models**:
+   - Design the data model using ERDs or similar notation.
+   - If the read model serves a human, design the user interaction that gives the user access to the data.
+3. For all **commands**:
+   - If a human issues the command, design the user interaction that allows the user to do that.
+   - If an external system issues the command, design the API that allows the system to do that.
+   - Determine if the command requires synchronous processing. If not, prefer asynchronous processing.
+   - For asynchronous commands, determine whether the command requires an explicit queue with durability guarantees.
+4. For all **aggregates**:
+   - Design the data model using ERDs or similar notation.
+5. For all **events**:
+   - Determine whether the event requires an explicit queue with durability guarantees.
 
 
 ### Architecture

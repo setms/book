@@ -1,7 +1,7 @@
 # Engineering process
 
-[Redundancy and diversity](design/digest.md) are techniques for developing
-[dependable](requirements/digest/elicitation.md#non-functional-requirements) systems.
+[Redundancy and diversity](../../design/digest.md) are techniques for developing
+[dependable](../../requirements/digest/elicitation.md#non-functional-requirements) systems.
 We can also use them to develop dependable processes.
 In a **dependable process**, activities use redundant and diverse techniques.
 For instance, verification & validation may use code reviews, static code analysis, automated tests and manual tests.
@@ -14,5 +14,5 @@ The organization must collect data to prove the team followed the process as def
 A **repeatable process** is one that doesn't rely on individual interpretation and judgement.
 
 Dependable process are auditable, diverse, documentable, robust, and standardized.
-A dependable software development process contains [quality management](quality.md) and
-[change management](configuration-management.md) processes.
+A dependable software development process contains [quality management](../../quality.md) and
+[change management](../../configuration-management.md) processes.

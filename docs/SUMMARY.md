@@ -35,7 +35,9 @@
 - [Maintenance](maintenance.md)
 - [Configuration management](configuration-management.md)
 - [Engineering management](engineering-management.md)
-- [Engineering process](engineering-process.md)
+- [Engineering process](engineering-process/index.md)
+  - [Digest](engineering-process/digest/index.md)
+  - [Analysis](engineering-process/analysis.md)
 - [Engineering models and methods](engineering-models-methods.md)
 - [Quality](quality.md)
 - [Engineering professional practice](engineering-professional-practice.md)
@@ -44,6 +46,7 @@
 # Part III: Synthesis
 
 - [Putting it all together](synthesis.md)
+- [Example: supporting GDPR](examples/GDPR.md)
 
 # Part IV: Conclusion
 
