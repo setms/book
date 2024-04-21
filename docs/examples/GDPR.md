@@ -42,8 +42,10 @@ Or the user fills out an online form and our customer support agents validate th
 **Q**: What happens when the user's request is invalid?
 For instance, when I use the form to request deletion of your data?
 
-**A**: Customer support reject the request.
-They don't notify the requester, or else they'd just try some other way.
+**A**: Customer support contacts the user via email.
+If that user doesn't respond, we cancel the request, and there's nothing else to do.
+If the user responds they didn't send the request, we also cancel the request.
+If the user doesn't have an account with any of our apps, same thing.
 
 ![CS validates identity](req-03.png)
 
