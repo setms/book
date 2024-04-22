@@ -74,6 +74,10 @@ They'll do the actual deletion and report back when they're done.
 At this point, the process model is complete, since there are no more hotspots.
 That doesn't mean the requirements gathering phase is complete, however.
 We still need to collect details on things like the business rules behind policies.
+This is where we should define acceptance tests.
+
+The purpose of this example, however, is not to perform perfect requirements analysis, but to show the software
+development process in action.
 
 Note that the analyst did some design during the requirements elicitation process.
 Two situations makes this is possible:
