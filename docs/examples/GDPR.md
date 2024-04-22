@@ -73,14 +73,8 @@ They'll do the actual deletion and report back when they're done.
 
 
 At this point, the process model is complete, since there are no more hotspots.
-That doesn't mean the requirements gathering phase is complete, however.
-We still need to collect details on things like the business rules behind policies.
-This is where we should define acceptance tests.
 
-The purpose of this example, however, is not to perform perfect requirements analysis, but to show the software
-development process in action.
-
-Note that the analyst did some design during the requirements elicitation process.
+Note that the analyst did some initial design during the requirements elicitation process.
 Two situations makes this is possible:
 
 1. The model contains a sequence of **command → hotspot → event** where it's clear what needs to happen in the hotspot
@@ -88,3 +82,6 @@ Two situations makes this is possible:
     In that case, the analyst can replace the hotspot with an **aggregate** named after the required information.
 2. Similar considerations apply to a sequence of **event → hotspot → command**.
     Here, the analyst replaces the hotspot with a **policy** that takes input from a **read model**.
+
+Just because the process model is complete, doesn't mean we're done with requirements gathering.
+We should define acceptance tests for automated policies, aggregates, and read models.
