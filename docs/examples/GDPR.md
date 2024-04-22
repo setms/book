@@ -48,7 +48,9 @@ If that user doesn't respond, we cancel the request, and there's nothing else to
 If the user responds they didn't send the request, we also cancel the request.
 If the user doesn't have an account with any of our apps, same thing.
 
+<!-- markdownlint-disable MD036 -->
 _(The model doesn't change.)_
+<!-- markdownlint-enable MD036 -->
 
 ![CS validates identity](req-03.png)
 
