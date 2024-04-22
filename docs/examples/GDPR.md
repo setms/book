@@ -35,7 +35,8 @@ The analyst asks a question, the stakeholder gives an answer, and the analyst sh
 Otherwise, it won't know what data to delete.
 
 **A**: The user logs in to one of our apps and issues the command from there.
-Or the user fills out an online form and our customer support agents validate their identity.
+Or the user fills out an online form and our customer support agents validate their identity against the app's user
+database.
 
 ![CS validates identity](req-03.png)
 
