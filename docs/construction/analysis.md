@@ -8,7 +8,7 @@ Materials have properties, grouped in categories, that affect their performance 
 These properties follow for the material's physical make-up: its atoms, electrons, and molecular structure.
 
 Software works with bits rather than atoms.
-Bits and collections of them, like atoms, have properties too.
+Bits, and collections of them, have properties too.
 
 ### Information
 
