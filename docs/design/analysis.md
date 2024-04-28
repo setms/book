@@ -1,3 +1,4 @@
+
 # Preliminary analysis
 
 
@@ -5,6 +6,9 @@
 
 1. Put the requirements in Rigorous Event Storming Icon Notation (RESIN) and resolve hotspots.
     See the [GDPR example](../examples/GDPR.md).
+1. If there are any humans issuing commands, or looking at read models, then design guidelines for the user experience.
+1. If there are any external systems issuing commands or consuming events, then design guidelines for the developer
+    experience.
 1. For all **events**:
    - Determine whether the event requires an explicit queue with durability guarantees.
    - If an external system consumes the event, design the API (format, evolution).
@@ -20,6 +24,18 @@
     guarantees.
 1. For all **aggregates**:
    - Design the data model using ERDs or similar notation.
+1. Create a directed graph:
+   - Add a node for every aggregate, read model, and automatic policy.
+   - Add an edge from an aggregate to a policy if the policy issues a command processed by the aggregate.
+   - Add an edge from a policy to a read model if the policy uses the read model to make a decision.
+   - Add an edge from a read model to an aggregate if the read model updates from an event emitted by the aggregate
+       and their data models have entities in common.
+1. Assign aggregates, automatic policies, and read models to modules based on the above dependency graph:
+    - For every cycle in the graph, create a module and assign all the nodes in the cycle to the module.
+    - Create a module for every unassigned aggregate.
+    - If a read model only has outgoing edges and those are all to aggregates in the same module, assign the read model
+        to that module.
+    - Assign each automatic policy to the module that contains its read model.
 
 
 ### Architecture

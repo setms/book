@@ -89,3 +89,35 @@ Two situations makes this is possible:
 
 Just because the process model is complete, doesn't mean we're done with requirements gathering.
 We should define acceptance tests for automated policies, aggregates, and read models.
+
+
+## Design
+
+The dependency graph for the above process looks like this:
+
+```mermaid
+flowchart LR
+  F[DataDeletionRequestForm]
+  S[Services]
+  N[Notifications]
+  CUS[CheckUnresponsiveServices]
+  CRC[CheckRequestComplete]
+  DIP[DeletionsInProgress]
+  DDC[DataDeletionCompletion]
+
+  S --> CUS
+  CUS --> DIP
+  DIP --> S
+  DDC --> N
+  N --> CRC
+  CRC --> DIP
+```
+
+1. The graph has one cycle, so we create a module containing `Services`, `CheckUnresponsiveSerivces`, and
+    `DeletionsInProgress`.
+    Let's call this module `Services`, after its only aggregate.
+2. We create two new modules for the unassigned aggregates `DataDeletionRequestForm` and `Notifications`.
+3. The read model `DataDeletionCompletion` only has one outgoing edge, so we assign it to the `Notifications` module.
+4. We assign the automatic policy `CheckRequestComplete` to the module that contains its read model, `Services`.
+
+TODO: Container diagram.
