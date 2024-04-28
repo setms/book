@@ -30,7 +30,10 @@
   - [Concepts](design/concepts.md)
   - [Analysis](design/analysis.md)
 
-- [Construction](construction.md)
+- [Construction](construction/index)
+  - [Digest](construction/digest.md)
+  - [Concepts](construction/concepts.md)
+  - [Analysis](construction/analysis.md)
 - [Testing](testing.md)
 - [Maintenance](maintenance.md)
 - [Configuration management](configuration-management.md)

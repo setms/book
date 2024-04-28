@@ -5,18 +5,21 @@
 
 1. Put the requirements in Rigorous Event Storming Icon Notation (RESIN) and resolve hotspots.
     See the [GDPR example](../examples/GDPR.md).
-2. For all **read models**:
-   - Design the data model using ERDs or similar notation.
-   - If the read model serves a human, design the user interaction that gives the user access to the data.
-3. For all **commands**:
+1. For all **events**:
+   - Determine whether the event requires an explicit queue with durability guarantees.
+   - If an external system consumes the event, design the API (format, evolution).
+1. For all **commands**:
    - If a human issues the command, design the user interaction that allows the user to do that.
    - If an external system issues the command, design the API that allows the system to do that.
    - Determine if the command requires synchronous processing. If not, prefer asynchronous processing.
    - For asynchronous commands, determine whether the command requires an explicit queue with durability guarantees.
-4. For all **aggregates**:
+1. For all **read models**:
    - Design the data model using ERDs or similar notation.
-5. For all **events**:
-   - Determine whether the event requires an explicit queue with durability guarantees.
+   - If the read model serves a human, design the user interaction that gives the user access to the data.
+   - If the read model updates from events, determine whether each event requires an explicit queue with durability
+    guarantees.
+1. For all **aggregates**:
+   - Design the data model using ERDs or similar notation.
 
 
 ### Architecture
