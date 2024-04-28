@@ -5,7 +5,7 @@
 The implementation step of the [engineering design process](../introduction/engineering.md#design-process) requires
 the engineer to select the right materials to realize the design.
 Materials have properties, grouped in categories, that affect their performance in the solution.
-These properties follow for the material's physical make-up: its atoms, electrons, and molecular structure.
+These properties follow from the material's physical make-up: its atoms, electrons, and molecular structure.
 
 Software works with bits rather than atoms.
 Bits, and collections of them, have properties too.
