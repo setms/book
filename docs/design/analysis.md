@@ -11,7 +11,7 @@
     experience.
 1. For all **events**:
    - Determine whether the event requires an explicit queue with durability guarantees.
-   - If an external system consumes the event, design the API (format, evolution).
+   - If an external system consumes the event, design the API.
 1. For all **commands**:
    - If a human issues the command, design the user interaction that allows the user to do that.
    - If an external system issues the command, design the API that allows the system to do that.
@@ -42,7 +42,7 @@
 
 Architecting consists of the following activities:
 
-1. Divide the system into subsystems based on requirements.
+1. Combine modules into subsystems.
 2. Group functional requirements and assign the groups to subsystems.
 3. Divide subsystems into standard subsystems to acquire (like databases) and custom subsystems to build.
 4. Select existing implementations for standard subsystems.
