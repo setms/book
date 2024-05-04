@@ -43,10 +43,10 @@
 Architecting consists of the following activities:
 
 1. Combine modules into subsystems based on organizational structure and Quality Attribute Requirements.
-3. Divide subsystems into standard subsystems to acquire (like databases and queues) and custom subsystems to build.
-4. Select existing implementations for standard subsystems.
-5. Decide how subsystems interact.
-6. Select technologies to implement custom subsystems and their interfaces.
+1. Divide subsystems into standard subsystems to acquire (like databases and queues) and custom subsystems to build.
+1. Select existing implementations for standard subsystems.
+1. Decide how subsystems interact.
+1. Select technologies to implement custom subsystems and their interfaces.
 
 ```mermaid
 flowchart TB
