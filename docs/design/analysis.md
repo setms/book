@@ -42,9 +42,8 @@
 
 Architecting consists of the following activities:
 
-1. Combine modules into subsystems.
-2. Group functional requirements and assign the groups to subsystems.
-3. Divide subsystems into standard subsystems to acquire (like databases) and custom subsystems to build.
+1. Combine modules into subsystems based on organizational structure and Quality Attribute Requirements.
+3. Divide subsystems into standard subsystems to acquire (like databases and queues) and custom subsystems to build.
 4. Select existing implementations for standard subsystems.
 5. Decide how subsystems interact.
 6. Select technologies to implement custom subsystems and their interfaces.
@@ -52,15 +51,15 @@ Architecting consists of the following activities:
 ```mermaid
 flowchart TB
   R[Requirement]
-  RG[Requirements\ngroup]
+  M[Module]
   C[Subsystem]
   SC[Standard\nsubsystem]
   CC[Custom\nsubsystem]
   I[Interface]
   T[Technology]
 
-  R --is part of--> RG
-  RG --implemented by--> C
+  R --implemented by--> M
+  M --deployed in--> C
   C --uses--> T
   I --uses--> T
   SC --is a--> C
@@ -78,7 +77,7 @@ Inputs to the architecting process:
 
 Outputs of the architecting process:
 
-- Requirements grouping.
+- Module assignments to subsystems.
 - Container diagram.
 - Architecture Decision Records (ADRs).
 
