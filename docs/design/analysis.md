@@ -10,9 +10,10 @@
 1. If there are any external systems issuing commands or consuming events, then design guidelines for the developer
     experience.
 1. For all **events**:
-   - Determine whether the event requires an explicit queue with durability guarantees.
-   - If an external system consumes the event, design the API.
    - Determine whether to use a notification event or event-carried state transfer @@Fowler2017.
+     If the latter, determine what data the event carries.
+   - If an external system consumes the event, design the API.
+   - Determine whether the event requires an explicit queue with durability guarantees.
 1. For all **commands**:
    - If a human issues the command, design the user interaction that allows the user to do that.
    - If an external system issues the command, design the API that allows the system to do that.

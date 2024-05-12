@@ -26,7 +26,10 @@
   - [Analysis](requirements/analysis.md)
 
 - [Design](design/index.md)
-  - [Digest](design/digest.md)
+  - [Digest](design/digest/index.md)
+    - [Methods](design/digest/methods.md)
+    - [Views](design/digest/views.md)
+    - [Usability](design/digest/usability.md)
   - [Concepts](design/concepts.md)
   - [Analysis](design/analysis.md)
 

@@ -1,6 +1,6 @@
 # Engineering process
 
-[Redundancy and diversity](../../design/digest.md) are techniques for developing
+[Redundancy and diversity](../../design/digest/index) are techniques for developing
 [dependable](../../requirements/digest/elicitation.md#non-functional-requirements) systems.
 We can also use them to develop dependable processes.
 In a **dependable process**, activities use redundant and diverse techniques.
