@@ -51,7 +51,7 @@ A **component** is an executable and deployable collection of modules, like a wa
 
 Architecting consists of the following activities:
 
-1. Combine modules into components based on organizational structure and Quality Attribute Requirements.
+1. Combine modules into components based on organizational structure and Quality Attribute Requirements @@Richardson2023.
 1. Divide components into standard components to acquire (like databases and queues) and custom components to build.
 1. Select existing implementations for standard components.
 1. Decide how components interact.
@@ -87,7 +87,9 @@ Inputs to the architecting process:
 Outputs of the architecting process:
 
 - Module assignments to components.
-- Container diagram.
+- [Container diagram](https://c4model.com/#ContainerDiagram).
+    Note that the C4 model uses different terminology: their _container_ corresponds to our _component_ and their
+    _component_ corresponds to our _module_.
 - Architecture Decision Records (ADRs).
 
 The starting point is an application consisting of a single system.
