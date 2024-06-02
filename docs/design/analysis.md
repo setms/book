@@ -5,7 +5,7 @@
 ## Ideas
 
 1. Put the requirements in Rigorous Event Storming Icon Notation (RESIN) and resolve hotspots.
-    See the [GDPR example](../examples/GDPR.md).
+    See the [GDPR example](../examples/gdpr/index.md).
 1. If there are any humans issuing commands, or looking at read models, then design guidelines for the user experience.
 1. If there are any external systems issuing commands or consuming events, then design guidelines for the developer
     experience.

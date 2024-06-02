@@ -52,7 +52,8 @@
 # Part III: Synthesis
 
 - [Putting it all together](synthesis.md)
-- [Example: supporting GDPR](examples/GDPR.md)
+- [Examples](examples/index.md)
+  - [Supporting GDPR](examples/gdpr/index.md)
 
 # Part IV: Conclusion
 
