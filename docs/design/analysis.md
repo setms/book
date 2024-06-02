@@ -86,7 +86,7 @@ Inputs to the architecting process:
 
 Outputs of the architecting process:
 
-- Module assignments to subsystems.
+- Module assignments to components.
 - Container diagram.
 - Architecture Decision Records (ADRs).
 
@@ -109,16 +109,16 @@ Performance / scalability:
   The latency for processing such commands is the latency of the entire process.
   For asynchronous commands, the latency is just the work for validating the input.
   Use asynchronous commands where possible, to give faster feedback.
-- Split off command/event handlers that have significantly different scaling requirements into their own subsystems, so
+- Split off command/event handlers that have significantly different scaling requirements into their own components, so
   they can scale independently.
 
 Resilience:
 
-- Make some queues explicit as subsystems so that retries can handle issues during processing of commands/events.
+- Make some queues explicit as components so that retries can handle issues during processing of commands/events.
   This requires that the handling code is idempotent.
 - Split off command/event handlers that have a big risk of causing issues, like OOM, to reduce impact on other parts.
 - Define what liveness means for each process.
-  Consider using an orchestration tool (another subsystem) to automatically restart processes that fail the liveness
+  Consider using an orchestration tool (another component) to automatically restart processes that fail the liveness
   test.
 - Consider load shedding when performance requirements aren't met to preserve uptime.
   Detect this using the metrics defined in these requirements.
@@ -134,18 +134,18 @@ Maintainability / portability:
 - The domain model is more stable than technical parts, like what storage solution to use.
   Apply hexagonal architecture to isolate changes in those parts from the domain model.
 
-Once done with non-functional requirements, you should have identified all subsystems.
-Perform make or buy decisions on all subsystems.
-For each custom subsystem, implement all functional requirements in the requirements group implemented by the subsystem.
+Once done with non-functional requirements, you should have identified all components.
+Perform make or buy decisions on all components.
+For each custom component, implement all functional requirements in the requirements group implemented by the component.
 Again, do one requirement at a time.
-Non-functional requirements apply to all subsystems.
+Non-functional requirements apply to all components.
 
 
 ### Design
 
-Design happens for each custom subsystem:
+Design happens for each custom component:
 
-1. Collect all requirements in the requirements group that the custom subsystem must implement.
+1. Collect all requirements in the requirements group that the custom component must implement.
 2. Implement requirements one at a time.
 3. For a given requirement, translate its acceptance tests into a list of detailed tests.
 4. Write code based on those tests using TDD.
@@ -154,7 +154,7 @@ Design happens for each custom subsystem:
 flowchart BT
   R[Requirement]
   RG[Requirements\ngroup]
-  CC[Custom\nsubsystem]
+  CC[Custom\ncomponent]
   I[Interface]
   AT[Acceptance\ntest]
   UT[Unit test]
