@@ -42,21 +42,28 @@
 
 ### Architecture
 
+```admonish tldr title="Definitions"
+A **module** is a compiled and packaged subdomain, like a jar file.
+A **component** is an executable and deployable collection of modules, like a war file or executable fat jar.
+
+--- Chris Richardson
+```
+
 Architecting consists of the following activities:
 
-1. Combine modules into subsystems based on organizational structure and Quality Attribute Requirements.
-1. Divide subsystems into standard subsystems to acquire (like databases and queues) and custom subsystems to build.
-1. Select existing implementations for standard subsystems.
-1. Decide how subsystems interact.
-1. Select technologies to implement custom subsystems and their interfaces.
+1. Combine modules into components based on organizational structure and Quality Attribute Requirements.
+1. Divide components into standard components to acquire (like databases and queues) and custom components to build.
+1. Select existing implementations for standard components.
+1. Decide how components interact.
+1. Select technologies to implement custom components and their interfaces.
 
 ```mermaid
 flowchart TB
   R[Requirement]
   M[Module]
-  C[Subsystem]
-  SC[Standard\nsubsystem]
-  CC[Custom\nsubsystem]
+  C[Component]
+  SC[Standard\ncomponent]
+  CC[Custom\ncomponent]
   I[Interface]
   T[Technology]
 
