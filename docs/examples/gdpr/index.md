@@ -119,5 +119,3 @@ flowchart LR
 2. We create two new modules for the unassigned aggregates `DataDeletionRequestForm` and `Notifications`.
 3. The read model `DataDeletionCompletion` only has one outgoing edge, so we assign it to the `Notifications` module.
 4. We assign the automatic policy `CheckRequestComplete` to the module that contains its read model, `Services`.
-
-TODO: Container diagram.

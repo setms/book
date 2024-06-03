@@ -35,9 +35,12 @@
 1. Assign aggregates, automatic policies, and read models to modules based on the above dependency graph:
     - For every cycle in the graph, create a module and assign all the nodes in the cycle to the module.
     - Create a module for every unassigned aggregate.
-    - If a read model only has outgoing edges and those are all to aggregates in the same module, assign the read model
-        to that module.
-    - Assign each automatic policy to the module that contains its read model.
+    - If all outgoing edges of a read model are to aggregates in the same module, assign the read model to that module.
+    - For each automatic policy that reads from a read model, assign it to the module that contains its read model.
+    - For each automatic policy that doesn't read from a read model, assign it to the module that contains the
+        aggregate that accepts the commands issued by the policy.
+1. Assign each command to the module that contains the aggregate that accepts the command.
+1. Assign each event to the module that contains the aggregate that emits the event.
 
 
 ### Architecture
@@ -46,7 +49,7 @@
 A **module** is a compiled and packaged subdomain, like a jar file.
 A **component** is an executable and deployable collection of modules, like a war file or executable fat jar.
 
---- Chris Richardson
+--- @@Richardson2023
 ```
 
 Architecting consists of the following activities:
@@ -86,7 +89,7 @@ Inputs to the architecting process:
 
 Outputs of the architecting process:
 
-- Module assignments to components.
+- Assignments of modules to components.
 - [Container diagram](https://c4model.com/#ContainerDiagram).
     Note that the C4 model uses different terminology: their _container_ corresponds to our _component_ and their
     _component_ corresponds to our _module_.

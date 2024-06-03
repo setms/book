@@ -54,6 +54,7 @@
 - [Putting it all together](synthesis.md)
 - [Examples](examples/index.md)
   - [Supporting GDPR](examples/gdpr/index.md)
+  - [Online classifieds](examples/classifieds/index.md)
 
 # Part IV: Conclusion
 
