@@ -17,7 +17,7 @@ The marketplace maintains rules around what kind of ads sellers can place, and c
 In this example, we assume such moderation happens automatically, but in practice this would be a combination of
 automated and manual processing.
 
-The marketplace's Trust & Safety Manager defines the moderation rules:
+The marketplace's Trust & Safety (TnS) Manager defines the moderation rules:
 
 ![TnS manager defines rules](define-rules.png)
 
@@ -55,21 +55,21 @@ The dependency graph for aggregates, automated policies, and read models looks l
 
 ```mermaid
 flowchart LR
-  CUP[Check user preferences]
+  CUP[/Check user preferences/]
   UP[User preferences]
-  U[Users]
-  A[Ads]
-  CI[Check index]
+  U{{Users}}
+  A{{Ads}}
+  CI[/Check index/]
   MA[My ads]
-  CV[Check violations]
+  CV[/Check violations/]
   RV[Rules]
-  R[Moderation]
+  R{{Moderation}}
   SA[Searchable ads]
-  I[Index]
+  I{{Index}}
   O[Offers]
-  T[Trades]
+  T{{Trades}}
   No[Notification]
-  N[Notifications]
+  N{{Notifications}}
 
   CUP --> UP
   A --> CUP

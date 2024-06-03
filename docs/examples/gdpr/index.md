@@ -97,11 +97,11 @@ The dependency graph for the above process looks like this:
 
 ```mermaid
 flowchart LR
-  F[DataDeletionRequestForm]
-  S[Services]
-  N[Notifications]
-  CUS[CheckUnresponsiveServices]
-  CRC[CheckRequestComplete]
+  F{{DataDeletionRequestForm}}
+  S{{Services}}
+  N{{Notifications}}
+  CUS[/CheckUnresponsiveServices/]
+  CRC[/CheckRequestComplete/]
   DIP[DeletionsInProgress]
   DDC[DataDeletionCompletion]
 
