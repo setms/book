@@ -70,6 +70,7 @@ flowchart LR
   T{{Trades}}
   No[Notification]
   N{{Notifications}}
+  CAO[/CheckAcceptedOffer/]
 
   CUP --> UP
   A --> CUP
@@ -82,17 +83,14 @@ flowchart LR
   O --> T
   UP --> U
   MA --> A
+  A --> CAO
 ```
 
 The corresponding modules are:
 
-<!-- vale Google.FirstPerson = NO -->
-
-- Users, User preferences, Check user preferences
-- Ads, My ads
-- Moderation, Rules, Check violations
-- Index, Searchable ads, Check index
+- Users, UserPreferences, CheckUserPreferences
+- Ads, MyAds, CheckAcceptedOffer
+- Moderation, Rules, CheckViolations
+- Index, SearchableAds, CheckIndex
 - Trades, Offers
 - Notifications, Notification
-
-<!-- vale Google.FirstPerson = YES -->
