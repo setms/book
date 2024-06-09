@@ -54,43 +54,97 @@ Competitive offerings include features not covered here, like messaging, payment
 The dependency graph for aggregates, automated policies, and read models looks like this:
 
 ```mermaid
-flowchart LR
-  CUP[/Check user preferences/]
-  UP[User preferences]
-  U{{Users}}
-  A{{Ads}}
-  CI[/Check index/]
-  MA[My ads]
-  CV[/Check violations/]
-  RV[Rules]
-  R{{Moderation}}
-  SA[Searchable ads]
-  I{{Index}}
-  O[Offers]
-  T{{Trades}}
-  No[Notification]
-  N{{Notifications}}
-  CAO[/CheckAcceptedOffer/]
+graph
+  usersAggregate(Users)
+  userPreferencesReadModel[[UserPreferences]]
+  adsAggregate(Ads)
+  rulesReadModel[[Rules]]
+  checkViolationsAutomaticPolicy[/CheckViolations/]
+  myAdsReadModel[[MyAds]]
+  checkIndexAutomaticPolicy[/CheckIndex/]
+  indexAggregate(Index)
+  searchableAdsReadModel[[SearchableAds]]
+  checkUserPreferencesAutomaticPolicy[/CheckUserPreferences/]
+  notificationsAggregate(Notifications)
+  notificationReadModel[[Notification]]
+  moderationAggregate(Moderation)
+  tradesAggregate(Trades)
+  offersReadModel[[Offers]]
+  checkAcceptedOfferAutomaticPolicy[/CheckAcceptedOffer/]
 
-  CUP --> UP
-  A --> CUP
-  A --> CI
-  A --> CV
-  CV --> RV
-  RV --> R
-  SA --> I
-  No --> N
-  O --> T
-  UP --> U
-  MA --> A
-  A --> CAO
+  userPreferencesReadModel --> usersAggregate
+  adsAggregate --> checkViolationsAutomaticPolicy
+  adsAggregate --> checkAcceptedOfferAutomaticPolicy
+  rulesReadModel --> moderationAggregate
+  checkViolationsAutomaticPolicy --> rulesReadModel
+  myAdsReadModel --> adsAggregate
+  indexAggregate --> checkIndexAutomaticPolicy
+  searchableAdsReadModel --> indexAggregate
+  checkUserPreferencesAutomaticPolicy --> userPreferencesReadModel
+  notificationsAggregate --> checkUserPreferencesAutomaticPolicy
+  notificationReadModel --> notificationsAggregate
+  offersReadModel --> tradesAggregate
 ```
 
 The corresponding modules are:
 
-- Users, UserPreferences, CheckUserPreferences
-- Ads, MyAds, CheckAcceptedOffer
-- Moderation, Rules, CheckViolations
-- Index, SearchableAds, CheckIndex
-- Trades, Offers
-- Notifications, Notification
+```mermaid
+graph
+  usersModule["<b>Users</b>
+- CheckUserPreferences
+- SignUp
+- UserAdded
+- UserPreferences
+- Users"]
+adsModule["<b>Ads</b>
+- AcceptAd
+- AdAccepted
+- AdBumped
+- AdChanged
+- AdClosed
+- AdDeleted
+- AdProposed
+- AdRejected
+- Ads
+- BumpAd
+- ChangeAd
+- CloseAd
+- CreateAd
+- DeleteAd
+- MyAds
+- RejectAd"]
+indexModule["<b>Index</b>
+- AddAdToIndex
+- DecreaseAdRelevancy
+- IncreaseAdRelevancy
+- Index
+- IndexUpdated
+- RemoveAdFromIndex
+- SearchableAds
+- UpdateAdInIndex"]
+notificationsModule["<b>Notifications</b>
+- InformUser
+- Notification
+- NotificationSent
+- Notifications"]
+moderationModule["<b>Moderation</b>
+- CheckViolations
+- DefineRule
+- Moderation
+- RuleDefined
+- Rules"]
+tradesModule["<b>Trades</b>
+- AcceptOffer
+- MakeOffer
+- OfferAccepted
+- OfferMade
+- OfferRejected
+- Offers
+- RejectOffer
+- Trades"]
+
+moderationModule --> adsModule
+usersModule --> notificationsModule
+usersModule --> adsModule
+usersModule --> tradesModule
+```

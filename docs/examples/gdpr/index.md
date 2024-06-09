@@ -96,21 +96,21 @@ We should define acceptance tests for automated policies, aggregates, and read m
 The dependency graph for the above process looks like this:
 
 ```mermaid
-flowchart LR
-  F{{DataDeletionRequestForm}}
-  S{{Services}}
-  N{{Notifications}}
-  CUS[/CheckUnresponsiveServices/]
-  CRC[/CheckRequestComplete/]
-  DIP[DeletionsInProgress]
-  DDC[DataDeletionCompletion]
+graph
+  dataDeletionRequestFormAggregate(DataDeletionRequestForm)
+  servicesAggregate(Services)
+  notificationsAggregate(Notifications)
+  deletionsInProgressReadModel[[DeletionsInProgress]]
+  dataDeletionCompletionReadModel[[DataDeletionCompletion]]
+  checkUnresponsiveServiceAutomaticPolicy[/CheckUnresponsiveService/]
+  checkRequestCompleteAutomaticPolicy[/CheckRequestComplete/]
 
-  S --> CUS
-  CUS --> DIP
-  DIP --> S
-  DDC --> N
-  N --> CRC
-  CRC --> DIP
+  servicesAggregate --> checkUnresponsiveServiceAutomaticPolicy
+  notificationsAggregate --> checkRequestCompleteAutomaticPolicy
+  deletionsInProgressReadModel --> servicesAggregate
+  dataDeletionCompletionReadModel --> notificationsAggregate
+  checkUnresponsiveServiceAutomaticPolicy --> deletionsInProgressReadModel
+  checkRequestCompleteAutomaticPolicy --> deletionsInProgressReadModel
 ```
 
 1. The graph has one cycle, so we create a module containing `Services`, `CheckUnresponsiveSerivces`, and
@@ -119,3 +119,31 @@ flowchart LR
 2. We create two new modules for the unassigned aggregates `DataDeletionRequestForm` and `Notifications`.
 3. The read model `DataDeletionCompletion` only has one outgoing edge, so we assign it to the `Notifications` module.
 4. We assign the automatic policy `CheckRequestComplete` to the module that contains its read model, `Services`.
+
+This gives us three loosely coupled modules:
+
+```mermaid
+graph
+  servicesModule["<b>Services</b>
+    - CheckRequestComplete
+- CheckUnresponsiveService
+- DataDeletedInService
+- DataDeletionRequestedInService
+- DataDeletionStarted
+- DeleteData
+- DeletionsInProgress
+- RemindService
+- Services
+- TimePassed"]
+dataDeletionRequestFormModule["<b>DataDeletionRequestForm</b>
+- DataDeletionRequestForm
+- DataDeletionRequested
+- DeleteMyData"]
+notificationsModule["<b>Notifications</b>
+- DataDeleted
+- DataDeletionCompletion
+- InformUser
+- Notifications"]
+
+servicesModule --> notificationsModule
+```
