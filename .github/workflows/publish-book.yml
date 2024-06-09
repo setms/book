@@ -17,7 +17,7 @@ jobs:
   vale:
     runs-on: ubuntu-latest
     container:
-      image: jdkato/vale:v2.10.2
+      image: jdkato/vale:v3.4.2
     steps:
       - uses: actions/checkout@v4
       - run: vale docs

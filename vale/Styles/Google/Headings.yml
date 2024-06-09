@@ -11,6 +11,7 @@ exceptions:
   - AST
   - ASTs
   - Azure
+  - BDD
   - Checkstyle
   - CID
   - CIDs
@@ -32,6 +33,7 @@ exceptions:
   - Java
   - Jenkins
   - Jira
+  - Kepner-Tregoe
   - Kubernetes
   - Linux
   - macOS
@@ -44,5 +46,6 @@ exceptions:
   - Pub/Sub
   - REPL
   - Slack
+  - SWEBOK
   - URLs
   - Windows
