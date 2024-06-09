@@ -108,6 +108,7 @@ adsModule["<b>Ads</b>
 - Ads
 - BumpAd
 - ChangeAd
+- CheckAcceptedOffer
 - CloseAd
 - CreateAd
 - DeleteAd
@@ -147,4 +148,5 @@ moderationModule --> adsModule
 usersModule --> notificationsModule
 usersModule --> adsModule
 usersModule --> tradesModule
+adsModule --> tradesModule
 ```

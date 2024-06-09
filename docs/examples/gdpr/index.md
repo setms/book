@@ -124,8 +124,12 @@ This gives us three loosely coupled modules:
 
 ```mermaid
 graph
-  servicesModule["<b>Services</b>
-    - CheckRequestComplete
+  dataDeletionRequestFormModule["<b>DataDeletionRequestForm</b>
+- DataDeletionRequestForm
+- DataDeletionRequested
+- DeleteMyData"]
+servicesModule["<b>Services</b>
+- CheckRequestComplete
 - CheckUnresponsiveService
 - DataDeletedInService
 - DataDeletionRequestedInService
@@ -135,10 +139,6 @@ graph
 - RemindService
 - Services
 - TimePassed"]
-dataDeletionRequestFormModule["<b>DataDeletionRequestForm</b>
-- DataDeletionRequestForm
-- DataDeletionRequested
-- DeleteMyData"]
 notificationsModule["<b>Notifications</b>
 - DataDeleted
 - DataDeletionCompletion
