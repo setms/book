@@ -25,15 +25,15 @@ flows.
 This makes it hard to use them to capture requirements and then derive a design from those requirements.
 It's left to the designer to take a giant intellectual leap.
 
-I believe event storming @@Brandolini2013 can fill the gap between these two sets of notations.
-The concepts of events, commands, persons, external systems, and so on are easy to explain in a workshop format,
+Event storming @@Brandolini2013 can fill the gap between these two sets of notations.
+The concepts of events, commands, persons, external systems, etc. are easy to explain in a workshop format,
 especially when introduced gradually.
 The grammar that rules the concepts helps with uncovering requirements by directing participants to answer the right
 questions.
-The concepts are also powerful enough to turn requirements gathering smoothly into design.
+The concepts are also powerful enough to turn requirements into design in a structured manner, as we'll see.
 
 The only downside of event storming is that it doesn't come with a formal notation like BPMN or UML.
-It's easy to replace the colored stickies with simarly colored icons, however, and connect them with arrows:
+It's easy to replace the colored stickies with similarly colored icons, however, and connect them with arrows:
 
 ![RESIN](resin.png)
 

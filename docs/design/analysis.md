@@ -40,7 +40,7 @@
           that domain.
       - Otherwise, create a domain containing the read model.
     - For every policy:
-      - If the policy has no outgoing edges, and all commands issued by the policy are accepted by aggregates in a
+      - If the policy has no outgoing edges, and all commands issued by the policy go to aggregates in a
           single domain, assign the policy to that domain.
       - If a policy has outgoing edges, and they're all to read models in the same domain, assign the policy to that
           domain.
