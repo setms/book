@@ -2,10 +2,10 @@
 # Preliminary analysis
 
 
-## Ideas
+## Design method
 
 1. Put the requirements in Rigorous Event Storming Icon Notation (RESIN) and resolve hotspots.
-    See the [GDPR example](../examples/gdpr/index.md).
+    See the [examples](../examples/index.md).
 1. If there are any humans issuing commands, or looking at read models, then design guidelines for the user experience.
 1. If there are any external systems issuing commands or consuming events, then design guidelines for the developer
     experience.
@@ -26,24 +26,32 @@
     guarantees.
 1. For all **aggregates**:
    - Design the data model using ERDs or similar notation.
-1. Create a directed graph:
+1. Create a directed graph capturing dependencies:
    - Add a node for every aggregate, read model, and automatic policy.
    - Add an edge from an aggregate to a policy if the policy issues a command processed by the aggregate.
    - Add an edge from a policy to a read model if the policy uses the read model to make a decision.
    - Add an edge from a read model to an aggregate if the read model updates from an event emitted by the aggregate
        and their data models have entities in common.
 1. Assign aggregates, automatic policies, and read models to subdomains based on the above dependency graph:
-    - For every cycle in the graph, create a subdomain and assign all the nodes in the cycle to the subdomain.
-    - Create a subdomain for every unassigned aggregate.
-    - If all outgoing edges of an unassigned read model are to aggregates in the same subdomain, assign the read model to
-        that subdomain.
-    - For each unassigned automatic policy that reads from a read model, assign it to the subdomain that contains its read
-        model.
-    - For each unassigned automatic policy that doesn't read from a read model, assign it to the subdomain that contains
-        the aggregate that accepts the commands issued by the policy.
-1. Assign each command to the subdomain that contains the aggregate that accepts the command.
-1. Assign each domain event to the subdomain that contains the aggregate that emits the event.
-1. Assign each unassigned event to the subdomain that contains the policy that handles the event.
+    - For every aggregate:
+      - Create a domain containing the aggregate.
+    - For every read model:
+      - If all outgoing edges of the read model are to aggregates in the same domain, assign the read model to
+          that domain.
+      - Otherwise, create a domain containing the read model.
+    - For every policy:
+      - If the policy has no outgoing edges, and all commands issued by the policy are accepted by aggregates in a
+          single domain, assign the policy to that domain.
+      - If a policy has outgoing edges, and they're all to read models in the same domain, assign the policy to that
+          domain.
+      - Otherwise, create a domain containing the policy.
+1. Assign commands and events to the discovered subdomains as follows:
+   - Assign each command to the subdomain that contains the aggregate that accepts the command.
+   - Assign each event to the subdomain that contains the aggregate that emits the event.
+   - Assign each unassigned event to the subdomain that contains the policy that handles the event.
+1. Dependencies between modules follow from dependencies between the RESIN elements, in particular events and commands,
+    since those are the modules' APIs.
+1. If there are cycles between modules, then merge all the modules on each cycle into a single module.
 
 
 ### Architecture
@@ -85,7 +93,7 @@ flowchart TB
 
 Inputs to the architecting process:
 
-- Requirements
+- Requirements and the modules discovered from them
 - Architectural styles and patterns
 - Sanctioned technologies and vendors
 - Teams and their skill levels
