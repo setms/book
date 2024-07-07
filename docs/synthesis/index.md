@@ -75,14 +75,21 @@ To complete the requirements gathering phase, add acceptance criteria:
 - For every policy, describe what events it handles and what commands it issues in response.
 - For every read model, describe what events it handles and how it updates its data in response.
 
+Of course, the above description is a simplification.
+In most cases, you'll need several workshops to flesh out the details.
+You're also going to have to redo some work as you learn more.
+
+We think the above process works best when performed at different levels of abstraction:
+
+1. Do big picture event storming @@Brandolini2013 to find use cases.
+    The goal here is to identify hotspots.
+2. Hold more detailed event storming sessions to flesh out the details of a single use case or a small set of related
+    use cases.
+    The goal here is to resolve hotspots in one part of the system at a time.
+
 
 ## Design
 
-```admonish info "Ideas"
-- Code smells & refactoring
-- ASTs
-- Structure editors
-```
 
 ## Construction
 
