@@ -52,6 +52,10 @@
 # Part III: Synthesis
 
 - [Putting it all together](synthesis/index.md)
+  - [Requirements](synthesis/requirements.md)
+  - [Design](synthesis/design.md)
+  - [Testing](synthesis/testing.md)
+  - [Construction](synthesis/construction.md)
 - [Examples](examples/index.md)
   - [Supporting GDPR](examples/gdpr/index.md)
   - [Online classifieds](examples/classifieds/index.md)
