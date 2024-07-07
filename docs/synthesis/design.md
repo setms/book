@@ -8,6 +8,10 @@ This makes our design approach a bottom-up one.
 ## Detailed design
 
 In detailed design, we'll look at all the small pieces that make up the system in turn.
+These pieces are what we call **active event storming items**:
+aggregates, events, commands, policies, and read models.
+Active event storming concepts find their way into code, whereas persons and external systems don't.
+
 Just as we did some design work during requirements gathering, we're going to dig deeper into non-functional
 requirements during the design phase.
 
@@ -92,3 +96,20 @@ See [events](#events) above for more information.
 ## Architecture
 
 With the low-level building blocks in place, we can now turn our focus to the bigger picture.
+
+
+### Domains
+
+In the event storming and DDD worlds, the word domain often pops up.
+As developers, we're supposed to find our domains and subdomains, but there is little concrete advice on how to do that.
+Here, we're going to give you an algorithm that accepts a process definition in RESIN as input and outputs a list of
+domains.
+Each (sub)domain contains active event storming items.
+
+A **module** is a compiled and packaged subdomain, like a jar file.
+A **component** is an executable and deployable collection of modules, like a war file or executable fat jar
+@@Richardson2023.
+In the next section, we'll look at combining modules into components.
+
+
+### Components
