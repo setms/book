@@ -28,7 +28,7 @@ It's left to the designer to take a giant intellectual leap.
 Event storming @@Brandolini2013 can fill the gap between these two sets of notations.
 The concepts of events, commands, persons, external systems, etc. are easy to explain in a workshop format,
 especially when introduced gradually.
-The grammar that rules the concepts helps with uncovering requirements by directing participants to answer the right
+The grammar that governs the concepts helps with uncovering requirements by directing participants to answer the right
 questions.
 The concepts are also powerful enough to turn requirements into design in a structured manner, as we'll see.
 
@@ -37,7 +37,43 @@ It's easy to replace the colored stickies with similarly colored icons, however,
 
 ![RESIN](resin.png)
 
-We call this Rigorous Event Storming Icon Notation (RESIN).
+We call this Rigorous Event Storming Icon Notation (RESIN) and argue that RESIN is well-suited for capturing
+requirements and translating those into a design.
+
+You start off using RESIN in the same way as in the original event storming workshop:
+
+1. Brainstorm the significant things that happen in the process.
+    Place orange event symbols on a timeline flowing from left to right.
+2. Ask what emits the events: external systems or the system under consideration.
+    Place pink external system symbols and red hotspot symbols.
+3. Next focus on the hotspots, since these show the incomplete parts of the process model.
+    If it's clear what specific part of the system emits a given event, replace the hotspot before it with a yellow
+    aggregate symbol.
+4. If it's not clear what specific part of the system emits a given event, ask what stimulus leads to the system
+    emitting the event.
+    This is either a user instructing the system to perform an action, or a policy.
+    Place either yellow person and blue command symbols, or purple policy and blue command symbols to represent these
+    scenarios.
+5. If a user issues a command, ask what information they need for that.
+    If the system is to provide that information, place a green read model symbol before the person.
+6. Similarly, if a policy issues a command, it probably also needs a read model to feed it information.
+7. For each policy, ask what event triggers it.
+    Place an event symbol before it on the timeline.
+8. For each read model, ask what events feed information into it, if any.
+    Place any event symbols before it.
+9. Repeat the above steps until no hotspots remain.
+
+The result of the above process is a timeline that captures the process under consideration.
+This process is a mix of requirements gathering and a bit of design, like determining the aggregates.
+
+It's often hard to capture everything in a single timeline.
+That's okay, you can use as many timelines as necessary to capture all scenarios of all use cases.
+
+To complete the requirements gathering phase, add acceptance criteria:
+
+- For every aggregate, describe what commands it accepts and how it updates its data and emits events in response.
+- For every policy, describe what events it handles and what commands it issues in response.
+- For every read model, describe what events it handles and how it updates its data in response.
 
 
 ## Design
