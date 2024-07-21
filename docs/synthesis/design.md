@@ -106,7 +106,7 @@ Here, we're going to give you an algorithm that accepts a process definition in 
 domains.
 Each (sub)domain contains active event storming items.
 
-**TODO**: Describe the algorithm
+_TODO_: Describe the algorithm
 
 A **module** is a compiled and packaged subdomain, like a jar file.
 A **component** is an executable and deployable collection of modules, like a war file or executable fat jar
@@ -116,4 +116,4 @@ In the next section, we'll look at combining modules into components.
 
 ### Components
 
-**TODO**: Attractive and repulsive forces between modules determine the components they should go into.
+_TODO_: Attractive and repulsive forces between modules determine the components they should go into.
