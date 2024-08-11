@@ -75,9 +75,9 @@ Commands accepted by aggregates come in two flavors.
 If a person issues the command, then they need a user interface to do so.
 Design this interface and the interaction it's part of.
 
-If, however, an external system issues the command, then it needs an API to do so.
-Does the external system need an immediate response (synchronous), can it wait for one (asynchronous),
-or does it not care about one (fire-and-forget)?
+If, however, an external system or policy issues the command, then it needs an API to do so.
+Does the issuer need an immediate response (**synchronous**), can it wait for one (**asynchronous**),
+or does it not care about one (**fire-and-forget**)?
 For asynchronous and fire-and-forget scenarios, what delivery guarantees do we need?
 
 Like with events, we need to design and document the schema for the payload of the API call.
@@ -100,7 +100,7 @@ With the low-level building blocks in place, we can now turn our focus to the bi
 
 ### Domains
 
-In the event storming and DDD worlds, the word domain often pops up.
+In the event storming and DDD worlds, the word **domain** often pops up.
 As developers, we're supposed to find our domains and subdomains, but there is little concrete advice on how to do that.
 Here, we're going to give you an algorithm that accepts a process definition in RESIN as input and outputs a list of
 domains.
@@ -108,12 +108,18 @@ Each (sub)domain contains active event storming items.
 
 _TODO_: Describe the algorithm
 
-A **module** is a compiled and packaged subdomain, like a jar file.
-A **component** is an executable and deployable collection of modules, like a war file or executable fat jar
-@@Richardson2023.
-In the next section, we'll look at combining modules into components.
-
 
 ### Components
 
-_TODO_: Attractive and repulsive forces between modules determine the components they should go into.
+A **module** is a compiled and packaged subdomain, like a jar file.
+A **component** is an executable and deployable collection of modules, like a war file or executable fat jar
+@@Richardson2023.
+
+Modules follow from the domains, which follow from the requirements.
+This is the easy part, since it depends on the technical system alone.
+Components, however, need developing and operating, which brings in the social part of the sociotechnical system.
+As a result, the "algorithm" for determining component boundaries isn't as straightforward.
+
+_TODO_: Residuality approach to create an architecture exhibiting criticality.
+_TODO_: Compare to attractive/repulsive forces between modules. Or is this the first step where we find the
+"naive architecture?"
