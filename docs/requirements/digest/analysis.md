@@ -121,7 +121,7 @@ Don't forget to include all relevant stakeholders when evaluating a prototype.
 ## Prioritization
 
 Customers set requirement priorities based on the contribution towards business objectives.
-Priorities are especially important for non-functional requirements, since conflicts between quality attributes are a
+Priorities are especially important for quality attribute requirements, since conflicts between quality attributes are a
 fact of life.
 You need to define which quality attributes are most important for the system, so that developers can make proper
 trade-offs.
@@ -169,7 +169,7 @@ The priority of a requirement should be one if its [attributes](management.md) i
 
 A high-priority requirement may depend on a lower-priority requirement.
 In that case, the lower-priority requirement must come first despite its lower priority.
-Non-functional requirements that affect the architecture should receive high priority, because rearchitecting is
+Quality attribute requirements that affect the architecture should receive high priority, because rearchitecting is
 expensive.
 
 Software has a cost, which developers estimate.

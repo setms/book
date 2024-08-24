@@ -45,9 +45,9 @@ Developers can write white box tests before the code, in a practice known as tes
 
 Users may also manually perform acceptance tests in User Acceptance Testing (UAT).
 
-Some non-functional requirements may require experts to validate them.
+Some quality attribute requirements may require experts to validate them.
 For instance, many organizations hire penetration testers to validate security requirements.
-Other non-functional requirements may be hard to validate because they state that some things should _not_ happen,
+Other quality attribute requirements may be hard to validate because they state that some things should _not_ happen,
 like safety and compliance requirements.
 
 

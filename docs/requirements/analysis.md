@@ -6,7 +6,7 @@ However, we feel that some issues remain:
 - There isn't always someone who can give us the requirements.
 - Requirements elicitation takes a long time because the development team needs to learn the domain.
 - Software has a certain shape that should affect how we express functional requirements.
-- Guidance on specifying non-functional requirements is thin.
+- Guidance on specifying quality attribute requirements is thin.
 - The Agile requirements process is misunderstood and weak.
 
 Let's explore these issues in more detail.
@@ -310,9 +310,9 @@ Then <the policy issues a command>
 ```
 
 
-## Specifying non-functional requirements
+## Specifying quality attribute requirements
 
-**Non-functional requirements** are requirements that target a quality attribute other than _functionality_.
+**Quality attribute requirements** are requirements that target a quality attribute other than _functionality_.
 These requirements don't deal so much with _what_ happens, but more with _how_: how fast, how easy, how secure, etc.
 That makes it less natural to express such requirements using the `Given/When/Then` format that focuses on the _what_.
 
@@ -324,7 +324,7 @@ We usually don't care much about the latency of a single request being over 3 se
 If this happens only once over the lifetime of a system, then that's annoying but usually not a big deal.
 (Unless we're talking about a safety-critical system, of course.)
 
-The same holds for other non-functional requirements.
+The same holds for other quality attribute requirements.
 Consider usability, for instance.
 We may require that 90% of the users can find the right next action within 5 seconds of the system presenting them
 some information.
@@ -338,7 +338,7 @@ The statistical nature of such requirements means we can't test them with a sing
 requirements.
 It also often means we must run the tests in production to get meaningful results.
 
-You may force acceptance tests for non-functional requirements into the `Given/When/Then` format:
+You may force acceptance tests for quality attribute requirements into the `Given/When/Then` format:
 
 ```text
 Given there are 100 concurrent users
@@ -358,10 +358,10 @@ That would be a shame.
 A better format is the following:
 
 1. **Objective**:
-  The non-functional requirement under consideration.
+  The quality attribute requirement under consideration.
   Define the quality attribute (performance, security, usability, etc).
 2. **Scenario**:
-  Describe conditions under which to test the non-functional requirement.
+  Describe conditions under which to test the quality attribute requirement.
   This may involve setting up certain environmental conditions or specifying user interactions.
   The scenario corresponds to the `Given` part of the `Given/When/Then` format.
 3. **Criteria**:

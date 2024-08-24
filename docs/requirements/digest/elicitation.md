@@ -143,9 +143,9 @@ Dashboards and reports may show predictive as well as descriptive analytics, whi
 models and statistical calculations.
 
 
-## Non-functional requirements
+## Quality attribute requirements
 
-**Non-functional requirements** are constraints or quality attributes.
+**Quality attribute requirements** are constraints or quality attributes.
 
 **Quality attributes** define _how well_ the systems works.
 Examples are how easy it's to use, how fast it executes, and how often it fails.
@@ -186,14 +186,14 @@ products are safe and secure.
 Governments establish regulatory bodies with wide powers that enforce compliance with these rules.
 
 A **constraint** places restrictions on the design or implementation choices available to developers.
-It's another kind of non-functional requirement, different from quality attributes.
+It's another kind of quality attribute requirement, different from quality attributes.
 Constraints can come from stakeholders (like compliance officers), external systems that the product must interact with,
 or from other development activities, like transition and maintenance.
 
 It's easy to miss requirements:
 
 - **Assumed requirements** are those that users expect without explicitly expressing them.
-  Non-functional requirements are often assumed.
+  Quality attribute requirements are often assumed.
 - **Implied requirements** are those that are necessary because of another requirement.
 - Different user classes have different requirements, so make sure to involve representatives of all user classes.
   For instance, the sponsor may not use the product directly, but may need KPIs that the product must collect

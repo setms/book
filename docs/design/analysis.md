@@ -150,11 +150,11 @@ Maintainability / portability:
 - The domain model is more stable than technical parts, like what storage solution to use.
   Apply hexagonal architecture to isolate changes in those parts from the domain model.
 
-Once done with non-functional requirements, you should have identified all components.
+Once done with quality attribute requirements, you should have identified all components.
 Perform make or buy decisions on all components.
 For each custom component, implement all functional requirements in the requirements group implemented by the component.
 Again, do one requirement at a time.
-Non-functional requirements apply to all components.
+Quality attribute requirements apply to all components.
 
 
 ### Design
@@ -204,7 +204,7 @@ Canon TDD:
 Issues:
 
 - How to order the initial list of tests? Select one which requires the code transformation with the highest priority.
-- How to design the code-level API when writing a test? How to test non-functional requirements?
+- How to design the code-level API when writing a test? How to test quality attribute requirements?
 - Are the transformations in the TPP complete?
 - How to perform the vague ones, like `statement->statements`?
 - How to deal with big jumps?

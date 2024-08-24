@@ -12,7 +12,7 @@ These pieces are what we call **active event storming items**:
 aggregates, events, commands, policies, and read models.
 Active event storming concepts find their way into code, whereas persons and external systems don't.
 
-Just as we did some design work during requirements gathering, we're going to dig deeper into non-functional
+Just as we did some design work during requirements gathering, we're going to dig deeper into quality attribute
 requirements during the design phase.
 
 
@@ -24,7 +24,7 @@ If an external system consumes the event, you'll want to document the payload in
 using AsyncAPI @@AsyncAPI.
 You also need to determine beforehand how to evolve the schema in the future, for instance using versions.
 
-Clarify non-functional requirements: is it acceptable to lose an event sometimes, or not?
+Clarify quality attribute requirements: is it acceptable to lose an event sometimes, or not?
 If not, you'll need a message broker with appropriate durability guarantees.
 Likewise, is it acceptable for an event to arrive at the system multiple times?
 If so, the event handlers need to be idempotent.
@@ -54,12 +54,12 @@ discussed [below](#architecture).
 Otherwise, design an internal API for accessing its data.
 Since this is an internal API, it may not need to same level as scrutiny and documentation as an external API.
 
-If the read model updates its data from events, then consider the non-functional requirements listed [above](#events).
+If the read model updates its data from events, then consider the quality attribute requirements listed [above](#events).
 
 
 ### Policies
 
-Since policies handle events, consider the non-functional requirements listed for [event handlers](#events).
+Since policies handle events, consider the quality attribute requirements listed for [event handlers](#events).
 
 
 ### Commands
@@ -88,7 +88,7 @@ We also need to design for throughput and latency requirements.
 
 Like read models, aggregates contain data, so we need to design their data models.
 
-Since aggregates accept commands, we need to consider non-functional requirements around delivery, throughput, and
+Since aggregates accept commands, we need to consider quality attribute requirements around delivery, throughput, and
 latency.
 See [events](#events) above for more information.
 

@@ -35,7 +35,7 @@ project realities.
 For instance, many Agile methods treat schedule & quality as constraints, features & cost as drivers, and scope as
 a degree of freedom.
 
-Collect functional and non-functional requirements in a **Software Requirements Specification** (SRS).
+Collect functional and quality attribute requirements in a **Software Requirements Specification** (SRS).
 This practice enables downstream activities, like validation and change management.
 The SRS has different names in different contexts, like business requirements document, or functional specification.
 
@@ -68,7 +68,7 @@ You may want to include a logical data model in the SRS, including how to collec
 destruct data.
 Descriptions of reports are also valuable.
 
-Don't forget to document non-functional requirements, like for usability (including localization and
+Don't forget to document quality attribute requirements, like for usability (including localization and
 internationalization), performance, and security.
 Also include requirements around migrations from existing systems.
 
@@ -150,7 +150,7 @@ shall be able to [do something]
 [qualifying conditions, response time, or quality statement].
 ```
 
-_Non-functional requirements_ should be SMART: **S**pecific, **M**easurable, **A**ttainable, **R**elevant, and
+_Quality attribute requirements_ should be SMART: **S**pecific, **M**easurable, **A**ttainable, **R**elevant, and
 **T**ime-sensitive.
 @@Wiegers2013 gives this example for availability:
 

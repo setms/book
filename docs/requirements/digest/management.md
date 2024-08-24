@@ -71,8 +71,8 @@ system requirements.
 For products in some fields, like aviation, regulations dictate that you can trace requirements forward to design and
 code.
 
-Non-functional requirements often don't trace forward to code.
-Some non-functional requirements, like for security, trace forward to functional requirements, like authentication,
+Quality attribute requirements often don't trace forward to code.
+Some quality attribute requirements, like for security, trace forward to functional requirements, like authentication,
 that in turn do trace forward to code.
 
 For all but the smallest projects, manually maintaining traceability is impractical.

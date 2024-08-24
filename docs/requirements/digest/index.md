@@ -24,9 +24,9 @@ They may be a constraint on the development of the system.
   business requirements.
 - **Functional requirements** specify the behaviors the system must exhibit under specific conditions.
   They describe what the developers must implement to enable the user requirements.
-- **Non-functional requirements** or **quality attributes** describe the product's characteristics in various
+- **Quality attribute requirements** or **quality attributes** describe the product's characteristics in various
   dimensions that are important to stakeholders.
-  Non-functional requirements often apply to the system as a whole rather than individual features or services.
+  Quality attribute requirements often apply to the system as a whole rather than individual features or services.
   They constrain the system, for instance by stating how fast it must respond.
 
 These terms aren't used consistently.
