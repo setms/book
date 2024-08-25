@@ -7,8 +7,8 @@ The standard notation to capture processes is Business Process Model and Notatio
 However, this notation is complex: it has many symbols and nuances.
 These complexities are necessary to fulfill a major goal of BPMN: execute processes based on the model alone.
 As such, BPMN is more a tool for design and construction than for requirements gathering.
-A major problem using it for capturing requirements is that stakeholders have a hard time reading it and can therefore
-not validate the requirements.
+A major problem using BPMN for capturing requirements is that stakeholders have a hard time reading BPMN diagrams and
+can therefore not validate the requirements.
 
 Other notations exist for describing processes, like activity diagrams and sequence diagrams @@UML.
 These notations are simpler, but rather generic, containing not much more than actors, their actions, and some data
@@ -30,6 +30,10 @@ It's easy to replace the colored stickies with similarly colored icons, however,
 
 We call this Rigorous Event Storming Icon Notation (RESIN) and argue that RESIN is well-suited for capturing
 requirements and translating those into a design.
+
+Note that we're not suggesting to use RESIN in an event storming workshop.
+Stickies are more flexible and easier to manipulate.
+RESIN is for capturing event storms in a more formal way, as input to the rest of the software development process.
 
 You start off using RESIN in the same way as in the original event storming workshop:
 
@@ -62,9 +66,9 @@ That's okay, you can use as many timelines as necessary to capture all scenarios
 
 To complete the requirements gathering phase, add acceptance criteria:
 
-- For every aggregate, describe what commands it accepts and how it updates its data and emits events in response.
-- For every policy, describe what events it handles and what commands it issues in response.
-- For every read model, describe what events it handles and how it updates its data in response.
+- For every aggregate, describe how it updates its data from the commands it accepts and how it emits events in response.
+- For every policy, describe how it turns the events it handles into the commands it issues in response.
+- For every read model, describe how it updates its data from the events it handles.
 
 Of course, the above description is a simplification.
 In most cases, you'll need several workshops to flesh out the details.

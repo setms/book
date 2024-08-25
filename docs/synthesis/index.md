@@ -14,8 +14,8 @@ environment.
 Change is thus a fundamental aspect of software development, which is why the Agile movement urges us to embrace change
 @@Beck2000.
 However, the guidance on how to do that has been lacking.
-A design should emerge from the code, and the architecture should evolve, and there are some practices
-that help with that.
+We're told that a design should emerge from the code, and the architecture should evolve.
+We're given some practices that help with that.
 
-What's missing is a worldview or philosophy @@OReillu2024 and overarching approach of how those practices fit together.
+What's missing is a worldview or philosophy @@OReilly2024 and overarching approach of how those practices fit together.
 The following synthesis of the preceding material attempts to provide that.

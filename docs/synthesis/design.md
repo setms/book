@@ -47,10 +47,11 @@ If the read model helps a user to issue a command, then a user interface must ex
 Design this interface and the interaction it's part of.
 
 If the read model feeds into a policy, then it needs an API.
-This API may be an informal one, where the policy access the read model's data directly via a Repository or Domain
+This API may be an informal one, where the policy accesses the read model's data directly via a Repository or Domain
 Service.
 This approach is appropriate when the read model is part of the same domain as the policy, as
 discussed [below](#architecture).
+
 Otherwise, design an internal API for accessing its data.
 Since this is an internal API, it may not need to same level as scrutiny and documentation as an external API.
 
@@ -81,6 +82,7 @@ or does it not care about one (**fire-and-forget**)?
 For asynchronous and fire-and-forget scenarios, what delivery guarantees do we need?
 
 Like with events, we need to design and document the schema for the payload of the API call.
+This can take various forms @@OpenAPI @@AsyncAPI @@GraphQL.
 We also need to design for throughput and latency requirements.
 
 
