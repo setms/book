@@ -145,8 +145,6 @@ models and statistical calculations.
 
 ## Quality attribute requirements
 
-**Quality attribute requirements** are constraints or quality attributes.
-
 **Quality attributes** define _how well_ the systems works.
 Examples are how easy it's to use, how fast it executes, and how often it fails.
 External quality attributes are important to users, while internal quality attributes are important to developers,
@@ -186,7 +184,6 @@ products are safe and secure.
 Governments establish regulatory bodies with wide powers that enforce compliance with these rules.
 
 A **constraint** places restrictions on the design or implementation choices available to developers.
-It's another kind of quality attribute requirement, different from quality attributes.
 Constraints can come from stakeholders (like compliance officers), external systems that the product must interact with,
 or from other development activities, like transition and maintenance.
 
