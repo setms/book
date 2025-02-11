@@ -29,7 +29,7 @@ requirements agreements throughout the project.
 The business analyst sets up requirement storage mechanisms, defines attributes, coordinates status, and monitors
 change.
 
-Requirements have attributes, like origin, creation date, priority, and status.
+Requirements have **attributes**, like origin, creation date, priority, and status.
 Common statuses include proposed, drafted, approved, in progress, implemented, verified, and rejected.
 Tracking the distribution of statuses throughout the project shows the progress the team is making.
 
@@ -60,7 +60,7 @@ A **requirements volatility chart** tracks the rate at which change requests arr
 It should trend towards zero as the project nears completion.
 A sustained high rate implies a schedule risk.
 The CCB then may need to renegotiate schedule, staff, budget, or quality to accommodate changes.
-Tracking the origin of change requests is also illuminating.
+Tracking the origin of change requests may also be illuminating.
 
 **Impact analysis** is the process of assessing the consequences of a change.
 A traceability matrix helps with impact analysis.

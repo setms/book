@@ -35,40 +35,39 @@ The [Computer Society](https://www.computer.org/) (IEEE CS) "engages computer en
 and industry professionals from all areas of computing."
 It also "sets the standard for the education and engagement that fuels continued global technological advancement."
 
-One of its publications is _The Guide to the Software Engineering Body of Knowledge_ (SWEBOK).
-SWEBOK describes generally accepted knowledge about software engineering.
-The current version is V3 @@SWEBOK2014, while V4 is under review @@SWEBOK2022.
+One of its publications is _The Guide to the Software Engineering Body of Knowledge_ @@SWEBOK.
 
 The SWEBOK organizes material in knowledge areas (KAs):
 
 1. Software Requirements
+1. Software Architecture
 1. Software Design
 1. Software Construction
 1. Software Testing
+1. Software Engineering Operations
 1. Software Maintenance
 1. Software Configuration Management
 1. Software Engineering Management
 1. Software Engineering Process
 1. Software Engineering Models and Methods
 1. Software Quality
+1. Software Security
 1. Software Engineering Professional Practice
 1. Software Engineering Economics
 1. Computing Foundations
 1. Mathematical Foundations
 1. Engineering Foundations
 
-Knowledge areas 13-15 provide the theoretical foundations.
-KA 8 describes the engineering process, while 1-5 cover the activities in that process.
+Knowledge areas 16-18 provide the theoretical foundations.
+KA 10 describes the engineering process, while 1-9 cover the activities in that process.
 The other KAs deal with related topics.
-
-SWEBOK V4 recognizes 18 KAs, introducing architecture, operations, and security as separate areas.
 
 Each knowledge area breaks down into topics and subtopics, summarizes the key concepts, and includes a
 reference list for detailed information.
 
 IEEE CS stresses that SWEBOK is a _guide_ to the body of knowledge for software engineering.
 The body of knowledge itself consists of the literature that SWEBOK references.
-Appendix C contains a list of 36 books that together cover all the KAs.
+Appendix C contains a list of 37 books that together cover all the KAs.
 
 
 ## Is this actually engineering?
@@ -95,8 +94,8 @@ Let's look at some possibilities.
 Organizations achieve immensely different outcomes, even in level playing fields.
 Some organizations outperform their competitors in every important dimension, _all at once_.
 
-@@Kim2023 claim to understand why.
-They say all organizations are sociotechnical systems, where different types of work happen in
+@@Kim2023 claims to understand why.
+The authors say all organizations are sociotechnical systems, where different types of work happen in
 different layers:
 
 1. The technical objects people work on, like source code.
@@ -107,7 +106,7 @@ They argue that performance in layer 3 dominates performance as a whole.
 In other words, winning organizations wire their social circuitry better.
 For instance, Agile methods outperform Waterfall @@AgileVsWaterfall2023.
 
-@@Kim2023 offer the following tools to improve layer 3:
+@@Kim2023 offers the following tools to improve layer 3:
 
 - **Slowification** to make it easier to solve problems.
 - **Simplification** to make the problems themselves easier to solve.
@@ -125,7 +124,7 @@ For example, it's been over 20 years since the @@AgileManifesto, and there are s
 because they don't know any better.
 
 Sometimes people do know better, but still stick to their old ways.
-This may be due to a lack of discipline, or it may result from poor management.
+This may be due to a lack of discipline, or it may result from poor management, as stated above.
 It's also possible that they're confused by too many options.
 
 
@@ -139,7 +138,8 @@ Taiichi Ohno, TPS's founder, says TPS is about reducing waste through just-in-ti
 and automation with a human touch @@Ohno1988.
 However, @@Spear1999 shows that the real power of TPS stems from standardizing all work, while responding to problems
 by improving the standards.
-In other words, Toyota uses the [scientific method](engineering.md#science).
+In other words, Toyota uses the [scientific method](engineering.md#science), with the standards playing the role of
+scientific theory/hypotheses.
 
 Is it possible to find one way to do software development that's optimal in all situations?
 The answer is probably negative.

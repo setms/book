@@ -58,9 +58,9 @@ flowchart LR
   SyRS[System\nRequirements\nspecification]
 
   Rule[Business\nrule]
-  Rule --leads to--> BR
-  Rule --leads to--> UR
-  Rule --leads to--> FR
+  Rule --leads to --> BR
+  Rule --leads to --> UR
+  Rule --leads to --> FR
 
   Feature --bundles--> FR
 ```

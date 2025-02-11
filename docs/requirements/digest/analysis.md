@@ -26,13 +26,14 @@ The different analysis models each have their own strengths and weaknesses, so p
   Entities have attributes, which the data dictionary describes.
   Diamond shapes in the ERD represent relationships between entities.
   Numbers show the cardinality of the relationships.
+
   Entities show up in data stores in a DFD.
   Their attributes appear in report specifications.
   A **CRUD matrix** correlates use cases with Create, Read, Update, and Delete actions on entities.
 - A **swimlane diagram** shows the steps of a business process or the operations of a software system.
   They consist of several lanes that represent different systems or actors executing steps.
   Swimlane diagrams can show what happens inside a process of a DFD.
-  They resemble UML activity diagrams.
+  Standard notations are Business Process Model and Notation @@BPMN2013 and Activity Diagrams @@UML.
 - A **State Transition Diagram** (STD) shows state changes.
   We already saw this kind of model in the [introduction](../../introduction/software.md#finite-automata).
   UML has a similar diagram known as a _state machine diagram_ @@UML.
@@ -61,7 +62,7 @@ The different analysis models each have their own strengths and weaknesses, so p
 
   The starting point for all formal methods is a mathematical model, which acts as the system specification.
   To create this model, translate the requirements, expressed in natural language, diagrams, and tables, into a
-  mathematical language that has formally defines semantics.
+  mathematical language that has formally defined semantics.
   Constructing a formal specification forces a detailed analysis of the requirements and is an effective way of
   discovering requirements problems.
 

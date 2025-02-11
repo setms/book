@@ -30,7 +30,7 @@ They may be a constraint on the development of the system.
   They constrain the system, for instance by stating how fast it must respond.
 
 These terms aren't used consistently.
-For instance, @@Sommerville2011 uses the term _system requirement_ where @@Wiegers2013 uses _functional requirement_.
+For instance, @@Sommerville2015 uses the term _system requirement_ where @@Wiegers2013 uses _functional requirement_.
 We'll stick with the above definitions.
 
 ```admonish tldr title="Definition"
@@ -93,12 +93,12 @@ This can be a job title or a role performed by people that also perform other ro
 The analyst serves as the principal interpreter through which requirements flow between the customer community and
 the software development team @@Wiegers2013.
 
-For consumer software, the **product manager** plays the role of business analyst.
+For software used outside the organization that developed it, a **product manager** plays the role of business analyst.
 Both roles can also coexist, with the product manager focusing on the external market and user demands, and the BA
 converting those into functional requirements.
 
-In Agile projects, the **product owner** plays the role of business analyst, although sometimes both roles are
-present.
+In Agile software development, the **product owner** plays the role of business analyst, although sometimes both roles
+are present.
 
 Business analysts have their own body of knowledge @@BABOK2015, including an extension for Agile software
 development @@AgileBABOK2017.
@@ -118,7 +118,8 @@ Perform root-cause analysis to determine improvement hypotheses.
 Pick one at a time and set clear goals for it.
 Treat improvement efforts as a mini-project, including proper planning, staffing, and change management.
 Make sure to revisit the goal to check whether the experiment worked using the metrics defined earlier.
-Keep in mind that change usually leads to an initial productivity drop while people figure out the new way of working.
+Keep in mind that change usually leads to an initial productivity drop while people figure out the new way of working
+@@Satir1991.
 Also, most metrics are lagging indicators, so it make take a while before improvements become visible.
 
 Use a change budget to limit the amount of change to a level that people can absorb.

@@ -7,7 +7,7 @@ collaborators need.
 The business analyst forges this collaborative partnership.
 
 A partnership requires that partners speak the same language, so learn the language of the business.
-Put together a glossary of terms, including synonyms, acronyms, and abbreviations.
+Put together a **glossary of terms**, including synonyms, acronyms, and abbreviations.
 
 A **data dictionary** stores more detail about terms in the glossary.
 It's a shared repository that defines the meaning, composition, data type, length, format, and
@@ -82,7 +82,7 @@ For any given project, you'll probably need to use more than one of the followin
 - Analyze **existing documents**.
   Examples are requirement specifications, business processes, user manuals, corporate and industry standards, and
   comparative reviews.
-  Remember that documents may not be up-to-date or even incorrect.
+  Remember that documents may be out of date or incorrect.
 - Analyze **interfaces** with external systems.
   This analysis gives technical requirements around data formats and data validation rules.
 - **Reuse** requirements based on pre-existing business rules.
@@ -173,8 +173,8 @@ expected by users.
 **Resilience** is a judgement of how well the system can continue offering its critical services in the presence of
 disruptive events.
 
-These are emergent properties of the **sociotechnical system**, which contains hardware, software, and non-technical
-elements such as people, processes, and regulations.
+Quality attributes are emergent properties of the **sociotechnical system**, which contains hardware, software, and
+non-technical elements such as people, processes, and regulations.
 Sociotechnical systems are so complex that you can't understand them as a whole.
 Rather, you have to view them as layers: equipment, operating system, networks, applications, business processes,
 organization, and society.

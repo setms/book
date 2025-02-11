@@ -418,7 +418,7 @@ I want to upgrade Java to 21
 In order to improve the code using new language features
 ```
 
-A user story's one sentence isn't a story, as @@Sommerville2011 thinks.
+A user story's one sentence isn't a story, as @@Sommerville2015 thinks.
 This misunderstanding probably reflect the authors' lack of experience with Agile methods.
 Part of that lack of experience stems from resistance to try out Agile methods.
 This resistance, in turn, partly comes from a real or perceived lack of rigor.

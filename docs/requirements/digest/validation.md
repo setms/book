@@ -38,12 +38,15 @@ You can't perform acceptance tests until you have running software, but just wri
 ambiguities, and omissions in requirements.
 
 Automate acceptance tests as much as possible.
-Automated tests fall on a spectrum from white box to black box.
-In black box testing, the tests can only work with the system's observable external interface.
-In white box testing, the tests can see inside the system they check.
-Developers can write white box tests before the code, in a practice known as test-driven development @@Beck2002.
+Automated tests fall on a spectrum from behavioral to structural.
+**Behavioral tests** focus on testing the external behavior of the system without considering its implementation.
+**Structural tests** take into account the internal structure, code, or logic of the system.
 
-Users may also manually perform acceptance tests in User Acceptance Testing (UAT).
+Developers may write structural tests before the code, in a practice known as Test-Driven Development (TDD) @@Beck2002.
+Behavioral tests may be performed by developers, separate Quality Assurance (QA) staff, and/or end users in User
+Acceptance Testing (UAT).
+For bespoke software specifically developed for one particular customer, UAT is often part of the formal process where
+the customer accepts the software.
 
 Some quality attribute requirements may require experts to validate them.
 For instance, many organizations hire penetration testers to validate security requirements.

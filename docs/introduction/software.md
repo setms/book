@@ -123,7 +123,7 @@ We've seen most of these symbols already in the definition of DFAs.
 The new ones are:
 
 - $\Gamma$ is the alphabet of stack symbols, the information that can go on the stack.
-- $Z_0$ is the initial symbol on the stack when the PDA starts.
+- $Z_0 \in \Gamma$ is the initial symbol on the stack when the PDA starts.
 
 The transition function is slightly different.
 It takes the current state, an input symbol, and the symbol from the top of the stack as input.
