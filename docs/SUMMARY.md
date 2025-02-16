@@ -25,6 +25,11 @@
   - [Concepts](requirements/concepts.md)
   - [Analysis](requirements/analysis.md)
 
+- [Architecture](architecture/index.md)
+  - [Digest](architecture/digest/index.md)
+  - [Concepts](architecture/concepts.md)
+  - [Analysis](architecture/analysis.md)
+
 - [Design](design/index.md)
   - [Digest](design/digest/index.md)
     - [Methods](design/digest/methods.md)
