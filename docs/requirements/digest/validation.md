@@ -40,12 +40,12 @@ ambiguities, and omissions in requirements.
 Automate acceptance tests as much as possible.
 Automated tests fall on a spectrum from behavioral to structural.
 **Behavioral tests** focus on testing the external behavior of the system without considering its implementation.
-**Structural tests** take into account the internal structure, code, or logic of the system.
+**Structural tests** consider the internal structure, code, or logic of the system.
 
 Developers may write structural tests before the code, in a practice known as Test-Driven Development (TDD) @@Beck2002.
-Behavioral tests may be performed by developers, separate Quality Assurance (QA) staff, and/or end users in User
+Developers mat perform behavioral tests, separate Quality Assurance (QA) staff, and/or end users in User
 Acceptance Testing (UAT).
-For bespoke software specifically developed for one particular customer, UAT is often part of the formal process where
+For bespoke software specifically developed for one specific customer, UAT is often part of the formal process where
 the customer accepts the software.
 
 Some quality attribute requirements may require experts to validate them.
