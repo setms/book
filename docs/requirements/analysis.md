@@ -180,7 +180,7 @@ Putting all that together, we get the following model for a software application
 
 ```mermaid
 flowchart TB
-  Policy --reacts to--> Event
+  Policy --reacts to --> Event
   RM[Read model]
   RM --based on--> Repository
   Application --has--> Aggregate
@@ -196,7 +196,7 @@ flowchart TB
   VO --is a--> DO
   VO[Value object]
   DO --contains--> DO
-  Entity --refers to--> VO
+  Entity --refers to --> VO
   Entity --bound\ninside--> Aggregate
   Command --contains--> DO
   Event --contains--> DO
