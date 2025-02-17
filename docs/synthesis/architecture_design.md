@@ -1,4 +1,4 @@
-# Design
+# Architecture & design
 
 The process models captured in RESIN help split up the design work into manageable pieces.
 We'll look at detailed design first and higher-level design/architecture later.

@@ -58,7 +58,7 @@
 
 - [Putting it all together](synthesis/index.md)
   - [Requirements](synthesis/requirements.md)
-  - [Design](synthesis/design.md)
+  - [Architecture & design](synthesis/architecture_design.md)
   - [Testing](synthesis/testing.md)
   - [Construction](synthesis/construction.md)
 - [Examples](examples/index.md)
