@@ -30,8 +30,7 @@
    - Add a node for every aggregate, read model, and automatic policy.
    - Add an edge from an aggregate to a policy if the policy issues a command processed by the aggregate.
    - Add an edge from a policy to a read model if the policy uses the read model to make a decision.
-   - Add an edge from a read model to an aggregate if the read model updates from an event emitted by the aggregate
-       and their data models have entities in common.
+   - Add an edge from a read model to an aggregate if the read model updates from an event emitted by the aggregate.
 1. Assign aggregates, automatic policies, and read models to subdomains based on the above dependency graph:
     - For every aggregate:
       - Create a domain containing the aggregate.
