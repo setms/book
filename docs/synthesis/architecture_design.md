@@ -10,7 +10,7 @@ This makes our design approach a bottom-up one.
 In detailed design, we'll look at all the small pieces that make up the system in turn.
 These pieces are what we call **active event storming items**:
 aggregates, events, commands, policies, and read models.
-Active event storming concepts find their way into code, whereas persons and external systems don't.
+Active event storming items find their way into code, whereas persons and external systems don't.
 
 Just as we did some design work during requirements gathering, we're going to dig deeper into quality attribute
 requirements during the design phase.
@@ -20,8 +20,7 @@ requirements during the design phase.
 
 Decide whether to use notification events or event-carried state transfer @@Fowler2017.
 Design the event payload.
-If an external system consumes the event, you'll want to document the payload in a formal schema, for example
-using AsyncAPI @@AsyncAPI.
+If an external system consumes the event, you'll want to document the payload in a formal schema @@AsyncAPI @@CloudEvents.
 You also need to determine beforehand how to evolve the schema in the future, for instance using versions.
 
 Clarify quality attribute requirements: is it acceptable to lose an event sometimes, or not?
