@@ -96,6 +96,7 @@ The event storming notation consists of the following items:
 - A <span style="color: #efb600;">**person**</span> is a human being responsible for a given decision.
 - An <span style="color: #ff00ff;">**external system**</span> is another system that interacts with the system under
   consideration.
+- A <span style="color: #ff0000;">**hotspot**</span> is an unresolved item or group of items
 
 In an event storming workshop, sticky notes of a particular color represent each of these concepts.
 Workshop participants place the stickies on a wall in timeline order to visualize the entire business process.
@@ -119,6 +120,10 @@ An external system rather than a person may issue a command:
 Events can also come from outside, either from an external system or from the passing of time:
 
 ![Other sources of events](../img/event-storming-grammar-3.png)
+
+Events can update read models:
+
+![Event updates read model](../img/event-storming-grammar-4.png)
 
 With the big picture defined, we can flesh out the domain model further.
 The domain model is a concept from _Domain-Driven Design_ (DDD) @@Evans2014.
