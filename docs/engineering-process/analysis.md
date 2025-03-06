@@ -14,18 +14,23 @@ flowchart LR
   P[Package]
   E[Running\nsoftware]
   M[Metrics]
+  F[Fitness function]
+
 
   UT --TDD--> C
   C --CI--> P
   P --CD--> E
   E -- o11y --> M
-  M --Compare--> R
+  R --Architecting--> F
 
   N --Requirements\nelicitation-->
   R --Architecting--> S
   R --Requirements\nspecification--> AT
   AT --detailed\nspecification--> UT
   S --detailed\ndesign--> UT
+
+  M --Compare--> Success
+  F --Compare--> Success
 ```
 
 Ideally, this process is:
