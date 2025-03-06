@@ -295,23 +295,31 @@ Examples:
 | $250.00 | $5.00    |
 ```
 
-If we look at acceptance criteria through the lens of an event storming process model, we see two specializations of the
-generic `Given/When/Then` format.
+If we look at acceptance criteria through the lens of an event storming process model, we see some specializations of
+the generic `Given/When/Then` format.
 
-This first is for aggregates:
+For aggregates:
 
 ```text
-Given <the aggregate is in some state>
+Given <the aggregate has some data>
 When <the aggregate accepts a command>
-Then <the aggregate has a new state and/or emits an event>
+Then <the aggregate has different data and/or emits an event>
 ```
 
-The second is for policies:
+For policies:
 
 ```text
 Given <the policy's read model returns some information>
 When <the policy reacts to an event>
 Then <the policy issues a command>
+```
+
+For read models:
+
+```text
+Given <the read model has some data>
+When <the read model handles an event>
+Then <the read model has different data>
 ```
 
 
@@ -341,7 +349,7 @@ Often we want several such relationships to hold at the same time, like p50 $\le
 
 The statistical nature of such requirements means we can't test them with a single test, like we can for functional
 requirements.
-It also often means we must run the tests in production to get meaningful results.
+It also often means we must run the tests in production on real data to get meaningful results.
 
 You may force acceptance tests for quality attribute requirements into the `Given/When/Then` format:
 
@@ -369,21 +377,41 @@ A better format is the following:
   Describe conditions under which to test the quality attribute requirement.
   This may involve setting up certain environmental conditions or specifying user interactions.
   The scenario corresponds to the `Given` part of the `Given/When/Then` format.
-3. **Criteria**:
+3. **Metrics**:
   Outline the metrics to collect.
-  Specify their thresholds or acceptable ranges using percentiles.
+  Ideally, use one metric per requirement.
 4. **Procedure**:
   Provide step-by-step instructions for conducting the test.
   This may involve specific actions, measurements, or observations.
   The procedure corresponds to the `When` part of `Given/When/Then`.
   Some people refer to this as the **fitness function** @@Ford2017.
 5. **Expected results**:
-  State the expected outcomes based on the defined criteria.
-  Specify what success looks like and what would constitute a pass or fail for the acceptance test.
+  Specify the thresholds or acceptable ranges for the metrics using percentiles.
   The results correspond to the `Then` part of `Given/When/Then`.
 6. **Constraints**:
   Specify any limitations associated with the test, such as specific environments, user roles, or
   other contextual factors.
+
+For example:
+
+```text
+Objective:
+    The search functionality is performant.
+Scenario:
+    System contains 100.000 records
+Metrics:
+    Latency of search
+Procedure:
+  100 users search concurrently on single keywords or short phrases.
+  After an initial wait of 1-3s, each user searches, waits for 2-10s
+  after seeing the search results, then searches again.
+  The entire test lasts 5 minutes.
+Expected results:
+    p50 <= 3s and p95 <= 5s
+Constraints:
+    The test executes in the staging environment.
+    Nothing else happens during the test.
+```
 
 
 ## Requirements engineering in Agile methods
