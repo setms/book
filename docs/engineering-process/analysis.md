@@ -14,7 +14,7 @@ flowchart LR
   P[Package]
   E[Running\nsoftware]
   M[Metrics]
-  F[Fitness function]
+  F[Fitness functions]
 
 
   UT --TDD--> C
