@@ -15,8 +15,9 @@
    - If an external system consumes the event, design the API.
    - Determine whether the event requires an explicit queue with durability guarantees.
 1. For all **commands**:
-   - If a human issues the command, design the user interaction that allows the user to do that.
    - If an external system issues the command, design the API that allows the system to do that.
+   - If a human issues the command, design the user interaction that allows the user to do that.
+     This includes designing the API from the frontend to the backend.
    - Determine if the command requires synchronous processing. If not, prefer asynchronous processing.
    - For asynchronous commands, determine whether the command requires an explicit queue with durability guarantees.
 1. For all **read models**:
