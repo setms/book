@@ -35,7 +35,7 @@ Note that we're not suggesting to use RESIN in an event storming workshop.
 Stickies are more flexible and easier to manipulate.
 RESIN is for capturing event storms in a more formal way, as input to the rest of the software development process.
 
-## Requirements/Design process
+## Requirements & logical design
 
 You start off using RESIN in the same way as in the original event storming workshop:
 
