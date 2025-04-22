@@ -35,6 +35,8 @@ Note that we're not suggesting to use RESIN in an event storming workshop.
 Stickies are more flexible and easier to manipulate.
 RESIN is for capturing event storms in a more formal way, as input to the rest of the software development process.
 
+## Requirements/Design process
+
 You start off using RESIN in the same way as in the original event storming workshop:
 
 1. Brainstorm the significant things that happen in the process.
@@ -59,14 +61,45 @@ You start off using RESIN in the same way as in the original event storming work
 9. Repeat the above steps until no hotspots remain.
 
 The result of the above process is a timeline that captures the process under consideration.
-This process is a mix of requirements gathering and a bit of design, like determining the aggregates.
-
 It's often hard to capture everything in a single timeline.
 That's okay, you can use as many timelines as necessary to capture all scenarios of all use cases.
 
+This process is a mix of requirements gathering and a bit of design, like determining the aggregates.
+That last part is actually not trivial and deserves more attention.
+
+## Determining aggregates
+
+Before we can get into the weeds of how to determine the aggregates, we need a better definition of what exactly an
+aggregate is.
+The "big blue book" defines aggregate as:
+
+```admonish tldr title="Definition"
+An **Aggregate** is a cluster of domain objects that can be treated as a single unit for the purposes of data changes.
+Each aggregate has a root and a boundary.
+The boundary defines what's inside or outside the aggregate, and the root entity is the single entry point through
+which all interactions with the aggregate must occur.
+
+--- @@Evans2014
+```
+
+We can formalize this definition using precise mathematical language.
+
+Let `E` be the set of all entities and `D` the set of all dependencies between them.
+Then the domain model `M=(E,D)` is the directed graph of all entities and their interdependencies.
+
+An aggregate `A` is a subgraph `A⊆M` with distinguished node `r∈V(A)∈E`, where:
+
+- For every `e∈V(A)∈E`, there exists a directed path from `r` to `e` within `A`.
+- For every edge `(e1,e2)∈E(A)∈D`, if `e1∈V(A)∈E` and `e2∉V(A),e2∈E`, then `e1=r`.
+
+TODO: Algorithm for finding aggregates.
+
+## Acceptance criteria
+
 To complete the requirements gathering phase, add acceptance criteria:
 
-- For every aggregate, describe how it updates its data from the commands it accepts and how it emits events in response.
+- For every aggregate, describe how it updates its data from the commands it accepts and how it emits events in
+  response.
 - For every policy, describe how it turns the events it handles into the commands it issues in response.
 - For every read model, describe how it updates its data from the events it handles.
 
