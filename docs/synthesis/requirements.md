@@ -65,7 +65,7 @@ It's often hard to capture everything in a single timeline.
 That's okay, you can use as many timelines as necessary to capture all scenarios of all use cases.
 
 This process is a mix of requirements gathering and a bit of design, like determining the aggregates.
-That last part is actually not trivial and deserves more attention.
+That last part is actually nontrivial and deserves more attention.
 
 ## Determining aggregates
 
@@ -87,12 +87,21 @@ We can formalize this definition using precise mathematical language.
 Let `E` be the set of all entities and `D` the set of all dependencies between them.
 Then the domain model `M=(E,D)` is the directed graph of all entities and their interdependencies.
 
-An aggregate `A` is a subgraph `A⊆M` with distinguished node `r∈V(A)∈E`, where:
+An aggregate `A` is a subgraph `A ⊆ M` with distinguished node `r ∈ V(A) ∈ E`, where:
 
-- For every `e∈V(A)∈E`, there exists a directed path from `r` to `e` within `A`.
-- For every edge `(e1,e2)∈E(A)∈D`, if `e1∈V(A)∈E` and `e2∉V(A),e2∈E`, then `e1=r`.
+- For every `e ∈ V(A) ∈ E, e ≠ r`, there exists a directed path from `r` to `e` within `A`.
+- For every edge `(e1,e2) ∈ E(A) ∈ D`, if `e1 ∈ V(A) ∈ E` and `e2 ∉ V(A), e2 ∈ E`, then `e1=r`.
 
-TODO: Algorithm for finding aggregates.
+Every time you need to identify an aggregate in step 3 of the requirements/design process above:
+
+1. Determine the entity `e ∈ V(A) ∈ E` that contains the required information for processing the commands and emitting
+   the events.
+2. If there is such an `e`, determine which aggregate `A` has `e ∈ V(A)`, and use `A`.
+3. If there is no such `e` yet, add `e` to `E`.
+4. Determine whether `e` can exist on its own or needs another entity `e2` to exist.
+5. If `e` can exist by itself, create a new aggregate `A = ( {e}, {} )`, and use `A`.
+6. Otherwise, go to step 2 with `e = e2` to find the aggregate `A` where `e2 ∈ V(A)`. Add `e` to `V(A)`, add `(e2, e)`
+   to `E(A)`, and use `A`.
 
 ## Acceptance criteria
 
