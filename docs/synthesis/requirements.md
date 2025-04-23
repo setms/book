@@ -45,19 +45,21 @@ You start off using RESIN in the same way as in the original event storming work
    Place pink external system symbols for the former and red hotspot symbols for the latter.
 3. Next focus on the hotspots, since these show the incomplete parts of the process model.
    If it's clear what specific part of the system emits a given event, replace the hotspot before it with a yellow
-   aggregate symbol.
+   aggregate symbol. Place a blue command symbol before the aggregate to make it emit the event.
 4. If it's not clear what specific part of the system emits a given event, ask what stimulus leads to the system
    emitting the event.
    This is either a user instructing the system to perform an action, or a policy.
-   Place either yellow person and blue command symbols, or purple policy and blue command symbols to represent these
-   scenarios.
+   Place either yellow person and blue command symbols before the hotspot symbol, or purple policy and blue command
+   symbols to represent these possibilities.
 5. If a user issues a command, ask what information they need for that.
    If the system is to provide that information, place a green read model symbol before the person.
 6. Similarly, if a policy issues a command, it probably also needs a read model to feed it information.
 7. For each policy, ask what event triggers it.
-   Place an event symbol before it on the timeline.
+   If an existing event does that, connect the event with the policy.
+   Otherwise, place a new event symbol before the policy on the timeline.
 8. For each read model, ask what events feed information into it, if any.
-   Place event symbols before the read model as appropriate.
+   If an existing event does that, connect the event with the read model.
+   Otherwise, place event symbols before the read model as appropriate.
 9. Repeat the above steps until no hotspots remain.
 
 The result of the above process is a timeline that captures the process under consideration.
