@@ -23,7 +23,7 @@ command = "mdbook-mermaid"
 [output]
 
 [output.html]
-additional-css = ["./mdbook-admonish.css"]
+additional-css = ["./mdbook-admonish.css", "./link.css"]
 curly-quotes = true
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
 
