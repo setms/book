@@ -1,19 +1,105 @@
 # Architecture & design
 
 The process models captured in RESIN help split up the design work into manageable pieces.
-We'll look at detailed design first and higher-level design/architecture later.
-This makes our design approach a bottom-up one.
+We can either design those pieces in detail first (design) or group them into modules and components first (architecture).
+We don't care about the order in which you do this, as long as you do both.
+You can even do them in parallel if you want to.
+
+In the following, we're going to look at the architecture first and then the design.
 
 
-## Detailed design
+## Architecture
+
+With the low-level building blocks in place, we can now turn our focus to the bigger picture: modules and components.
+
+A **module** is a compiled and packaged subdomain, like a jar file.
+A **component** is an executable and deployable collection of modules, like a war file or executable fat jar
+@@Richardson2023.
+
+The purpose of modules is to provide internally cohesive units with minimal dependencies on other modules.
+To assign event storming elements to modules, we're going to focus first on the active elements, since they're the
+ones that make decisions.
+Here's how we define the dependencies between active elements:
+
+| From \ To      | Aggregate | Policy   | Read Model   |
+|----------------|-----------|----------|--------------|
+| **Aggregate**  | X         | Contract | None         |
+| **Policy**     | Contract  | X        | Availability |
+| **Read Model** | Contract  | None     | X            |
+
+In this table, we define the following coupling strengths for the dependencies:
+
+- **Availability**: the dependent element can't function if the dependency is unavailable
+- **Contract**: the dependent element can function without its dependency, but it depends on its dependency's contract
+for the information it provides
+- **None**: the elements are independent of each other
+
+Let's look at each of these dependencies in more detail:
+
+- An **aggregate** depends on a **policy** if the policy issues commands to the aggregate.
+  This is contract coupling, since the aggregate can function without the policy, but it needs to know the contract
+  for the commands it accepts.
+- A **policy** depends on an **aggregate** if the policy handles an event emitted by the aggregate.
+  This is again contract coupling.
+- A **policy** depends on a **read model** if the policy needs data from the read model to make a decision.
+  This is availability couling, since the policy can't make a decision without the data from the read model.
+- A **read model** depends on an **aggregate** if the read model needs to update its data based on an event emitted by
+  the aggregate.
+  This is again contract coupling.
+
+Based on these definitions for dependencies, we can convert an event storm into a dependency graph.
+However, an even more interesting visualization is a Design Structure Matrix (DSM).
+
+A **Design Structure Matrix** (DSM) is a network modeling tool that represents the elements comprising a system and
+their interactions @@Eppinger2012.
+As such, a DSM highlights the system's architecture.
+A DSM is an NxN square matrix, where the N rows and N columns each get the name of the system's elements.
+The diagonal of the matrix represents the elements.
+Off-diagonal elements represent the dependencies between the elements.
+In a **binary DSM**, the off-diagonal elements are either 0 (no dependency) or 1 (dependency).
+Dependencies are usually marked with `X`, whereas empty cells represent no dependency.
+In a **numerical DSM**, the off-diagonal elements are numbers representing the strength of the dependency.
+
+We can use the dependency table above to create a numerical DSM if we assign numbers to the coupling strengths:
+
+- **Availability**: 1.0
+- **Contract**: 0.6
+- **None**: 0
+
+The advantage of having this information in the form of a DSM is that there are algorithms that operate on DSMs to
+cluster its elements.
+Those clusters minimize the dependencies between the clusters and maximize the dependencies within the clusters.
+Since this is exactly what we want for our modules, we can equate a DSM cluster to a module.
+
+_TODO_: Assign commands and events to modules.
+
+
+### Components
+
+Modules follow from the domains, which follow from the requirements.
+This is the easy part, since it depends on the technical system alone.
+Components, however, need developing and operating, which brings in the social part of the sociotechnical system.
+As a result, the "algorithm" for determining component boundaries isn't as straightforward.
+
+However, on a high level, we can play the same game as with modules.
+We build a DSM where the elements are the modules and run a clustering algorithm on it.
+The problem is in finding the strengths of the dependencies between the modules.
+
+_TODO_: Compare to attractive/repulsive forces between modules. Or is this the first step where we find the
+"naive architecture" as defined in residuality theory?
+_TODO_: How does residuality theory factor in to create an architecture exhibiting criticality?
+
+
+## Design
 
 In detailed design, we'll look at all the small pieces that make up the system in turn.
-To determine those pieces, let's divide the event storm elements into categories:
+To determine those pieces, let's divide the RESIN elements into categories:
 
-- **External**: persons and external systems fall outside the scope of the system
-- **Active**: aggregates, policies, and read models are the elements that make decisions (whether/how to update data,
-  whether to emit events, whether to issue commands)
-- **Passive**: events and commands just carry data from one place to the next
+- **External**: _persons_ and _external systems_ fall outside the scope of the system and therefore don't need designing
+  or architecting
+- **Active**: _aggregates_, _policies_, and _read models_ are the elements that make decisions (whether/how to update
+  data, whether to emit events, whether to issue commands)
+- **Passive**: _events_ and _commands_ just carry data from one place to the next
 
 We need to design the active and passive elements of the system.
 
@@ -97,83 +183,3 @@ Like read models, aggregates contain data, so we need to design their data model
 Since aggregates accept commands, we need to consider quality attribute requirements around delivery, throughput, and
 latency.
 See [events](#events) above for more information.
-
-
-## Architecture
-
-With the low-level building blocks in place, we can now turn our focus to the bigger picture: modules and components.
-
-A **module** is a compiled and packaged subdomain, like a jar file.
-A **component** is an executable and deployable collection of modules, like a war file or executable fat jar
-@@Richardson2023.
-
-The purpose of modules is to provide internally cohesive units with minimal dependencies on other modules.
-To assign event storming elements to modules, we're going to focus first on the active elements, since they're the
-ones that make decisions.
-Here's how we define the dependencies between active elements:
-
-| From \ To      | Aggregate | Policy   | Read Model   |
-|----------------|-----------|----------|--------------|
-| **Aggregate**  | X         | Contract | None         |
-| **Policy**     | Contract  | X        | Availability |
-| **Read Model** | Contract  | None     | X            |
-
-In this table, we define the following coupling strength for the dependencies:
-
-- **Availability**: the dependent element can't function if the dependency is unavailable
-- **Contract**: the dependent element can function without its dependency, but it depends on its dependency's contract
-for the information it provides
-- **None**: the elements are independent of each other
-
-Let's look at each of these dependencies in more detail:
-
-- An **aggregate** depends on a **policy** if the policy issues commands to the aggregate.
-  This is contract coupling, since the aggregate can function without the policy, but it needs to know the contract
-  for the commands it accepts.
-- A **policy** depends on an **aggregate** if the policy handles an event emitted by the aggregate.
-  This is again contract coupling.
-- A **policy** depends on a **read model** if the policy needs data from the read model to make a decision.
-  This is availability couling, since the policy can't make a decision without the data from the read model.
-- A **read model** depends on an **aggregate** if the read model needs to update its data based on an event emitted by
-  the aggregate.
-  This is again contract coupling.
-
-Based on these definitions for dependencies, we can convert an event storm into a dependency graph.
-However, an even more interesting visualization is a Design Structure Matrix (DSM).
-
-A **Design Structure Matrix** (DSM) is a network modeling tool that represents the elements comprising a system and
-their interactions @@Eppinger2012.
-As such, a DSM highlights the system's architecture.
-A DSM is an NxN square matrix, where the N rows and N columns each get the name of the system's elements.
-The diagonal of the matrix represents the elements.
-Off-diagonal elements represent the dependencies between the elements.
-In a **binary DSM**, the off-diagonal elements are either 0 (no dependency) or 1 (dependency).
-Dependencies are usually marked with `X`, whereas empty cells represent no dependency.
-In a **numerical DSM**, the off-diagonal elements are numbers representing the strength of the dependency.
-
-We can use the dependency table above to create a numerical DSM if we assign numbers to the coupling strengths:
-
-- **Availability**: 1.0
-- **Contract**: 0.6
-- **None**: 0
-
-The advantage of having this information in the form of a DSM is that there are algorithms that operate on DSMs to
-cluster its elements.
-Those clusters minimize the dependencies between the clusters and maximize the dependencies within the clusters.
-Since this is exactly what we want for our modules, we can equate a DSM cluster to a module.
-
-
-### Components
-
-Modules follow from the domains, which follow from the requirements.
-This is the easy part, since it depends on the technical system alone.
-Components, however, need developing and operating, which brings in the social part of the sociotechnical system.
-As a result, the "algorithm" for determining component boundaries isn't as straightforward.
-
-However, on a high level, we can play the same game as with modules.
-We build a DSM where the elements are the modules and run a clustering algorithm on it.
-The problem is in finding the strengths of the dependencies between the modules.
-
-_TODO_: Compare to attractive/repulsive forces between modules. Or is this the first step where we find the
-"naive architecture" as defined in residuality theory?
-_TODO_: How does residuality theory factor in to create an architecture exhibiting criticality?
