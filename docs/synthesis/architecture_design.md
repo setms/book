@@ -21,11 +21,11 @@ To assign event storming elements to modules, we're going to focus first on the 
 ones that make decisions.
 Here's how we define the dependencies between active elements:
 
-| From \ To      | Aggregate | Policy   | Read Model   |
-|----------------|-----------|----------|--------------|
-| **Aggregate**  | X         | Contract | None         |
-| **Policy**     | Contract  | X        | Availability |
-| **Read Model** | Contract  | None     | X            |
+| From \ To      | Aggregate | Policy | Read Model   |
+|----------------|-----------|--------|--------------|
+| **Aggregate**  | X         | None   | None         |
+| **Policy**     | Contract  | X      | Availability |
+| **Read Model** | Contract  | None   | X            |
 
 In this table, we define the following coupling strengths for the dependencies:
 
@@ -36,13 +36,13 @@ for the information it provides
 
 Let's look at each of these dependencies in more detail:
 
-- An **aggregate** depends on a **policy** if the policy issues commands to the aggregate.
-  This is contract coupling, since the aggregate can function without the policy, but it needs to know the contract
-  for the commands it accepts.
+- A **policy** depends on an **aggregate** if the policy issues commands to the aggregate.
+  This is contract coupling, since the policy can function without the aggregate, but it needs to know the contract
+  for the commands it issues.
 - A **policy** depends on an **aggregate** if the policy handles an event emitted by the aggregate.
   This is again contract coupling.
 - A **policy** depends on a **read model** if the policy needs data from the read model to make a decision.
-  This is availability couling, since the policy can't make a decision without the data from the read model.
+  This is availability coupling, since the policy can't make a decision without the data from the read model.
 - A **read model** depends on an **aggregate** if the read model needs to update its data based on an event emitted by
   the aggregate.
   This is again contract coupling.
@@ -62,16 +62,34 @@ In a **numerical DSM**, the off-diagonal elements are numbers representing the s
 
 We can use the dependency table above to create a numerical DSM if we assign numbers to the coupling strengths:
 
-- **Availability**: 1.0
-- **Contract**: 0.6
+- **Availability**: 5
+- **Contract**: 3
 - **None**: 0
+
+Note that there may be multiple dependencies between the same pair of elements.
+For instance, a policy may depend on an aggregate for both issuing commands and handling events.
+In such cases, we can sum the strengths of the dependencies to get a single number for the DSM cell.
 
 The advantage of having this information in the form of a DSM is that there are algorithms that operate on DSMs to
 cluster its elements.
 Those clusters minimize the dependencies between the clusters and maximize the dependencies within the clusters.
-Since this is exactly what we want for our modules, we can equate a DSM cluster to a module.
+Since this is exactly what we want for our modules, we can find modules by looking at the DSM's clusters.
 
-_TODO_: Assign commands and events to modules.
+We now have modules that contain the active elements of the system.
+Let's look at the passive elements next.
+Commands form the inbound API of an aggregate, so a command naturally belongs to the module that contains the aggregate
+that accepts it.
+
+The picture for events is a bit more complicated.
+There may be multiple aggregates emitting the same event, as well as multiple policies handling that event.
+However, we shouldn't look at the individual emitters and handlers, but rather at their modules.
+For instance, there may be two aggregates that emit the same event, but both are in the same module.
+This leaves us with the following combinations:
+
+| Emitters' modules \ Handlers' modules | Single                         | Multiple                       |
+|---------------------------------------|--------------------------------|--------------------------------|
+| **Single**                            | Place event in emitting module | Place event in emitting module |
+| **Multiple**                          | Place event in handling module | Place event in its own module  |
 
 
 ### Components
