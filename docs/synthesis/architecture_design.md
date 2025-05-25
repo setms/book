@@ -71,7 +71,7 @@ For instance, a policy may depend on an aggregate for both issuing commands and 
 In such cases, we can sum the strengths of the dependencies to get a single number for the DSM cell.
 
 The advantage of having this information in the form of a DSM is that there are algorithms that operate on DSMs to
-cluster its elements.
+cluster its elements @@DamasioEtAl2017.
 Those clusters minimize the dependencies between the clusters and maximize the dependencies within the clusters.
 Since this is exactly what we want for our modules, we can find modules by looking at the DSM's clusters.
 
