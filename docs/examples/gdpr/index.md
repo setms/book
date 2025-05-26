@@ -1,7 +1,5 @@
 # Example: supporting GDPR
 
-Here we show an example of the method in detail.
-
 In this example, a company owns several apps that consumers use.
 Since the company operates in the European Union, it must follow the GDPR regulation.
 Among other things, this regulation grants EU citizens the right to have companies delete their data.
@@ -21,57 +19,64 @@ The analyst asks a question, the stakeholder gives an answer, and the analyst sh
 
 **Q**: What can I do for you?
 
-**A**: I want a system to support GDPR.
+**A**: I want a system to support GDPR:
 
-![Not much to go on yet](req-01.png)
+![Not much to go on yet](NotMuchToGoOnYet.png)
 
 **Q**: What interesting things happen in this system?
 
-**A**: Users delete their data with it.
+**A**: Users delete their data with it:
 
-![Delete my data](req-02.png)
+![Delete my data](UsersDeleteTheirData.png)
 
 **Q**: How does the system know who the user is?
 Otherwise, it won't know what data to delete.
 
-**A**: The user logs in to one of our apps and issues the command from there.
-Or the user fills out an online form and our customer support agents validate their identity against the app's user
-database.
+**A**: The user either logs in to one of our apps and issues the command from there:
 
-![CS validates identity](req-03.png)
+![Known user deletes data](LoggedInUserDeletesTheirData.png)
+
+Or the user fills out an online form, and our customer support agents validate their identity against the apps' user
+databases:
+
+![Unknown user requests data deletion](UnknownUserRequestsDataDeletion.png)
+
 
 **Q**: What happens when the user's request is invalid?
-For instance, when I use the form to request deletion of your data?
+For instance, when I use the form to request deletion of someone else's data?
 
-**A**: Customer support contacts the user via email.
-If that user doesn't respond, we cancel the request, and there's nothing else to do.
-If the user responds they didn't send the request, we also cancel the request.
-If the user doesn't have an account with any of our apps, same thing.
+**A**: Customer support looks up the user via the provided email address.
+If there is no user with that address, we deny the request and the process ends.
+Otherwise, customer support contacts the user via email.
+If the user doesn't respond in time, we deny the request.
+If the user responds they didn't send the request, we also deny the request:
 
-<!-- markdownlint-disable MD036 -->
-_(The model doesn't change.)_
-<!-- markdownlint-enable MD036 -->
+![Non-user requests data deletion](InvalidUserRequestsDataDeletion.png)
 
-![CS validates identity](req-03.png)
+**Q**: How does the system know what users the apps have?
+
+**A**: The app notifies the system of any changes in its users:
+
+![Non-user requests data deletion](UpdateUsers.png)
 
 **Q**: How does the system delete the user's data?
 
 **A**: It has to tell all our services to delete the data.
 They'll do the actual deletion and report back when they're done.
 
-![CS validates identity](req-04.png)
+![CS validates identity](InstructServicesToDeleteData.png)
 
 **Q**: What happens when a service doesn't respond?
 
 **A**: After some time, we'll call them again.
 
-![CS validates identity](req-05.png)
+![CS validates identity](ServiceDoesntRespond.png)
 
 **Q**: What happens when all services have responded back?
 
 **A**: Then the request is complete, and we inform the user.
 
-![CS validates identity](req-06.png)
+![CS validates identity](InformUser.png)
 
 <!-- vale Google.FirstPerson = YES -->
 
