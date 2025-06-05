@@ -126,7 +126,7 @@ Events can update read models:
 ![Event updates read model](../img/event-storming-grammar-4.png)
 
 With the big picture defined, we can flesh out the domain model further.
-The domain model is a concept from _Domain-Driven Design_ (DDD) @@Evans2014.
+The domain model is a concept from _Domain-Driven Design_ (DDD) @@Evans2004.
 
 ```admonish info "Quote"
 The interaction between team members changes as all members crunch the model together. The constant
@@ -135,7 +135,7 @@ assisting, rather than to produce functions mechanically. The domain experts oft
 understanding by being forced to distill what they know to essentials, and they come to understand the
 conceptual rigor that software projects require.
 
---- @@Evans2014
+--- @@Evans2004
 ```
 
 The **domain model** is a set of concepts shared by everyone on the project, with terms and relationships

@@ -81,7 +81,7 @@ Each aggregate has a root and a boundary.
 The boundary defines what's inside or outside the aggregate, and the root entity is the single entry point through
 which all interactions with the aggregate must occur.
 
---- @@Evans2014
+--- @@Evans2004
 ```
 
 We can formalize this definition using precise mathematical language.

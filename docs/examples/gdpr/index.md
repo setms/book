@@ -1,7 +1,7 @@
 # Example: supporting GDPR
 
 In this example, a company owns several apps that consumers use.
-Since the company operates in the European Union, it must follow the GDPR regulation.
+Since the company operates in the European Union, it must comply with the GDPR regulation.
 Among other things, this regulation grants EU citizens the right to have companies delete their data.
 
 The company's apps store data about their users.

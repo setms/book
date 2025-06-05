@@ -25,39 +25,52 @@ The purpose of modules is to provide internally cohesive units with minimal depe
 As stated above, a module is the technical equivalent of a subdomain.
 That means we can determine modules by determining subdomains.
 
-To assign event storming elements to subdomains, we're going to focus first on the active elements, since they're the
-ones that contain logic.
-Here's how we define the dependencies between active elements:
 
-| From \ To      | Aggregate | Policy | Read Model   |
-|----------------|-----------|--------|--------------|
-| **Aggregate**  | X         | None   | None         |
-| **Policy**     | Contract  | X      | Availability |
-| **Read Model** | Contract  | None   | X            |
+### Subdomains
 
-In this table, we define the following coupling strengths for the dependencies:
+We can leverage the power of the event storming grammar, which defines the valid patterns for event storm elements.
+Let's look at the patterns between active elements:
 
-- **Availability**: the dependent element can't function if the dependency is unavailable
-- **Contract**: the dependent element can function without its dependency, but it depends on its dependency's contract
-for the information it provides
-- **None**: the elements are independent of each other
+![Policy -> command -> aggregate](../img/policy-command-aggregate.png)
 
-Let's look at each of these dependencies in more detail:
+If a policy issues a command that an aggregate accepts, then it depends on the aggregate.
+It's the aggregate that defines the contract for the command, because the command is part of its API.
+We call this **contract coupling**.
 
-- A **policy** depends on an **aggregate** if the policy issues commands to the aggregate.
-  This is contract coupling, since the policy can function without the aggregate, but it needs to know the contract
-  for the command it issues.
-- A **policy** depends on an **aggregate** if the policy handles an event emitted by the aggregate.
-  This is again contract coupling.
-- A **policy** depends on a **read model** if the policy needs data from the read model to make a decision.
-  This is availability coupling, since the policy requires the read model to be available so that it can query it while
-  it's making its decision.
-- A **read model** depends on an **aggregate** if the read model needs to update its data based on an event emitted by
-  the aggregate.
-  This is again contract coupling.
+![Aggregate -> event -> policy](../img/aggregate-event-policy.png)
 
-Based on these definitions for dependencies, we can convert an event storm into a dependency graph.
-However, an even more interesting visualization is a Design Structure Matrix.
+If an aggregate emits an event that a policy handles, then the policy also depends on the aggregate.
+The logic is similar: the event is part of the aggregate's API, so it defines the contract.
+
+![Aggregate-event-readmodel](../img/aggregate-event-readmodel.png)
+
+This looks a lot like the previous situation, but it's a little different.
+The read model depends on the agregate in this case too, but the coupling is actually a little stronger.
+Both aggregates and read models have associated data models (see [below](#read-models)).
+If a read model updates its data based on an aggregate's event, there is a good chance that these data models
+at least overlap.
+In fact, it's likely that the read model's data model derives from the aggregate's.
+We call this **data coupling**, which is a bit stronger than contract coupling.
+
+![Read model -> policy](../img/readmodel-policy.png)
+
+Here the policy uses data from a read model to make a decision on how to handle an event.
+The policy therefore depends on the read model.
+This coupling is much stronger than contract or data coupling, because the policy doesn't just depend on the
+data from the read model.
+That data must be available at the moment the policy handles an event.
+We call this **availability coupling**.
+
+![Policy -> command -> external system -> event -> policy](../img/policy-command-externalsystem-event-policy.png)
+
+Here one policy sends a command to an external system, and another policy handles the resulting event.
+Together, the policies implement an Anti-Corruption Layer (ACL) @@Evans2004.
+We therefore call this **ACL coupling**.
+The policies share a lot of knowledge about the external system, so this is a strong form of coupling: between data
+and availability coupling.
+
+These five patterns give us a way to determine all dependencies between active event storm elements.
+We can then visualize the dependencies in a Design Structure Matrix.
 
 A **Design Structure Matrix** (DSM) is a network modeling tool that represents the elements comprising a system and
 their interactions @@Eppinger2012.
@@ -74,21 +87,31 @@ Many other variations exist, for instance, using different colors for the cells.
 We can use the dependency table for active elements to create a numerical DSM if we assign numbers to the coupling
 strengths:
 
-- **Availability**: 5
-- **Contract**: 3
-- **None**: 0
+- **Availability**: 10
+- **ACL**: 8
+- **Data**: 4
+- **Contract**: 1
 
 Note that there may be multiple dependencies between the same pair of elements.
 For instance, a policy may depend on an aggregate for both issuing commands and handling events.
-In such cases, we can sum the strengths of the dependencies to get a single number for the DSM cell.
+In such cases, we take the maximum of the strengths of the dependencies to get a single number for the DSM cell.
 
-Having our dependencies in a DSM means we can re-use DSM **clustering algorithms**, like the one in @@Damasio2017.
+Having our dependencies in a DSM means we can re-use DSM **clustering algorithms**.
 The clusters found by those algorithms minimize the dependencies between the clusters and maximize the dependencies
 within the clusters.
 Since this is exactly what we want for our subdomains (and modules), we can find subdomains by looking at the DSM's
 clusters.
 
-This gives us subdomains that contain the active elements of the system.
+We need one small refinement, however.
+It's quite common to find two big clusters with a small one connecting the two.
+The small cluster contains a policy that handles an event from the first cluster and issues a command to the second.
+It depends on the preceding aggregate just as much as on the following (contract coupling), so the clustering
+algorithm puts it into its own cluster.
+Most of the time, we want to move the small cluster into one of the bigger two.
+This is straightforward if one of the two bigger clusters depends on the other.
+We then add the policy's cluster to the one that depends on the other.
+
+The subdomains we get from this procedure contain the active elements of the system.
 Let's look at the passive elements next.
 Commands form the inbound API of an aggregate, so a command naturally belongs to the subdomain that contains the
 aggregate that accepts it.
