@@ -93,8 +93,7 @@ strengths:
 - **Contract**: 1
 
 Note that there may be multiple dependencies between the same pair of elements.
-For instance, a policy may depend on an aggregate for both issuing commands and handling events.
-In such cases, we take the maximum of the strengths of the dependencies to get a single number for the DSM cell.
+In such cases, we take the maximum coupling strength to get a single number for the DSM cell.
 
 Having our dependencies in a DSM means we can re-use DSM **clustering algorithms**.
 The clusters found by those algorithms minimize the dependencies between the clusters and maximize the dependencies
