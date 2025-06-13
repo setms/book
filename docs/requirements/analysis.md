@@ -240,7 +240,7 @@ This makes it hard for them to check the model.
 Therefore, we need a notation that we can automatically transform back to text that the SMEs can verify.
 
 We also need a notation that allows us to decompose processes into smaller pieces.
-Finally, we need a tackle requirements in small batches, rather than all at once.
+Finally, we need to tackle requirements in small batches, rather than all at once.
 We need to be able to decompose some parts of a process, while keeping others at a high level.
 
 The international standard for modeling processes is Business Process Model and Notation (BPMN) @@Dumas2018.
