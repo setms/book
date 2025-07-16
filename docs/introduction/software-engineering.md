@@ -153,7 +153,7 @@ Its output:
 <!-- vale write-good.Passive = NO -->
 <!-- vale write-good.Weasel = NO -->
 
-> - Is defect free (that it, it has the features and performance the customer expects);
+> - Is defect-free (it has the features and performance the customer expects);
 > - Can be delivered one request at a time (a batch size of one);
 > - Can be supplied on demand in the version requested;
 > - Can be delivered immediately;
