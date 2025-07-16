@@ -42,14 +42,13 @@ We therefore need more specialized tools that automate more parts of the process
 much as possible.
 
 Such tools depend on a good "understanding" of what's going on.
-This "understanding" is made possible by capturing as much of the knowledge worker's knowledge as possible in
-_structured_ artifacts.
+This "understanding" requires capturing as much of the knowledge worker's knowledge as possible in _structured_
+artifacts.
 Where generic tools like word processors can work with unstructured content, specialized tools need detailed structure
 that provides context.
 
 Consider the case of renaming something.
-A word processor offers the tool of `Search & Replace`, where the human has to decide which occurrences should be
-replaced.
+A word processor offers the tool of `Search & Replace`, where the human has to decide which occurrences to replace.
 An IDE, however, offers the `Rename` tool that makes this decision automatically for the human, based on its
 understanding of the context.
 In that sense, the `Rename` tool reduces accidental complexity compared to the `Search & Replace` tool.
