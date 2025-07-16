@@ -1,5 +1,62 @@
 # Analysis
 
+## Knowledge management
+
+Software development is a form of knowledge work.
+
+Knowledge work is different from other forms of work because of its emphasis on "non-routine" problem-solving.
+This requires a combination of convergent and divergent thinking @@WikipediaKM.
+Various definitions of knowledge work exist, with the most narrow being:
+
+```admonish tldr title="Definition"
+**Knowledge work** is the direct manipulation of symbols to create an original knowledge product, or to add obvious
+value to an existing one.
+
+--- @@WikipediaKM
+```
+
+
+The knowledge product may be in the knowledge worker's head, stored in an artifact, or a combination of the two.
+As the number of knowledge workers that collaborate to solve a problem grows, it becomes more important to capture
+knowledge in artifacts.
+
+Software development in professional settings is highly collaborative.
+Many specialized people contribute their deep knowledge to specific parts of the process.
+The software development team therefore needs to capture their knowledge in artifacts, like requirements documents,
+design diagrams, source code, and tests.
+
+Typical knowledge workers must have some system at their disposal to create, process, and enhance their own knowledge
+@@WikipediaKM.
+The practice of knowledge management (KM) evolved to support knowledge workers with standard tools and processes.
+KM tools used in software development range from generic, like word processors, to specialized, like Integrated
+Development Environments (IDEs).
+
+More specialized tools bring higher value by automating parts of the process.
+This is especially important since software development has high accidental complexity @@Brooks1986.
+The software development team has to consider many things that have nothing to do with the problem to solve, but
+by how it's solved.
+
+Since software is eating the world @@Andreessen2011, it's become imperative that we improve the effectiveness and
+efficiency of the software development process.
+We therefore need more specialized tools that automate more parts of the process and reduce accidental complexity as
+much as possible.
+
+Such tools depend on a good "understanding" of what's going on.
+This "understanding" is made possible by capturing as much of the knowledge worker's knowledge as possible in
+_structured_ artifacts.
+Where generic tools like word processors can work with unstructured content, specialized tools need detailed structure
+that provides context.
+
+Consider the case of renaming something.
+A word processor offers the tool of `Search & Replace`, where the human has to decide which occurrences should be
+replaced.
+An IDE, however, offers the `Rename` tool that makes this decision automatically for the human, based on its
+understanding of the context.
+In that sense, the `Rename` tool reduces accidental complexity compared to the `Search & Replace` tool.
+
+
+## The software development process
+
 Software development is a process that starts with stakeholder needs and ends with running software that meets those
 needs:
 
@@ -37,13 +94,18 @@ Ideally, this process is:
 
 - **Iterative** -- The system starts small and grows over time by adding or changing parts.
   Each part goes through the process one or more times.
+  This follows Gall's Law:
+
+  > A complex system that works is invariably found to have evolved from a simple system that worked. @@Gall1977
+
   [Use case scenarios](../requirements/digest/elicitation.md#techniques) make good candidates for parts.
 - **Incremental** -- Each stage of the process refines work from earlier stages and/or adds information.
+  This acknowledges that software development is collaborative knowledge work.
 
 Artifacts from one stage should link to the artifacts from earlier stages that they refine or add information to.
 This provides [traceability](../requirements/digest/management.md#requirements-management), which helps with impact
 analysis of proposed changes.
 
 In an ideal world, we'd store artifacts in files that are both human and machine-readable.
-Stage-specific compilers verify the links between artifacts to ensure the system is complete and correct.
+Stage-specific tools verify the links between artifacts to ensure the system is complete and correct.
 Making the file formats machine-readable may mean humans need dedicated editors to work with the files.
