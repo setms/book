@@ -113,7 +113,7 @@ Making the file formats machine-readable may mean humans need dedicated editors 
 
 ## Tools for software _engineering_
 
-So far, the discussion has been about a process and supporting tools for software _development_.
+The discussion has so far been about a process and supporting tools for software _development_.
 This leaves open whether software development is an engineering discipline or not.
 If we wanted to go further and insist on engineering discipline, what would change?
 
