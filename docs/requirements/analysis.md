@@ -25,7 +25,7 @@ realm of engineering.
 
 The Build-Measure-Learn cycle in Lean Startup corresponds to the probe-sense-response approach suited for the
 _Complex_ domain.
-This process moves the undertaking from _Complex_ to _Complicated_.
+Over time, this process moves the undertaking from _Complex_ to _Complicated_.
 Once the company establishes product/market fit, its requirements process normalizes.
 
 <!-- vale Google.FirstPerson = NO -->
@@ -48,7 +48,7 @@ problem.
 
 Once a company achieves product/market fit, it should have a clear sense of what jobs the customer is hiring the
 software for @@Christensen2016.
-These jobs always occur within a larger process @@Dumas2018 in a certain domain.
+These jobs always occur within a larger process in a certain domain.
 
 Most engineering disciplines specialize around such domains.
 Engineers trained in that field speak the same language as the people requesting them to build a system.
@@ -76,56 +76,19 @@ More often, multiple SMEs each have a clear picture of one part of the process a
 This results in conflicting points of view, which need resolution before building software.
 However, it takes a while before the analyst knows enough to ask the hard questions and bring conflicts into the open.
 
-_Event storming_ is a technique that solves these issues @@Brandolini2013 @@Webber2017.
-It's a workshop where the key stakeholders work together to build up a consistent picture of the entire process.
-It introduces just enough notation just in time for non-technical people to collaborate.
-It lets the stakeholders and development team build up a _domain model_ in hours or days rather than weeks or months.
+Some modern techniques address these challenges.
+The most promising ones are **domain story telling** @@Hofer2021 and **event storming** @@Brandolini2013 @@Webber2017.
 
-In event storming, the SMEs perform the integration of various perspectives rather than the analyst.
+Both approaches use workshops where the key stakeholders work together to build up a consistent picture of the entire
+process.
+They introduce just enough notation just in time for non-technical people to collaborate.
+They let the stakeholders and development team build up a domain model in hours or days rather than weeks or months.
+
+During a workshop, the SMEs perform the integration of various perspectives rather than the analyst.
 By giving them a standard notation, non-experts can follow what they're doing and force them to be precise.
 It allows them to ask the hard questions and bring conflicts out for resolution.
 Everybody's learning compresses while the domain model emerges as a natural byproduct.
 
-The event storming notation consists of the following items:
-
-- A <span style="color: #e2871a;">**domain event**</span> is anything that happens that's of interest to an SME.
-- A <span style="color: #1d6eff;">**command**</span> triggers an event.
-- An <span style="color: #efb600;">**aggregate**</span> accepts commands and emits events.
-- A <span style="color: #b300b3;">**policy**</span> contains the decision on how to react to an event.
-- A <span style="color: #007300;">**read model**</span> holds the information necessary to make a decision.
-- A <span style="color: #efb600;">**person**</span> is a human being responsible for a given decision.
-- An <span style="color: #ff00ff;">**external system**</span> is another system that interacts with the system under
-  consideration.
-- A <span style="color: #ff0000;">**hotspot**</span> is an unresolved item or group of items
-
-In an event storming workshop, sticky notes of a particular color represent each of these concepts.
-Workshop participants place the stickies on a wall in timeline order to visualize the entire business process.
-
-In the following, we'll use custom symbols for these concepts, keeping the colors.
-This makes it easier to visualize processes.
-
-A specific grammar governs event storming concepts @@Brandolini2022, in the sense that certain things
-always come before or after others.
-It's this grammar that allows people who aren't domain experts to ask intelligent questions, like what emits this event?
-
-The main part of the grammar is when a user of the system issues a command based on some information:
-
-![Main event storming grammar](../img/event-storming-grammar-1.png)
-
-Some alternatives flows exist as well.
-An external system rather than a person may issue a command:
-
-![External system issues command](../img/event-storming-grammar-2.png)
-
-Events can also come from outside, either from an external system or from the passing of time:
-
-![Other sources of events](../img/event-storming-grammar-3.png)
-
-Events can update read models:
-
-![Event updates read model](../img/event-storming-grammar-4.png)
-
-With the big picture defined, we can flesh out the domain model further.
 The domain model is a concept from _Domain-Driven Design_ (DDD) @@Evans2004.
 
 ```admonish info "Quote"
@@ -167,56 +130,29 @@ Anything outside the aggregate may only refer to the root entity.
 A **repository** is where an application stores aggregates and later retrieves them.
 Each aggregate type has its own repository.
 
-The combination of event storming and DDD allows the development team to learn the domain faster and better than
+The combination of structured workshops and DDD allows the development team to learn the domain faster and better than
 traditional techniques.
 The DDD concepts also map to code constructs in a natural way, eliminating translation issues.
 
-DDD and event storming give us a new vocabulary to talk about what software _does_.
-We need to reconcile that with our vocabulary of what software [is](../introduction/software.md#model-of-software).
+Which of the two approaches should we take: domain story telling or event storming?
+We believe the answer is both.
 
-In event storming terms, aggregates make up an application's state.
-An application transitions between states when an aggregate accepts a command.
-The output of an application is an emitted event.
+**Domain story telling** is a collaborative modeling technique that highlights how people work together.
+While the domain experts tell their story in spoken language, the moderator records the story as a diagram:
 
-Commands and events carry data.
-In DDD terms, that data takes the form of domain objects.
+![Domain story telling](../img/domain-story-telling.png)
 
-Putting all that together, we get the following model for a software application:
+Domain story telling is more suited for requirements gathering and knowledge transfer from SME to the development team.
+Its main benefit is its simple pictographic language that's easy to grasp for SMEs.
+This allows them to validate the requirements.
 
-```mermaid
-flowchart TB
-  Policy --reacts to --> Event
-  RM[Read model]
-  RM --based on--> Repository
-  Application --has--> Aggregate
-  Aggregate --emits--> Event
-  Policy --issues--> Command
-  Aggregate --accepts--> Command
-  Aggregate --defined by--> RE
-  RE[Root entity]
-  RE --is a--> Entity
-  RE --stored in--> Repository
-  Entity --is a--> DO
-  DO[Domain object]
-  VO --is a--> DO
-  VO[Value object]
-  DO --contains--> DO
-  Entity --refers to --> VO
-  Entity --bound\ninside--> Aggregate
-  Command --contains--> DO
-  Event --contains--> DO
-  Application --has--> AP
-  AP --is a--> Policy
-  AP[Automatic\npolicy]
-  AP --queries--> RM
-  PMP --is a--> Policy
-  PMP[Person-managed\npolicy]
-  Person --executes--> PMP
-  Person --initiates--> Command
-  ES --issues--> Command
-  ES[External\nsystem]
-  ES --emits--> Event
-```
+Event storming can work too, but in our experience, not as well.
+SMEs find it more natural to think about actors performing activities than about events that happened.
+This makes sense, given how humans evolved as social creatures.
+
+However, event storming provides a great basis for high-level design and from there to tests and code.
+And it's easy to elaborate a domain story into an event storm, as we'll see [later](../design/analysis.md).
+
 
 ## Requirements for _software_
 
@@ -228,7 +164,7 @@ However, this approach also keeps out the fact that the requirements are for _so
 procedures or for some other medium.
 Software has a [particular shape](../introduction/software.md) and that should affect how we define requirements.
 
-Most people suggest to write requirements as use cases consisting of scenarios and to do so in text form.
+Most people suggest writing requirements as use cases consisting of scenarios and to do so in text form.
 Use cases and their scenarios describe processes in which the software plays a role.
 Rather than text, it makes sense to model these processes using _to-be_ process models.
 This corresponds to the _abstraction_ phase of the engineering
@@ -293,33 +229,6 @@ Examples:
 | $99.99  | $0.00    |
 | $100.00 | $1.00    |
 | $250.00 | $5.00    |
-```
-
-If we look at acceptance criteria through the lens of an event storming process model, we see some specializations of
-the generic `Given/When/Then` format.
-
-For aggregates:
-
-```text
-Given <the aggregate has some data>
-When <the aggregate accepts a command>
-Then <the aggregate has different data and/or emits an event>
-```
-
-For policies:
-
-```text
-Given <the policy's read model returns some information>
-When <the policy reacts to an event>
-Then <the policy issues a command>
-```
-
-For read models:
-
-```text
-Given <the read model has some data>
-When <the read model handles an event>
-Then <the read model has different data>
 ```
 
 

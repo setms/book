@@ -1,6 +1,96 @@
 
 # Preliminary analysis
 
+## Event storming
+
+The event storming notation consists of the following items:
+
+- A <span style="color: #e2871a;">**domain event**</span> is anything that happens that's of interest to an SME.
+- A <span style="color: #1d6eff;">**command**</span> triggers an event.
+- An <span style="color: #efb600;">**aggregate**</span> accepts commands and emits events.
+- A <span style="color: #b300b3;">**policy**</span> contains the decision on how to react to an event.
+- A <span style="color: #007300;">**read model**</span> holds the information necessary to make a decision.
+- A <span style="color: #efb600;">**person**</span> is a human being responsible for a given decision.
+- An <span style="color: #ff00ff;">**external system**</span> is another system that interacts with the system under
+  consideration.
+- A <span style="color: #ff0000;">**hotspot**</span> is an unresolved item or group of items
+
+In an event storming workshop, sticky notes of a particular color represent each of these concepts.
+Workshop participants place the stickies on a wall in timeline order to visualize the entire business process.
+
+In the following, we'll use custom symbols for these concepts, keeping the colors.
+This makes it easier to visualize processes.
+
+A specific grammar governs event storming concepts @@Brandolini2022, in the sense that certain things
+always come before or after others.
+It's this grammar that allows people who aren't domain experts to ask intelligent questions, like what emits this event?
+
+The main part of the grammar is when a user of the system issues a command based on some information:
+
+![Main event storming grammar](../img/event-storming-grammar-1.png)
+
+Some alternatives flows exist as well.
+An external system rather than a person may issue a command:
+
+![External system issues command](../img/event-storming-grammar-2.png)
+
+Events can also come from outside, either from an external system or from the passing of time:
+
+![Other sources of events](../img/event-storming-grammar-3.png)
+
+Events can update read models:
+
+![Event updates read model](../img/event-storming-grammar-4.png)
+
+With the big picture defined, we can flesh out the domain model further.
+
+DDD and event storming give us a new vocabulary to talk about what software _does_.
+We need to reconcile that with our vocabulary of what software [is](../introduction/software.md#model-of-software).
+
+In event storming terms, aggregates make up an application's state.
+An application transitions between states when an aggregate accepts a command.
+The output of an application is an emitted event.
+
+Commands and events carry data.
+In DDD terms, that data takes the form of domain objects.
+
+Putting all that together, we get the following model for a software application:
+
+```mermaid
+flowchart TB
+  Policy --reacts to --> Event
+  RM[Read model]
+  RM --based on--> Repository
+  Application --has--> Aggregate
+  Aggregate --emits--> Event
+  Policy --issues--> Command
+  Aggregate --accepts--> Command
+  Aggregate --defined by--> RE
+  RE[Root entity]
+  RE --is a--> Entity
+  RE --stored in--> Repository
+  Entity --is a--> DO
+  DO[Domain object]
+  VO --is a--> DO
+  VO[Value object]
+  DO --contains--> DO
+  Entity --refers to --> VO
+  Entity --bound\ninside--> Aggregate
+  Command --contains--> DO
+  Event --contains--> DO
+  Application --has--> AP
+  AP --is a--> Policy
+  AP[Automatic\npolicy]
+  AP --queries--> RM
+  PMP --is a--> Policy
+  PMP[Person-managed\npolicy]
+  Person --executes--> PMP
+  Person --initiates--> Command
+  ES --issues--> Command
+  ES[External\nsystem]
+  ES --emits--> Event
+```
+
 
 ## Design method
 
