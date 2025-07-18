@@ -25,7 +25,7 @@ flowchart LR
   E -- o11y --> M
   R --Architecting--> F
 
-  N --Requirements\nelicitation-->
+  N --Requirements\nelicitation--> R
   R --Architecting--> S
   R --Requirements\nspecification--> AT
   AT --detailed\nspecification--> UT
@@ -123,4 +123,9 @@ And then build tools based on that science:
 
 ![Software Engineering Workbench](../img/sew-domain-story.png)
 
-A collection of those tools that cover the entire software development process is a Software Engineering Workbench (SEW).
+A set of such tools supporting the full software development lifecycle is a **Software Engineering Workbench** (SEW).
+A SEW should support and guide the software development process, helping teams adopt the right practices at the right
+time.
+
+Since professional software development is highly collaborative, a SEW must aid collaboration.
+The output of one member should flow effortlessly to the next, like a well-practiced sports team passing the ball.
