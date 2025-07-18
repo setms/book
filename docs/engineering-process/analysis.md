@@ -117,8 +117,8 @@ The discussion has so far been about a process and supporting tools for software
 This leaves open whether software development is an engineering discipline or not.
 If we wanted to go further and insist on engineering discipline, what would change?
 
-Since engineering is the application of scientific principles to solve practical problems, we'd need to introduce
-a science of software development somewhere.
+Since engineering is the application of scientific principles to solve practical problems, we'd need a science of
+software development.
 And then build tools based on that science:
 
 ![Software Engineering Workbench](../img/sew-domain-story.png)
@@ -128,4 +128,5 @@ A SEW should support and guide the software development process, helping teams a
 time.
 
 Since professional software development is highly collaborative, a SEW must aid collaboration.
-The output of one member should flow effortlessly to the next, like a well-practiced sports team passing the ball.
+The output of one member should flow effortlessly to the next, like a well-practiced sports team passing the ball
+around.
