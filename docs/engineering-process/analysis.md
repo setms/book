@@ -97,8 +97,8 @@ Where generic tools like word processors can work with unstructured content, spe
 that provides context.
 
 Consider the case of renaming something.
-A word processor offers the tool of `Search & Replace`, where the tool just everything or the human has to decide which
-occurrences to replace.
+A word processor offers the tool of `Search & Replace`, where the tool either replaces everything or the human has to
+decide _for each_ occurrence whether to replace.
 An IDE, however, offers the `Rename` tool that makes this decision automatically for the human, based on its
 understanding of the context.
 In that sense, the `Rename` tool reduces accidental complexity compared to the `Search & Replace` tool.
