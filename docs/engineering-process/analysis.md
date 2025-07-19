@@ -127,6 +127,22 @@ A set of such tools supporting the full software development lifecycle is a **So
 A SEW should support and guide the software development process, helping teams adopt the right practices at the right
 time.
 
+
+## Software engineering as a team sport
+
 Since professional software development is highly collaborative, a SEW must aid collaboration.
 The output of one member should flow effortlessly to the next, like a well-practiced sports team passing the ball
 around.
+
+In our current reality, handoffs are usually not this smooth.
+A software development team is seldom a real team, but usually a collection of individuals each working in isolation
+and throwing output over the wall.
+Such handoffs imply queues with associated wait times, which can be significant.
+
+A SEW should help the work flow faster through the team.
+It should collect flow metrics @@Pereira2024 that identify and help the team improve the bottleneck @@Goldratt1984.
+It should also promote practices that improve flow, like software teaming @@Pearl2018 @@Meadows2022.
+
+Most importantly, a SEW should make it easy to collaborate.
+It should make progress visible to all team members and make it clear where each can best contribute their special
+skills at each moment.
