@@ -90,8 +90,8 @@ efficiency of the software development process.
 We therefore need more specialized tools that automate more parts of the process and reduce accidental complexity as
 much as possible.
 
-Such tools depend on a good "understanding" of what's going on.
-This "understanding" requires capturing as much of the knowledge worker's knowledge as possible in _structured_
+Such tools need a good "understanding" of what's going on.
+The tools' "understanding" depends on capturing as much of the knowledge worker's knowledge as possible in _structured_
 artifacts.
 Where generic tools like word processors can work with unstructured content, specialized tools need detailed structure
 that provides context.
