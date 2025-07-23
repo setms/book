@@ -43,7 +43,7 @@ Ideally, this process is:
 
   > A complex system that works is invariably found to have evolved from a simple system that worked. @@Gall1977
 
-  [Use case scenarios](../requirements/digest/elicitation.md#techniques) make good candidates for parts.
+  [Use case scenarios](../requirements/digest/elicitation.md#techniques) make good candidates for describing the parts.
 - **Incremental** -- Each stage of the process refines work from earlier stages and/or adds information.
   This acknowledges that software development is collaborative knowledge work.
 
@@ -135,8 +135,10 @@ The output of one member should flow effortlessly to the next, like a well-pract
 around.
 
 In our current reality, handoffs are usually not this smooth.
-A software development team is seldom a real team, but usually a collection of individuals each working in isolation
-and throwing output over the wall.
+A software development team resembles a team in a relay race more than, say, a rugby team (ironically, especially when
+they use Scrum).
+The average software development team is more a collection of individuals who work in isolation and throw output
+over the wall than an actual team.
 Such handoffs imply queues with associated wait times, which can be significant.
 
 A SEW should help the work flow faster through the team.
