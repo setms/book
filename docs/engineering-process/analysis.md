@@ -47,7 +47,7 @@ Ideally, this process is:
 - **Incremental** -- Each stage of the process refines work from earlier stages and/or adds information.
   This acknowledges that software development is collaborative knowledge work.
 
-Let's look at knowledge and how knowledge workers collaborate in more detail.
+Let's look at knowledge and how knowledge workers collaborate in more detail and then apply that to software development.
 
 
 ## Knowledge
@@ -188,5 +188,6 @@ It should collect flow metrics @@Pereira2024 that identify and help the team imp
 It should also promote practices that improve flow, like software teaming @@Pearl2018 @@Meadows2022.
 
 Most importantly, a SEW should make it easy to collaborate.
-It should make progress visible to all team members and make it clear where each can best contribute their
-context-specific knowledge.
+It should make progress visible to all team members and make it clear where each can best contribute.
+In a way, this means that software engineering is a team sport where the players are both humans and tools.
+The tools ideally provide all technology-specific knowledge, while humans add context-specific knowledge.
