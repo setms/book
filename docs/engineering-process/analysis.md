@@ -7,6 +7,8 @@ needs:
 
 ```mermaid
 flowchart LR
+  B[Business\nstrategy]
+  KPI[Key performance indicators]
   N[Stakeholder\nneeds]
   R[Requirements]
   S[Subsystems]
@@ -18,7 +20,8 @@ flowchart LR
   M[Metrics]
   F[Fitness functions]
 
-
+  B --Drives--> N
+  B --Measured by--> KPI
   UT --TDD--> C
   C --CI--> P
   P --CD--> E
@@ -33,6 +36,7 @@ flowchart LR
 
   M --Compare--> Success
   F --Compare--> Success
+  KPI --Compare--> Success
 ```
 
 Ideally, this process is:
