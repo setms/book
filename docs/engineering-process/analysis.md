@@ -177,8 +177,8 @@ The output of one member should flow effortlessly to the next, like a well-pract
 around.
 
 In our current reality, handoffs are usually not this smooth.
-A software development team resembles a team in a relay race more than, say, a rugby team (ironically, especially when
-they use Scrum).
+A software development team resembles a team in a relay race more than, say, a rugby team (which is especially ironic
+when they use Scrum).
 The average software development team is more a collection of individuals who work in isolation and throw output
 over the wall than an actual team.
 Such handoffs imply queues with associated wait times, which can be significant.
@@ -188,5 +188,5 @@ It should collect flow metrics @@Pereira2024 that identify and help the team imp
 It should also promote practices that improve flow, like software teaming @@Pearl2018 @@Meadows2022.
 
 Most importantly, a SEW should make it easy to collaborate.
-It should make progress visible to all team members and make it clear where each can best contribute their special
-skills at each moment.
+It should make progress visible to all team members and make it clear where each can best contribute their
+context-specific knowledge.
