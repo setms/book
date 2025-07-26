@@ -1,6 +1,10 @@
-# Book organization
+# The modern synthesis
 
-Before we look at the book's organization, a quick word on its title.
+If software engineering is to be the application of science to solve software development problems, then we need a
+science of software development.
+Some pieces of that are available to us, but we still need to synthesize a coherent picture.
+
+Something similar happened in biology in the 20th century.
 
 
 ## Evolution
@@ -37,18 +41,20 @@ Note how this process resembles the [scientific method](engineering.md#science):
 The scientific theory of evolution rests on two pillars:
 
 1. **Natural selection** is the differential survival and reproduction of individuals due to differences in traits
-  @@Darwin1859.
+  @@Darwin1859 @@Wallace1869.
 2. **Heredity of traits** is the passing on of traits from parents to their offspring with some changes @@Mendel1866,
   @@Fisher1930.
 
-The two pillars of evolution were fist brought together in the seminal book _Evolution: The Modern Synthesis_
+The two pillars of evolution were first brought together in the seminal book _Evolution: The Modern Synthesis_
 @@Huxley1948.
 
 The current book similarly aspires to bring together the various pillars of software engineering.
 
+## Book organization
+
 The rest of this book attempts to answer the question of how to make software development a real engineering discipline.
 
-First we'll look into each of the SWEBOK knowledge areas and see how much they conform to the engineering approach.
-Then we'll see if we can synthesize an actual engineering process out of their combination.
+We'll first look into each of the SWEBOK knowledge areas to assemble the pieces.
+Then we'll see if we can synthesize those into an actual engineering process.
 
 Let's get started.
