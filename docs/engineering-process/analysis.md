@@ -43,26 +43,66 @@ Ideally, this process is:
 
   > A complex system that works is invariably found to have evolved from a simple system that worked. @@Gall1977
 
-  [Use case scenarios](../requirements/digest/elicitation.md#techniques) make good candidates for describing the parts.
+  [Domain stories](../requirements/analysis.md#learning-the-domain) are good ways to describe the parts.
 - **Incremental** -- Each stage of the process refines work from earlier stages and/or adds information.
   This acknowledges that software development is collaborative knowledge work.
 
+Let's look at knowledge and how knowledge workers collaborate in more detail.
 
-## Knowledge management
 
-Knowledge work is different from other forms of work because of its emphasis on "non-routine" problem-solving.
-This requires a combination of convergent and divergent thinking @@WikipediaKM.
-Various definitions of knowledge work exist, with the most narrow being:
+## Knowledge
+
+Knowledge work is work that requires extensive knowledge to perform.
+Knowledge is often contrasted with information and data.
 
 ```admonish tldr title="Definition"
-**Knowledge work** is the direct manipulation of symbols to create an original knowledge product, or to add obvious
-value to an existing one.
+**Data** comprises facts, observations, or perceptions (which may or may not be correct).
+Data represent raw numbers or assertions and may therefore be devoid of context, meaning, or intent.
 
---- @@WikipediaKM
+--- @@Becerra2024
 ```
 
+```admonish tldr title="Definition"
+**Information** is a subset of data, only including those data that posses context, relevance, and purpose.
+Information typically involves the manipulation of raw data to obtain more meaningful indication of trends or patterns
+in the data.
 
-The knowledge product may be in the knowledge worker's head, stored in an artifact, or a combination of the two.
+--- @@Becerra2024
+```
+
+```admonish tldr title="Definition"
+**Knowledge** in an area are justified beliefs about relationships among concepts relevant to that particula area.
+
+--- @@Becerra2024
+```
+
+Knowledge helps produce information from data or more valuable information from less valuable information.
+In this way, knowledge facilitates action, like making a decision.
+Such decisions lead to events, which generate more data.
+
+Knowledge can be generic or specific.
+The latter, also known as idiosyncratic knowledge, is more interesting for the current discussion.
+It can be technology-specific, context-specific, or both.
+
+**Technology-specific knowledge** is deep knowledge about a specific area.
+It includes knowledge about tools and techniques that are useful to solve problems in that area.
+People often acquire this kind of knowledge as part of a formal training program and then augment it through
+experience in the field.
+
+**Context-specific knowledge** refers to the knowledge of particular circumstances of time and place in which people
+perform work.
+One can't acquire contextually specific knowledge through formal training, but only via working in the context.
+
+Software development relies on both context-specific and technology-specific knowledge.
+
+For instance, consider the architectural decision about how to distribute code over deployable artifacts.
+Three basic options exist: an unstructured monolith (big ball of mud), a modulith, or a set of microservices.
+Technology-specific knowledge tells us that the big ball of mud approach has severe downsides for applications of
+non-trivial size.
+It can't tell us whether a modulith or a microservices approach is the right choice, however.
+For that, we need context-specific knowledge about team structures, skill levels of developers, etc.
+
+Knowledge resides in several different locations: people, artifacts, and organizational entities.
 As the number of knowledge workers that collaborate to solve a problem grows, it becomes more important to capture
 knowledge in artifacts.
 
@@ -71,16 +111,15 @@ Many specialized people contribute their deep knowledge to specific parts of the
 The software development team therefore needs to capture their knowledge in artifacts, like requirements documents,
 design diagrams, source code, and tests.
 
-Typical knowledge workers must have some system at their disposal to create, process, and enhance their own knowledge
-@@WikipediaKM.
+
+## Knowledge management tools for software development
+
+Typical knowledge workers must have some system at their disposal to create, process, and enhance their own knowledge.
 The practice of knowledge management (KM) evolved to support knowledge workers with standard tools and processes.
 KM tools used in software development range from generic, like word processors, to specialized, like Integrated
 Development Environments (IDEs).
 
-
-## Knowledge management tools for software development
-
-More specialized tools bring higher value by automating parts of the process.
+More specialized tools deliver higher value by automating parts of the process.
 This is especially important since software development has high accidental complexity @@Brooks1986.
 The software development team has to consider many things that have nothing to do with the problem to solve, but
 by how it's solved.
@@ -90,15 +129,15 @@ efficiency of the software development process.
 We therefore need more specialized tools that automate more parts of the process and reduce accidental complexity as
 much as possible.
 
-Such tools need a good "understanding" of what's going on.
-The tools' "understanding" depends on capturing as much of the knowledge worker's knowledge as possible in _structured_
-artifacts.
+Such tools need a good understanding of what's going on.
+In other words, we need to embed technology-specific knowledge in them.
+This requires capturing as much of the knowledge worker's knowledge as possible in _structured_ artifacts.
 Where generic tools like word processors can work with unstructured content, specialized tools need detailed structure
 that provides context.
 
 Consider the case of renaming something.
 A word processor offers the tool of `Search & Replace`, where the tool either replaces everything or the human has to
-decide _for each_ occurrence whether to replace.
+decide _for each_ occurrence whether to replace it.
 An IDE, however, offers the `Rename` tool that makes this decision automatically for the human, based on its
 understanding of the context.
 In that sense, the `Rename` tool reduces accidental complexity compared to the `Search & Replace` tool.
@@ -119,7 +158,10 @@ If we wanted to go further and insist on engineering discipline, what would chan
 
 Since engineering is the application of scientific principles to solve practical problems, we'd need a science of
 software development.
-And then build tools based on that science:
+This science formalizes technology-specific knowledge about how best to develop software and organizes it in a coherent
+scientific theory.
+
+And then we need to build tools based on that scientific theory:
 
 ![Software Engineering Workbench](../img/sew-domain-story.png)
 
