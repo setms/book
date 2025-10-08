@@ -146,7 +146,7 @@ flowchart TB
 
 ### Architecture
 
-```admonish tldr title="Definitions"
+```admonish tldr title="Definition"
 A **module** is a compiled and packaged subdomain, like a jar file.
 A **component** is an executable and deployable collection of modules, like a war file or executable fat jar.
 
