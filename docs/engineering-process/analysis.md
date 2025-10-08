@@ -75,7 +75,7 @@ in the data.
 ```
 
 ```admonish tldr title="Definition"
-**Knowledge** in an area are justified beliefs about relationships among concepts relevant to that particula area.
+**Knowledge** in an area are justified beliefs about relationships among concepts relevant to that particular area.
 
 --- @@Becerra2024
 ```
@@ -147,11 +147,12 @@ understanding of the context.
 In that sense, the `Rename` tool reduces accidental complexity compared to the `Search & Replace` tool.
 
 To support specialized tools, we should store artifacts in files that are both human and machine-readable.
+Making the file formats machine-readable may mean humans need dedicated editors to work with the files.
+
 Artifacts from one stage should link to the artifacts from earlier stages that they refine or add information to.
 This provides [traceability](../requirements/digest/management.md#requirements-management), which helps with impact
 analysis of proposed changes.
 Stage-specific tools verify the links between artifacts to ensure the system is complete and correct.
-Making the file formats machine-readable may mean humans need dedicated editors to work with the files.
 
 
 ## Tools for software _engineering_
@@ -173,6 +174,13 @@ A set of such tools supporting the full software development lifecycle is a **So
 A SEW should support and guide the software development process, helping teams adopt the right practices at the right
 time.
 
+We can expect a science of software development to consist of several specific theories, each relevant to one or more
+stages.
+These theories define the rules for a given stage in the form of a coherent model and/or ontology.
+The science of software development needs to ensure these models map well onto each other, both forward and
+backward.
+Without such mappings, it would be impossible to support traceability and incremental development.
+
 
 ## Software engineering as a team sport
 
@@ -181,8 +189,8 @@ The output of one member should flow effortlessly to the next, like a well-pract
 around.
 
 In our current reality, handoffs are usually not this smooth.
-A software development team resembles a team in a relay race more than, say, a rugby team (which is especially ironic
-when they use Scrum).
+A software development team resembles a team in a relay race more than, say, a rugby team (which is ironic when that
+team uses Scrum).
 The average software development team is more a collection of individuals who work in isolation and throw output
 over the wall than an actual team.
 Such handoffs imply queues with associated wait times, which can be significant.
