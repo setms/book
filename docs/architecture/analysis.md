@@ -42,3 +42,26 @@ This leaves several questions unanswered, like
 - What were the main decision drivers?
 
 It makes sense to capture all that information in **Architecture Decision Records** (ADRs) @@Nygard2011.
+
+
+## Related decisions
+
+Making one architecturally significant decision is hard enough, but those decisions rarely come in isolation.
+Decisions have relationships with each other.
+
+Some decisions constrain other decisions.
+For instance, the choice of a programming language reduces the choices for what tools and frameworks to use.
+The Go build command can't compile Ruby code.
+PyTest can't test Rust code.
+Using the Spring framework only makes sense with JVM languages like Java and Kotlin.
+
+Some decisions replace earlier decisions.
+Things change, so what was once a prudent decision may now have serious negative consequences that require a different
+choice.
+For example, if maintainers of an open source library abandon it, you'll no longer receive security fixes.
+Or if your company decides to standardize on AWS, your service running on GCP needs migrating.
+
+Combining the above two relationships, it becomes clear that there is value in keeping options open.
+For instance, tools like Bazel and Gradle can each compile several languages.
+Organizing code in a Hexagonal Architecture makes it easier to switch from Kafka to GCP Pub/Sub or AWS SNS & SQS
+@@Cockburn2025.
