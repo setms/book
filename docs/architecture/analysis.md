@@ -24,7 +24,7 @@ The appropriate approach for that domain is Sense → Analyze → Respond, and t
 Software architects seldom have formal training in decision-making and rarely use anything other than their experience
 or fashion to make decisions.
 Most are unaware of formal decision-making approaches, like Decision Intelligence @@Pratt2023, and decision-making
-tools, like decision matrices @@DecisionMatrix.
+tools, like decision matrices @@WikipediaDM.
 
 Architects also rarely document their decisions.
 It then falls unto others to reverse-engineer the decisions from the architectural views, or even from the code.
@@ -42,7 +42,7 @@ It makes sense to capture all that information in **Architecture Decision Record
 ## Related decisions
 
 Making one principal design decision is hard enough, but those decisions rarely come in isolation.
-And decisions have relationships with each other.
+Decisions have relationships with each other.
 
 **Some decisions constrain other decisions.**
 For instance, the choice of a programming language reduces the choices for what tools and frameworks to use.
@@ -65,3 +65,27 @@ AWS SNS & SQS.
 For example, suppose your application is running in a private datacenter, and you make the high-level decision to move
 it to AWS.
 Then there must be follow-up decisions about using EC2 vs ECS vs EKS, whether to use RDS or DynamoDB, etc.
+
+Since decisions have relationships, you can think of them as nodes in a **decision graph**.
+Viewing them that way opens up the door for using graph-based tools, like Open-Process Network @@Koo2005, to make
+internally consistent decisions.
+
+
+## Architecture decisions
+
+Now that we've looked at general decision-making, let's turn back to architecture.
+If architecture is the set of principal design decisions, then it follows that we need to make decisions about
+important design alternatives.
+
+We see different types of principal design decisions:
+
+- **Common decisions** are those that architects need to make for (virtually) all software systems.
+  For instance, every system benefits from a decision about its architectural style (layered, pipe-and-filter,
+  event-based, etc).
+  Likewise, every system needs a programming language for implementation, along with build tool, testing framework, etc.
+- **Category-specific decisions** are those that come up for certain categories of software systems.
+  For example, every microservices architecture requires making a decision about how to deal with distributed
+  transactions (choreography, orchestration).
+  Likewise, every event-based system needs decisions about what type each event is (notification, event-carried state
+  transfer).
+- **Context-specific decisions** are those that are unique for a given software system or small set of systems.
