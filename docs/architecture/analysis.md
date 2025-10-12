@@ -90,3 +90,9 @@ We see different types of principal design decisions:
   Likewise, every event-based system needs decisions about what type each event is (notification, event-carried state
   transfer).
 - **Context-specific decisions** are those that are unique for a given software system or small set of systems.
+
+Architects must be well-versed in common decisions.
+It may make sense for them to specialize in a certain category of architecture, to become proficient at
+category-specific decisions as well.
+Finally, they must understand decision-making tools and techniques well enough to handle the inevitable
+context-specific decisions.
