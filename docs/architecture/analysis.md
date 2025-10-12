@@ -75,10 +75,10 @@ Viewing them that way opens up the door for using graph-based tools and techniqu
 ## Architecture decisions
 
 Now that we've looked at general decision-making, let's turn back to architecture.
-If architecture is the set of principal design decisions, then it follows that we need to make decisions about
+If architecture is the set of principal design decisions, then it follows that architects need to make decisions about
 important design alternatives.
 
-We see different types of principal design decisions:
+We see different groups of principal design decisions:
 
 - **Common decisions** are those that architects need to make for (virtually) all software systems.
   For instance, every system benefits from a decision about its architectural style (layered, pipe-and-filter,
@@ -91,8 +91,8 @@ We see different types of principal design decisions:
   transfer).
 - **Context-specific decisions** are those that are unique for a given software system or small set of systems.
 
-Architects must be well-versed in common decisions.
+Architects must be well-versed in making common decisions.
 It may make sense for them to specialize in a certain category of architecture, to become proficient at
-category-specific decisions as well.
+category-specific decision-making as well.
 Finally, they must understand decision-making tools and techniques well enough to handle the inevitable
 context-specific decisions.
