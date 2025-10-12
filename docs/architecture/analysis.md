@@ -65,10 +65,11 @@ AWS SNS & SQS.
 For example, suppose your application is running in a private datacenter, and you make the high-level decision to move
 it to AWS.
 Then there must be follow-up decisions about using EC2 vs ECS vs EKS, whether to use RDS or DynamoDB, etc.
+Or if you decide on a microservices architecture, then you also have to decide between storing code in a monorepo or in
+multiple repositories.
 
 Since decisions have relationships, you can think of them as nodes in a **decision graph**.
-Viewing them that way opens up the door for using graph-based tools, like Open-Process Network @@Koo2005, to make
-internally consistent decisions.
+Viewing them that way opens up the door for using graph-based tools and techniques, but this rarely happens in practice.
 
 
 ## Architecture decisions
