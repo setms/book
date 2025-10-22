@@ -27,7 +27,7 @@ Most are unaware of formal decision-making approaches, like Decision Intelligenc
 tools, like decision matrices @@WikipediaDM.
 
 Architects also rarely document their decisions.
-It then falls unto others to reverse-engineer the decisions from the architectural views, or even from the code.
+It then falls to others to reverse-engineer the decisions from the architectural views, or even from the code.
 The downside of this approach is that it's impossible to retrieve the reasoning behind the decision.
 This leaves several questions unanswered, like
 

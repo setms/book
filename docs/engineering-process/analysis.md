@@ -154,6 +154,15 @@ This provides [traceability](../requirements/digest/management.md#requirements-m
 analysis of proposed changes.
 Stage-specific tools verify the links between artifacts to ensure the system is complete and correct.
 
+One thing we can learn from Unix, is that it's better to have more fine-grained tools than fewer coarser-grained one.
+Having more tools means they each support a smaller part of the process.
+This allows both the tools and the artifacts to be more focused.
+This makes it easier to implement tools and easier to review artifacts.
+It also makes it easier to optimize tools for quality attributes like performance and cost.
+
+Having many small, focused tools that each transform a particular artifact type into another leads to an architectural
+style called _pipes and filters_ @@Taylor2009.
+
 
 ## Tools for software _engineering_
 
