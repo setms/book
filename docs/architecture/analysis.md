@@ -93,7 +93,7 @@ Viewing them that way opens up the door for using graph-based tools and techniqu
 ## Architecture decisions
 
 Now that we've looked at general decision-making, let's turn back to architecture.
-If architecture is the set of principal design decisions, then it follows that architects need to make decisions about
+If architecture is the set of principal design decisions, then it follows that architects must make decisions about
 important design alternatives.
 
 We see different groups of principal design decisions:
@@ -114,3 +114,15 @@ It may make sense for them to specialize in a certain category of architecture, 
 category-specific decision-making as well.
 Finally, they must understand decision-making tools and techniques well enough to handle the inevitable
 context-specific decisions.
+
+Another classification of principal design decisions focuses on their impact @@Kruchten2004.
+
+- **Existence decisions** state that some element/artifact must exist in the systems’ design or implementation.
+  Structural decision relate to components, whereas behavioral decisions relate to their interactions.
+- **Non-existence decisions** state that some element must _not_ exist in the system's design or implementation.
+- **Property decisions** state an enduring, overarching trait or quality of the system.
+  Property decisions can be design rules or guidelines (when expressed positively) or design constraints (when expressed
+  negatively).
+- **Executive decisions** don't relate directly to the design elements or their qualities, but derive more from
+  the business environment (financial), and affect the development process (methodological), the people
+  (education and training), the organization, and technologies and tools.
