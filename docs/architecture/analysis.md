@@ -5,11 +5,26 @@
 Architectures are usually documented (if at all) as a series of views @@Clements2010.
 Those views are _representations_ of the architecture, however, not the architecture itself.
 **The architecture is the set of principal design decisions @@Taylor2009.**
-Architects make these decisions over time, whereas architectural views reflect the decisions' aggregate result at a
-particular moment.
 
-If the architecture is the set of principal design decisions, then it makes sense to look more deeply
-into decision-making.
+```admonish tldr title="Definition"
+A **principal design decision** is the description of the set of architectural additions, subtractions, and modifications
+to the software architecture, the rationale, and the design rules, design constraints, and additional requirements that
+(partially) realize one or more requirements on a given architecture.
+
+--- @@JansenBosch2005
+```
+
+Each principal design decision constrains the solution space of the system in its own way.
+As the number of decisions grows, the resulting viable part of the solution space shrinks.
+The selected architecture is a single point in this viable part of the solution space.
+Note that there may be other points that are viable as well; these are alternative architectures.
+
+The solution space is multidimensional, but we can project it in two dimensions to visualize the relationship between
+architecture and principal design decisions:
+
+![Decisions constrain viable architectures](../img/architecture-as-decisions.png)
+
+If architecture is the set of principal design decisions, then it makes sense to look more deeply into decision-making.
 
 We already encountered the decision-making framework
 [Cynefin](../introduction/software-engineering.md#the-cynefin-framework) @@Snowden2007.
@@ -62,6 +77,9 @@ Or organizing code in a Hexagonal Architecture @@Cockburn2025 makes it easier to
 AWS SNS & SQS.
 
 **Some decisions lead to further decisions.**
+The definition of principal design decision mentions "additional requirements" that the architecture must meet.
+Follow-up design decisions must address these new requirements.
+
 For example, suppose your application is running in a private datacenter, and you make the high-level decision to move
 it to AWS.
 Then there must be follow-up decisions about using EC2 vs ECS vs EKS, whether to use RDS or DynamoDB, etc.
