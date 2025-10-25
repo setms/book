@@ -41,7 +41,13 @@ or fashion to make decisions.
 Most are unaware of formal decision-making approaches, like Decision Intelligence @@Pratt2023, and decision-making
 tools, like decision matrices @@WikipediaDM.
 
-Architects also rarely document their decisions.
+Some decisions are impossible or very hard to reverse @@Bezos2015.
+We must then be very careful not to make the wrong choice, so using more formal approaches make sense.
+Most decisions aren't like that, however.
+It would be wasteful to spend a lot of time on them if we can change direction at low cost.
+Just because architectural decisions are _principal_ design decisions, doesn't automatically make them irreversible.
+
+Architects rarely document their decisions.
 It then falls to others to reverse-engineer the decisions from the architectural views, or even from the code.
 The downside of this approach is that it's impossible to retrieve the reasoning behind the decision.
 This leaves several questions unanswered, like
@@ -52,6 +58,7 @@ This leaves several questions unanswered, like
 - What were the main decision drivers?
 
 It makes sense to capture all that information in **Architecture Decision Records** (ADRs) @@Nygard2011.
+This is true even for decisions that are easy to reverse.
 
 
 ## Related decisions
@@ -61,7 +68,7 @@ Decisions have relationships with each other.
 
 **Some decisions constrain other decisions.**
 For instance, the choice of a programming language reduces the choices for what tools and frameworks to use.
-The Go build command can't compile Ruby code.
+The Go `build` command can't compile Ruby code.
 PyTest can't test Rust code.
 Using the Spring framework only makes sense with JVM languages like Java and Kotlin.
 
@@ -71,7 +78,7 @@ choice.
 For example, if maintainers of an open source library abandon it, you'll no longer receive security fixes.
 Or if your company decides to standardize on AWS, your service running on GCP needs migrating.
 
-Combining the above two relationships, it becomes clear that there is value in keeping options open.
+Combining the above two relationships, it becomes clear that there is value in keeping options open @@MaassenMatts2007.
 For instance, tools like Bazel and Gradle can each compile several languages.
 Or organizing code in a Hexagonal Architecture @@Cockburn2025 makes it easier to switch from Kafka to GCP Pub/Sub or
 AWS SNS & SQS.
@@ -87,7 +94,8 @@ Or if you decide on a microservices architecture, then you also have to decide b
 multiple repositories.
 
 Since decisions have relationships, you can think of them as nodes in a **decision graph**.
-Viewing them that way opens up the door for using graph-based tools and techniques, but this rarely happens in practice.
+Viewing them that way theoretically opens up the door for using graph-based tools and techniques, but this rarely
+happens in practice.
 
 
 ## Architecture decisions
@@ -100,13 +108,13 @@ We see different groups of principal design decisions:
 
 - **Common decisions** are those that architects need to make for (virtually) all software systems.
   For instance, every system benefits from a decision about its architectural style (layered, pipe-and-filter,
-  event-based, etc).
+  event-based, etc) @@Taylor2009.
   Likewise, every system needs a programming language for implementation, along with build tool, testing framework, etc.
 - **Category-specific decisions** are those that come up for certain categories of software systems.
   For example, every microservices architecture requires making a decision about how to deal with distributed
-  transactions (choreography, orchestration).
+  transactions (choreography, orchestration) @@Richardson2019.
   Likewise, every event-based system needs decisions about what type each event is (notification, event-carried state
-  transfer).
+  transfer) @@Fowler2017.
 - **Context-specific decisions** are those that are unique for a given software system or small set of systems.
 
 Architects must be well-versed in making common decisions.
