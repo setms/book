@@ -2,8 +2,8 @@
 
 ## The software development process
 
-Software development is a process that starts with stakeholder needs and ends with running software that meets those
-needs:
+Software development is a multistep process that starts with stakeholder needs and ends with running software that meets
+those needs:
 
 ```mermaid
 flowchart LR
@@ -147,20 +147,20 @@ understanding of the context.
 In that sense, the `Rename` tool reduces accidental complexity compared to the `Search & Replace` tool.
 
 To support specialized tools, we should store artifacts in files that are both human and machine-readable.
-Making the file formats machine-readable may mean humans need dedicated editors to work with the files.
+Making the file formats machine-readable may mean humans need dedicated editors to work with the files efficiently.
 
 Artifacts from one stage should link to the artifacts from earlier stages that they refine or add information to.
 This provides [traceability](../requirements/digest/management.md#requirements-management), which helps with impact
 analysis of proposed changes.
 Stage-specific tools verify the links between artifacts to ensure the system is complete and correct.
 
-One thing we can learn from Unix, is that it's better to have more fine-grained tools than fewer coarser-grained one.
+One thing we can learn from Unix, is that it's better to have more fine-grained tools than fewer coarser-grained ones.
 Having more tools means they each support a smaller part of the process.
 This allows both the tools and the artifacts to be more focused.
-This makes it easier to implement tools and easier to review artifacts.
+This, in turn, makes it easier to implement tools and easier to review artifacts.
 It also makes it easier to optimize tools for quality attributes like performance and cost.
 
-Having many small, focused tools that each transform a particular artifact type into another leads to an architectural
+Having many small, focused tools that each transforms a particular artifact type into another leads to an architectural
 style called _pipes and filters_ @@Taylor2009.
 
 
