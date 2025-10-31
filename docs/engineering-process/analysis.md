@@ -47,7 +47,7 @@ Ideally, this process is:
 
   > A complex system that works is invariably found to have evolved from a simple system that worked. @@Gall1977
 
-  Using [domain stories](../requirements/analysis.md#learning-the-domain) is a good way to describe the parts.
+  Using [domain stories](../requirements/analysis.md#learning-the-domain) is a good way to start describing the parts.
 - **Incremental** -- Each stage of the process refines work from earlier stages and/or adds information.
   This acknowledges that software development is collaborative knowledge work.
 
