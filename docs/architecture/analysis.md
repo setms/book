@@ -19,8 +19,8 @@ As the number of decisions grows, the resulting viable part of the solution spac
 The selected architecture is a single point in this viable part of the solution space.
 Note that there may be other points that are viable as well; these are alternative architectures.
 
-The solution space is multidimensional, but we can project it in two dimensions to visualize the relationship between
-architecture and principal design decisions:
+Let's pretend for a moment that the multidimensional solution space has only two dimensions.
+Then we can visualize the relationship between architecture and principal design decisions:
 
 ![Decisions constrain viable architectures](../img/architecture-as-decisions.png)
 
@@ -37,7 +37,7 @@ The appropriate approach for that domain is Sense → Analyze → Respond, and t
 - **Respond** by making principal design decisions
 
 Software architects seldom have formal training in decision-making and rarely use anything other than their experience
-or fashion to make decisions.
+(or fashion) to make decisions.
 Most are unaware of formal decision-making approaches, like Decision Intelligence @@Pratt2023, and decision-making
 tools, like decision matrices @@WikipediaDM.
 
@@ -48,7 +48,7 @@ It would be wasteful to spend a lot of time on them if we can change direction a
 Just because architectural decisions are _principal_ design decisions, doesn't automatically make them irreversible.
 
 Architects rarely document their decisions.
-It then falls to others to reverse-engineer the decisions from the architectural views, or even from the code.
+It then falls to others to reverse-engineer the decisions from the architectural views or from the code.
 The downside of this approach is that it's impossible to retrieve the reasoning behind the decision.
 This leaves several questions unanswered, like
 
@@ -129,7 +129,7 @@ alternatives for another issue.
 - **isCompatibleWith**: Certain alternatives for one issue work well with certain alternatives for another issue.
 
 The above are all structural relations.
-They define a temporal relation as well:
+Zimmerman et al define a temporal relation as well:
 
 - **triggers**: Choosing an alternative for one issue (which creates an outcome) makes another issue ready to resolve.
 
@@ -165,7 +165,7 @@ important design alternatives.
 @@Kruchten2004 classify principal design decisions based on their impact:
 
 - **Existence decisions** state that some element/artifact must exist in the systems’ design or implementation.
-  Structural decision relate to components, whereas behavioral decisions relate to their interactions.
+  Structural decisions relate to components, whereas behavioral decisions relate to their interactions.
 - **Non-existence decisions** state that some element must _not_ exist in the system's design or implementation.
 - **Property decisions** state an enduring, overarching trait or quality of the system.
   Property decisions can be design rules or guidelines (when expressed positively) or design constraints (when expressed
