@@ -47,7 +47,7 @@ Ideally, this process is:
 
   > A complex system that works is invariably found to have evolved from a simple system that worked. @@Gall1977
 
-  [Domain stories](../requirements/analysis.md#learning-the-domain) are good ways to describe the parts.
+  Using [domain stories](../requirements/analysis.md#learning-the-domain) is a good way to describe the parts.
 - **Incremental** -- Each stage of the process refines work from earlier stages and/or adds information.
   This acknowledges that software development is collaborative knowledge work.
 
@@ -67,7 +67,7 @@ Data represent raw numbers or assertions and may therefore be devoid of context,
 ```
 
 ```admonish tldr title="Definition"
-**Information** is a subset of data, only including those data that posses context, relevance, and purpose.
+**Information** is a subset of data, only including those data that possess context, relevance, and purpose.
 Information typically involves the manipulation of raw data to obtain more meaningful indication of trends or patterns
 in the data.
 
@@ -95,7 +95,7 @@ experience in the field.
 
 **Context-specific knowledge** refers to the knowledge of particular circumstances of time and place in which people
 perform work.
-One can't acquire contextually specific knowledge through formal training, but only via working in the context.
+One can't acquire context-specific knowledge through formal training, but only via working in the context.
 
 Software development relies on both context-specific and technology-specific knowledge.
 
@@ -104,7 +104,7 @@ Three basic options exist: an unstructured monolith (big ball of mud), a modulit
 Technology-specific knowledge tells us that the big ball of mud approach has severe downsides for applications of
 non-trivial size.
 It can't tell us whether a modulith or a microservices approach is the right choice, however.
-For that, we need context-specific knowledge about team structures, skill levels of developers, etc.
+For that, we need context-specific knowledge about team sizes, skill levels of team members, etc.
 
 Knowledge resides in several different locations: people, artifacts, and organizational entities.
 As the number of knowledge workers that collaborate to solve a problem grows, it becomes more important to capture
@@ -118,10 +118,10 @@ design diagrams, source code, and tests.
 
 ## Knowledge management tools for software development
 
-Typical knowledge workers must have some system at their disposal to create, process, and enhance their own knowledge.
+Typically, knowledge workers have systems at their disposal to create, process, and enhance their own knowledge.
 The practice of knowledge management (KM) evolved to support knowledge workers with standard tools and processes.
 KM tools used in software development range from generic, like word processors, to specialized, like Integrated
-Development Environments (IDEs).
+Development Environments (IDEs) or deployment tools.
 
 More specialized tools deliver higher value by automating parts of the process.
 This is especially important since software development has high accidental complexity @@Brooks1986.
@@ -141,7 +141,7 @@ that provides context.
 
 Consider the case of renaming something.
 A word processor offers the tool of `Search & Replace`, where the tool either replaces everything or the human has to
-decide _for each_ occurrence whether to replace it.
+decide _for each occurrence_ whether to replace it.
 An IDE, however, offers the `Rename` tool that makes this decision automatically for the human, based on its
 understanding of the context.
 In that sense, the `Rename` tool reduces accidental complexity compared to the `Search & Replace` tool.
