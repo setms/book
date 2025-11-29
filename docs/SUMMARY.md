@@ -49,6 +49,7 @@
 - [Engineering process](engineering-process/index.md)
   - [Digest](engineering-process/digest/index.md)
   - [Analysis](engineering-process/analysis.md)
+  - [Concepts](engineering-process/concepts.md)
 - [Engineering models and methods](engineering-models-methods.md)
 - [Quality](quality.md)
 - [Engineering professional practice](engineering-professional-practice.md)

@@ -212,3 +212,10 @@ Most importantly, a SEW should make it easy to collaborate.
 It should make progress visible to all team members and make it clear where each can best contribute.
 In a way, this means that software engineering is a team sport where the players are both humans and tools.
 The tools ideally provide all technology-specific knowledge, while humans add context-specific knowledge.
+
+A SEW thus consists of an **orchestrator** that maintains **tasks** for team members to complete, and **tools** that
+create or update **artifacts**.
+It supports team members by providing them tasks to perform, which also consist of creating and updating artifacts.
+Note that the creation of an artifact is usually the result of the transformation of one or more other artifacts by
+adding information.
+Updating an artifact is usually also a matter of adding information.
