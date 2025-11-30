@@ -12,7 +12,7 @@ flowchart LR
   H[Team member]
 
   P--consists of-->S
-  S--work captured in-->A
+  S--deliverable\ncaptured in-->A
   T--supports-->A
   O--tracks-->A
   O--invokes-->T
@@ -20,3 +20,8 @@ flowchart LR
   H--performs-->Task
   Task--references-->A
 ```
+
+The specialization lies in the tools and artifacts used.
+The chapters about the various stages of software development shed more light on the specifics.
+For instance, for the requirements stage, the artifact would be a
+[domain story](../requirements/analysis.md#learning-the-domain).
