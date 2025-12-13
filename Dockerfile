@@ -1,4 +1,4 @@
-FROM rust:1.91.1-slim AS build
+FROM rust:1.92.0-slim AS build
 
 ARG MDBOOK_VERSION="0.4.37"
 ARG MDBOOK_ADMONISH_VERSION="1.15.0"
