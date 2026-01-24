@@ -76,8 +76,8 @@ Engineers apply scientific theories by constructing models of their designs @@Br
 A **model** is an approximation of a real system that responds in a similar way.
 
 Since everything connects to everything, networks are important models.
-A **graph** is a visualization of a network, where the **nodes** are things and the **edges** are relationships between the
-things.
+A **graph** is a visualization of a network, where the **nodes** are things and the **edges** are relationships between
+the things.
 Edges are either **directed** (with arrows) or **undirected** (without).
 
 Here's an example of an undirected graph:
@@ -184,8 +184,8 @@ The design process to solve an engineering problem consists of the following ste
     Once you've settled on the design goals, you should prioritize them.
 3. **Abstraction and synthesis**.
 
-    In **abstraction**, the engineer breaks the problem down into as many different functional parts as possible, where the
-    subproblems ideally are independent.
+    In **abstraction**, the engineer breaks the problem down into as many different functional parts as possible, where
+    the subproblems ideally are independent.
 
     Models help recognize what we know and what not about a problem and its solution.
     They can transform an unfamiliar problem into a set of recognizable subproblems that may be much easier to solve.
