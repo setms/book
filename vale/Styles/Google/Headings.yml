@@ -45,6 +45,7 @@ exceptions:
   - PRs
   - Pub/Sub
   - REPL
+  - Service Level Expectation
   - Slack
   - SWEBOK
   - URLs
