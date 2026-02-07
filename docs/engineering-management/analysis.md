@@ -51,6 +51,9 @@ Benefits of using SLE:
 - It's independent of the process used to deliver work.
   You just need to be able to define when work starts and finishes.
   For example, it works with both Scrum and Kanban, and even when you switch from one to the other.
+- It's an absolute, objective metric, unlike, for instance, Story Points.
+  This means you can aggregate at every desired level: from single team to whole organization.
+  Just adjust the pool of work items.
 - Using SLE, you can say with confidence and at the desired accuracy when you expect work to get done.
   And **this requires no estimation**.
   All you need is to break work down into work items and some historical data about work items.
