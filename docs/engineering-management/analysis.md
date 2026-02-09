@@ -4,7 +4,7 @@
 
 A company's main goal is to maximize profit by increasing revenue and reducing cost.
 A software delivery organization contributes to revenue by delivering product features.
-Its cost are mainly labor and infrastructure and as such outside the scope of this chapter.
+Its cost are mainly labor and infrastructure costs and as such outside the scope of this chapter.
 
 
 ### The main metric: Service Level Expectation
