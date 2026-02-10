@@ -88,10 +88,16 @@ Common options for finishing work items faster are:
 SLE is the main metric for driving predictability and efficiency.
 Other metrics may help keep the process stable and drive improvements:
 
-- **Capacity allocation**: percentage of work items by type: functionality (building features), quality (fixing
-  bugs), and capability improvement (process improvements, process automation, code simplification, etc).
+- **Capacity allocation**: percentage of work items by type:
+  - functionality: building features
+  - quality: fixing bugs
+  - capability improvement: process improvements, process automation, code simplification, etc.
+
   This metric enables a discussion about the right mix of investments.
-- **Stability**: change failure rate (any rollback, hotfix, or incident), escaped defect inflow (customer-reported
-  defects), and open defect stock.
-  Ensures SLE improvements don't degrade reliability and anchors quality-related capacity allocation to quality
-  signals.
+- Stability metrics:
+  - **change failure rate**: how often a rollback, hotfix, or incident occurs as percentage of all deployments
+  - **escaped defect inflow**: the number of customer-reported defects per reporting period
+  - **open defect stock**: total number of unresolved issues
+
+  These metrics ensure SLE improvements don't degrade reliability and anchor quality-related capacity allocation to
+  quality signals.
