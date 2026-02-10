@@ -99,5 +99,5 @@ Other metrics may help keep the process stable and drive improvements:
   - **escaped defect inflow**: the number of customer-reported defects per reporting period
   - **open defect stock**: total number of unresolved issues
 
-  These metrics ensure SLE improvements don't degrade reliability and allow anchoring of quality-related capacity
-  allocation to quality signals.
+  These metrics ensure SLE improvements don't degrade reliability and allow quality signals to inform quality-related
+  capacity allocation.
