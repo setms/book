@@ -1,6 +1,6 @@
 # Analysis
 
-## Measurement
+## Measurements
 
 A company's main goal is to maximize profit by increasing revenue and reducing cost.
 A software delivery organization contributes to revenue by delivering product features.
@@ -101,3 +101,23 @@ Other metrics may help keep the process stable and drive improvements:
 
   These metrics ensure SLE improvements don't degrade reliability and allow quality signals to inform quality-related
   capacity allocation.
+
+
+## Forecasting
+
+SLE is a metric about the past.
+You can use it as a **forecast** for the completion of individual items if relevant things stay the same.
+An example of something that's relevant is the composition of the team working on the items.
+
+However, most of the time we're interested in forecasting bigger chunks of work.
+Let's follow Agile nomenclature and call such a collection of work items an epic.
+
+We mustn't multiply the SLE by the number of items in the epic to arrive at a forecast for the epic.
+A single item has much higher variability than a collection of items, so we'd be overestimating the duration.
+The correct way to forecast duration of a set of work items, is to use **Monte Carlo simulation**:
+
+1. Randomly pick a cycle time from a past work item.
+2. Repeat this `N` times, where `N` is the number of work items in the epic.
+3. Sum the `N` cycle times to get a prediction.
+4. Repeat this process a lot, say 10,000 times.
+5. Compute the required percentile of the predictions to get the forecast.
