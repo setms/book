@@ -21,7 +21,7 @@ RUN cargo install mdbook-mermaid --vers ${MDBOOK_MERMAID_VERSION} --verbose
 RUN cargo install mdbook-wordcount --vers ${MDBOOK_WORDCOUNT_VERSION} --verbose
 
 # Create the final image
-FROM ubuntu:24.04
+FROM ubuntu:26.04
 
 ENV RUST_LOG info
 
