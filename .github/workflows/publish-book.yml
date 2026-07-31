@@ -8,6 +8,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: write
 
 concurrency:
   group: "pages"
@@ -54,6 +55,7 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: ./book/html
+          retention-days: 1
   deploy:
     needs:
       - vale
@@ -68,3 +70,18 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+      # GitHub Pages serves from its own storage once deployed - the
+      # upload-pages-artifact is only a same-run handoff to the step
+      # above, not something worth keeping around afterward.
+      - name: Delete pages artifact
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          id=$(gh api "repos/${{ github.repository }}/actions/artifacts" \
+            --jq ".artifacts[] | select(.workflow_run.id==${{ github.run_id }} and .name==\"github-pages\") | .id" \
+            | head -1)
+          if [ -n "$id" ]; then
+            gh api -X DELETE "repos/${{ github.repository }}/actions/artifacts/$id"
+          fi
