@@ -26,5 +26,3 @@ command = "mdbook-mermaid"
 additional-css = ["./mdbook-admonish.css", "./link.css"]
 curly-quotes = true
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
-
-[output.wordcount]
